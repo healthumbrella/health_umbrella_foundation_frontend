@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import "./diseases_second_page.scss";
 // import img2 from "/Images/cow.png";
 import axios from "axios";
@@ -88,10 +89,10 @@ const Bottom = () => {
                     therapyArray.map((therapy, index) => (
                       <div key={index} className="disease-card" style={{backgroundImage:gradientarry[index%gradientarry.length]}}>
                        <div className="disease-card-img">
-                       <img src={therapy.imageLink} alt="" />
+                        <img src={therapy.imageLink} alt="" />
                        {/* <img src="/Images/cow.png" alt="" /> */}
                        </div>
-                        <h4>{therapy.name}</h4>
+                        <Link to="/PathyPage"><h4>{therapy.name}</h4></Link>
                         <p>
                           {therapy.isReadMore
                             ? therapy.summary

@@ -52,8 +52,8 @@ function Footer() {
                             </div>
                             <div className="quick-links_container-2">
                                 <Link to="/ejournal">Newsletter</Link>
-                                <Link to="#">Feedback</Link>
-                                <Link to="#">Join Us</Link>
+                                <Link to="/feedback">Feedback</Link>
+                                <Link to="/join-us">Join Us</Link>
                             </div>
                         </div>
 

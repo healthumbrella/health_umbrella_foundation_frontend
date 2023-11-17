@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import './accupressure.css';
+import './PathyPage.css';
 import axios from 'axios';
 
-const Accupressure = () => {
+const PathyPage = () => {
   const [data,setData]=useState({
     pathy:'',
     text:'',
@@ -23,37 +23,37 @@ useEffect(() => {
 
 
   return (
-    <div className='accupressure-main'>
-      <div className='accupressure-nav'>&lt; Migraine / Accupressure</div>
-      <div className='accupressure-container'>
+    <div className='PathyPage-main'>
+      <div className='PathyPage-nav'>&lt; Migraine / Accupressure</div>
+      <div className='PathyPage-container'>
         <img src="./Images/green_ring_tl.png" className="greenring-tl" />
-        <h1 className="accupressure-heading">ACUPRESSURE</h1>
-        <h3 className="accupressure-subheading">THERAPY</h3>
-        <div className="accupressure-content">{data.text}</div>
-        <div className="accupressure-cards">
+        <h1 className="PathyPage-heading">ACUPRESSURE</h1>
+        <h3 className="PathyPage-subheading">THERAPY</h3>
+        <div className="PathyPage-content">{data.text}</div>
+        <div className="PathyPage-cards">
             <div className="item">
               <img src="./Images/man.png" alt="" />
-              <div className="accupressure-cards-desc">Direct Cases</div>
+              <div className="PathyPage-cards-desc">Direct Cases</div>
             </div>
             <div className="item">
               <img src="./Images/youtube-logo.png" alt="" />
-              <div className="accupressure-cards-desc">Youtube</div>
+              <div className="PathyPage-cards-desc">Youtube</div>
             </div>
             <div className="item">
               <img src="./Images/globe-icon.png" alt="" />
-              <div className="accupressure-cards-desc">Website</div>
+              <div className="PathyPage-cards-desc">Website</div>
             </div>
             <div className="item">
               <img src="./Images/socialmedia-women.png" alt="" />
-              <div className="accupressure-cards-desc">SocialMedia</div>
+              <div className="PathyPage-cards-desc">SocialMedia</div>
             </div>
             <div className="item">
               <img src="./Images/books.png" alt="" />
-              <div className="accupressure-cards-desc">Books/Book Chapters</div>
+              <div className="PathyPage-cards-desc">Books/Book Chapters</div>
             </div>
             <div className="item">
               <img src="./Images/articles-search.png" alt="" />
-              <div className="accupressure-cards-desc">Articles</div>
+              <div className="PathyPage-cards-desc">Articles</div>
             </div>
         </div>
       </div>
@@ -61,4 +61,4 @@ useEffect(() => {
   );
 };
 
-export default Accupressure;
+export default PathyPage;
