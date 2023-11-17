@@ -102,7 +102,7 @@ function Sub() {
                       handleChange(e);
                     }}
                   />
-                  <button type="submit">
+                  <button type="submit" className="submitbutton">
                     <span>Subscribe</span>
                   </button>
                 </form>

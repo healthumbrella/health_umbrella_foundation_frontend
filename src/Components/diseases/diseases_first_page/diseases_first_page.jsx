@@ -55,11 +55,11 @@ const Top = ({data}) => {
             </p>
           </div>
         </div>
-        <civ className="diseases-top-end">
+        <div className="diseases-top-end">
           <div className="g-line">
             <div className="g-round">Pathies</div>
           </div>
-        </civ>
+        </div>
       </div>
     </>
   );

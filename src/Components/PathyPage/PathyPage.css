@@ -1,11 +1,11 @@
-.accupressure-main{
+.PathyPage-main{
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     gap: 1.5rem;
 }
-.accupressure-nav{
+.PathyPage-nav{
     width: 95vw;
     height: auto;
     margin-top: 8rem;
@@ -14,12 +14,12 @@
     font-weight: bolder;
     cursor: pointer;
 }
-.accupressure-container{
+.PathyPage-container{
     display: flex;
     flex-direction: column;
     width: 95vw;
     height: auto;
-    margin-bottom: 2.5rem;
+    margin-bottom: 1rem;
     border-radius: 1.5rem;
     box-shadow: 0px 4px 4px 0px #00000040;
     align-items: center;
@@ -34,39 +34,39 @@
     height: 25rem;
     width: 20rem;
 }
-.accupressure-heading{
+.PathyPage-heading{
     font-weight: bolder;
     color: #053B3F;
     margin-top: 1.5rem;
 }
-.accupressure-subheading{
+.PathyPage-subheading{
     font-weight: lighter;
     font-weight: 200;
 }
-.accupressure-content{
+.PathyPage-content{
     width: 80%;
     max-height: 150px;
     overflow-y: hidden;
     transition: overflow .3s;
     text-align: center;
 }
-.accupressure-content:hover{
+.PathyPage-content:hover{
     overflow-y: auto; 
 }
-.accupressure-content::-webkit-scrollbar {
+.PathyPage-content::-webkit-scrollbar {
     width: 0.5rem;
   }
   
-  .accupressure-content::-webkit-scrollbar-track {
+  .PathyPage-content::-webkit-scrollbar-track {
     background: #edebeb;
     border-radius: 0.5rem;
   }
   
-  .accupressure-content::-webkit-scrollbar-thumb {
+  .PathyPage-content::-webkit-scrollbar-thumb {
     background: #053B3F;
     border-radius: 0.5rem;
   }
-.accupressure-cards {
+.PathyPage-cards {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -87,15 +87,14 @@
     margin: 1.5rem; 
     border-radius: 1rem;
     box-shadow: 0px 4px 4px 0px #00000040;
-}
-.item:hover{
+}.PathyPage{
     cursor: pointer;
 }
-.accupressure-cards-desc{
+.PathyPage-cards-desc{
     font-weight: bolder;
 }
 @media screen and (max-width:1150px){
-    .accupressure-cards{
+    .PathyPage-cards{
         width: 80%;
     }
 }
@@ -115,7 +114,7 @@
     }
 }
 @media screen and (max-width:315px) {
-    .accupressure-heading{
+    .PathyPage-heading{
         font-size: 2rem;
     }
     

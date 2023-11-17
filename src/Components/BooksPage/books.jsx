@@ -1,27 +1,29 @@
 import react from "react"
 import "./books.css"
 import SeparateBook from "./Books/separatebooks";
+import { useParams } from "react-router-dom";
 
 function Books(){
+    const {titlee} = useParams();
     return(
         <div className="B_outer">
             <div className="B_outer_top">
-                <h2>&#60; Migraine/Accupressure/Books & Book Chapters</h2>
+                <h2>&#60; Migraine/ {titlee.charAt(0).toUpperCase()}{titlee.slice(1)} /Books & Book Chapters</h2>
             </div>
             <div className="B_outer_bottom">
                 <div className="B_inner_top">
-                    <img src="./images/bookStack.png" alt="_blank"/>
+                    <img src={process.env.PUBLIC_URL +"/images/bookStack.png"} alt="_blank"/>
                     <h1>Books & Book Chapters</h1>
                 </div>
                 <div className="B_inner_bottom">
                     <div className="B_inner_left">
-                        <SeparateBook className="Sbclass" />
-                        <SeparateBook className="Sbclass" />
-                        <SeparateBook className="Sbclass" />
-                        <SeparateBook className="Sbclass" />
+                        <SeparateBook pathy = {titlee} className="Sbclass" />
+                        {/* <SeparateBook pathy = {titlee} className="Sbclass" />
+                        <SeparateBook pathy = {titlee} className="Sbclass" />
+                        <SeparateBook pathy = {titlee} className="Sbclass" /> */}
                     </div>
                     <div className="B_inner_right">
-                        <img src="./images/bookCase.png" alt="" />
+                        <img src={process.env.PUBLIC_URL+"/images/bookCase.png"} alt="" />
                     </div>
                 </div>
             </div>

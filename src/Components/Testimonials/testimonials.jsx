@@ -9,6 +9,7 @@ const Testimonials = () => {
   const { title } = useParams();
   const [matchedImageLink, setMatchedImageLink] = useState("");
   const [selectedSummary, setSelectedSummary] = useState("");
+  console.log(title);
   useEffect(() => {
     const fetchDataFromAPI = async () => {
       try {

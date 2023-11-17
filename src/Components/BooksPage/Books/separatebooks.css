@@ -1,7 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@700&family=Noto+Sans+Georgian:wght@200&family=Noto+Sans:wght@700&family=Rubik:ital,wght@0,500;0,700;1,500&display=swap');
+.Sb{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
 .Sb_outer{
     padding: 1rem;
-    width: 70%;
+    width: 90%;
     /* border: 0.2rem solid red; */
     display: flex;
     flex-direction: row;
@@ -49,13 +55,14 @@
 }
 .Sb_inner_right button{
     height: 2rem;
-    max-width: 9rem;
+    width: 8rem;
     border-radius: 6px;
     background-color: #FB641B;
     font-family: 'Inter', sans-serif;
     font-size: small;
     color: #FFFFFF;  
     border: none;
+    cursor: pointer;
 }
 .summary_text{
     color: grey;
