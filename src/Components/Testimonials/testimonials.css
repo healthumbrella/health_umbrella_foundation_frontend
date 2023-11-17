@@ -1,0 +1,223 @@
+/* *{
+    color: #000000;
+    YEH PUCHNA HAI SIR SE
+} */
+.testimonials-main{
+    margin: 5rem 0rem;
+    height: auto;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+}
+.testimonials-link-topleft{
+    width: fit-content;
+    top: 0%;
+    left: 1%;
+    position: absolute;
+    font-weight: 500;
+    color: #053B3F;
+    cursor: pointer;
+}
+
+.testimonials-container{
+    background-image: url("../../../public/Images/greeninfographics-cropped.png");
+    background-size: 100%;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    width: 90%;
+    height: auto;
+    border-radius: 1.5rem;
+    box-shadow: 0px 4px 4px 0px #00000040;
+    background-color: #B9B9B921;
+    padding: 2rem;
+    margin-top: 2rem;
+
+}
+.t-row1
+{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 10%;
+    
+}
+.t-image{
+    height: 3rem;
+    width: 3rem;}
+.t-row1 .heading{
+    font-weight: 700;
+    font-size: 3rem;
+}
+.t-row2{
+    font-weight: 400;
+    color: #000000;
+    height: 10%;
+}
+.t-row3{
+    color: #000000;
+    font-weight: 400;
+    font-size: 1rem;
+    height: 10%;
+}
+.t-row4{
+    height: 70%;
+    /* background-color: red; */
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    width: 100%;
+    padding: 1rem;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+.t-card
+{
+    height: auto;
+    width: 24rem;
+    background-color: #FFFFFF;
+    border-radius: 1rem;
+    display: flex;
+    padding: 1.5rem 1.5rem;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    box-shadow: 0px 4px 4px 0px #00000040;
+    position: relative;
+}
+.t-title{
+    font-weight: 700;
+    font-size: large;
+    text-align: left;
+}
+.t-card a{
+    font-weight: 500;
+    font-size: small;
+}
+.t-summary{
+    display: flex;
+    /* align-items: center; */
+    color: rgb(151, 151, 151);
+    font-weight: 600;
+}
+.t-summary button{
+    border: none;
+    background: none;
+    color: #007bff;
+    font-size: small;
+    margin-top: .27rem;
+    margin-inline-start: .6rem;
+    cursor: pointer;
+}
+.t-backend-summary{
+    font-size: small;
+    font-weight: 500;
+    color: black;
+    text-align: right;
+    height: 7.5rem;
+    overflow-y: hidden;
+    transition: overflow .3s;
+}
+.t-backend-summary:hover{
+    overflow-y: auto;
+}
+.t-backend-summary::-webkit-scrollbar{
+    width: .5rem;
+}
+.t-backend-summary::-webkit-scrollbar-track{
+    background: #edebeb;
+    border-radius: 0.5rem;
+}
+.t-backend-summary::-webkit-scrollbar-thumb{
+    background: #053B3F;
+    border-radius: 0.5rem;
+}
+
+.t-rating{
+    display: flex;
+    flex-direction: column;
+}
+.t-rating p1{
+    font-weight: 300;
+    font-size: small;
+    color: rgb(151, 151, 151);
+}
+.t-rating p2{
+    text-align: left;
+    font-weight: 700;
+    color: rgb(151, 151, 151);
+}
+.t-comment{
+    display: flex;
+    flex-direction: column;
+}
+.t-comment p1{
+    font-weight: 300;
+    font-size: small;
+    color: rgb(151, 151, 151);
+    text-align: left;
+}
+.t-comment p2{
+    text-align: left;
+    font-weight: 400;
+    font-size: small;
+    color: black
+}
+.t-design
+{
+    position: relative;
+} 
+.t-rb-img1{
+    position: absolute;
+    bottom: -3.5%;
+    right: -1.5%;
+    /* height: 90px; */
+    /* width: 90px; */
+    
+}
+.selected-summary-img1{
+    bottom: -2.5%;
+
+}
+.t-rb-img2{
+    position: absolute;
+    bottom: 0%;
+    right: 0%;
+}
+.t-id{
+    position: absolute;
+    bottom: 0%;
+    right: 7%;
+    display: flex;
+    flex-direction: column;
+}
+.t-id p1,p2{
+    color: #FFFFFF;
+    font-size: .8rem;
+}
+.t-id p2{
+    color: #88B5B8;
+    font-size: .75rem;
+}
+@media screen and (max-width:400px)
+{
+    .testimonials-container{
+        padding: 2rem 0.5rem;
+    }
+    .t-row4{
+        padding: 1rem 0rem;
+    }
+    .t-card
+    {
+        width: 100%;
+    }
+}

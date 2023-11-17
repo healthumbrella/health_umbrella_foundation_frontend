@@ -14,6 +14,7 @@ import DirectCases from "./Components/DirectCases/directcases"
 import ShareExp from "./Components/ShareExp/ShareExp";
 import Accupressure from "./Components/Accupressure/accupressure"
 import OurTeam from "./Components/OurTeam/OurTeam";
+import Testimonials from "./Components/Testimonials/testimonials";
 
 function App() {
   
@@ -36,6 +37,8 @@ function App() {
         <Route path="/directcases" exact element={<DirectCases />}></Route> 
         <Route path="/accupressure" exact element={<Accupressure/>}></Route>       
         <Route path="/our-team" exact element={<OurTeam />}></Route> 
+        <Route path="/Testimonials/:title" exact element={<Testimonials />}></Route> 
+
         
       </Routes>
       
