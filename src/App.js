@@ -34,6 +34,7 @@ function App() {
         <Route path="/books/:titlee" exact element={<Books />}></Route> 
         <Route path="/ejournal" exact element={<Ejournal />}></Route>
         <Route path="/join-us" exact element={<Joinus />}></Route> 
+        <Route path="/join-us" exact element={<Joinus />}></Route> 
         <Route path="/directcases" exact element={<DirectCases />}></Route> 
         <Route path="/PathyPage/:titles" exact element={<PathyPage/>}></Route>       
         <Route path="/our-team" exact element={<OurTeam />}></Route> 
