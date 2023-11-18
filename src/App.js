@@ -15,6 +15,7 @@ import PathyPage from "./Components/PathyPage/PathyPage"
 import OurTeam from "./Components/OurTeam/OurTeam";
 import Feedback from "./Components/Feedback/Feedback";
 
+import Testimonials from "./Components/Testimonials/testimonials";
 
 function App() {
   
@@ -30,12 +31,14 @@ function App() {
         <Route path="/ask-suggestion" exact element={<Suggestion />}></Route>
         {/* <Route path="/pathy" exact element={<Home />}></Route> */}
         {/* <Route path="/clinics-hospitals" exact element={<Home />}></Route>  */}
-        <Route path="/books" exact element={<Books />}></Route> 
+        <Route path="/books/:titlee" exact element={<Books />}></Route> 
         <Route path="/ejournal" exact element={<Ejournal />}></Route>
         <Route path="/join-us" exact element={<Joinus />}></Route> 
+        <Route path="/join-us" exact element={<Joinus />}></Route> 
         <Route path="/directcases" exact element={<DirectCases />}></Route> 
-        <Route path="/PathyPage" exact element={<PathyPage/>}></Route>       
+        <Route path="/PathyPage/:titles" exact element={<PathyPage/>}></Route>       
         <Route path="/our-team" exact element={<OurTeam />}></Route> 
+        <Route path="/Testimonials/:title1/:title2" exact element={<Testimonials />}></Route> 
         <Route path="/feedback" exact element = {<Feedback />}></Route>
       </Routes>     
       <Footer />
