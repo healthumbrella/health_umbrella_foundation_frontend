@@ -25,7 +25,7 @@ function Header() {
     return (
         <nav className="navbar navbar-expand-lg navbar-dark">
             <NavLink className="navbar-brand" to="">
-                <img src="./Images/headerlogo.png" className="navbar-logo d-inline-block align-top" alt=""></img>
+                <img src={process.env.PUBLIC_URL + "/Images/headerlogo.png"} className="navbar-logo d-inline-block align-top" alt=""></img>
             </NavLink>
             <button ref={hamburgerRef} className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>

@@ -6,15 +6,16 @@ import imageInfo from "./imageLink";
 
 const Testimonials = () => {
   const [fetchData, setFetchData] = useState({ text: "", sourceList: [] });
-  const { title } = useParams();
+  const { title1,title2 } = useParams();
   const [matchedImageLink, setMatchedImageLink] = useState("");
   const [selectedSummary, setSelectedSummary] = useState("");
-  console.log(title);
+  console.log(title1);
+  console.log(title2);
   useEffect(() => {
     const fetchDataFromAPI = async () => {
       try {
         const response = await axios.get(
-          `http://backend.healthumbrella.org:8000/disease/migraine/acupressure/${title}`
+          `http://backend.healthumbrella.org:8000/disease/migraine/${title1}/${title2}`
         );
         setFetchData(response.data);
       } catch (error) { 
@@ -23,11 +24,11 @@ const Testimonials = () => {
     };
     fetchDataFromAPI();
 
-    const matchedImage = imageInfo.find((info) => info.title === title);
+    const matchedImage = imageInfo.find((info) => info.title === title2);
     if (matchedImage) {
       setMatchedImageLink(matchedImage.imageLink);
     }
-  }, [title]);
+  }, [title2]);
 
   const handleSummaryClick = (summary) => {
     setSelectedSummary(summary === selectedSummary ? "" : summary);
@@ -38,14 +39,14 @@ const Testimonials = () => {
   return (
     <div className="testimonials-main">
       <p className="testimonials-link-topleft">
-        &lt; Migraine/Acupressure/{title.charAt(0).toUpperCase()}{title.slice(1)}
+        &lt; Migraine/{title1.charAt(0).toUpperCase()}{title1.slice(1)}/{title2.charAt(0).toUpperCase()}{title2.slice(1)}
       </p>
       <div className="testimonials-container">
         <div className="t-row1">
           {matchedImageLink && (
-            <img src={matchedImageLink} alt={title} className="t-image" />
+            <img src={matchedImageLink} alt={title2} className="t-image" />
           )}
-          <h1 className="t-row1 heading">{title.charAt(0).toUpperCase()}{title.slice(1)}</h1>
+          <h1 className="t-row1 heading">{title2.charAt(0).toUpperCase()}{title2.slice(1)}</h1>
         </div>
         <div className="t-row2">TESTIMONIALS</div>
         <div className="t-row3">{fetchData.text}</div>
