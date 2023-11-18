@@ -32,11 +32,11 @@ function App() {
         {/* <Route path="/clinics-hospitals" exact element={<Home />}></Route>  */}
         <Route path="/books" exact element={<Books />}></Route> 
         <Route path="/ejournal" exact element={<Ejournal />}></Route>
-        {/* <Route path="/join-us" exact element={<Joinus />}></Route>  */}
+        <Route path="/join-us" exact element={<Joinus />}></Route> 
         <Route path="/directcases" exact element={<DirectCases />}></Route> 
         <Route path="/PathyPage" exact element={<PathyPage/>}></Route>       
         <Route path="/our-team" exact element={<OurTeam />}></Route> 
-        {/* <Route path="/feedback" exact element = {<Feedback />}></Route> */}
+        <Route path="/feedback" exact element = {<Feedback />}></Route>
       </Routes>     
       <Footer />
     </div>
