@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100;200;300;400;500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.diseases-bottom-container{
+    //  width: 85.27vw;
+    width: 95vw;
+    height: auto;
+    // background: rgb(244, 244, 246);
+    margin: auto;
+    margin-bottom: 30px;
+    
+    // background-image: linear-gradient(rgb(249, 175, 239),white);
+}
+.disease-bottom-buttons{
+    margin: auto;
+    margin-bottom: 20px;
+    font-family: 'Noto Sans', sans-serif;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    .disease-therapy-button{
+        color: white;
+            background-color:#053B3F;
+            outline: none;
+            text-decoration: none;
+            
+    }
+    
+    
+    button{
+        width:100vw;
+        height: 85px;
+        background-color: #E9FFFF;
+        color: #053B3F;
+        font-size: 22px;
+        font-weight: bold;
+        text-transform: capitalize;
+        border-radius:10px;
+        // white-space:nowrap;
+        // &:hover{
+        //     color: white;
+        //     background-color:#053B3F;
+        //     outline: none;
+        //     text-decoration: none;
+        // }
+        
+    }
+}
+
+//card css
+.disease-cards{
+    display: flex;
+    flex: 0 0 calc(33.33% - 20px);
+    flex-wrap: wrap;
+    justify-content:space-evenly;
+    // margin: auto;
+    justify-content: center;
+
+    font-family: 'Noto Sans', sans-serif;
+    color: #053B3F;
+
+
+    .disease-card{
+        box-shadow: 0px 0px 5px 1px rgb(195, 194, 194);
+        width: 257px;
+        min-height: 272px;
+        border-bottom: #dedddd 3px solid;
+        // background-image: linear-gradient(violet,white);
+        // background-color: grey;
+        padding: 5px 10px;
+        transition: .3s;
+        border-radius: 12px;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        margin-left: 20px;
+        margin-right: 20px;
+        // margin-bottom: 10px;
+        // stroke: 2px solid rgba($color: #053B3F, $alpha: 0);
+        // border: 2px solid transparent;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+        
+
+       .disease-card-img{
+        display: flex;
+        align-items: center;
+        // justify-content: center;
+
+        img{
+            width: 141px;
+            height: 101px;
+            margin-top: 25px;
+            border-radius: 50%;
+            box-shadow: none;
+        }
+       }
+
+       h4{
+        font-size: 24px;
+        margin-top: 5px;
+        text-transform: capitalize;
+        
+    }
+        p{
+            font-size: 15px;
+             margin-top:5px;
+             margin-left: 10px;
+            min-height: 90px;
+            max-height: 70px;
+            overflow-x: hidden;
+            text-align: left;
+        }
+        p::-webkit-scrollbar{
+            width: 0.5rem;
+            // width:0;
+        }
+        p::-webkit-scrollbar-track{
+            background: #dedddd;
+            // background: #999999;
+            // background: #8ef0d976;
+            border-radius: 0.5rem;
+        }
+        p::-webkit-scrollbar-thumb{
+            background: #053B3F;
+            border-radius: 0.5rem;
+        }
+        p::-webkit-scrollbar-button{
+            height: 100%;
+        }
+
+    }
+
+
+}
+
+
+@media screen and (max-width: 1000px){
+    
+    .disease-bottom-buttons{
+        // flex-direction: column;
+        // margin: 0;
+        // align-items: center;
+        button{
+            // border-radius: 20px;
+            font-size: 20px;
+        }
+    }
+    .disease-cards{
+        // margin: auto;
+        // justify-content: space-evenly;
+        margin: auto;
+        flex: 0 0 calc(33.33% - 20px);
+        // max-width: calc(33.33% - 20px);
+    }
+ }
+ 
+ @media screen and (max-width: 850px){
+    //
+    .disease-bottom-buttons{
+       flex-direction: column;
+        margin: 0;
+        align-items: center; 
+        
+        button{
+            border-radius: 20px;
+            font-size: 20px;
+        }
+    }
+ }
+
+ 

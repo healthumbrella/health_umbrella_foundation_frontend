@@ -1,4 +1,5 @@
 .hfp_outer{
+    border-radius: unset;
     margin-top: 5.5rem;
     padding: 5rem 0rem 0rem 0rem;
     width: 100vw;
@@ -7,12 +8,11 @@
     align-items: center;
     justify-content: center;
     background-color:#E9FFFF;
-    border-top-right-radius: 20rem;
     border-bottom-right-radius: 20rem;
+    border-top-right-radius: 20rem;
 }
 
 .hfp_outer_right{
-    
     width: 40vw;
 }
 

@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Georgian:wght@200&family=Rubik:wght@500&display=swap');
+
+.D_outer{
+    background: #F9F9F9;
+    padding: 1rem 3rem;
+    width: 100vw;
+    min-height: 80vh;
+    margin-top: 12vh;
+    margin-bottom: 0.2rem;
+    /* border: 0.2rem solid black; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.D_outer_top{
+    /* margin-bottom: 0.2rem; */
+    display: flex;
+    align-content:flex-start;
+    font-family: 'Rubik', sans-serif;
+}
+.D_outer_top h2{
+    margin-top: 1rem;
+    color: #053B3F;
+    font-weight: 500;
+    font-size: x-large;
+}
+.D_outer_bottom{
+    border-radius: 1rem;
+    /* padding: 1rem; */
+    background-color: #ffffff;
+    border:0.1rem solid #CCCCCC;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.D_main_heading{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+}
+.line{
+    width: 100%;
+    height: 0.1rem;
+    background-color: #D4D4D4;
+}
+.D_main_heading h2{
+    margin: 2rem 3rem 1rem 3rem;
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 700;
+    font-size: x-large;
+    color: #053B3F;
+    /* text-align: flex-start; */
+}
+.D_outer_summary{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+.D_summary_heading{
+    margin: 2rem 3rem 0rem 3rem;
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 700;
+    font-size: x-large;
+    text-align: start;
+}
+.D_summary_text{
+    margin: 1rem 3rem 2rem 3rem;
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 400;
+    font-size: medium;
+    color: #555555;
+    text-align: start;
+}
+.D_outer_details{
+    width: 100%;
+    min-height: 20vh;
+    /* border: 0.2rem solid green; */
+    display: flex;
+    flex-direction: column;
+}
+.D_bottom_top{
+    /* border: 0.2rem solid yellow; */
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+.D_top_left{
+    /* border: 0.2rem solid red; */
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.D_detail_heading{
+    width: 100%;
+    margin: 1rem 0rem 1rem 6rem;
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 700;
+    font-size: x-large;
+    text-align: start;
+}
+.D_detail_table{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 4rem;
+    margin-bottom: 2rem;
+}
+.TR{
+    display: flex;
+    /* justify-content: space-between; */
+    flex-direction: row;
+    margin-top: 0.5rem;
+}
+.TD1{
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: bold;
+}
+.TD2{
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 500;
+    color: #555555;
+}
+.D_top_right{
+    width: 60%;
+    display: flex;
+    flex-direction: row;
+    margin-top: 2rem;
+}
+.inner_line{
+    border-left: 0.1rem solid #D4D4D4;
+    height: 80%;
+    margin-top: 1rem;
+    margin-right: 2rem;
+}
+.D_right_text{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: start;
+}
+.D_detail_comments{
+    width: 100%;
+    text-align: start;
+    margin-bottom: 2rem;
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 700;
+    font-size: x-large;
+}
+.D_detail_text{
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 500;
+    font-size: medium;
+    color: #555555;
+}
+.D_detail_text button{
+    background: none;
+    border: none;
+    color: #1E4AE4;
+}
+.D_outer_cards{
+    width: 100%;
+}
+.D_cards{
+    padding: 1rem;
+    display: flex;
+    flex-direction: row;
+}
+.D_cards div{
+    margin: 1rem;
+    padding: 0.2rem 2rem;
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 600;
+    font-size: medium;
+    border: 0.1rem solid #A1A1A1;
+    border-radius: 1rem;
+}

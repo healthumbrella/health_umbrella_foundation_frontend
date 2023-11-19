@@ -1,0 +1,122 @@
+.PathyPage-main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+.PathyPage-nav{
+    width: 95vw;
+    height: auto;
+    margin-top: 8rem;
+    text-align: left;
+    color: #053B3F;
+    font-weight: bolder;
+    cursor: pointer;
+}
+.PathyPage-container{
+    display: flex;
+    flex-direction: column;
+    width: 95vw;
+    height: auto;
+    margin-bottom: 1rem;
+    border-radius: 1.5rem;
+    box-shadow: 0px 4px 4px 0px #00000040;
+    align-items: center;
+    background: #B9B9B921;
+    gap: .5rem;
+    position: relative;
+}
+.greenring-tl{
+    position: absolute;
+    top: 7%;
+    left: 0%;
+    height: 25rem;
+    width: 20rem;
+}
+.PathyPage-heading{
+    font-weight: bolder;
+    color: #053B3F;
+    margin-top: 1.5rem;
+}
+.PathyPage-subheading{
+    font-weight: lighter;
+    font-weight: 200;
+    margin-top: -1rem;
+}
+.PathyPage-content{
+    width: 80%;
+    max-height: 150px;
+    overflow-y: hidden;
+    transition: overflow .3s;
+    text-align: center;
+}
+.PathyPage-content:hover{
+    overflow-y: auto; 
+}
+.PathyPage-content::-webkit-scrollbar {
+    width: 0.5rem;
+  }
+  
+  .PathyPage-content::-webkit-scrollbar-track {
+    background: #edebeb;
+    border-radius: 0.5rem;
+  }
+  
+  .PathyPage-content::-webkit-scrollbar-thumb {
+    background: #053B3F;
+    border-radius: 0.5rem;
+  }
+.PathyPage-cards {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60%;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.item {
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1rem;
+    width: 10rem;
+    height:10rem;
+    margin: 1.5rem; 
+    border-radius: 1rem;
+    box-shadow: 0px 4px 4px 0px #00000040;
+}.PathyPage{
+    cursor: pointer;
+}
+.PathyPage-cards-desc{
+    font-weight: bolder;
+}
+@media screen and (max-width:1150px){
+    .PathyPage-cards{
+        width: 80%;
+    }
+}
+@media screen and (max-width:780px)
+{
+    .greenring-tl{
+        width: 18rem;
+        height: 20rem;
+    }
+
+}
+@media screen and (max-width:500px)
+{
+    .greenring-tl{
+        height: 16rem;
+        width: 12rem;
+    }
+}
+@media screen and (max-width:315px) {
+    .PathyPage-heading{
+        font-size: 2rem;
+    }
+    
+}
