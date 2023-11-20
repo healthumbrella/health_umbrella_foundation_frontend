@@ -47,7 +47,7 @@ function Footer() {
                             <div className="quick-links_container-1">
                                 <Link to="/">Home</Link>
                                 <Link to="#">About</Link>
-                                <Link to="/members">Members</Link>
+                                <Link to="/our-team">Members</Link>
                                 <Link to="#"><span>Donate</span></Link>
                             </div>
                             <div className="quick-links_container-2">
