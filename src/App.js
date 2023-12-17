@@ -14,7 +14,7 @@ import ShareExp from "./Components/ShareExp/ShareExp";
 import PathyPage from "./Components/PathyPage/PathyPage"
 import OurTeam from "./Components/OurTeam/OurTeam";
 import Feedback from "./Components/Feedback/Feedback";
-
+import Pathy from "./Components/Pathy/Pathy";
 import Testimonials from "./Components/Testimonials/testimonials";
 
 function App() {
@@ -29,7 +29,7 @@ function App() {
         <Route path="/diseases" exact element={<Diseases/>}></Route>
         <Route path="/share-experience" exact element={<ShareExp/>}></Route>
         <Route path="/ask-suggestion" exact element={<Suggestion />}></Route>
-        {/* <Route path="/pathy" exact element={<Home />}></Route> */}
+        <Route path="/pathy" exact element={<Pathy/>}></Route>
         {/* <Route path="/clinics-hospitals" exact element={<Home />}></Route>  */}
         <Route path="/books/:titlee" exact element={<Books />}></Route> 
         <Route path="/ejournal" exact element={<Ejournal />}></Route>
