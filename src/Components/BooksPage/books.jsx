@@ -1,4 +1,3 @@
-import react from "react"
 import "./books.css"
 import SeparateBook from "./Books/separatebooks";
 import { useParams } from "react-router-dom";

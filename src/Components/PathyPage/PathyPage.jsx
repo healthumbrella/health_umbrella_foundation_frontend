@@ -28,7 +28,7 @@ const PathyPage = () => {
     <div className='PathyPage-main'>
       <div className='PathyPage-nav'>&lt; Migraine / {titles.charAt(0).toUpperCase()}{titles.slice(1)}</div>
       <div className='PathyPage-container'>
-        <img src={process.env.PUBLIC_URL +"/Images/green_ring_tl.png"} className="greenring-tl" />
+        <img src={process.env.PUBLIC_URL +"/Images/green_ring_tl.png"} alt="_blank" className="greenring-tl" />
         <h1 className="PathyPage-heading">{titles.charAt(0).toUpperCase()}{titles.slice(1)}</h1>
         <h3 className="PathyPage-subheading">THERAPY</h3>
         <div className="PathyPage-content">{data.text}</div>

@@ -81,10 +81,12 @@ const Pathy = () => {
       <div className="pathy-detail">
         <img
           src={process.env.PUBLIC_URL + "/Images/green_ring_tl.png"}
+          alt="_blank"
           className="pathy-ring-left"
         />
         <img
           src={process.env.PUBLIC_URL + "/Images/green_ring_rb.png"}
+          alt="_blank"
           className="pathy-ring-right"
         />
         {data.map((item, key) => (
