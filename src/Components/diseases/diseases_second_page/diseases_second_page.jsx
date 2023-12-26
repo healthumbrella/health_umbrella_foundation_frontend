@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./diseases_second_page.scss";
-// import img2 from "/Images/cow.png";
 import axios from "axios";
 import ClipLoader from "react-spinners/ClipLoader";
 import Top from "../diseases_first_page/diseases_first_page";
@@ -97,7 +96,7 @@ const Bottom = () => {
                           {therapy.isReadMore
                             ? therapy.summary
                             : therapy.summary.slice(0, 72)}
-                          <a
+                          <span
                             onClick={() => {
                               toggleReadMore(index);
                             }}
@@ -105,7 +104,7 @@ const Bottom = () => {
                           >
                             <br />
                             {!therapy.isReadMore ? "Read More..." : "...Read Less"}
-                          </a>
+                          </span>
                         </p>
                       </div>
                     ))}

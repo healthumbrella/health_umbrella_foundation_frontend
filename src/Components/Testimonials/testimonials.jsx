@@ -28,6 +28,7 @@ const Testimonials = () => {
     if (matchedImage) {
       setMatchedImageLink(matchedImage.imageLink);
     }
+    // eslint-disable-next-line
   }, [title2]);
 
   const handleSummaryClick = (summary) => {
@@ -55,7 +56,7 @@ const Testimonials = () => {
           {fetchData.sourceList.map((item) => (
             <div key={item.id} className="t-card">
               <h3 className="t-title">{item.title.charAt(0).toUpperCase()}{item.title.slice(1)}</h3>
-              <a href={item.link} target="_blank">Click here to see the video</a>
+              <a href={item.link} target="_blank" rel="noreferrer">Click here to see the video</a>
               <span className="t-summary">
                 short-summary
                 {selectedSummary === item.summary ? (

@@ -1,10 +1,12 @@
 import React, { useState ,useRef} from "react";
 import { toast, ToastContainer } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
+// eslint-disable-next-line
 import { FiUpload } from 'react-icons/fi';
 import axios from "axios";
 
 const Feedbackleft = () => {
+  // eslint-disable-next-line
     const fileInputRef=useRef(null);
     const [formData, setFormData] = useState({
         rating: "1",

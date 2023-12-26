@@ -1,4 +1,3 @@
-import react from "react"
 import "./books.css"
 import SeparateBook from "./Books/separatebooks";
 import { useParams } from "react-router-dom";
@@ -18,9 +17,9 @@ function Books(){
                 <div className="B_inner_bottom">
                     <div className="B_inner_left">
                         <SeparateBook pathy = {titlee} className="Sbclass" />
-                        {/* <SeparateBook pathy = {titlee} className="Sbclass" />
                         <SeparateBook pathy = {titlee} className="Sbclass" />
-                        <SeparateBook pathy = {titlee} className="Sbclass" /> */}
+                        <SeparateBook pathy = {titlee} className="Sbclass" />
+                        <SeparateBook pathy = {titlee} className="Sbclass" />
                     </div>
                     <div className="B_inner_right">
                         <img src={process.env.PUBLIC_URL+"/images/bookCase.png"} alt="" />
