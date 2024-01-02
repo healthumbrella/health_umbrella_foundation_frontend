@@ -3,14 +3,17 @@ import axios from "axios";
 import "./testimonials.css";
 import { useParams } from "react-router-dom";
 import imageInfo from "./imageLink";
+import Modal from "../Modal/Modal";
 
 const Testimonials = () => {
   const [fetchData, setFetchData] = useState({ text: "", sourceList: [] });
-  const { title1,title2 } = useParams();
+  const { title1, title2 } = useParams();
   const [matchedImageLink, setMatchedImageLink] = useState("");
   const [selectedSummary, setSelectedSummary] = useState("");
-  console.log(title1);
-  console.log(title2);
+  const [selectedItem, setSelectedItem] = useState("");
+  const [modalVisible, setModalVisible] = useState(false);
+
+ 
   useEffect(() => {
     const fetchDataFromAPI = async () => {
       try {
@@ -30,7 +33,29 @@ const Testimonials = () => {
     }
     // eslint-disable-next-line
   }, [title2]);
+  
+  useEffect(() => {
+    const handleOutsideClick = (e) => {
+      if (modalVisible && e.target.classList.contains('modal-wrapper')) {
+        setModalVisible(false);
+      }
+    };
 
+    if (modalVisible) {
+      document.addEventListener('click', handleOutsideClick);
+    }
+
+    return () => {
+      document.removeEventListener('click', handleOutsideClick);
+    };
+  }, [modalVisible]);
+   
+  const handleCardClick = (item) => {
+    setSelectedItem(item);
+    setModalVisible(true);
+  };
+
+  
   const handleSummaryClick = (summary) => {
     setSelectedSummary(summary === selectedSummary ? "" : summary);
   };
@@ -54,7 +79,7 @@ const Testimonials = () => {
         <div className="t-row4">
           {/* <> */}
           {fetchData.sourceList.map((item) => (
-            <div key={item.id} className="t-card">
+            <div key={item.id} className="t-card" onClick={() => handleCardClick(item)}>
               <h3 className="t-title">{item.title.charAt(0).toUpperCase()}{item.title.slice(1)}</h3>
               <a href={item.link} target="_blank" rel="noreferrer">Click here to see the video</a>
               <span className="t-summary">
@@ -92,11 +117,10 @@ const Testimonials = () => {
                 alt="sorry"
               />
               <img
-                className={`t-rb-img1 ${
-                  selectedSummary === item.summary
+                className={`t-rb-img1 ${selectedSummary === item.summary
                     ? "selected-summary-img1"
                     : ""
-                }`}
+                  }`}
                 src="/Images/Vector7.png"
                 alt="sorry"
               />
@@ -109,7 +133,13 @@ const Testimonials = () => {
           {/* </> */}
         </div>
       </div>
+
+      {modalVisible && <Modal setModalVisible={setModalVisible} selectedItem={selectedItem} />}
+
+
     </div>
+
+
   );
 };
 
