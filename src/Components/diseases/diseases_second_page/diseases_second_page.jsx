@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import "./diseases_second_page.scss";
 import axios from "axios";
 import ClipLoader from "react-spinners/ClipLoader";
@@ -11,13 +11,14 @@ const Bottom = () => {
   const [selectedTherapy, setSelectedTherapy] = useState("therapiesWithDrugs");
   const [data, setData] = useState({});
   const [loading, setLoading] = useState(true);
- 
+  const params = useParams();
+  const disease = params.disease;
 
   useEffect(() => {
     const getapidata = async () => {
       try {
         const response = await axios.get(
-          `${process.env.REACT_APP_BACKEND_IP}/disease/migraine`
+          `${process.env.REACT_APP_BACKEND_IP}/disease/${disease}`
         );
         const fetchedData = response.data;
 
@@ -33,7 +34,7 @@ const Bottom = () => {
     };
 
     getapidata();
-  }, []);
+  }, [disease]);
 
   const handleButtonClick = (therapyType) => {
     setSelectedTherapy(therapyType);
@@ -91,7 +92,7 @@ const Bottom = () => {
                         <img src={therapy.imageLink} alt="" />
                        {/* <img src="/Images/cow.png" alt="" /> */}
                        </div>
-                        <Link to={`/PathyPage/${therapy.name}`}><h4>{therapy.name}</h4></Link>
+                        <Link to={`/${disease}/${therapy.name}`}><h4>{therapy.name}</h4></Link>
                         <p>
                           {therapy.isReadMore
                             ? therapy.summary

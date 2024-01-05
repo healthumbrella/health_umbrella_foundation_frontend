@@ -3,15 +3,17 @@ import "./separatebooks.css";
 import { NavLink } from "react-router-dom";
 import axios from "axios";
 
-function SeparateBook({ pathy }) {
+function SeparateBook({ pathy,disease }) {
   const [fetchData, setFetchData] = useState({ books: [] });
-
+  // console.log(pathy+disease);
+  
   useEffect(() => {
     const fetchDataFromAPI = async () => {
       try {
         const response = await axios.get(
-          `http://backend.healthumbrella.org:8000/disease/migraine/${pathy}/books`
+          `http://backend.healthumbrella.org:8000/disease/${disease}/${pathy}/books`
         );
+        // console.log(response.data);
         setFetchData(response.data);
       } catch (error) {
         console.error('Error fetching data:', error);

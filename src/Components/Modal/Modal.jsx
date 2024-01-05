@@ -1,5 +1,7 @@
 import React from 'react';
 import "./modal.css"
+import { IoMdCloseCircleOutline } from "react-icons/io";
+
 const Modal = ({ setModalVisible,selectedItem}) => {
     // console.log(selectedItem);
     const item = selectedItem;
@@ -7,10 +9,10 @@ const Modal = ({ setModalVisible,selectedItem}) => {
     <div className="modal-wrapper " style={{fontFamily: 'Figtree, sans-serif'}}>
       <div className="modal-content modal-card">
         {/* Your modal content goes here */}
-                <div className="closemodal" onClick={()=>{setModalVisible(false)}}>close</div>
+                <div className="closemodal" onClick={()=>{setModalVisible(false)}}><IoMdCloseCircleOutline /></div>
 
                 <div key={item.id}  >
-              <h3 className="t-title">{item.title.charAt(0).toUpperCase()}{item.title.slice(1)}</h3>
+              <h3 className="modal-title">{item.title.charAt(0).toUpperCase()}{item.title.slice(1)}</h3>
               {/* <a href={item.link} target="_blank" rel="noreferrer">Click here to see the video</a> */}
               <span className="modal-summary">
                 short-summary

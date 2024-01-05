@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./testimonials.css";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import imageInfo from "./imageLink";
 import Modal from "../Modal/Modal";
 
@@ -13,7 +13,7 @@ const Testimonials = () => {
   const [selectedItem, setSelectedItem] = useState("");
   const [modalVisible, setModalVisible] = useState(false);
 
- 
+ const navigate = useNavigate();
   useEffect(() => {
     const fetchDataFromAPI = async () => {
       try {
@@ -64,7 +64,7 @@ const Testimonials = () => {
 
   return (
     <div className="testimonials-main">
-      <p className="testimonials-link-topleft">
+      <p className="testimonials-link-topleft" onClick={()=>navigate(-1)}>
         &lt; Migraine/{title1.charAt(0).toUpperCase()}{title1.slice(1)}/{title2.charAt(0).toUpperCase()}{title2.slice(1)}
       </p>
       <div className="testimonials-container">

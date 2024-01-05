@@ -24,17 +24,18 @@ function App() {
       <Routes>
         <Route path="/" exact element={<Home />}></Route> 
         <Route path="/about-us" exact element={<Home />}></Route>
-        <Route path="/diseases" exact element={<Diseases/>}></Route>
+        {/* <Route path="/diseases" exact element={<Diseases/>}></Route> */}
+        <Route path="/disease/:disease" exact element={<Diseases/>}></Route>
         <Route path="/share-experience" exact element={<ShareExp/>}></Route>
         <Route path="/ask-suggestion" exact element={<Suggestion />}></Route>
         <Route path="/pathy" exact element={<Pathy/>}></Route>
-        <Route path="/books/:titlee" exact element={<Books />}></Route> 
-        <Route path="/ejournal" exact element={<Ejournal />}></Route>
+         <Route path="/ejournal" exact element={<Ejournal />}></Route>
         <Route path="/join-us" exact element={<Joinus />}></Route> 
         <Route path="/directcases" exact element={<DirectCases />}></Route> 
-        <Route path="/PathyPage/:titles" exact element={<PathyPage/>}></Route>       
+        <Route path="/:disease/:titles" exact element={<PathyPage/>}></Route>       
         <Route path="/our-team" exact element={<OurTeam />}></Route> 
-        <Route path="/Testimonials/:title1/:title2" exact element={<Testimonials />}></Route> 
+        <Route path="/:disease/:title1/books" exact element={<Books />}></Route> 
+        <Route path="/:disease/:title1/:title2" exact element={<Testimonials />}></Route> 
         <Route path="/feedback" exact element = {<Feedback />}></Route>
       </Routes>     
       <Footer />
