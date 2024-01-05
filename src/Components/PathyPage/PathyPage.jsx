@@ -55,7 +55,7 @@ const PathyPage = () => {
           </Link>
           <Link to={`/Testimonials/${titles}/article`} className="item">
             <img src={process.env.PUBLIC_URL + '/Images/articles-search.png'} alt="" />
-            <div className="PathyPage-cards-desc">Article</div>
+            <div className="PathyPage-cards-desc">Articles</div>
           </Link>
         </div>
       </div>
