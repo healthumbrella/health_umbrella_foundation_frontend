@@ -12,7 +12,7 @@ function Books(){
             </div>
             <div className="B_outer_bottom">
                 <div className="B_inner_top">
-                    <img src={process.env.PUBLIC_URL +"/images/bookStack.png"} alt="_blank"/>
+                    <img src={process.env.PUBLIC_URL +"/Images/bookStack.png"} alt="_blank"/>
                     <h1>Books & Book Chapters</h1>
                 </div>
                 <div className="B_inner_bottom">
@@ -23,7 +23,7 @@ function Books(){
                         <SeparateBook pathy = {title1} disease={disease} className="Sbclass" />
                     </div>
                     <div className="B_inner_right">
-                        <img src={process.env.PUBLIC_URL+"/images/bookCase.png"} alt="" />
+                        <img src={process.env.PUBLIC_URL+"/Images/bookCase.png"} alt="" />
                     </div>
                 </div>
             </div>
