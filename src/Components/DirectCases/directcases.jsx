@@ -2,6 +2,7 @@ import React from "react";
 import "./directcases.css";
 
 function DirectCases() {
+ 
   return (
     <div className="D_outer">
       <div className="D_outer_top">

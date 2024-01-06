@@ -79,6 +79,7 @@
     height: 3rem;
     font-family: 'Sombra';
     text-align: center;
+    cursor: pointer;
 }
 
 .searchbar_outer_button2 {

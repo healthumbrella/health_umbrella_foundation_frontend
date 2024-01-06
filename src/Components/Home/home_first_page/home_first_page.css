@@ -1,7 +1,7 @@
 .hfp_outer{
     border-radius: unset;
-    margin-top: 5.5rem;
-    padding: 5rem 0rem 0rem 0rem;
+    /* margin-top: 5.5rem; */
+    padding: 8rem 0rem 0rem 0rem;
     width: 100vw;
     display: flex;
     flex-direction: row;

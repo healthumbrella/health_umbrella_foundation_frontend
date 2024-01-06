@@ -13,6 +13,7 @@ function SeparateBook({ pathy }) {
           `http://backend.healthumbrella.org:8000/disease/migraine/${pathy}/books`
         );
         setFetchData(response.data);
+        window.scrollTo(0,0);
       } catch (error) {
         console.error('Error fetching data:', error);
       }

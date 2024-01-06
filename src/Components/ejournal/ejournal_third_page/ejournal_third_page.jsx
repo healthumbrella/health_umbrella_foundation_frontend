@@ -1,80 +1,86 @@
 import React, { useState, useEffect } from "react";
 import "./ejournal_third_page.scss";
 
-// import ClipLoader from "react-spinners/ClipLoader";
+import ClipLoader from "react-spinners/ClipLoader";
 import axios from "axios";
 
 function Sub() {
   const [sub, setSub] = useState(null);
-  // const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(true);
   const [email, setEmail] = useState("");
   const [issub, setIssub] = useState(false);
 
   const handleChange = (e) => {
-    //   console.log(e.target.value);
     setEmail(e.target.value);
   };
 
   const subtime = () => {
     setTimeout(() => {
       setIssub(false);
-      return;
     }, 2000);
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
+
     if (!email) {
       // Handle the case where email is null
-      // alert("Email is required.");
       return;
     }
 
-    // setLoading(true);
     try {
+      setLoading(true);
       const datafetch = await axios.get(
         `${process.env.REACT_APP_BACKEND_IP}/ejournal/subscribe?email=${email}`
       );
       setSub(datafetch.data);
       setIssub(true);
       subtime();
-      // setIssub(true);
     } catch (error) {
       console.log(error);
     } finally {
-      // setLoading(false);
+      setLoading(false);
       setEmail("");
     }
-    
   };
 
   // Fetching data from backend and controlling the loading icon
   useEffect(() => {
     const getapidata = async () => {
       try {
-        var datafetch;
-        if(email!==""){
-          datafetch = await axios.get(
+        if (email !== "") {
+          setLoading(true);
+          const datafetch = await axios.get(
             `${process.env.REACT_APP_BACKEND_IP}/ejournal/subscribe?email=${email}`
           );
+          setSub(datafetch.data);
+          setIssub(true);
+          subtime();
         }
-        
-        // console.log(datafetch.data);
-        setSub(datafetch.data);
-        setIssub(true);
-        subtime();
-        // setLoading(false);
       } catch (error) {
         console.log(error);
+      } finally {
+        setLoading(false);
       }
     };
 
     getapidata();
-  });
+  },[]);
 
   return (
         <>
+        <div>
+        { loading ? (
+          <ClipLoader
+            className="loadingicon"
+            color="green"
+            loading={loading}
+            size={150}
+            aria-label="Loading Spinner"
+            data-testid="loader"
+          />
+        ) :(
+          <>
           <div className="sub-main">
             <div className="sub-container">
               <div className="sub-left">
@@ -109,6 +115,9 @@ function Sub() {
               </div>
             </div>
           </div>
+        </>
+        )}
+        </div>
         </>
       
   );

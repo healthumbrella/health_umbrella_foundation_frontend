@@ -21,6 +21,12 @@ function Header() {
             },300);
         }
     };
+
+    const scrollToTopOnClick = () => {
+        window.scrollTo(0, 0);
+      };
+    
+
     
     return (
         <nav className="navbar navbar-expand-lg navbar-dark">
@@ -33,26 +39,26 @@ function Header() {
             <div className="collapse navbar-collapse adjusting_navbar" id="navbarNav">
                 <ul className="navbar-nav ml-auto">
                     <li className="nav-item">
-                        <NavLink className="nav-link underline" to="/" onClick={collapseHandler}>Home</NavLink>
+                        <NavLink className="nav-link underline" to="/" onClick={collapseHandler && scrollToTopOnClick}>Home</NavLink>
                     </li>
-                    <li className="nav-item">
+                    {/* <li className="nav-item">
                         <NavLink className="nav-link underline" to="/about-us" onClick={collapseHandler}>About Us</NavLink>
+                    </li> */}
+                    <li className="nav-item">
+                        <NavLink className="nav-link underline" to="/diseases" onClick={collapseHandler && scrollToTopOnClick}>Diseases</NavLink>
                     </li>
                     <li className="nav-item">
-                        <NavLink className="nav-link underline" to="/diseases" onClick={collapseHandler}>Diseases</NavLink>
+                        <NavLink className="nav-link underline" to="/share-experience" onClick={collapseHandler && scrollToTopOnClick}>Share Experience</NavLink>
                     </li>
                     <li className="nav-item">
-                        <NavLink className="nav-link underline" to="/share-experience" onClick={collapseHandler}>Share Experience</NavLink>
+                        <NavLink className="nav-link underline" to="/ask-suggestion" onClick={collapseHandler && scrollToTopOnClick}>Ask Suggestion</NavLink>
                     </li>
                     <li className="nav-item">
-                        <NavLink className="nav-link underline" to="/ask-suggestion" onClick={collapseHandler}>Ask Suggestion</NavLink>
+                        <NavLink className="nav-link underline" to="/pathy" onClick={collapseHandler && scrollToTopOnClick}>Pathy</NavLink>
                     </li>
-                    <li className="nav-item">
-                        <NavLink className="nav-link underline" to="/pathy" onClick={collapseHandler}>Pathy</NavLink>
-                    </li>
-                    <li className="nav-item">
+                    {/* <li className="nav-item">
                         <NavLink className="nav-link underline" to="/clinics-hospitals" onClick={collapseHandler}>Clinics/Hospitals</NavLink>
-                    </li>
+                    </li> */}
                 </ul>
             </div>
         </nav>

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import ClipLoader from "react-spinners/ClipLoader";
 import "./testimonials.css";
 import { useParams } from "react-router-dom";
 import imageInfo from "./imageLink";
@@ -9,8 +10,10 @@ const Testimonials = () => {
   const { title1,title2 } = useParams();
   const [matchedImageLink, setMatchedImageLink] = useState("");
   const [selectedSummary, setSelectedSummary] = useState("");
+  const [loading, setLoading] = useState(true);
   console.log(title1);
   console.log(title2);
+ 
   useEffect(() => {
     const fetchDataFromAPI = async () => {
       try {
@@ -18,6 +21,8 @@ const Testimonials = () => {
           `http://backend.healthumbrella.org:8000/disease/migraine/${title1}/${title2}`
         );
         setFetchData(response.data);
+       
+        setLoading(false);
       } catch (error) { 
         console.error("Error fetching data:", error);
       }
@@ -31,6 +36,9 @@ const Testimonials = () => {
     // eslint-disable-next-line
   }, [title2]);
 
+ 
+
+
   const handleSummaryClick = (summary) => {
     setSelectedSummary(summary === selectedSummary ? "" : summary);
   };
@@ -38,6 +46,19 @@ const Testimonials = () => {
   console.log(fetchData);
 
   return (
+    <>
+    <div>
+    {loading ? (
+      <ClipLoader
+        className="loadingicon"
+        color="green"
+        loading={loading}
+        size={150}
+        aria-label="Loading Spinner"
+        data-testid="loader"
+      />
+    ) : (
+      <>
     <div className="testimonials-main">
       <p className="testimonials-link-topleft">
         &lt; Migraine/{title1.charAt(0).toUpperCase()}{title1.slice(1)}/{title2.charAt(0).toUpperCase()}{title2.slice(1)}
@@ -110,6 +131,10 @@ const Testimonials = () => {
         </div>
       </div>
     </div>
+    </>
+    )}
+    </div>
+    </>
   );
 };
 

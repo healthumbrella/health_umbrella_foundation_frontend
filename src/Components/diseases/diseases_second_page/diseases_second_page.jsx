@@ -35,8 +35,13 @@ const Bottom = () => {
     getapidata();
   }, []);
 
+  const scrollToTopOnClick = () => {
+    window.scrollTo(0, 0);
+  };
+
+
   const handleButtonClick = (therapyType) => {
-    setSelectedTherapy(therapyType);
+   setSelectedTherapy(selectedTherapy === therapyType ?"" : therapyType);
   };
 
   const toggleReadMore = (index) => {
@@ -76,7 +81,7 @@ const Bottom = () => {
                     <button
                       key={index}
                       onClick={() => handleButtonClick(therapyType)}
-                      className={selectedTherapy === therapyType ? "disease-therapy-button" : ""}
+                      className={selectedTherapy === therapyType ? "disease-therapy-button " : ""}
                     >
                       {therapyType}
                     </button>
@@ -91,7 +96,7 @@ const Bottom = () => {
                         <img src={therapy.imageLink} alt="" />
                        {/* <img src="/Images/cow.png" alt="" /> */}
                        </div>
-                        <Link to={`/PathyPage/${therapy.name}`}><h4>{therapy.name}</h4></Link>
+                        <Link to={`/PathyPage/${therapy.name}`} onClick={scrollToTopOnClick}><h4>{therapy.name}</h4></Link>
                         <p>
                           {therapy.isReadMore
                             ? therapy.summary

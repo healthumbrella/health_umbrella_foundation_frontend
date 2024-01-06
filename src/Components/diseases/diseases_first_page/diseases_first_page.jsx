@@ -1,23 +1,57 @@
-import React, { useState } from "react";
+import React, { useEffect,useState } from "react";
 import "./diseases_first_page.scss";
+import ClipLoader from "react-spinners/ClipLoader";
+import axios from "axios";
 
 const Top = ({data}) => {
   const [isReadMore, setIsReadMore] = useState(false);
   const [isReadMore2, setIsReadMore2] = useState(false);
- 
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const getapidata = async () => {
+      try {
+        const response = await axios.get(
+          `${process.env.REACT_APP_BACKEND_IP}/disease/migraine`
+        );
+        const fetchedData = response.data;
+
+        if (fetchedData && fetchedData.pathies) {
+          
+          setLoading(false);
+        } else {
+          console.error("API response structure is not as expected.");
+        }
+      } catch (error) {
+        console.error(error);
+      }
+    };
+    getapidata();
+  }, []);
+
   return (
     <>
-      <div className="extraspace">{/* Hello */}</div>
+    <div>
+        {loading ? (
+          <ClipLoader
+            className="loadingicon"
+            color="green"
+            loading={loading}
+            size={150}
+            aria-label="Loading Spinner"
+            data-testid="loader"
+          />
+        ) : (
+          <>
+      {/* <div className="extraspace">Hello</div> */}
       <div className="diseases-top-main">
         <div className="diseases-top-container">
           <div className="disease-left">
             <img src={data.imageLink} alt="img" />
-            {/* <img src="/Images/women.png" alt="img" /> */}
           </div>
           <div className="disease-right">
-            <h1 style={{textTransform:"capitalize"}}>{data.disease}</h1>
-            <p>
-              {/* {data.text} */}
+          <h1>{data.disease}</h1>
+          <p>
               {isReadMore2 ? `${data.text}` : `${data.text}`.slice(0, 270)}
               <span
                 onClick={() => {
@@ -32,8 +66,6 @@ const Top = ({data}) => {
             <h2>Summary</h2>
             <p>
               {isReadMore ? `${data.summary}` : `${data.summary}`.slice(0, 270)}
-              {/* {isReadMore ? TEXT : TEXT.slice(0, 400)} */}
-
               <span
                 onClick={() => {
                   setIsReadMore(!isReadMore);
@@ -52,6 +84,9 @@ const Top = ({data}) => {
           </div>
         </div>
       </div>
+    </>
+        )}
+    </div>
     </>
   );
 };

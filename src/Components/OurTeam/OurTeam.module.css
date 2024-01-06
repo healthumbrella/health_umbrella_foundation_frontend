@@ -6,7 +6,7 @@
 .our_team{
     display: flex;
     flex-direction: column;
-    padding-top: 5.8rem;
+    margin-top: 8rem;
 }
 .upper_div {
   padding-top: 4rem;
@@ -34,7 +34,7 @@
 .team_description{
     font-weight: 500;
     text-align:left;
-    width: 50%;
+    width: 90%;
 }
 .team_button {
 
@@ -45,6 +45,7 @@
     color: white;
     font-weight: 500;
     flex-shrink: 0;
+    cursor: pointer;
   }
 .team_photo{
     width: 50%;
@@ -55,7 +56,7 @@
     position: absolute;
     left:50%;
     transform: translateX(-50%);
-    bottom: -30%;
+    bottom: -25%;
     width: 100%;
     height: auto;
     object-fit: cover;
@@ -77,23 +78,27 @@
 }
 
 .team_links {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(3, 1fr);
+  display: flex;
   column-gap: 14rem;
+  flex-direction: row;
   row-gap: 2rem;
+  width: 100%;
   padding-bottom: 3rem;
+  justify-content: center;
 }
-
+ 
 .team_link {
   display: flex;
   align-items: flex-start;
   padding: 10px;
   font-weight: bolder;
+  
 }
 .link_text {
   align-self: center;
   padding-left: 1rem;
+  text-decoration: none;
+  color: black;
 }
 
 
@@ -106,6 +111,7 @@
     }
     .team_button{
       margin-bottom: 1.5rem;
+     
     }
   }
    

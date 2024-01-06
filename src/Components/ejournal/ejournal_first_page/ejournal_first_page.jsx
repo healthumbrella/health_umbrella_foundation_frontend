@@ -45,6 +45,16 @@ function Top() {
     }
     console.log(setShow);
   };
+ 
+const scrollToCertainHeight = () => {
+    const specificHeight = 500; // Define the height you want to scroll to
+    window.scrollTo({
+        top: specificHeight,
+        behavior: 'smooth',
+    });
+};
+
+
 
   return (
     <>
@@ -60,18 +70,22 @@ function Top() {
           />
         ) : (
           <>
-            <div className="extraspace">
+            {/* <div className="extraspace"> */}
               {/* Hello */}
-            </div>
+            {/* </div> */}
             <div className="top-main">
               <div className="top-container">
                 <div className="left">
                   <h1>E-Journals</h1>
                   <p>{topdata.latestEjournalPage.text}</p>
                   <h5><span>To See All E-Journals of health Umbrella Foundation</span></h5>
-                  <button onClick={ShowName}>
-                    {!show ? "See More" : "See Less"}
-                  </button>
+                  <button onClick={() => {
+   scrollToCertainHeight() 
+   setShow(!show);
+    
+}}>
+    {!show ? "See More" : "See Less"}
+</button>
                 </div>
                 <div className="right">
                   <Swiper

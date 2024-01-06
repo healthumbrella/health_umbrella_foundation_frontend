@@ -23,6 +23,9 @@ function All() {
     }
   };
 
+ 
+
+
   // Fetching data from backend and controlling the loading icon
   useEffect(() => {
     const getapidata = async () => {
@@ -72,6 +75,7 @@ function All() {
                         <button
                           onClick={() => {
                             handleYearChange(-1);
+                            
                           }}
                         >
                           <span>

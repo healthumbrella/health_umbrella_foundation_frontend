@@ -29,8 +29,11 @@ function SearchBar(props) {
     }
 
     const handleClick = () => {
-        navigate(`/diseases/${searchInput}`);
-    }
+       
+            navigate(`/diseases/${searchInput}`);
+        }
+    
+
 
 
     return (

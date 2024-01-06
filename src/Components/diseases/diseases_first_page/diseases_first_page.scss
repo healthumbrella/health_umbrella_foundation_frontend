@@ -15,6 +15,8 @@
 }
 .diseases-top-container{
     position: relative;
+    background-color: #f6f6f6;
+    background-size: 100%;
     width: 96.2vw;
     height: 520px;
     // overflow: scroll;
@@ -24,7 +26,8 @@
     // background: #ececec;
     
     margin: auto;
-    margin-top: 15px;
+    margin-top: 8rem;
+    // padding: 5rem 0rem 0rem 0rem;
     border-radius: 20px;
     font-family: 'Noto Sans', sans-serif;
 
@@ -32,9 +35,10 @@
         display: flex;
         align-items: center;
         //margin-left:50px ;
+        width: 40%;
         margin: auto;
         img{
-            height: 444px;
+            height: 519px;
             width: auto;
             margin-right: 20px;
             max-width: 493px;
@@ -43,26 +47,27 @@
     .disease-right{
 
         text-align: left;
-        margin: auto ;
+        margin-top: 4rem;
+        width: 60%;
 
         p{
+            font-size: 15px;
+             margin-top:5px;
+             
+             color: black;
+            min-height: 90px;
+            max-height: 70px;
             overflow-x: hidden;
-            // overflow: scroll;
-            max-height: 150px;
-            max-width: 750px;
-            margin-right: 20px;
-            margin-left: 20px;
-            font-size: 20px;
-            // margin-bottom: 20px;
-            // margin: 20px auto;
+            text-align: left;
         }
         p::-webkit-scrollbar{
             width: 0.5rem;
             // width:0;
         }
         p::-webkit-scrollbar-track{
+            background: #dedddd;
             // background: #999999;
-            background: #edebeb;
+            // background: #8ef0d976;
             border-radius: 0.5rem;
         }
         p::-webkit-scrollbar-thumb{
@@ -70,22 +75,24 @@
             border-radius: 0.5rem;
         }
         p::-webkit-scrollbar-button{
-            height: 50%;
+            height: 100%;
         }
+
         h1{
             font-weight: bold;
             font-size: 60px;
+           text-transform: uppercase;
             // margin-top: 10px;
-            margin-right: 20px;
-            margin-left: 20px;
+            // margin-right: 20px;
+            // text-align: left;
             // margin: 20px auto;
         }
         h2{
             font-weight:500;
             font-size: 40px;
             // margin-top: 15px;
-            margin-right: 20px;
-            margin-left: 20px;
+            // margin-right: 20px;
+            // text-align: left;
             // margin: 15px auto;
         }
     }
@@ -105,6 +112,7 @@
     .g-round{
         display: flex;
         margin: auto;position: relative;
+        color:white;
         background-color: #053B3F;
         padding: 0px;
         // margin-top: 20px;
