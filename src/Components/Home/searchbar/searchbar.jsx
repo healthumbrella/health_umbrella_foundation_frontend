@@ -29,10 +29,9 @@ function SearchBar(props) {
     }
 
     const handleClick = () => {
-       
-            navigate(`/diseases/${searchInput}`);
-        }
-    
+        navigate(`/disease/${searchInput}`);
+    }
+
 
 
 
@@ -48,7 +47,7 @@ function SearchBar(props) {
 
             {resultData.length !== 0 && <div className="dataResult">
                 {resultData.slice(0, 5).map((value) => {
-                    return <NavLink className="dataItem" to={`/diseases/${value}`} key={value}>{value}</NavLink>
+                    return <NavLink className="dataItem" to={`/disease/${value}`} key={value}>{value}</NavLink>
                 })}
             </div>}
         </div>

@@ -1,31 +1,43 @@
-import React from "react";
+import React, { useState, useEffect, useParams } from "react";
 import "./directcases.css";
-
+import axios from "axios";
+import { FiDownload } from "react-icons/fi";
+import { useNavigate } from "react-router-dom";
 function DirectCases() {
- 
+  // const {disease,pathy,caseId} = useParams()
+  const navigate=useNavigate()
+  const [data, setData] = useState();
+  useEffect(() => {
+    getData();
+  }, []);
+  const getData = async () => {
+    try {
+      // const res=await axios.get(`http://backend.healthumbrella.org:8000/disease/${disease}/${pathy}/directCase/${caseId}`);
+      const res = await axios.get(
+        `http://backend.healthumbrella.org:8000/disease/migraine/acupressure/directCase/001`
+      );
+
+      // console.log(res);
+      setData(res.data);
+    } catch (e) {
+      console.log(e);
+    }
+  };
+  console.log(data);
   return (
     <div className="D_outer">
       <div className="D_outer_top">
         <h2>&#60; Migraine/Accupressure</h2>
+        {/* <h2 onClick={()=>{navigate(-1)}}>&#60; `${disease}${pathy}`</h2> */}
       </div>
       <div className="D_outer_bottom">
         <div className="D_main_heading">
-          <h2>Case 1</h2>
+          <h2>Case {data?.caseId}</h2>
           <div className="line" />
         </div>
         <div className="D_outer_summary">
           <h2 className="D_summary_heading">Summary</h2>
-          <p className="D_summary_text">
-            A patient suffering from migraines sought relief through acupressure
-            therapy. Acupressure involves applying pressure to specific points
-            on the body to promote healing. The patient underwent a series of
-            sessions where skilled practitioners targeted the relevant pressure
-            points. Over time, the patient experienced a reduction in the
-            frequency and intensity of their migraines, eventually finding
-            complete relief. Acupressure therapy proved to be an effective
-            alternative treatment for the patient's migraines, offering them a
-            new lease on life.
-          </p>
+          <p className="D_summary_text">{data?.summary}</p>
           <div className="line" />
         </div>
         <div className="D_outer_details">
@@ -35,32 +47,46 @@ function DirectCases() {
               <div className="D_detail_table">
                 <table className="D_detail_inner_table">
                   <tr className="TR">
-                    <td className="TD1">Name</td>
-                    <td className="TD2">Rahul Sharma</td>
+                    <td className="TD1">Name - </td>
+                    <td className="TD2">
+                      {data?.personalDetails?.name ?? "NA"}
+                    </td>
                   </tr>
                   <tr className="TR">
-                    <td className="TD1">Age</td>
-                    <td className="TD2">29</td>
+                    <td className="TD1">Age - </td>
+                    <td className="TD2">
+                      {data?.personalDetails?.age ?? "NA"}
+                    </td>
                   </tr>
                   <tr className="TR">
-                    <td className="TD1">Sex</td>
-                    <td className="TD2">Male</td>
+                    <td className="TD1">Sex - </td>
+                    <td className="TD2">
+                      {data?.personalDetails?.sex ?? "NA"}
+                    </td>
                   </tr>
                   <tr className="TR">
-                    <td className="TD1">Occupation</td>
-                    <td className="TD2">Engineer</td>
+                    <td className="TD1">Occupation - </td>
+                    <td className="TD2">
+                      {data?.personalDetails?.occupation ?? "NA"}
+                    </td>
                   </tr>
                   <tr className="TR">
-                    <td className="TD1">Email ID</td>
-                    <td className="TD2">rahulsh@gmail.com</td>
+                    <td className="TD1">Email ID - </td>
+                    <td className="TD2">
+                      {data?.personalDetails?.emailAddress ?? "NA"}
+                    </td>
                   </tr>
                   <tr className="TR">
-                    <td className="TD1">Phone No.</td>
-                    <td className="TD2">7777777724</td>
+                    <td className="TD1">Phone No - </td>
+                    <td className="TD2">
+                      {data?.personalDetails?.phoneNumber ?? "NA"}
+                    </td>
                   </tr>
                   <tr className="TR">
-                    <td className="TD1">Region</td>
-                    <td className="TD2">India</td>
+                    <td className="TD1">Region - </td>
+                    <td className="TD2">
+                      {data?.personalDetails?.region ?? "NA"}
+                    </td>
                   </tr>
                 </table>
               </div>
@@ -69,28 +95,41 @@ function DirectCases() {
               <div className="inner_line"></div>
               <div className="D_right_text">
                 <h2 className="D_detail_comments">Comments by other</h2>
-                <p className="D_detail_text">
-                    A patient suffering from migraines sought relief through
-                    acupressure therapy. Acupressure involves applying pressure to
-                    specific points on the body to promote healing. The patient
-                    underwent a series of sessions where skilled practitioners
-                    targeted the relevant pressure points. Over time, the patient
-                    experienced a reduction in the frequency and intensity of their
-                    migraines, eventually finding complete relief. Acupressure
-                    therapy proved to be an effective alternative treatment for the
-                    patient's migraines, offering them a new <button>...Read More</button>
-                </p>
+                <p className="D_detail_text">{data?.comment}</p>
               </div>
             </div>
           </div>
           <div className="line"></div>
         </div>
         <div className="D_outer_cards">
-            <div className="D_cards">
-                <div className="D_casehistory">Case History</div>
-                <div className="D_allergies">Allergies</div>
-                <div className="D_medicalreport">Medical Report</div>
+          <div className="D_cards">
+            <div className="D_casehistory">
+              {" "}
+              <a
+                href={data?.caseHistory}
+                target="__blank"
+                className="D_linkStyle"
+              >
+                Case History
+              </a>
             </div>
+            <div className="D_allergies">
+              {" "}
+              <a href={data?.allergies} target="__blank" className="D_linkStyle">
+                Allergies
+              </a>
+            </div>
+            <div className="D_medicalreport">
+              <a
+                href={data?.medicalReport}
+                target="__blank"
+                className="D_linkStyle"
+              >
+                <FiDownload size={18} color="#000000" className="D_FiUpload" />{" "}
+                Medical Report
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
