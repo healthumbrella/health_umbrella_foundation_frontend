@@ -1,24 +1,29 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./testimonials.css";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import imageInfo from "./imageLink";
+import Modal from "../Modal/Modal";
 
 const Testimonials = () => {
   const [fetchData, setFetchData] = useState({ text: "", sourceList: [] });
-  const { title1,title2 } = useParams();
+  const { disease,title1, title2 } = useParams();
   const [matchedImageLink, setMatchedImageLink] = useState("");
   const [selectedSummary, setSelectedSummary] = useState("");
-  console.log(title1);
-  console.log(title2);
+  const [selectedItem, setSelectedItem] = useState("");
+  const [modalVisible, setModalVisible] = useState(false);
+  
+
+  const navigate = useNavigate();
   useEffect(() => {
     const fetchDataFromAPI = async () => {
       try {
         const response = await axios.get(
-          `http://backend.healthumbrella.org:8000/disease/migraine/${title1}/${title2}`
+          `http://backend.healthumbrella.org:8000/disease/${disease}/${title1}/${title2}`
         );
+        console.log(response.data);
         setFetchData(response.data);
-      } catch (error) { 
+      } catch (error) {
         console.error("Error fetching data:", error);
       }
     };
@@ -31,15 +36,34 @@ const Testimonials = () => {
     // eslint-disable-next-line
   }, [title2]);
 
-  const handleSummaryClick = (summary) => {
-    setSelectedSummary(summary === selectedSummary ? "" : summary);
+  useEffect(() => {
+    const handleOutsideClick = (e) => {
+      if (modalVisible && e.target.classList.contains('modal-wrapper')) {
+        setModalVisible(false);
+      }
+    };
+
+    if (modalVisible) {
+      document.addEventListener('click', handleOutsideClick);
+    }
+
+    return () => {
+      document.removeEventListener('click', handleOutsideClick);
+    };
+  }, [modalVisible]);
+
+  const handleCardClick = (item) => {
+    setSelectedItem(item);
+    setModalVisible(true);
   };
 
-  console.log(fetchData);
+
+
+
 
   return (
     <div className="testimonials-main">
-      <p className="testimonials-link-topleft">
+      <p className="testimonials-link-topleft" onClick={() => navigate(-1)}>
         &lt; Migraine/{title1.charAt(0).toUpperCase()}{title1.slice(1)}/{title2.charAt(0).toUpperCase()}{title2.slice(1)}
       </p>
       <div className="testimonials-container">
@@ -59,24 +83,17 @@ const Testimonials = () => {
               <a href={item.link} target="_blank" rel="noreferrer">Click here to see the video</a>
               <span className="t-summary">
                 short-summary
-                {selectedSummary === item.summary ? (
-                  <div>
-                    <p className="t-backend-summary">{item.summary}</p>
-                    <button
-                      className="t-button"
-                      onClick={() => handleSummaryClick(item.summary)}
-                    >
-                      Close &larr;
-                    </button>
-                  </div>
-                ) : (
-                  <button
-                    className="t-button"
-                    onClick={() => handleSummaryClick(item.summary)}
-                  >
-                    Click here &rarr;
-                  </button>
-                )}
+
+                <button
+                  className="t-button"
+                  onClick={() =>
+                    fetchData.text === "directcase"
+                      ? navigate(`/disease/${disease}/${title1}/directCase/${item.caseId}`) // Assuming you have a function for directcases navigation
+                      : handleCardClick(item)
+                  }
+                >
+                  Click here &rarr;
+                </button>
               </span>
               <span className="t-rating">
                 <p1>Our Rating for this data </p1>
@@ -92,11 +109,10 @@ const Testimonials = () => {
                 alt="sorry"
               />
               <img
-                className={`t-rb-img1 ${
-                  selectedSummary === item.summary
-                    ? "selected-summary-img1"
-                    : ""
-                }`}
+                className={`t-rb-img1 ${selectedSummary === item.summary
+                  ? "selected-summary-img1"
+                  : ""
+                  }`}
                 src="/Images/Vector7.png"
                 alt="sorry"
               />
@@ -109,7 +125,13 @@ const Testimonials = () => {
           {/* </> */}
         </div>
       </div>
+
+      {modalVisible && <Modal setModalVisible={setModalVisible} selectedItem={selectedItem} />}
+
+
     </div>
+
+
   );
 };
 
