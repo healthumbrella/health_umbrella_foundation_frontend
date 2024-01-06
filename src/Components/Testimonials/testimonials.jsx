@@ -56,9 +56,7 @@ const Testimonials = () => {
   };
 
   
-  const handleSummaryClick = (summary) => {
-    setSelectedSummary(summary === selectedSummary ? "" : summary);
-  };
+
 
   console.log(fetchData);
 
@@ -79,29 +77,19 @@ const Testimonials = () => {
         <div className="t-row4">
           {/* <> */}
           {fetchData.sourceList.map((item) => (
-            <div key={item.id} className="t-card" onClick={() => handleCardClick(item)}>
+            <div key={item.id} className="t-card">
               <h3 className="t-title">{item.title.charAt(0).toUpperCase()}{item.title.slice(1)}</h3>
               <a href={item.link} target="_blank" rel="noreferrer">Click here to see the video</a>
               <span className="t-summary">
                 short-summary
-                {selectedSummary === item.summary ? (
-                  <div>
-                    <p className="t-backend-summary">{item.summary}</p>
-                    <button
-                      className="t-button"
-                      onClick={() => handleSummaryClick(item.summary)}
-                    >
-                      Close &larr;
-                    </button>
-                  </div>
-                ) : (
+               
                   <button
                     className="t-button"
-                    onClick={() => handleSummaryClick(item.summary)}
+                    onClick={() => handleCardClick(item)}
                   >
                     Click here &rarr;
                   </button>
-                )}
+                
               </span>
               <span className="t-rating">
                 <p1>Our Rating for this data </p1>

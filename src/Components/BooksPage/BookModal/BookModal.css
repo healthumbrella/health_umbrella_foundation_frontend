@@ -16,6 +16,7 @@
     display: flex;
     /* justify-content: center; */
     align-items: center;
+    text-align: center;
     position: fixed;
     top: 50%;
     left: 50%;
@@ -28,6 +29,7 @@
 
 .modal-title{
   margin-top: 10px;
+  text-align: center;
 }
 
   .closemodal{
@@ -45,10 +47,11 @@
   /* } */
 
   .modal-backend-summary{
+    text-align: center;
     font-size: small;
     font-weight: 500;
     color: black;
-    text-align:left;
+    /* text-align:left; */
     height: 20rem;
     overflow-y: hidden;
     transition: overflow .3s;
@@ -78,7 +81,7 @@
     display: flex;
     padding: 1.5rem 1.5rem;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center !important;
     justify-content: center;
     gap: 1rem;
     flex-wrap: wrap;
@@ -86,10 +89,6 @@
     position: relative;
 }
 
-.modal-title{
-  /* border:2px solid red; */
-  text-align: center;
-}
 
 
   
