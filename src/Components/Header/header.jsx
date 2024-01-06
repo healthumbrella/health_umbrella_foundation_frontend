@@ -8,6 +8,7 @@ function Header() {
     const [width, setWidth] = useState(window.innerWidth);
 
     const [diseases, setDiseases] = useState(["Diabetes","Breast Cancer","Alzheimer","migraine","Heart Diseases","Cancer","CLD","Asthma","Thyroid","Depression","Kidney Disease","Obesity","Bronchiectasis","Sudden Cardiac Arrest","Multiple Sclerosis","PCOD","Strokes","Hypertension","Lung Cancer","Osteoporosis","Arthritis","Glaucoma","COPD",]); // State to store diseases data
+    // const [diseases, setDiseases] = useState([]); // State to store diseases data
     const [isDropdownOpen, setIsDropdownOpen] = useState(false); // State to control dropdown visibility
 
     // useEffect(() => {

@@ -34,27 +34,27 @@ const PathyPage = () => {
         <h3 className="PathyPage-subheading">THERAPY</h3>
         <div className="PathyPage-content">{data.text}</div>
         <div className="PathyPage-cards">
-          <Link to={`/${disease}/${titles}/directCase`} className="item">
+          <Link to={`/disease/${disease}/${titles}/directCase`} className="item">
             <img src={process.env.PUBLIC_URL + '/Images/man.png'} alt="" />
             <div className="PathyPage-cards-desc">Direct Cases</div>
           </Link>
-          <Link to={`/${disease}/${titles}/youtube`} className="item">
+          <Link to={`/disease/${disease}/${titles}/youtube`} className="item">
             <img src={process.env.PUBLIC_URL + '/Images/youtube-logo.png'} alt="" />
             <div className="PathyPage-cards-desc">Youtube</div>
           </Link>
-          <Link to={`/${disease}/${titles}/website`} className="item">
+          <Link to={`/disease/${disease}/${titles}/website`} className="item">
             <img src={process.env.PUBLIC_URL+'/Images/globe-icon.png'} alt="" />
             <div className="PathyPage-cards-desc">Website</div>
           </Link>
-          <Link to={`/${disease}/${titles}/socialMedia`} className="item">
+          <Link to={`/disease/${disease}/${titles}/socialMedia`} className="item">
             <img src={process.env.PUBLIC_URL + '/Images/socialmedia-women.png'} alt="" />
             <div className="PathyPage-cards-desc">Social Media</div>
           </Link>
-          <Link to={`/${disease}/${titles}/books`} className="item" >
+          <Link to={`/disease/${disease}/${titles}/books`} className="item" >
             <img src={process.env.PUBLIC_URL+'/Images/books.png'} alt="" />
             <div className="PathyPage-cards-desc">Books/Book Chapters</div>
           </Link>
-          <Link to={`/${disease}/${titles}/article`} className="item">
+          <Link to={`/disease/${disease}/${titles}/article`} className="item">
             <img src={process.env.PUBLIC_URL + '/Images/articles-search.png'} alt="" />
             <div className="PathyPage-cards-desc">Articles</div>
           </Link>
