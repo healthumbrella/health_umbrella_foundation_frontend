@@ -22,11 +22,10 @@ const suggestion = () => {
             others walking a similar path.
           </div>
         </div>
-        <div className="suggestion_container_right">
+        <div className="suggestion_container_right" >
           <h2 className="scr_heading">Ask suggestion for any Disease</h2>
           <h4 className="scr_subheading ">
-            Every donation no matter how big or small makes a significant
-            difference to our cause.
+            {/* Share your Suggestions: Help us shape the future by offering your valuable suggestions! */}
             <br></br>
             <p className="scr-subheading-1" >
             Thank you for doing your part to help.

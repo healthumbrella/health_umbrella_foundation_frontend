@@ -35,7 +35,7 @@ const ContactForm = () => {
       [e.target.name]: e.target.value,
     });
   };
-
+   const [fileName,setFileName]=useState("")
   const handleFileInputChange = (e) => {
     var upld=e.target.files[0].name.split('.').pop();
     if(upld==='pdf')
@@ -45,6 +45,7 @@ const ContactForm = () => {
         reports: e.target.files[0], 
         
       });
+      setFileName(e.target.files[0].name)
     }
     else{
       toast.error("Only pdf files are allowed", {
@@ -56,10 +57,13 @@ const ContactForm = () => {
     fileInputRef.current.click();
   }
 
+  const [loading,setLoading]=useState(false)
   const handleSubmit = async (e) => {
     console.log(formData)
     e.preventDefault();
     try {
+      setLoading(true)
+
       const response = await axios.post(
         "http://backend.healthumbrella.org:8000/user-forms/ask-suggestion", 
         formData,
@@ -73,11 +77,29 @@ const ContactForm = () => {
         position: toast.POSITION.TOP_RIGHT
       });
       console.log("Response from backend:", response.data);
-
+      setFormData({
+        name: "",
+        age: "",
+        gender: "",
+        city: "",
+        state: "",
+        country: "",
+        email_address: "",
+        phone_number: "",
+        disease: "",
+        pathies: "",
+        query: "",
+        show_study: "false",
+        show_email: "false",
+        reports: null, 
+      })
+      setFileName("")
     } catch (error) {
       toast.error("Error !", {
         position: toast.POSITION.TOP_RIGHT
       });
+    }finally{
+      setLoading(false)
     }
   };
     return (
@@ -119,11 +141,11 @@ const ContactForm = () => {
           </div>
           <div className="last-half">
             <div className="sixthrow">
-                <label htmlFor="queries">
+                <label htmlFor="query">
                   <p className=" text-area-heading" >
                     Queries<tag className="asterik">*</tag>
                   </p>
-                  <textarea id="queries" className="textarea-box" name="queries" value={formData.queries} onChange={handleChange} placeholder="Please share your problems here..." required
+                  <textarea id="query" className="textarea-box" name="query" value={formData.query} onChange={handleChange} placeholder="Please share your problems here..." required
                   />
                 </label>
             </div>
@@ -153,12 +175,15 @@ const ContactForm = () => {
               <div className="last3">
               <p className="last3 p1">Reports (Any supporting Docx (pdf format only)):</p>
               <input type="file" name="supportingDocx" onChange={handleFileInputChange} hidden ref={fileInputRef} accept="application/pdf" />
+              <div style={{display:'flex' , flexDirection:"column"}}>
               <label className="btn" onClick={handleUploadClick}>
                 <FiUpload size={18} color="#000000" /> Upload
               </label>
+               <p style={{color:'gray'}}>{fileName}</p>
+              </div>
             </div>
             </div>
-          <input className="submit" type="submit" value="Submit" />
+          <input className="submit" type="submit" value={!loading?"Submit":"Processing..."} disabled={loading}/>
           </div>
           <ToastContainer />
         </form>

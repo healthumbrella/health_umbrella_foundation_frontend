@@ -67,7 +67,8 @@ const Joinus = () => {
             ? "Please upload a .jpg, .jpeg, .png, or .pdf file!"
             : "Please upload a .pdf file!",
           {
-            position: toast.POSITION.BOTTOM_RIGHT,
+            position: toast.POSITION.TOP_RIGHT,
+            style:{top:'90px'}
           }
         );
       }
@@ -87,10 +88,20 @@ const Joinus = () => {
   const handleDocumentFileSelect = () => {
     documentFileInputRef.current.click();
   };
+
+  const [loading,setLoading]=useState(false)
   const handleSubmit = async (e) => {
     console.log(formData);
     e.preventDefault();
     try {
+      if(!formData.photograph || !formData.document){
+        toast.error("Please Upload both document and photo !", {
+          position: toast.POSITION.TOP_RIGHT,
+          style:{top:'90px'}
+        });
+        return
+      }
+      setLoading(true)
       const response = await axios.post(
         "http://backend.healthumbrella.org:8000/user-forms/join-us",
         formData,
@@ -101,13 +112,34 @@ const Joinus = () => {
         }
       );
       toast.success("Information successfully submitted!", {
-        position: toast.POSITION.BOTTOM_RIGHT,
+        position: toast.POSITION.TOP_RIGHT,
+          style:{top:'90px'}
       });
       console.log("Response from backend:", response.data);
+      setFormData({
+        name: "",
+        age: "",
+        gender: "",
+        email_address: "",
+        phone_number: "",
+        address: "",
+        pincode: "",
+        city: "",
+        state: "",
+        country: "",
+        profession: "",
+        message: "",
+        photograph: null,
+        document: null,
+      })
+      setfileName({file1:"",file2:""})
     } catch (error) {
       toast.error("Error !", {
-        position: toast.POSITION.BOTTOM_RIGHT,
+        position: toast.POSITION.TOP_RIGHT,
+          style:{top:'90px'}
       });
+    }finally{
+      setLoading(false)
     }
   };
 
@@ -116,7 +148,7 @@ const Joinus = () => {
       <div className={styles.join_us_content}>
         <div className={styles.join_text}>
           <img
-            src="./images/green-ring.png"
+            src="./Images/green-ring.png"
             alt="green-ring"
             className={styles.upper_green_ring}
           ></img>
@@ -136,10 +168,9 @@ const Joinus = () => {
         </div>
         <div className={styles.join_us_form}>
           <div className={styles.fill_form}>Fill the Form!!</div>
-          <div className={styles.fill_para}>
-            Every donation no matter how big or small makes a significant
-            difference to our cause. Thank you for doing your part to help
-          </div>
+          {/* <div className={styles.fill_para}>
+          Join our movement towards a healthier world – become a part of our community, share your voice, and contribute to a tapestry of hope and healing
+          </div> */}
           <form className={styles.form_body} onSubmit={handleSubmit}>
             <div className={styles.first_row}>
               <input
@@ -259,12 +290,12 @@ const Joinus = () => {
               placeholder="Message"
             ></textarea>
             <div className={`${styles.upload_file}`}>
-              <div className={styles.upload_photo}>Recent Photograph :</div>
+              <div className={styles.upload_photo}>Recent Photograph * :</div>
               <label onClick={handleUploadClick} className={styles.upload}>
                 <FiUpload size={18} color="#000000" /> Upload
               </label>
               <input
-                required
+                // required
                 accept=".jpg, .jpeg, .png"
                 name="photograph"
                 onChange={(e) => handleFileChange(e, "photograph")}
@@ -277,17 +308,16 @@ const Joinus = () => {
             </div>
             <div className={styles.upload_file}>
               <div style={{ marginRight: "2rem" }}>
-                Document(Aadhar/PAN/Govt. ID Proof) :
+                Document(Aadhar/PAN/Govt. ID Proof) * :
               </div>
               <label
                 onClick={handleDocumentFileSelect}
                 className={styles.upload}
               >
-                <FiUpload size={18} color="#000000" />
-                Upload
+                <FiUpload size={18} color="#000000" /> Upload
               </label>
               <input
-                required
+                // required
                 ref={documentFileInputRef}
                 accept=".pdf"
                 hidden
@@ -311,8 +341,8 @@ const Joinus = () => {
                 <span style={{ color: "red" }}>*</span>
               </div>
             </div>
-            <button type="submit" className={styles.submit_button}>
-              Submit
+            <button type="submit" className={styles.submit_button} disabled={loading} style={{cursor:"pointer"}}>
+              {!loading?"Submit":"Processing..."}
             </button>
             <div style={{ fontSize: "11px", fontWeight: "500" }}>
               Anyone who is interested to join our NGO/movement and contribute
@@ -326,7 +356,7 @@ const Joinus = () => {
             <ToastContainer />
           </form>
           <img
-            src="./images/green-ring-reverse.png"
+            src="./Images/green-ring-reverse.png"
             alt="green-ring"
             className={styles.lower_green_ring}
           ></img>
