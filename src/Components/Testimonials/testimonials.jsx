@@ -7,21 +7,23 @@ import Modal from "../Modal/Modal";
 
 const Testimonials = () => {
   const [fetchData, setFetchData] = useState({ text: "", sourceList: [] });
-  const { title1, title2 } = useParams();
+  const { disease,title1, title2 } = useParams();
   const [matchedImageLink, setMatchedImageLink] = useState("");
   const [selectedSummary, setSelectedSummary] = useState("");
   const [selectedItem, setSelectedItem] = useState("");
   const [modalVisible, setModalVisible] = useState(false);
+  
 
- const navigate = useNavigate();
+  const navigate = useNavigate();
   useEffect(() => {
     const fetchDataFromAPI = async () => {
       try {
         const response = await axios.get(
-          `http://backend.healthumbrella.org:8000/disease/migraine/${title1}/${title2}`
+          `http://backend.healthumbrella.org:8000/disease/${disease}/${title1}/${title2}`
         );
+        console.log(response.data);
         setFetchData(response.data);
-      } catch (error) { 
+      } catch (error) {
         console.error("Error fetching data:", error);
       }
     };
@@ -33,7 +35,7 @@ const Testimonials = () => {
     }
     // eslint-disable-next-line
   }, [title2]);
-  
+
   useEffect(() => {
     const handleOutsideClick = (e) => {
       if (modalVisible && e.target.classList.contains('modal-wrapper')) {
@@ -49,20 +51,19 @@ const Testimonials = () => {
       document.removeEventListener('click', handleOutsideClick);
     };
   }, [modalVisible]);
-   
+
   const handleCardClick = (item) => {
     setSelectedItem(item);
     setModalVisible(true);
   };
 
-  
 
 
-  console.log(fetchData);
+
 
   return (
     <div className="testimonials-main">
-      <p className="testimonials-link-topleft" onClick={()=>navigate(-1)}>
+      <p className="testimonials-link-topleft" onClick={() => navigate(-1)}>
         &lt; Migraine/{title1.charAt(0).toUpperCase()}{title1.slice(1)}/{title2.charAt(0).toUpperCase()}{title2.slice(1)}
       </p>
       <div className="testimonials-container">
@@ -82,14 +83,17 @@ const Testimonials = () => {
               <a href={item.link} target="_blank" rel="noreferrer">Click here to see the video</a>
               <span className="t-summary">
                 short-summary
-               
-                  <button
-                    className="t-button"
-                    onClick={() => handleCardClick(item)}
-                  >
-                    Click here &rarr;
-                  </button>
-                
+
+                <button
+                  className="t-button"
+                  onClick={() =>
+                    fetchData.text === "directcase"
+                      ? navigate(`/disease/${disease}/${title1}/directCase/${item.caseId}`) // Assuming you have a function for directcases navigation
+                      : handleCardClick(item)
+                  }
+                >
+                  Click here &rarr;
+                </button>
               </span>
               <span className="t-rating">
                 <p1>Our Rating for this data </p1>
@@ -106,8 +110,8 @@ const Testimonials = () => {
               />
               <img
                 className={`t-rb-img1 ${selectedSummary === item.summary
-                    ? "selected-summary-img1"
-                    : ""
+                  ? "selected-summary-img1"
+                  : ""
                   }`}
                 src="/Images/Vector7.png"
                 alt="sorry"

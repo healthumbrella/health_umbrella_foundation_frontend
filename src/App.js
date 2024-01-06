@@ -31,7 +31,7 @@ function App() {
         <Route path="/pathy" exact element={<Pathy/>}></Route>
          <Route path="/ejournal" exact element={<Ejournal />}></Route>
         <Route path="/join-us" exact element={<Joinus />}></Route> 
-        <Route path="/directcases" exact element={<DirectCases />}></Route> 
+        <Route path="/disease/:disease/:pathy/directCase/:caseId" exact element={<DirectCases />}></Route> 
         <Route path="/:disease/:titles" exact element={<PathyPage/>}></Route>       
         <Route path="/our-team" exact element={<OurTeam />}></Route> 
         <Route path="/:disease/:title1/books" exact element={<Books />}></Route> 
