@@ -143,6 +143,7 @@ const ShareExpForm = () => {
         preferred_communication: "email",
         reports: null, 
        })
+       setFileName("")
     } catch (error) {
       toast.error("Error !", {
         position: toast.POSITION.TOP_RIGHT
@@ -264,7 +265,7 @@ const ShareExpForm = () => {
               </div>
             </div>
             </div>
-          <input className="submit" type="submit" value="Submit" disabled={loading} />
+          <input className="submit" type="submit" value={!loading?"Submit":"Processing..."} disabled={loading} />
           </div>
           <ToastContainer />
         </form>

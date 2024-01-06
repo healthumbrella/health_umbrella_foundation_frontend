@@ -148,7 +148,7 @@ const Joinus = () => {
       <div className={styles.join_us_content}>
         <div className={styles.join_text}>
           <img
-            src="./images/green-ring.png"
+            src="./Images/green-ring.png"
             alt="green-ring"
             className={styles.upper_green_ring}
           ></img>
@@ -168,9 +168,9 @@ const Joinus = () => {
         </div>
         <div className={styles.join_us_form}>
           <div className={styles.fill_form}>Fill the Form!!</div>
-          <div className={styles.fill_para}>
+          {/* <div className={styles.fill_para}>
           Join our movement towards a healthier world – become a part of our community, share your voice, and contribute to a tapestry of hope and healing
-          </div>
+          </div> */}
           <form className={styles.form_body} onSubmit={handleSubmit}>
             <div className={styles.first_row}>
               <input
@@ -290,7 +290,7 @@ const Joinus = () => {
               placeholder="Message"
             ></textarea>
             <div className={`${styles.upload_file}`}>
-              <div className={styles.upload_photo}>Recent Photograph :</div>
+              <div className={styles.upload_photo}>Recent Photograph * :</div>
               <label onClick={handleUploadClick} className={styles.upload}>
                 <FiUpload size={18} color="#000000" /> Upload
               </label>
@@ -308,14 +308,13 @@ const Joinus = () => {
             </div>
             <div className={styles.upload_file}>
               <div style={{ marginRight: "2rem" }}>
-                Document(Aadhar/PAN/Govt. ID Proof) :
+                Document(Aadhar/PAN/Govt. ID Proof) * :
               </div>
               <label
                 onClick={handleDocumentFileSelect}
                 className={styles.upload}
               >
-                <FiUpload size={18} color="#000000" />
-                Upload
+                <FiUpload size={18} color="#000000" /> Upload
               </label>
               <input
                 // required
@@ -342,8 +341,8 @@ const Joinus = () => {
                 <span style={{ color: "red" }}>*</span>
               </div>
             </div>
-            <button type="submit" className={styles.submit_button} disabled={loading}>
-              Submit
+            <button type="submit" className={styles.submit_button} disabled={loading} style={{cursor:"pointer"}}>
+              {!loading?"Submit":"Processing..."}
             </button>
             <div style={{ fontSize: "11px", fontWeight: "500" }}>
               Anyone who is interested to join our NGO/movement and contribute
@@ -357,7 +356,7 @@ const Joinus = () => {
             <ToastContainer />
           </form>
           <img
-            src="./images/green-ring-reverse.png"
+            src="./Images/green-ring-reverse.png"
             alt="green-ring"
             className={styles.lower_green_ring}
           ></img>

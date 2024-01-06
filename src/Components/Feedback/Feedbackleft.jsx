@@ -33,7 +33,13 @@ const Feedbackleft = () => {
         e.preventDefault();
         try {
            
-      
+          if(rating==0){
+            toast.error("Please select a rating to submit Feedback", {
+              position: toast.POSITION.TOP_RIGHT,
+              style:{top:'90px'}
+            });
+            return
+          }
           console.log(formData);
       
           const response = await axios.post(
@@ -50,7 +56,11 @@ const Feedbackleft = () => {
             style:{top:'90px'}
           });
           console.log("Response from backend:", response.data);
-    
+          setFormData({
+            rating:'1',
+            feedback:""
+          })
+          setRating(0)
         } catch (error) {
           toast.error("Error !", {
             position: toast.POSITION.TOP_RIGHT,
@@ -73,6 +83,7 @@ const Feedbackleft = () => {
             <p className="fb_p3">
                 let us know in the given field
             </p>
+            <div style={{display:'flex',flexDirection:"column",alignItems:'center'}}>
             <div style={{display:'flex'}}>
             {
               [...Array(5)].map((star,index)=>{
@@ -108,6 +119,7 @@ const Feedbackleft = () => {
             
             <div  className="fb_button">
                 <input /* className="fb_submit"*/ type="submit" value="Submit" />
+            </div>
             </div>
             <ToastContainer />
 

@@ -93,6 +93,7 @@ const ContactForm = () => {
         show_email: "false",
         reports: null, 
       })
+      setFileName("")
     } catch (error) {
       toast.error("Error !", {
         position: toast.POSITION.TOP_RIGHT
@@ -182,7 +183,7 @@ const ContactForm = () => {
               </div>
             </div>
             </div>
-          <input className="submit" type="submit" value="Submit" disabled={loading}/>
+          <input className="submit" type="submit" value={!loading?"Submit":"Processing..."} disabled={loading}/>
           </div>
           <ToastContainer />
         </form>
