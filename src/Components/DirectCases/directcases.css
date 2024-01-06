@@ -73,8 +73,27 @@
     font-weight: 400;
     font-size: medium;
     color: #555555;
+    height: 200px;
+    overflow-y: auto;
     text-align: start;
 }
+.D_summary_text::-webkit-scrollbar-track {
+    border-radius: 0.5rem;
+  }
+  .D_summary_text::-webkit-scrollbar {
+    width: 0.5rem;
+  }
+  .D_summary_text::-webkit-scrollbar-track {
+    background: #dedddd;
+    border-radius: 0.5rem;
+  }
+  .D_summary_text::-webkit-scrollbar-thumb {
+    background: #053b3f;
+    border-radius: 0.5rem;
+  }
+  .D_summary_text::-webkit-scrollbar-button {
+    height: 100%;
+  }
 .D_outer_details{
     width: 100%;
     min-height: 20vh;
@@ -121,6 +140,7 @@
 .TD1{
     font-family: 'Noto Sans', sans-serif;
     font-weight: bold;
+    padding-right: 5px;
 }
 .TD2{
     font-family: 'Noto Sans', sans-serif;
@@ -181,4 +201,23 @@
     font-size: medium;
     border: 0.1rem solid #A1A1A1;
     border-radius: 1rem;
+}
+.D_medicalreport{
+    display: flex;
+    flex-direction: row;
+    align-items: center;    
+    gap: 10px;
+}
+.D_casehistory,.D_allergies,.D_medicalreport{
+    cursor: pointer;
+}
+
+
+.D_linkStyle{
+    text-decoration: none;
+    color: #053B3F;
+}
+.D_linkStyle:hover{
+    text-decoration: none;
+    color: #053B3F;
 }
