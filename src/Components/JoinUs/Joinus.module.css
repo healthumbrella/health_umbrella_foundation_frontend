@@ -4,14 +4,14 @@
 }
 .join_us {
   display: flex;
-  margin-top: 5.5rem;
+  /* margin-top: 5.5rem; */
 }
 .join_us_content {
   display: flex;
   position: relative;
   flex-wrap: wrap;
   border-radius: 1.4rem;
-  margin: 2rem 3rem 6rem 3rem;
+  margin: 8rem 3rem 2rem 3rem;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   z-index: 400;
 }
@@ -46,6 +46,11 @@
   font-weight: 800;
   margin-top: 50%;
   /* line-height:1; */
+  
+  
+}
+.join_heading span{
+  font-size: 4rem;
 }
 .join_para {
   color: #000;
@@ -144,6 +149,7 @@
 .upload_photo {
   margin-right: 11.1rem;
 }
+
 /* Media query for smaller screens, such as tablets */
 @media only screen and (max-width: 992px) {
   .join_us {

@@ -6,16 +6,12 @@
     box-sizing: border-box;
 }
 
-.diseases-bottom-container{
-    //  width: 85.27vw;
+.diseases-bottom-container{ 
     width: 95vw;
     height: auto;
-    // background: rgb(244, 244, 246);
     margin: auto;
-    margin-bottom: 30px;
-    
-    // background-image: linear-gradient(rgb(249, 175, 239),white);
-}
+    margin-bottom: 30px; 
+} 
 .disease-bottom-buttons{
     margin: auto;
     margin-bottom: 20px;
@@ -26,28 +22,27 @@
     .disease-therapy-button{
         color: white;
             background-color:#053B3F;
-            outline: none;
-            text-decoration: none;
-            
+            border: none;
+            box-shadow: 0px 0px 5px 1px rgb(195, 194, 194);
+            // border-bottom: #dedddd 3px solid;
     }
+    
     
     
     button{
         width:100vw;
         height: 85px;
         background-color: #E9FFFF;
-        color: #053B3F;
+        color: black;
         font-size: 22px;
         font-weight: bold;
         text-transform: capitalize;
-        border-radius:10px;
-        // white-space:nowrap;
-        // &:hover{
-        //     color: white;
-        //     background-color:#053B3F;
-        //     outline: none;
-        //     text-decoration: none;
-        // }
+        border: 1px solid #b3eeee;
+        margin: 3px;
+        
+         &:hover{
+            cursor: pointer;
+         }
         
     }
 }

@@ -49,7 +49,7 @@
     border-radius: 20px;
     // box-shadow: 1px 1px rgb(131, 126, 126);
     // border: 1px outset black;
-    margin: 20px auto;
+    margin: 8rem auto;
     font-family: 'Noto Sans', sans-serif;
     display: flex;
     flex-direction: row;
@@ -109,6 +109,7 @@ background-position: center -600px;
         outline: none;
         font-family: 'Noto Sans', sans-serif;
         font-weight: bold;
+        cursor: pointer;
 
         a {
             text-decoration: none;

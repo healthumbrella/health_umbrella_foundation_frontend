@@ -66,6 +66,7 @@
     background-color: #053B3F;
     border-radius: 0.2rem;
     border: none;
+    cursor: pointer;
 }
 @media screen and (max-width: 768px){
     .hsp_outer{

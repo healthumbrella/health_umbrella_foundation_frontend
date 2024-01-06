@@ -36,8 +36,13 @@ const Bottom = () => {
     getapidata();
   }, [disease]);
 
+  const scrollToTopOnClick = () => {
+    window.scrollTo(0, 0);
+  };
+
+
   const handleButtonClick = (therapyType) => {
-    setSelectedTherapy(therapyType);
+   setSelectedTherapy(selectedTherapy === therapyType ?"" : therapyType);
   };
 
   const toggleReadMore = (index) => {
@@ -77,7 +82,7 @@ const Bottom = () => {
                     <button
                       key={index}
                       onClick={() => handleButtonClick(therapyType)}
-                      className={selectedTherapy === therapyType ? "disease-therapy-button" : ""}
+                      className={selectedTherapy === therapyType ? "disease-therapy-button " : ""}
                     >
                       {therapyType}
                     </button>

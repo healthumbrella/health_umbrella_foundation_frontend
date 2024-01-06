@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './PathyPage.css';
+import ClipLoader from "react-spinners/ClipLoader";
 import axios from 'axios';
 import { useNavigate, useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
@@ -10,9 +11,11 @@ const PathyPage = () => {
     pathy: '',
     text: '',
     informationSource: [],
-  });
-  const {disease,titles } = useParams();
-  // console.log(titles);
+  }); 
+  const [loading, setLoading] = useState(true);
+
+  const { titles } = useParams();
+  console.log(titles);
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -23,9 +26,29 @@ const PathyPage = () => {
       }
     };
     fetchData();
+  
+    setLoading(false);
   }, [titles]);
 
+
+  const scrollToTopOnClick = () => {
+    window.scrollTo(0, 0);
+  };
+
   return (
+    <>
+    <div>
+    {loading ? (
+      <ClipLoader
+        className="loadingicon"
+        color="green"
+        loading={loading}
+        size={150}
+        aria-label="Loading Spinner"
+        data-testid="loader"
+      />
+    ) : (
+      <>
     <div className='PathyPage-main'>
       <div className='PathyPage-nav' onClick={()=>{navigate(-1)}}>&lt; Migraine / {titles.charAt(0).toUpperCase()}{titles.slice(1)}</div>
       <div className='PathyPage-container'>
@@ -61,6 +84,10 @@ const PathyPage = () => {
         </div>
       </div>
     </div>
+    </>
+    )}
+    </div>
+    </>
   );
 };
 

@@ -4,6 +4,7 @@
 } */
 .testimonials-main{
     margin: 7rem 0rem 2rem 0rem;
+    margin-top: 8rem;
     height: auto;
     width: 100vw;
     display: flex;
@@ -15,6 +16,9 @@
 .testimonials-link-topleft{
     width: fit-content;
     top: 0%;
+    /* font-size: large; */
+    font-size: large;
+    font-family: 'Rubik', sans-serif;
     left: 1%;
     position: absolute;
     font-weight: 500;
@@ -39,6 +43,7 @@
     background-color: #B9B9B921;
     padding: 2rem;
     margin-top: 2rem;
+   
 
 }
 .t-row1

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import ClipLoader from "react-spinners/ClipLoader";
 import "./testimonials.css";
 import { useNavigate, useParams } from "react-router-dom";
 import imageInfo from "./imageLink";
@@ -10,6 +11,10 @@ const Testimonials = () => {
   const { disease,title1, title2 } = useParams();
   const [matchedImageLink, setMatchedImageLink] = useState("");
   const [selectedSummary, setSelectedSummary] = useState("");
+  const [loading, setLoading] = useState(true);
+  console.log(title1);
+  console.log(title2);
+ 
   const [selectedItem, setSelectedItem] = useState("");
   const [modalVisible, setModalVisible] = useState(false);
   
@@ -23,7 +28,9 @@ const Testimonials = () => {
         );
         console.log(response.data);
         setFetchData(response.data);
-      } catch (error) {
+       
+        setLoading(false);
+      } catch (error) { 
         console.error("Error fetching data:", error);
       }
     };
@@ -62,6 +69,19 @@ const Testimonials = () => {
 
 
   return (
+    <>
+    <div>
+    {loading ? (
+      <ClipLoader
+        className="loadingicon"
+        color="green"
+        loading={loading}
+        size={150}
+        aria-label="Loading Spinner"
+        data-testid="loader"
+      />
+    ) : (
+      <>
     <div className="testimonials-main">
       <p className="testimonials-link-topleft" onClick={() => navigate(-1)}>
         &lt; Migraine/{title1.charAt(0).toUpperCase()}{title1.slice(1)}/{title2.charAt(0).toUpperCase()}{title2.slice(1)}
@@ -130,8 +150,10 @@ const Testimonials = () => {
 
 
     </div>
-
-
+    </>
+    )}
+    </div>
+    </>
   );
 };
 

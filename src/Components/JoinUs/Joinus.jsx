@@ -45,7 +45,7 @@ const Joinus = () => {
           photograph: file,
         });
         setfileName({
-          ...fileName,
+         ...fileName,
           file1:file.name,
         });
         
@@ -152,9 +152,8 @@ const Joinus = () => {
             alt="green-ring"
             className={styles.upper_green_ring}
           ></img>
-          
-          <div className={styles.join_heading} style={{marginBottom:'5rem'}}>
-            Join this Movement as a member..
+          <div className={styles.join_heading}>
+            <span >J</span>oin this Movement as a member..
           </div>
           <div className={styles.join_para}>
             This is your space—a confidential and supportive environment where

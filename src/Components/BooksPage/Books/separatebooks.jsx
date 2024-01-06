@@ -19,6 +19,7 @@ function SeparateBook({ pathy,disease }) {
         );
         // console.log(response.data);
         setFetchData(response.data);
+        window.scrollTo(0,0);
       } catch (error) {
         console.error('Error fetching data:', error);
       }
