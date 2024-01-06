@@ -20,11 +20,13 @@ const OurTeam = () => {
             alt="team-photos"
             className={styles.team_photo}
           ></img>
+          {/* <div className={styles.hi}> */}
           <img
-            src="images/teams-bg.png"
-            alt="background"
-            className={styles.upper_bg}
+          src="images/teams-bg.png"
+          alt="background"
+          className={styles.upper_bg}
           ></img>
+          {/* </div> */}
         </div>
 
         <div className={styles.lower_div}>
