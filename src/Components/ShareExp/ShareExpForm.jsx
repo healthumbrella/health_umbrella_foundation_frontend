@@ -193,7 +193,7 @@ const ShareExpForm = () => {
 
           <div className = "form date">
             <div className="form_date_text">
-              Duration of Disease*
+              Duration of Disease <span style={{color:'red',fontSize:'17px',fontWeight:'bold'}}>*</span>
             </div>
             <div style={{height:"30px"}}>
               <input
@@ -203,6 +203,7 @@ const ShareExpForm = () => {
               value={formData.date_from}
               onChange={handleDateFromChange}
               placeholder="From"
+              style={{width:"118px"}}
             />
             <input
               type="date"
@@ -211,6 +212,7 @@ const ShareExpForm = () => {
               value={formData.date_to}
               onChange={handleDateToChange}
               placeholder="To"
+              style={{width:"118px"}}
             />
          {dateError && <p style={{color:"red",fontSize:"12px"}}>{dateError}</p>}
             </div>
@@ -233,7 +235,7 @@ const ShareExpForm = () => {
               <div className="last1">
                 <p className="last1 p1">
                 Can we publish your experience with name ? 
-                  <span className="asterik">*</span>
+                  <span className="asterik" style={{fontWeight:'bold',fontSize:'17px'}}>*</span>
                 </p>
                 <div className="gap-yes-no">
                     <input  type="radio"  name="show_name"  value="true"  checked={formData.show_name === "true"}  onChange={handleRadioChange}

@@ -25,9 +25,9 @@ const Share_exp = () => {
           <h4 className="scr_subheading ">
             {/* Your story matters; let’s create a legacy of shared experiences together! */}
             <br></br>
-            <p className="scr-subheading-1" >
+            {/* <p className="scr-subheading-1" >
             Thank you for doing your part to help.
-            </p>
+            </p> */}
           </h4>
           <ShareExpForm />
           <img src="./Images/green_ring_rb.png" className="ring-rb" alt="bottom-green-circle" />

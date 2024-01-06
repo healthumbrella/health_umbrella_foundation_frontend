@@ -102,6 +102,13 @@ const ContactForm = () => {
       setLoading(false)
     }
   };
+  // const placeholder = (
+  //   // <span>
+  //     <>City
+  //     <span style={{ color: 'red' }}>*</span></>
+  //   // </span>
+  // );
+
     return (
         <form onSubmit={handleSubmit} className="suggestion_form" encType="multipart/form-data">
           <div className="form firstrow">
@@ -118,7 +125,9 @@ const ContactForm = () => {
             <label htmlFor="email_address"></label>
             <input type="email" id="email" name="email_address" value={formData.email_address} onChange={handleChange} placeholder="Email*" required /> <br /> <br />
             <label htmlFor="city"></label>
+            
             <input type="text" id="city" name="city" value={formData.city} onChange={handleChange} placeholder="City*" required /> <br /> <br />
+
           </div>
           <div className="form thirdrow">
 
@@ -143,7 +152,7 @@ const ContactForm = () => {
             <div className="sixthrow">
                 <label htmlFor="query">
                   <p className=" text-area-heading" >
-                    Queries<tag className="asterik">*</tag>
+                    Queries<tag className="asterik" style={{fontWeight:'bold'}}>*</tag>
                   </p>
                   <textarea id="query" className="textarea-box" name="query" value={formData.query} onChange={handleChange} placeholder="Please share your problems here..." required
                   />
@@ -152,9 +161,11 @@ const ContactForm = () => {
 
             <div className="lastrow">
               <div className="last1">
-                <p className="last1 p1">
+                <p className="last1 p1" style={{height:'0.3rem'}}>
                   Can we share your case study by keeping <br></br>you anonymous?
-                  <tag className="asterik">*</tag>
+                  <tag className="asterik" 
+                  style={{fontSize:'17px',fontWeight:'bold'}}
+                  >*</tag>
                 </p>
                 <div className="gap-yes-no">
                     <input  type="radio"  name="show_study"  value="true"  checked={formData.show_study === "true"}  onChange={handleRadioChange}

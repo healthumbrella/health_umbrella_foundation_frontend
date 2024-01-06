@@ -27,9 +27,9 @@ const suggestion = () => {
           <h4 className="scr_subheading ">
             {/* Share your Suggestions: Help us shape the future by offering your valuable suggestions! */}
             <br></br>
-            <p className="scr-subheading-1" >
+            {/* <p className="scr-subheading-1" >
             Thank you for doing your part to help.
-            </p>
+            </p> */}
           </h4>
           <ContactForm />
           <img src="./Images/green_ring_rb.png" className="ring-rb" alt="bottom-green-circle" />

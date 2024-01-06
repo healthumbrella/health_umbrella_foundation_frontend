@@ -145,14 +145,15 @@ const Joinus = () => {
 
   return (
     <div className={styles.join_us}>
-      <div className={styles.join_us_content}>
-        <div className={styles.join_text}>
+      <div className={styles.join_us_content} >
+        <div className={styles.join_text} >
           <img
             src="./Images/green-ring.png"
             alt="green-ring"
             className={styles.upper_green_ring}
           ></img>
-          <div className={styles.join_heading}>
+          
+          <div className={styles.join_heading} style={{marginBottom:'5rem'}}>
             Join this Movement as a member..
           </div>
           <div className={styles.join_para}>
@@ -165,9 +166,10 @@ const Joinus = () => {
             tapestry of inspiration that offers hope, guidance, and solace to
             others walking a similar path.
           </div>
+          
         </div>
-        <div className={styles.join_us_form}>
-          <div className={styles.fill_form}>Fill the Form!!</div>
+        <div className={styles.join_us_form} style={{display:'flex',flexDirection:'column',alignItems:'center'}}>
+          <div className={styles.fill_form} style={{marginBottom:'3rem'}}>Fill the Form</div>
           {/* <div className={styles.fill_para}>
           Join our movement towards a healthier world – become a part of our community, share your voice, and contribute to a tapestry of hope and healing
           </div> */}
@@ -290,7 +292,7 @@ const Joinus = () => {
               placeholder="Message"
             ></textarea>
             <div className={`${styles.upload_file}`}>
-              <div className={styles.upload_photo}>Recent Photograph * :</div>
+              <div className={styles.upload_photo}>Recent Photograph <span style={{color:'red'}}>*</span>:</div>
               <label onClick={handleUploadClick} className={styles.upload}>
                 <FiUpload size={18} color="#000000" /> Upload
               </label>
@@ -308,7 +310,7 @@ const Joinus = () => {
             </div>
             <div className={styles.upload_file}>
               <div style={{ marginRight: "2rem" }}>
-                Document(Aadhar/PAN/Govt. ID Proof) * :
+                Document(Aadhar/PAN/Govt. ID Proof) <span style={{color:'red'}}>*</span>:
               </div>
               <label
                 onClick={handleDocumentFileSelect}
@@ -338,7 +340,7 @@ const Joinus = () => {
               <div style={{ fontSize: "13px", fontWeight: "500" }}>
                 I hereby declare that the information given by me in the here is
                 true, complete and correct to the best of my knowledge* :{" "}
-                <span style={{ color: "red" }}>*</span>
+                <span style={{ color: "red",fontSize:'16px' }}>*</span>
               </div>
             </div>
             <button type="submit" className={styles.submit_button} disabled={loading} style={{cursor:"pointer"}}>
