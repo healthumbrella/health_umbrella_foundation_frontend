@@ -11,27 +11,27 @@ function Header() {
     // const [diseases, setDiseases] = useState([]); // State to store diseases data
     const [isDropdownOpen, setIsDropdownOpen] = useState(false); // State to control dropdown visibility
 
-    // useEffect(() => {
-    //     const getapidata = async () => {
-    //       try {
-    //         const response = await axios.get(
-    //           `${process.env.REACT_APP_BACKEND_IP}/header`
-    //         );
-    //         const fetchedData = response.data;
-    //         console.log(fetchedData);
-    //         if (fetchedData && fetchedData.diseaseList) {
-    //           setDiseases(fetchedData);
-    //         //   setLoading(false);
-    //         } else {
-    //           console.error("API response structure is not as expected.");
-    //         }
-    //       } catch (error) {
-    //         console.error(error);
-    //       }
-    //     };
+    useEffect(() => {
+        const getapidata = async () => {
+          try {
+            const response = await axios.get(
+              `${process.env.REACT_APP_BACKEND_IP}/header`
+            );
+            const fetchedData = response.data;
+            console.log(fetchedData);
+            if (fetchedData && fetchedData.diseaseList) {
+              setDiseases(fetchedData);
+            //   setLoading(false);
+            } else {
+              console.error("API response structure is not as expected.");
+            }
+          } catch (error) {
+            console.error(error);
+          }
+        };
 
-    //     getapidata();
-    //   }, []);
+        getapidata();
+      }, []);
 
 
 
@@ -81,7 +81,7 @@ function Header() {
                     </li>
                     {/* <li className="nav-item">
                         <NavLink className="nav-link underline" to="/about-us" onClick={collapseHandler}>About Us</NavLink>
-                    </li>
+                    </li> */}
                     <li className="nav-item dropdown">
                         <NavLink
                             className="nav-link underline "
@@ -108,7 +108,7 @@ function Header() {
                     <li className="nav-item">
                         <NavLink className="nav-link underline" to="/pathy" onClick={collapseHandler && scrollToTopOnClick}>Pathy</NavLink>
                     </li>
-                    {/* <li className="nav-item">
+                     {/* <li className="nav-item">
                         <NavLink className="nav-link underline" to="/clinics-hospitals" onClick={collapseHandler}>Clinics/Hospitals</NavLink>
                     </li> */}
                 </ul>
