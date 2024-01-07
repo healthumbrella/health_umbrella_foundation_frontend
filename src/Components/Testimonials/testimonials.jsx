@@ -51,12 +51,26 @@ const Testimonials = () => {
         </div>
         {title2==="directCase"?(<div className="t-row2">CASES</div>):(<div className="t-row2">TESTIMONIALS</div>)}
         {/* // <div className="t-row2">TESTIMONIALS</div> */}
+        {title2==="directCase"?(<div className="t-row2">CASES</div>):(<div className="t-row2">TESTIMONIALS</div>)}
+        {/* // <div className="t-row2">TESTIMONIALS</div> */}
         <div className="t-row3">{fetchData.text}</div>
         <div className="t-row4">
           {/* <> */}
           {fetchData.sourceList.map((item) => (
             <div key={item.id} className="t-card">
               <h3 className="t-title">{item.title.charAt(0).toUpperCase()}{item.title.slice(1)}</h3>
+              
+              {title2 === "website" ? (
+      <a href={item.link} target="_blank" rel="noreferrer">
+        Click here to visit the website
+      </a>
+    ) : title2 === "youtube" ? (
+      <a href={item.link} target="_blank" rel="noreferrer">
+        Click here to see the video
+      </a>
+    ) : (
+     ""
+    )}
               
               {title2 === "website" ? (
       <a href={item.link} target="_blank" rel="noreferrer">

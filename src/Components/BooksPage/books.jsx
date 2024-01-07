@@ -1,7 +1,9 @@
 import { useState,useEffect } from "react";
+import { useState,useEffect } from "react";
 import "./books.css"
 import SeparateBook from "./Books/separatebooks";
 import { useParams } from "react-router-dom";
+import ClipLoader from "react-spinners/ClipLoader";
 import ClipLoader from "react-spinners/ClipLoader";
 function Books(){
     const {titlee} = useParams();
@@ -13,7 +15,28 @@ function Books(){
         }, 1000);
         return () => clearTimeout(timeout);
       }, []);
+    const [loading, setLoading] = useState(true);
+    useEffect(() => {
+
+        const timeout = setTimeout(() => {
+          setLoading(false);
+        }, 1000);
+        return () => clearTimeout(timeout);
+      }, []);
     return(
+        <>
+        <div>
+          {!titlee || loading ? (
+            <ClipLoader
+              className="loadingicon"
+              color="green"
+              loading={loading}
+              size={150}
+              aria-label="Loading Spinner"
+              data-testid="loader"
+            />
+          ) : (
+            <>
         <>
         <div>
           {!titlee || loading ? (

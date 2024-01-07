@@ -1,14 +1,15 @@
 * {
   font-family: "Noto Sans", sans-serif;
   box-sizing: border-box;
-  color: #053b3f;
+  /* color: #053b3f; */
 }
 .our_team{
     display: flex;
     flex-direction: column;
-    padding-top: 5.8rem;
+    margin-top: 8rem;
 }
 .upper_div {
+
   padding-top: 4rem;
   padding-left: 6rem;
   position: relative;
@@ -19,6 +20,8 @@
   margin-right: 1rem;
   background-color: #F6F6F6;
   z-index: 1000;
+  height: 98%;
+  width: 98%;
 }
 .text_block{
     display: flex;
@@ -34,7 +37,7 @@
 .team_description{
     font-weight: 500;
     text-align:left;
-    width: 50%;
+    width: 90%;
 }
 .team_button {
 
@@ -45,20 +48,22 @@
     color: white;
     font-weight: 500;
     flex-shrink: 0;
+    cursor: pointer;
   }
 .team_photo{
     width: 50%;
     height: 20%;
     align-self: flex-end;
 }
+
 .upper_bg{
     position: absolute;
     left:50%;
     transform: translateX(-50%);
-    bottom: -30%;
+    bottom: -18%;
     width: 100%;
-    height: auto;
-    object-fit: cover;
+    height: 100%;
+    object-fit: scale-down;
   z-index: -1;
 }
 
@@ -77,23 +82,27 @@
 }
 
 .team_links {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(3, 1fr);
+  display: flex;
   column-gap: 14rem;
+  flex-direction: row;
   row-gap: 2rem;
+  width: 100%;
   padding-bottom: 3rem;
+  justify-content: center;
 }
-
+ 
 .team_link {
   display: flex;
   align-items: flex-start;
   padding: 10px;
   font-weight: bolder;
+  
 }
 .link_text {
   align-self: center;
   padding-left: 1rem;
+  text-decoration: none;
+  color: black;
 }
 
 
@@ -106,14 +115,13 @@
     }
     .team_button{
       margin-bottom: 1.5rem;
+     
     }
   }
    
 
   @media (max-width: 768px) {
-    .upper_bg {
-      bottom: -16%; /* Adjust the bottom value for better positioning on smaller screens */
-    }
+ 
     .team_button{
       margin-bottom: 1.5rem;
     }
@@ -125,13 +133,13 @@
    }
   } 
   
-  /* For screens between 769px and 1024px (typical tablets) */
-  @media (min-width: 769px) and (max-width: 1024px) {
+  
+  /* @media (min-width: 769px) and (max-width: 1024px) {
     .upper_bg {
-      display: none; /* Reset the bottom value for tablets */
+      display: none; 
     }
 
-  }
+  } */
 
 
   

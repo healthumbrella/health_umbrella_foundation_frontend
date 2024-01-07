@@ -1,5 +1,5 @@
 .pathy-container {
-  margin-top: 5.5rem;
+  /* margin-top: 2rem; */
   height: auto;
   width: 100vw;
   display: flex;
@@ -22,7 +22,7 @@
   border-radius: 1rem;
   box-shadow: 0px 4px 4px 0px #00000040;
   padding: 1rem;
-  margin: 2rem 0rem;
+  margin-top: 8rem;
 }
 .pathy-detail {
   height: auto;
@@ -63,7 +63,7 @@
   justify-content: center;
   gap: 1rem;
   padding: 2rem;
-  margin-bottom: 10rem;
+  /* margin-bottom: 10rem; */
 }
 .cardContainer {
   width: 100%;
@@ -175,12 +175,14 @@
   z-index: 1000;
 }
 
-.scrollToTopButton:hover {
+.scrollToTopButton:hover{
   background-color: #053b3f;
 }
-.scrollToTopButton i:hover {
-  color: white;
+.scrollToTopButton:hover i{
+  color: white; 
+  
 }
+
 
 .scrollToTopButton i {
   font-size: 20px;

@@ -6,7 +6,7 @@
     position: relative;
     /* height: 70rem; */
     width: 100vw;
-    margin-top: 15vh;
+    margin-top: 2rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -23,11 +23,12 @@
     display: flex;
     align-content:flex-start;
     font-family: 'Rubik', sans-serif;
+    /* z-index: 9999; */
 }
 .B_outer_top h2{
     color: #053B3F;
     font-weight: 500;
-    font-size: x-large;
+    font-size: large;
 }
 .B_outer_bottom{
     background: url("./../../../public/Images/books-bg.png") no-repeat bottom center;

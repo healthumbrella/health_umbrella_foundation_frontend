@@ -3,9 +3,11 @@ import "./separatebooks.css";
 import { NavLink } from "react-router-dom";
 import axios from "axios";
 import ClipLoader from "react-spinners/ClipLoader";
+import ClipLoader from "react-spinners/ClipLoader";
 
 function SeparateBook({ pathy }) {
   const [fetchData, setFetchData] = useState({ books: [] });
+  const [loading, setLoading] = useState(true);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -17,8 +19,11 @@ function SeparateBook({ pathy }) {
         setFetchData(response.data);
         setLoading(false);
         
+        setLoading(false);
+        
       } catch (error) {
         console.error('Error fetching data:', error);
+        setLoading(false);
         setLoading(false);
       }
     };
@@ -26,6 +31,19 @@ function SeparateBook({ pathy }) {
   }, [pathy]);
 
   return (
+    <>
+    <div>
+      {!fetchData || loading ? (
+        <ClipLoader
+          className="loadingicon"
+          color="green"
+          loading={loading}
+          size={150}
+          aria-label="Loading Spinner"
+          data-testid="loader"
+        />
+      ) : (
+        <>
     <>
     <div>
       {!fetchData || loading ? (

@@ -10,13 +10,18 @@ const PathyDetailComponent =(props)=> {
         </div>
         <div className="pathy-right-para" style={{color: "black"}}>{props.item.text}</div>
         <div className="pathy-right-disease">
-        <p style={{ color:"black" }}>Most effective for:</p>
+        {props.item.diseaseList.length > 0 && (
+    <p style={{ color: "black" }}>Most effective for:</p>
+  )}
           {props.item.diseaseList.map((item, key) => (
+            <React.Fragment key={key}>
               <a href={item.link} target="__blank" key={key}>
                 <div className="pathy-right-disease-name-container">
-                <div className="pathy-right-disease-name">{item.disease} ,</div>
+                <div className="pathy-right-disease-name">{item.disease}</div>
                 </div>
               </a>
+              {key !== props.item.diseaseList.length - 1 && ", "}
+              </React.Fragment>
           ))}
         </div>
       </div>

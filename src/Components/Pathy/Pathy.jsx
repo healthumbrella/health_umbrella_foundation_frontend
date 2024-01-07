@@ -2,24 +2,34 @@ import React, { useEffect, useState } from "react";
 import "./Pathy.css";
 import axios from "axios";
 import PathyDetailComponent from "./PathyDetailComponent";
+import ClipLoader from "react-spinners/ClipLoader";
 
 const Pathy = () => {
   const [data, setData] = useState([]);
   const [showScrollButton, setShowScrollButton] = useState(false);
+  const [loading, setLoading] = useState(true);
 
-  async function getData() {
-    try {
-      const res = await axios.get(
-        "http://backend.healthumbrella.org:8000/pathy/"
-      );
-      console.log(res);
-      setData(res.data.pathyList);
-    } catch (err) {
-      console.error("Error fetching data of pathy", err);
-    }
-  }
 
   useEffect(() => {
+    async function getData()  {
+      try {
+        const res = await axios.get(
+          "${process.env.REACT_APP_BACKEND_IP}/pathy/"
+        );
+        console.log(res);
+        setData(res.data.pathyList);
+        const fetchedData = res.data.pathyList;
+
+        if (fetchedData) {
+          
+          setLoading(false);
+        } else {
+          console.error("API response structure is not as expected.");
+        }
+      } catch (error) {
+        console.error(error);
+      }
+    };
     getData();
   }, []);
 
@@ -43,18 +53,33 @@ const Pathy = () => {
   const scrollToDetail = (title) => {
     const element = document.getElementById(`mp${title}`);
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+      const yOffset = -100; // Adjust this value to include any fixed headers or offsets
+      const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+      window.scrollTo({ top: y, behavior: 'smooth' });
     }
   };
+  
 
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
+
+  const scrollToTopOnClick = () => {
+    window.scrollTo(0, 0);
   };
 
   return (
+    <>
+    <div>
+
+        {loading ? (
+          <ClipLoader
+            className="loadingicon"
+            color="green"
+            loading={loading}
+            size={150}
+            aria-label="Loading Spinner"
+            data-testid="loader"
+          />
+        ) : (
+          <>
     <div className="pathy-container">
       <div className="pathy-select">
         <h1 className="pathy-select-heading" style={{fontWeight:600}}>Pathy Gallery</h1>
@@ -97,11 +122,15 @@ const Pathy = () => {
         ))}
       </div>
       {showScrollButton && (
-        <div className="scrollToTopButton" onClick={scrollToTop}>
+        <div className="scrollToTopButton" onClick={scrollToTopOnClick}>
           <i className="fas fa-arrow-up" ></i>
         </div>
       )}
     </div>
+    </>
+        )}
+        </div>
+        </>
   );
 };
 

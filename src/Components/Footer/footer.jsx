@@ -3,6 +3,8 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import "./footer.css";
 
+
+
 function Footer() {
 
     const [footerdata,setFooterData] = useState(null);
@@ -12,17 +14,24 @@ function Footer() {
         const getapidatafooter = async () => {
           try{
 
-            const datafetchfooter = await axios.get(`${process.env.REACT_APP_BACKEND_IP}/footer/`);
-            setFooterData(datafetchfooter.data);
+            const datafetch = await axios.get(
+                `${process.env.REACT_APP_BACKEND_IP}/footer/`
+              );
+            setFooterData(datafetch.data);
+           
           }catch(error){
-            
+            console.error(error);
           }
         };
   
         getapidatafooter();
       },[]);
 
+      const scrollToTopOnClick = () => {
+        window.scrollTo(0, 0);
+      };
 
+      
     return (
         <div className="footer">
             <div className="footer_upper">
@@ -34,10 +43,21 @@ function Footer() {
                             you to follow our social media handles.</p>
                         {footerdata && 
                         <div className="follow-us_links">
-                        <a href={footerdata.footer.socialMediaInformation.instagramLink} target="_blank" rel="noreferrer"><i className="fa-brands fa-instagram"></i></a>
-                        <a href={footerdata.footer.socialMediaInformation.twitterLink} target="_blank" rel="noreferrer"><i className="fa-brands fa-twitter"></i></a>
-                        <a href={footerdata.footer.socialMediaInformation.youtubeLink} target="_blank" rel="noreferrer"><i className="fa-brands fa-youtube"></i></a>
-                        <a href={footerdata.footer.socialMediaInformation.facebookLink} target="_blank" rel="noreferrer"><i className="fa-brands fa-facebook"></i></a>
+                            
+                            <a href={`https://${footerdata.footer.socialMediaInformation.instagramLink}`} target="__blank" >
+                            <i className="fa-brands fa-instagram"></i>
+                            </a>
+                            <a href={`https://${footerdata.footer.socialMediaInformation.twitterLink}`} target="__blank" >
+                            <i className="fa-brands fa-twitter"></i>
+                            </a>
+                            <a href={`https://${footerdata.footer.socialMediaInformation.youtubeLink}`} target="__blank" >
+                            <i className="fa-brands fa-youtube"></i>
+                            </a>
+                            <a href={`https://${footerdata.footer.socialMediaInformation.facebookLink}`} target="__blank">
+                            <i className="fa-brands fa-facebook"></i>
+                            </a>
+                        
+                       
                         </div>}
                     </div>
 
@@ -45,15 +65,15 @@ function Footer() {
                         <h4>Quick Links</h4>
                         <div className="quick-links_container">
                             <div className="quick-links_container-1">
-                                <Link to="/">Home</Link>
-                                <Link to="#">About</Link>
-                                <Link to="/our-team">Members</Link>
-                                <Link to="#"><span>Donate</span></Link>
+                                <Link to="/" onClick={scrollToTopOnClick}>Home</Link>
+                                {/* <Link to="#" onClick={scrollToTop}>About</Link> */}
+                                <Link to="/our-team" onClick={scrollToTopOnClick}>Members</Link>
+                                {/* <Link to="#" onClick={scrollToTop}><span>Donate</span></Link> */}
                             </div>
                             <div className="quick-links_container-2">
-                                <Link to="/ejournal">Newsletter</Link>
-                                <Link to="/feedback">Feedback</Link>
-                                <Link to="/join-us">Join Us</Link>
+                                <Link to="/ejournal" onClick={scrollToTopOnClick}>Newsletter</Link>
+                                <Link to="/feedback" onClick={scrollToTopOnClick}>Feedback</Link>
+                                <Link to="/join-us" onClick={scrollToTopOnClick}>Join Us</Link>
                             </div>
                         </div>
 
@@ -63,8 +83,12 @@ function Footer() {
                     { footerdata && 
                     <div className="reach-us">
                         <h4>Reach Us</h4>
-                        <p><i className="fa-solid fa-envelope"></i><span>{footerdata.footer.contactInformation.contactEmail}</span></p>
-                        <p><i className="fa-solid fa-phone"></i><span>{footerdata.footer.contactInformation.contactPhoneNumber}</span></p>
+                        <p><i className="fa-solid fa-envelope"></i>
+                            <a href={`https://${footerdata.footer.contactInformation.contactEmail}`} target="__blank" >
+                                    {footerdata.footer.contactInformation.contactEmail}
+                             </a>
+                        </p>
+                        <p><i className="fa-solid fa-phone"></i>{footerdata.footer.contactInformation.contactPhoneNumber}</p>
                         <p><i className="fa-solid fa-location-dot"></i><span>{footerdata.footer.contactInformation.contactAddress}</span></p>
                     </div>}
 

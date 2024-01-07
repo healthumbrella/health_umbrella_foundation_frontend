@@ -6,6 +6,8 @@ import axios from "axios";
 
 const ShareExpForm = () => {
   const fileInputRef=useRef(null);
+  const [fileName,setFileName]=useState("")
+
   const [formData, setFormData] = useState({
     name: "",
     age: "",
@@ -46,19 +48,33 @@ const ShareExpForm = () => {
       [e.target.name]: e.target.value,
     });
   };
-  
+  const [dateError,setDateError]=useState("")
   const handleDateFromChange = (e) => {
+    const date=new Date()
+    const enterDate=new Date(e.target.value)
+    if(enterDate<=date){
     setFormData({
       ...formData,
       [e.target.name] : e.target.value,
     })
+    setDateError("")
+  }else{
+    setDateError("Date cannnot be in the future")
+  }
   };
 
   const handleDateToChange = (e) => {
+    const date=new Date()
+    const enterDate=new Date(e.target.value)
+    if(enterDate<=date){
     setFormData({
       ...formData,
       [e.target.name] : e.target.value,
     })
+    setDateError("")
+  }else{
+    setDateError("Date cannnot be in the future")
+  }
   };
   const handleFileInputChange = (e) => {
     var upld=e.target.files[0].name.split('.').pop();
@@ -69,6 +85,7 @@ const ShareExpForm = () => {
         reports: e.target.files[0], 
         
       });
+      setFileName(e.target.files[0].name)
     }
     else{
       toast.error("Only pdf files are allowed", {
@@ -80,12 +97,22 @@ const ShareExpForm = () => {
     fileInputRef.current.click();
   }
 
+  const [loading,setLoading]=useState(false)
   const handleSubmit = async (e) => {
     console.log(formData)
     e.preventDefault();
     try {
+      if (new Date(formData.date_from) > new Date(formData.date_to)) {
+        setDateError("date from cannot be greater than date to")
+        return
+      }
+      if(!formData.date_from || !formData.date_to){
+        setDateError("Select Dates")
+        return 
+      }
+      setLoading(true)
       const response = await axios.post(
-        "http://backend.healthumbrella.org:8000/user-forms/share-experience", 
+        "${process.env.REACT_APP_BACKEND_IP}/user-forms/share-experience", 
         formData,
         {
           headers: {
@@ -97,11 +124,32 @@ const ShareExpForm = () => {
         position: toast.POSITION.TOP_RIGHT
       });
       console.log("Response from backend:", response.data);
-
+       setFormData({
+        name: "",
+        age: "",
+        gender: "",
+        city: "",
+        state: "",
+        country: "",
+        email_address: "",
+        phone_number: "",
+        disease: "",
+        pathies: "",
+        date_from: "",
+        date_to: "",
+        
+        experience: "",
+        show_name: "false",
+        preferred_communication: "email",
+        reports: null, 
+       })
+       setFileName("")
     } catch (error) {
       toast.error("Error !", {
         position: toast.POSITION.TOP_RIGHT
       });
+    }finally{
+      setLoading(false)
     }
   };
     return (
@@ -145,9 +193,9 @@ const ShareExpForm = () => {
 
           <div className = "form date">
             <div className="form_date_text">
-              Duration of Disease*
+              Duration of Disease <span style={{color:'red',fontSize:'17px',fontWeight:'bold'}}>*</span>
             </div>
-            <div>
+            <div style={{height:"30px"}}>
               <input
               type="date"
               id="date_from"
@@ -155,6 +203,7 @@ const ShareExpForm = () => {
               value={formData.date_from}
               onChange={handleDateFromChange}
               placeholder="From"
+              style={{width:"118px"}}
             />
             <input
               type="date"
@@ -163,10 +212,13 @@ const ShareExpForm = () => {
               value={formData.date_to}
               onChange={handleDateToChange}
               placeholder="To"
+              style={{width:"118px"}}
             />
+         {dateError && <p style={{color:"red",fontSize:"12px"}}>{dateError}</p>}
             </div>
+           
           </div>
-
+         
 
           <div className="last-half">
             <div className="sixthrow">
@@ -183,7 +235,7 @@ const ShareExpForm = () => {
               <div className="last1">
                 <p className="last1 p1">
                 Can we publish your experience with name ? 
-                  <span className="asterik">*</span>
+                  <span className="asterik" style={{fontWeight:'bold',fontSize:'17px'}}>*</span>
                 </p>
                 <div className="gap-yes-no">
                     <input  type="radio"  name="show_name"  value="true"  checked={formData.show_name === "true"}  onChange={handleRadioChange}
@@ -206,12 +258,16 @@ const ShareExpForm = () => {
               <div className="last3">
               <p className="last3 p1">Reports (Any supporting Docx (pdf format only)):</p>
               <input type="file" name="supportingDocx" onChange={handleFileInputChange} hidden ref={fileInputRef} accept="application/pdf" />
+
+              <div style={{display:'flex', flexDirection:'column'}}>
               <label className="btn" onClick={handleUploadClick}>
                 <FiUpload size={18} color="#000000" /> Upload
               </label>
+              <p style={{color:"gray"}}>{fileName}</p>
+              </div>
             </div>
             </div>
-          <input className="submit" type="submit" value="Submit" />
+          <input className="submit" type="submit" value={!loading?"Submit":"Processing..."} disabled={loading} />
           </div>
           <ToastContainer />
         </form>
