@@ -65,7 +65,7 @@ const ContactForm = () => {
       setLoading(true)
 
       const response = await axios.post(
-        "http://backend.healthumbrella.org:8000/user-forms/ask-suggestion", 
+        "${process.env.REACT_APP_BACKEND_IP}/user-forms/ask-suggestion", 
         formData,
         {
           headers: {

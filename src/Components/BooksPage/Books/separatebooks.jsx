@@ -2,11 +2,13 @@ import React, { useEffect, useState } from "react";
 import "./separatebooks.css";
 import { NavLink } from "react-router-dom";
 import axios from "axios";
+import ClipLoader from "react-spinners/ClipLoader";
 import { FiBookOpen } from "react-icons/fi";
 import Modal from "../BookModal/BookModal";
 
 function SeparateBook({ pathy,disease }) {
   const [fetchData, setFetchData] = useState({ books: [] });
+  const [loading, setLoading] = useState(true);
   const [selectedItem, setSelectedItem] = useState("");
   const [modalVisible, setModalVisible] = useState(false);
   // console.log(pathy+disease);
@@ -15,13 +17,16 @@ function SeparateBook({ pathy,disease }) {
     const fetchDataFromAPI = async () => {
       try {
         const response = await axios.get(
-          `http://backend.healthumbrella.org:8000/disease/${disease}/${pathy}/books`
+          `${process.env.REACT_APP_BACKEND_IP}/disease/${disease}/${pathy}/books`
         );
         // console.log(response.data);
         setFetchData(response.data);
         window.scrollTo(0,0);
+        setLoading(false);
+        
       } catch (error) {
         console.error('Error fetching data:', error);
+        setLoading(false);
       }
     };
     fetchDataFromAPI();
@@ -52,6 +57,19 @@ function SeparateBook({ pathy,disease }) {
   
 
   return (
+    <>
+    <div>
+      {!fetchData || loading ? (
+        <ClipLoader
+          className="loadingicon"
+          color="green"
+          loading={loading}
+          size={150}
+          aria-label="Loading Spinner"
+          data-testid="loader"
+        />
+      ) : (
+        <>
     <div className="Sb">
       {fetchData.books.map((book, index) => (
         <div className="Sb_outer" key={index}>
@@ -77,7 +95,10 @@ function SeparateBook({ pathy,disease }) {
 
 
     </div>
+    </>
+        )}
+      </div>
+    </>
   );
 }
-
 export default SeparateBook;

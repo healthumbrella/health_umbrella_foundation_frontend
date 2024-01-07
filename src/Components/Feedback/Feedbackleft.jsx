@@ -43,7 +43,7 @@ const Feedbackleft = () => {
           console.log(formData);
       
           const response = await axios.post(
-            "http://backend.healthumbrella.org:8000/feedback/", 
+            "${process.env.REACT_APP_BACKEND_IP}/feedback/", 
             formData,
             // {
             //   headers: {
