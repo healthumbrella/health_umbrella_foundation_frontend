@@ -49,16 +49,33 @@ const Testimonials = () => {
           )}
           <h1 className="t-row1 heading">{title2.charAt(0).toUpperCase()}{title2.slice(1)}</h1>
         </div>
-        <div className="t-row2">TESTIMONIALS</div>
+        {title2==="directCase"?(<div className="t-row2">CASES</div>):(<div className="t-row2">TESTIMONIALS</div>)}
+        {/* // <div className="t-row2">TESTIMONIALS</div> */}
         <div className="t-row3">{fetchData.text}</div>
         <div className="t-row4">
           {/* <> */}
           {fetchData.sourceList.map((item) => (
             <div key={item.id} className="t-card">
               <h3 className="t-title">{item.title.charAt(0).toUpperCase()}{item.title.slice(1)}</h3>
-              <a href={item.link} target="_blank" rel="noreferrer">Click here to see the video</a>
+              
+              {title2 === "website" ? (
+      <a href={item.link} target="_blank" rel="noreferrer">
+        Click here to visit the website
+      </a>
+    ) : title2 === "youtube" ? (
+      <a href={item.link} target="_blank" rel="noreferrer">
+        Click here to see the video
+      </a>
+    ) : (
+     ""
+    )}
               <span className="t-summary">
-                short-summary
+                {/* short-summary */}
+                {title2 === "directCase"?(
+                  <p id="casedetail" >Case Detail</p>
+                ):(
+                  <p id="casedetail">short-summary</p>
+                )}
                 {selectedSummary === item.summary ? (
                   <div>
                     <p className="t-backend-summary">{item.summary}</p>

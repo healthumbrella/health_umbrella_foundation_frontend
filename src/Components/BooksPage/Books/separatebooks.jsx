@@ -2,9 +2,11 @@ import React, { useEffect, useState } from "react";
 import "./separatebooks.css";
 import { NavLink } from "react-router-dom";
 import axios from "axios";
+import ClipLoader from "react-spinners/ClipLoader";
 
 function SeparateBook({ pathy }) {
   const [fetchData, setFetchData] = useState({ books: [] });
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchDataFromAPI = async () => {
@@ -13,14 +15,30 @@ function SeparateBook({ pathy }) {
           `http://backend.healthumbrella.org:8000/disease/migraine/${pathy}/books`
         );
         setFetchData(response.data);
+        setLoading(false);
+        
       } catch (error) {
         console.error('Error fetching data:', error);
+        setLoading(false);
       }
     };
     fetchDataFromAPI();
   }, [pathy]);
 
   return (
+    <>
+    <div>
+      {!fetchData || loading ? (
+        <ClipLoader
+          className="loadingicon"
+          color="green"
+          loading={loading}
+          size={150}
+          aria-label="Loading Spinner"
+          data-testid="loader"
+        />
+      ) : (
+        <>
     <div className="Sb">
       {fetchData.books.map((book, index) => (
         <div className="Sb_outer" key={index}>
@@ -42,7 +60,10 @@ function SeparateBook({ pathy }) {
         </div>
       ))}
     </div>
+    </>
+        )}
+      </div>
+    </>
   );
 }
-
 export default SeparateBook;
