@@ -15,10 +15,10 @@ function DirectCases() {
   const getData = async () => {
     try {
       const res = await axios.get(
-        `http://backend.healthumbrella.org:8000/disease/${disease}/${pathy}/directCase/${caseId}`
+        `${process.env.REACT_APP_BACKEND_IP}/disease/${disease}/${pathy}/directCase/${caseId}`
       );
       // const res = await axios.get(
-      // `http://backend.healthumbrella.org:8000/disease/migraine/acupressure/directCase/001`
+      // `${process.env.REACT_APP_BACKEND_IP}/disease/migraine/acupressure/directCase/001`
       // );
 
       // console.log(res);

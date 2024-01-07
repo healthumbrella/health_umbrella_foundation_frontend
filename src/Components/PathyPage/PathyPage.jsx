@@ -19,7 +19,7 @@ const PathyPage = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`http://backend.healthumbrella.org:8000/disease/${disease}/${titles}`);
+        const response = await axios.get(`${process.env.REACT_APP_BACKEND_IP}/disease/${disease}/${titles}`);
         setData(response.data);
       } catch (error) {
         console.error('Error fetching data:', error);

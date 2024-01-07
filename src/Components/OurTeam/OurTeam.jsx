@@ -10,7 +10,7 @@ const OurTeam = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`http://backend.healthumbrella.org:8000/members/`);
+        const response = await axios.get(`${process.env.REACT_APP_BACKEND_IP}/members/`);
         setData(response.data);
         setLoading(false); // Move setLoading inside try block after data retrieval
       } catch (error) {

@@ -23,6 +23,7 @@
     display: flex;
     align-content:flex-start;
     font-family: 'Rubik', sans-serif;
+    /* z-index: 9999; */
 }
 .B_outer_top h2{
     color: #053B3F;

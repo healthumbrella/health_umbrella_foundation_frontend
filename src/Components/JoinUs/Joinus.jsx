@@ -103,7 +103,7 @@ const Joinus = () => {
       }
       setLoading(true)
       const response = await axios.post(
-        "http://backend.healthumbrella.org:8000/user-forms/join-us",
+        "${process.env.REACT_APP_BACKEND_IP}/user-forms/join-us",
         formData,
         {
           headers: {
