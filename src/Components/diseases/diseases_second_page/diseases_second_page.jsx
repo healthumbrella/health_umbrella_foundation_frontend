@@ -97,7 +97,7 @@ const Bottom = () => {
                         <img src={therapy.imageLink} alt="" />
                        {/* <img src="/Images/cow.png" alt="" /> */}
                        </div>
-                        <Link to={`/disease/${disease}/${therapy.name}`}><h4>{therapy.name}</h4></Link>
+                        <Link to={`/disease/${disease}/${therapy.name}`} onClick={scrollToTopOnClick}><h4>{therapy.name}</h4></Link>
                         <p>
                           {therapy.isReadMore
                             ? therapy.summary
