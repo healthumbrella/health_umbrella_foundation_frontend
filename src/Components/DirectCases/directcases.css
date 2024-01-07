@@ -4,6 +4,7 @@
     background: #F9F9F9;
     padding: 1rem 3rem;
     width: 100vw;
+    padding-top: 7rem;
     min-height: 80vh;
     /* margin-top: 12vh; */
     margin-bottom: 0.2rem;
@@ -16,15 +17,18 @@
     /* margin-bottom: 0.2rem; */
     display: flex;
     align-content:flex-start;
+    padding-top: 1rem;
     font-family: 'Rubik', sans-serif;
 }
 .D_outer_top h2{
-    /* margin-top: 1rem; */
+    margin-bottom: 2rem;
+    margin-top: .5rem;
     color: #053B3F;
     font-weight: 500;
     font-size: x-large;
 }
 .D_outer_bottom{
+    /* padding-top: 1rem; */
     border-radius: 1rem;
     /* padding: 1rem; */
     background-color: #ffffff;
@@ -109,7 +113,7 @@
 }
 .D_top_left{
     /* border: 0.2rem solid red; */
-    width: 40%;
+    width: 50%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -117,7 +121,7 @@
 }
 .D_detail_heading{
     width: 100%;
-    margin: 1rem 0rem 1rem 6rem;
+    margin: 2rem 0rem 1rem 6.5rem;
     font-family: 'Noto Sans', sans-serif;
     font-weight: 700;
     font-size: x-large;
@@ -127,8 +131,8 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    padding-left: 4rem;
+    /* align-items: flex-start; */
+    padding-left: 2rem;
     margin-bottom: 2rem;
 }
 .TR{
@@ -136,19 +140,27 @@
     /* justify-content: space-between; */
     flex-direction: row;
     margin-top: 0.5rem;
+    width: 100%;
+    padding-left: 2rem;
+    /* background-color: red; */
 }
 .TD1{
     font-family: 'Noto Sans', sans-serif;
     font-weight: bold;
     padding-right: 5px;
+    width: 40%;
+    text-align: left;
 }
 .TD2{
     font-family: 'Noto Sans', sans-serif;
+    width: 60%;
     font-weight: 500;
     color: #555555;
+    text-align: left;
+    /* background-color: blue */
 }
 .D_top_right{
-    width: 60%;
+    width: 50%;
     display: flex;
     flex-direction: row;
     margin-top: 2rem;
@@ -177,14 +189,34 @@
 .D_detail_text{
     font-family: 'Noto Sans', sans-serif;
     font-weight: 500;
+    height: 200px;
+    overflow-y: auto;
     font-size: medium;
     color: #555555;
 }
-.D_detail_text button{
+
+.D_detail_text::-webkit-scrollbar-track {
+    border-radius: 0.5rem;
+  }
+  .D_detail_text::-webkit-scrollbar {
+    width: 0.5rem;
+  }
+  .D_detail_text::-webkit-scrollbar-track {
+    background: #dedddd;
+    border-radius: 0.5rem;
+  }
+  .D_detail_text::-webkit-scrollbar-thumb {
+    background: #053b3f;
+    border-radius: 0.5rem;
+  }
+  .D_detail_text::-webkit-scrollbar-button {
+    height: 100%;
+  }
+/* .D_detail_text button{
     background: none;
     border: none;
     color: #1E4AE4;
-}
+} */
 .D_outer_cards{
     width: 100%;
 }
@@ -209,15 +241,19 @@
     gap: 10px;
 }
 .D_casehistory,.D_allergies,.D_medicalreport{
+
     cursor: pointer;
+    /* color: #053B3F; */
 }
 
 
 .D_linkStyle{
     text-decoration: none;
-    color: #053B3F;
+    color: black;
+    display: flex;
+    align-items: center;
 }
 .D_linkStyle:hover{
     text-decoration: none;
-    color: #053B3F;
+    color: black;
 }

@@ -67,7 +67,6 @@ const Testimonials = () => {
 
 
 
-
   return (
     <>
     <div>
@@ -121,7 +120,8 @@ const Testimonials = () => {
               </span>
               <span className="t-comment">
                 <p1>Comments</p1>
-                <p2>{item.comment}</p2>
+                <p2>{item?.comment.slice(0, 70)}{item?.comment.length > 70 ? "..." :""} </p2>
+
               </span>
               <img
                 className="t-rb-img2"
@@ -138,7 +138,7 @@ const Testimonials = () => {
               />
               <span className="t-id">
                 <p1>ID:</p1>
-                <p2>{item.id}</p2>
+                <p2>{item.caseId}</p2>
               </span>
             </div>
           ))}
