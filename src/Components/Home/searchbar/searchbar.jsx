@@ -31,7 +31,10 @@ function SearchBar(props) {
     const handleClick = () => {
         navigate(`/disease/${searchInput}`);
     }
-
+    const scrollToTopOnClick = () => {
+        window.scrollTo(0, 0);
+      };
+    
 
 
 
@@ -47,7 +50,7 @@ function SearchBar(props) {
 
             {resultData.length !== 0 && <div className="dataResult">
                 {resultData.slice(0, 5).map((value) => {
-                    return <NavLink className="dataItem" to={`/disease/${value}`} key={value}>{value}</NavLink>
+                    return <NavLink className="dataItem" to={`/disease/${value}`} key={value} onClick={scrollToTopOnClick}>{value}</NavLink>
                 })}
             </div>}
         </div>
