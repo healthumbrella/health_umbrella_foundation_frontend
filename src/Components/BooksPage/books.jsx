@@ -3,7 +3,7 @@ import "./books.css"
 import SeparateBook from "./Books/separatebooks";
 import { useParams } from "react-router-dom";
 import ClipLoader from "react-spinners/ClipLoader";
-import ClipLoader from "react-spinners/ClipLoader";
+
 function Books(){
     const {titlee} = useParams();
     const [loading, setLoading] = useState(true);
