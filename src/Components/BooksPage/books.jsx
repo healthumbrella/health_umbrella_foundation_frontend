@@ -1,20 +1,14 @@
 import { useState,useEffect } from "react";
 import "./books.css"
 import SeparateBook from "./Books/separatebooks";
-import { useParams } from "react-router-dom";
+import { Navigate, useNavigate, useParams } from "react-router-dom";
 import ClipLoader from "react-spinners/ClipLoader";
 
 function Books(){
-    const {titlee} = useParams();
-    const [loading, setLoading] = useState(true);
-    useEffect(() => {
+    const {title1,disease} = useParams();
+    const navigate = useNavigate();
 
-        const timeout = setTimeout(() => {
-          setLoading(false);
-        }, 1000);
-        return () => clearTimeout(timeout);
-      }, []);
-    const [loading, setLoading] = useState(true);
+    const [loading, setLoading] = useState(false);
     useEffect(() => {
 
         const timeout = setTimeout(() => {
@@ -23,9 +17,9 @@ function Books(){
         return () => clearTimeout(timeout);
       }, []);
     return(
-        <>
+      <>
         <div>
-          {!titlee || loading ? (
+          {!title1 || loading ? (
             <ClipLoader
               className="loadingicon"
               color="green"
@@ -35,23 +29,10 @@ function Books(){
               data-testid="loader"
             />
           ) : (
-            <>
-        <>
-        <div>
-          {!titlee || loading ? (
-            <ClipLoader
-              className="loadingicon"
-              color="green"
-              loading={loading}
-              size={150}
-              aria-label="Loading Spinner"
-              data-testid="loader"
-            />
-          ) : (
-            <>
+           
         <div className="B_outer">
-            <div className="B_outer_top">
-                <h2>&#60; Migraine/ {titlee.charAt(0).toUpperCase()}{titlee.slice(1)} /Books & Book Chapters</h2>
+            <div className="B_outer_top" onClick={()=>{navigate(-1)}}>
+                <h2>&#60; Migraine/ {title1.charAt(0).toUpperCase()}{title1.slice(1)} /Books & Book Chapters</h2>
             </div>
             <div className="B_outer_bottom">
                 <div className="B_inner_top">
@@ -60,12 +41,10 @@ function Books(){
                 </div>
                 <div className="B_inner_bottom">
                     <div className="B_inner_left">
-                        {titlee?(
+                        {title1?(
                             <>
-                        <SeparateBook pathy = {titlee} className="Sbclass" />
-                        <SeparateBook pathy = {titlee} className="Sbclass" />
-                        <SeparateBook pathy = {titlee} className="Sbclass" />
-                        <SeparateBook pathy = {titlee} className="Sbclass" />
+                        <SeparateBook pathy = {title1} className="Sbclass" />
+                      
                         </>
                         ):(<p>Books Not Available</p>
 
@@ -77,7 +56,7 @@ function Books(){
                 </div>
             </div>
         </div>
-        </>
+      
         )}
       </div>
     </>
