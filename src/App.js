@@ -15,6 +15,7 @@ import OurTeam from "./Components/OurTeam/OurTeam";
 import Feedback from "./Components/Feedback/Feedback";
 import Pathy from "./Components/Pathy/Pathy";
 import Testimonials from "./Components/Testimonials/testimonials";
+import Memberdetails from "./Components/Memberdetails/Memberdetails";
 
 function App() {
   
@@ -38,6 +39,8 @@ function App() {
         <Route path="/join-us" exact element={<Joinus />}></Route> 
   
         <Route path="/our-team" exact element={<OurTeam />}></Route> 
+        <Route path="/our-team/:team" exact element={<Memberdetails />}></Route> 
+
 
         <Route path="/feedback" exact element = {<Feedback />}></Route>
       </Routes>     

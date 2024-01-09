@@ -70,7 +70,7 @@ const OurTeam = () => {
     data.teamList
       .filter((_, index) => index % 2 === 0)
       .map((team, index) => (
-        <Link key={index} to={`/team${index + 1}`} className={styles.team_link}>
+        <Link key={index} to={`/our-team/${team}`} className={styles.team_link}>
           <img
             src={`images/${team
               .split('-')
@@ -94,7 +94,7 @@ const OurTeam = () => {
     data.teamList
       .filter((_, index) => index % 2 !== 0)
       .map((team, index) => (
-        <Link key={index} to={`/team${index + 1}`} className={styles.team_link}>
+        <Link key={index} to={`/our-team/${team}`} className={styles.team_link}>
           <img
             src={`images/${team
               .split('-')
