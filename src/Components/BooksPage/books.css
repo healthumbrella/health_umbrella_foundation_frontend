@@ -24,20 +24,24 @@
     align-content:flex-start;
     font-family: 'Rubik', sans-serif;
     /* z-index: 9999; */
+    padding-top: 3.5rem;
+
 }
 .B_outer_top h2{
     color: #053B3F;
     font-weight: 500;
     font-size: large;
+
 }
 .B_outer_bottom{
     background: url("./../../../public/Images/books-bg.png") no-repeat bottom center;
     max-height: 120vh;
     /* border: 0.2rem solid green; */
-    margin-top: 4rem;
+    margin-top: 6rem;
     background-color: #B9B9B921;
     border-radius: 1.5rem;
     box-shadow: 0px 15px 10px -15px grey;
+   
 }
 .B_inner_top{
     display: flex;
