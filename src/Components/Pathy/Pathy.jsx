@@ -14,7 +14,8 @@ const Pathy = () => {
     async function getData()  {
       try {
         const res = await axios.get(
-          "${process.env.REACT_APP_BACKEND_IP}/pathy/"
+          `${process.env.REACT_APP_BACKEND_IP}/pathy/`
+         
         );
         console.log(res);
         setData(res.data.pathyList);
