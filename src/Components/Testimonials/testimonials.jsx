@@ -15,7 +15,8 @@ const Testimonials = () => {
     const fetchDataFromAPI = async () => {
       try {
         const response = await axios.get(
-          `http://backend.healthumbrella.org:8000/disease/migraine/${title1}/${title2}`
+          
+          `${process.env.REACT_APP_BACKEND_IP}/disease/migraine/${title1}/${title2}`
         );
         setFetchData(response.data);
       } catch (error) { 
