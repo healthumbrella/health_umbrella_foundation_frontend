@@ -109,9 +109,9 @@ function Header() {
                     <li className="nav-item">
                         <NavLink className="nav-link underline" to="/pathy" onClick={()=>{handleDiseaseClick(); collapseHandler();  scrollToTopOnClick();}}>Pathy</NavLink>
                     </li>
-                     {/* <li className="nav-item">
-                        <NavLink className="nav-link underline" to="/clinics-hospitals" onClick={collapseHandler}>Clinics/Hospitals</NavLink>
-                    </li> */}
+                      <li className="nav-item">
+                        <NavLink className="nav-link underline" to="/clinics/" onClick={collapseHandler}>Clinics/Hospitals</NavLink>
+                    </li> 
                 </ul>
             </div>
         </nav>
