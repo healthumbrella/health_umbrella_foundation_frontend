@@ -16,14 +16,14 @@ function All() {
 
   const handleYearChange = (amount) => {
     // Update the 'year' state when + or - buttons are clicked
-    if(year<=currentYear&&year>=2019){
-    setYear((prevYear) => prevYear + amount);
-    }else{
+    if (year <= currentYear && year >= 2019) {
+      setYear((prevYear) => prevYear + amount);
+    } else {
       setYear(currentYear);
     }
   };
 
- 
+
 
 
   // Fetching data from backend and controlling the loading icon
@@ -75,34 +75,34 @@ function All() {
                         <button
                           onClick={() => {
                             handleYearChange(-1);
-                            
+
                           }}
                         >
                           <span>
-                            <FaChevronLeft style={{color:"lightgrey"}}/>
+                            <FaChevronLeft style={{ color: "lightgrey" }} />
                           </span>
                         </button>
-                        <p  onClick={() => {
-                            handleYearChange(-1);
-                          }}>
-                           {year>2019 ?  <span>{year - 1}</span> : <span>END</span>}
+                        <p onClick={() => {
+                          handleYearChange(-1);
+                        }}>
+                          {year > 2019 ? <span>{year - 1}</span> : <span>END</span>}
                         </p>
                         <p id="cb">
                           <span>{year}</span>
                         </p>
                         <p onClick={() => {
-                            if(year!==currentYear)handleYearChange(1);
-                          }}>
-                            {year<currentYear ?  <span>{year + 1}</span> : <span>END</span>}
-                          
+                          if (year !== currentYear) handleYearChange(1);
+                        }}>
+                          {year < currentYear ? <span>{year + 1}</span> : <span>END</span>}
+
                         </p>
                         <button
                           onClick={() => {
-                            if(year!==currentYear)handleYearChange(1);
+                            if (year !== currentYear) handleYearChange(1);
                           }}
                         >
                           <span>
-                            <FaChevronRight  style={{color:"lightgrey"}}/>
+                            <FaChevronRight style={{ color: "lightgrey" }} />
                           </span>
                         </button>
                       </div>
@@ -115,10 +115,17 @@ function All() {
                     <div className="cards">
                       {alldata.ejournals.map((card, i) => (
                         <div key={i} className="card">
-                         <a href={card.fileLink}>  <img src={card.imageLink} alt="" />
-                          <h4>
-                           <p>{card.name}</p>
-                          </h4>
+                          <a href={card.fileLink}>
+                            {process.env.REACT_APP_IS_PRODUCTION == 'true' ? (
+                              <img src={`${process.env.REACT_APP_BACKEND_IP}${card.imageLink}`} alt="img" />
+                            ) : (
+                              <img src={card.imageLink} alt="img" />
+                            )}
+
+                            
+                            <h4>
+                              <p>{card.name}</p>
+                            </h4>
                           </a>
                         </div>
                       ))}

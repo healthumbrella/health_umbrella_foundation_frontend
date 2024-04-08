@@ -18,7 +18,8 @@ function SeparateBook({ pathy }) {
         );
         setFetchData(response.data);
         setLoading(false);
-        
+        // console.log('hi');
+        // console.log(response.data);
         setLoading(false);
         
       } catch (error) {

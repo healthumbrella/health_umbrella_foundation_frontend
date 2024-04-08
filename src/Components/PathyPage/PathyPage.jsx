@@ -15,7 +15,7 @@ const PathyPage = () => {
   const [loading, setLoading] = useState(true);
 
   const {disease, titles } = useParams();
-  console.log(titles);
+  // console.log(titles);
   useEffect(() => {
     const fetchData = async () => {
       try {

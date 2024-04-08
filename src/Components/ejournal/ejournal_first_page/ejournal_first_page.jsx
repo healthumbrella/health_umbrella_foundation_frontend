@@ -45,14 +45,14 @@ function Top() {
     }
     console.log(setShow);
   };
- 
-const scrollToCertainHeight = () => {
+
+  const scrollToCertainHeight = () => {
     const specificHeight = 500; // Define the height you want to scroll to
     window.scrollTo({
-        top: specificHeight,
-        behavior: 'smooth',
+      top: specificHeight,
+      behavior: 'smooth',
     });
-};
+  };
 
 
 
@@ -71,7 +71,7 @@ const scrollToCertainHeight = () => {
         ) : (
           <>
             {/* <div className="extraspace"> */}
-              {/* Hello */}
+            {/* Hello */}
             {/* </div> */}
             <div className="top-main">
               <div className="top-container">
@@ -80,12 +80,12 @@ const scrollToCertainHeight = () => {
                   <p>{topdata.latestEjournalPage.text}</p>
                   <h5><span>To See All E-Journals of health Umbrella Foundation</span></h5>
                   <button onClick={() => {
-   scrollToCertainHeight() 
-   setShow(!show);
-    
-}}>
-    {!show ? "See More" : "See Less"}
-</button>
+                    scrollToCertainHeight()
+                    setShow(!show);
+
+                  }}>
+                    {!show ? "See More" : "See Less"}
+                  </button>
                 </div>
                 <div className="right">
                   <Swiper
@@ -115,7 +115,13 @@ const scrollToCertainHeight = () => {
                     {topdata.latestEjournalPage.ejournals.map((ele, ind) => (
                       <SwiperSlide key={ind}>
                         <a href={ele.fileLink}>
-                          <img src={ele.imageLink} alt="slide_image" />
+                          {process.env.REACT_APP_IS_PRODUCTION == 'true' ? (
+                            <img src={`${process.env.REACT_APP_BACKEND_IP}${ele.imageLink}`} alt="slice_image" />
+                          ) : (
+                            <img src={ele.imageLink} alt="slice_image" />
+                          )}
+
+                          {/* <img src={ele.imageLink} alt="slide_image" /> */}
                         </a>
                       </SwiperSlide>
                     ))}

@@ -17,7 +17,7 @@ const Pathy = () => {
           `${process.env.REACT_APP_BACKEND_IP}/pathy/`
          
         );
-        console.log(res);
+        // console.log(res);
         setData(res.data.pathyList);
         const fetchedData = res.data.pathyList;
 

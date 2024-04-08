@@ -38,7 +38,7 @@ function DirectCases() {
     navigate(-1);
   };
 
-  console.log(data);
+  // console.log(data);
   return (
     <div className="D_outer">
       <div className="D_outer_top">
