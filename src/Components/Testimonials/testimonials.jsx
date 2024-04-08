@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./testimonials.css";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import imageInfo from "./imageLink";
 
 const Testimonials = () => {
   const [fetchData, setFetchData] = useState({ text: "", sourceList: [] });
-  const { title1,title2 } = useParams();
+  const { disease,title1,title2 } = useParams();
   const [matchedImageLink, setMatchedImageLink] = useState("");
   const [selectedSummary, setSelectedSummary] = useState("");
+  const navigate = useNavigate();
   // console.log(title1);
   // console.log(title2);
   useEffect(() => {
@@ -16,7 +17,7 @@ const Testimonials = () => {
       try {
         const response = await axios.get(
           
-          `${process.env.REACT_APP_BACKEND_IP}/disease/migraine/${title1}/${title2}`
+          `${process.env.REACT_APP_BACKEND_IP}/disease/${disease}/${title1}/${title2}`
         );
         setFetchData(response.data);
       } catch (error) { 
@@ -37,11 +38,13 @@ const Testimonials = () => {
   };
 
   // console.log(fetchData);
-
+  
   return (
     <div className="testimonials-main">
       <p className="testimonials-link-topleft">
-        &lt; Migraine/{title1.charAt(0).toUpperCase()}{title1.slice(1)}/{title2.charAt(0).toUpperCase()}{title2.slice(1)}
+        &lt; <span onClick={() => navigate(-2)}>{disease.charAt(0).toUpperCase()}{disease.slice(1)}</span>
+        <span onClick={() => navigate(-1)}>/{title1.charAt(0).toUpperCase()}{title1.slice(1)}</span>
+        /{title2.charAt(0).toUpperCase()}{title2.slice(1)}
       </p>
       <div className="testimonials-container">
         <div className="t-row1">

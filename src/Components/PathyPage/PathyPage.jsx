@@ -50,7 +50,7 @@ const PathyPage = () => {
     ) : (
       <>
     <div className='PathyPage-main'>
-      <div className='PathyPage-nav' onClick={()=>{navigate(-1)}}>&lt; Migraine / {titles.charAt(0).toUpperCase()}{titles.slice(1)}</div>
+      <div className='PathyPage-nav' onClick={()=>{navigate(-1)}}>&lt; {disease.charAt(0).toUpperCase()}{disease.slice(1)} / {titles.charAt(0).toUpperCase()}{titles.slice(1)}</div>
       <div className='PathyPage-container'>
         <img src={process.env.PUBLIC_URL +"/Images/green_ring_tl.png"} alt="_blank" className="greenring-tl" />
         <h1 className="PathyPage-heading">{titles.charAt(0).toUpperCase()}{titles.slice(1)}</h1>
