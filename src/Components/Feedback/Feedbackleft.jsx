@@ -40,7 +40,7 @@ const Feedbackleft = () => {
             });
             return
           }
-          console.log(formData);
+          // console.log(formData);
       
           const response = await axios.post(
             "${process.env.REACT_APP_BACKEND_IP}/feedback/", 
@@ -55,7 +55,7 @@ const Feedbackleft = () => {
             position: toast.POSITION.TOP_RIGHT,
             style:{top:'90px'}
           });
-          console.log("Response from backend:", response.data);
+          // console.log("Response from backend:", response.data);
           setFormData({
             rating:'1',
             feedback:""

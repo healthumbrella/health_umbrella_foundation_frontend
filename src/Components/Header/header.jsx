@@ -18,7 +18,7 @@ function Header() {
               `${process.env.REACT_APP_BACKEND_IP}/header`
             );
             const fetchedData = response.data;
-            console.log(fetchedData);
+            // console.log(fetchedData);
             if (fetchedData && fetchedData.diseaseList) {
               setDiseases(fetchedData);
             //   setLoading(false);

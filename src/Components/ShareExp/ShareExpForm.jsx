@@ -99,7 +99,7 @@ const ShareExpForm = () => {
 
   const [loading,setLoading]=useState(false)
   const handleSubmit = async (e) => {
-    console.log(formData)
+    // console.log(formData)
     e.preventDefault();
     try {
       if (new Date(formData.date_from) > new Date(formData.date_to)) {
@@ -123,7 +123,7 @@ const ShareExpForm = () => {
       toast.success("Information successfully submitted!", {
         position: toast.POSITION.TOP_RIGHT
       });
-      console.log("Response from backend:", response.data);
+      // console.log("Response from backend:", response.data);
        setFormData({
         name: "",
         age: "",

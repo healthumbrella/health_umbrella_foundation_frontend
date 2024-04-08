@@ -9,8 +9,8 @@ const Testimonials = () => {
   const { title1,title2 } = useParams();
   const [matchedImageLink, setMatchedImageLink] = useState("");
   const [selectedSummary, setSelectedSummary] = useState("");
-  console.log(title1);
-  console.log(title2);
+  // console.log(title1);
+  // console.log(title2);
   useEffect(() => {
     const fetchDataFromAPI = async () => {
       try {
@@ -36,7 +36,7 @@ const Testimonials = () => {
     setSelectedSummary(summary === selectedSummary ? "" : summary);
   };
 
-  console.log(fetchData);
+  // console.log(fetchData);
 
   return (
     <div className="testimonials-main">

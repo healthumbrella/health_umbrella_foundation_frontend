@@ -13,8 +13,8 @@ const Clinics_card = ({ clinicdata }) => {
   const [modalVisible, setModalVisible] = useState(false);
   const [showAllTags, setShowAllTags] = useState(false);
 
-  console.log(selectedCity);
-  console.log(selectedPathies);
+  // console.log(selectedCity);
+  // console.log(selectedPathies);
 
   useEffect(() => {
     const handleOutsideClick = (e) => {
@@ -33,7 +33,7 @@ const Clinics_card = ({ clinicdata }) => {
   }, [modalVisible]);
 
   const handleCardClick = (item) => {
-    console.log(item);
+    // console.log(item);
     setSelectedItem(item);
     setModalVisible(true);
   };
@@ -50,66 +50,72 @@ const Clinics_card = ({ clinicdata }) => {
         <h2 className="clinic-heading">Clinic and Medical communities</h2>
         <div className="clinics-card-main">
           <div className="clinics-card-container">
-            
-            
-            {clinicdata &&
-          clinicdata.clinicsList
-            .filter((clinic) => {
-              // Filter logic:
-              console.log("Filtering clinic:", clinic.location, selectedCity);
 
-              return (
-                // (selectedCity.length === 0 || clinic.location === selectedCity) &&
-                (selectedPathies.length === 0 ||
-                  clinic.tagList.some((tag) => selectedPathies.includes(tag)))
-              );
-            }).map((clinic, index) => (
-                <div className="clinics-cards" key={index}>
-                  <div className="clinics-card">
-                    <div className="clinics-card-img">
-                      {/* Image or placeholder */}
-                      <img src={clinic.imageLink} alt="Clinic" />
-                    </div>
-                    <div className="clinics-card-text">
-                      <h5>{clinic.name}</h5>
-                      <p><img src="./Images/Place_Marker.png" alt="" />
-                        {clinic.location.slice(0,20)} {clinic.address.slice(0,60)}...
-                      </p>
-                      <div className="clinics-card-tags">
-                        {clinic.tagList
-                          .slice(0, showAllTags ? clinic.tagList.length : 3)
-                          .map((tag, tagIndex) => (
-                            <p className="clinics-tag" key={tagIndex}>
-                              {tag}
-                            </p>
-                          ))}
-                        <p
-                          className="clinics-tag-more"
-                          onClick={() => handleTagClick(!showAllTags)}
+
+            {clinicdata &&
+              clinicdata.clinicsList
+                .filter((clinic) => {
+                  // Filter logic:
+                  // console.log("Filtering clinic:", clinic.location, selectedCity);
+
+                  return (
+                    // (selectedCity.length === 0 || clinic.location === selectedCity) &&
+                    (selectedPathies.length === 0 ||
+                      clinic.tagList.some((tag) => selectedPathies.includes(tag)))
+                  );
+                }).map((clinic, index) => (
+                  <div className="clinics-cards" key={index}>
+                    <div className="clinics-card">
+                      <div className="clinics-card-img">
+                        {/* Image or placeholder */}
+                       
+                        {process.env.REACT_APP_IS_PRODUCTION == 'true' ? (
+                          <img src={`${process.env.REACT_APP_BACKEND_IP}${clinic.imageLink}`} alt="Clinic" />
+                        ) : (
+                          <img src={clinic.imageLink} alt="Clinic" />
+                        )}
+                      </div>
+
+                      <div className="clinics-card-text">
+                        <h5>{clinic.name}</h5>
+                        <p><img src="./Images/Place_Marker.png" alt="" />
+                          {clinic.location.slice(0, 20)} {clinic.address.slice(0, 60)}...
+                        </p>
+                        <div className="clinics-card-tags">
+                          {clinic.tagList
+                            .slice(0, showAllTags ? clinic.tagList.length : 3)
+                            .map((tag, tagIndex) => (
+                              <p className="clinics-tag" key={tagIndex}>
+                                {tag}
+                              </p>
+                            ))}
+                          <p
+                            className="clinics-tag-more"
+                            onClick={() => handleTagClick(!showAllTags)}
+                          >
+                            {showAllTags ? (
+                              <p className="clinics-tag-more">See Less...</p>
+                            ) : (
+                              <p className="clinics-tag-more">See More...</p>
+                            )}
+                          </p>
+                        </div>
+                      </div>
+                      <div className="clinics-card-summary">
+                        {/* <p className='clinics-summary clinics-s'>(-) {clinic.summary}</p> */}
+                        <button
+                          className="clinics-summary clinics-s"
+                          onClick={() => handleCardClick(clinic)}
                         >
-                          {showAllTags ? (
-                            <p className="clinics-tag-more">See Less...</p>
-                          ) : (
-                            <p className="clinics-tag-more">See More...</p>
-                          )}
+                          <img id="clinic-summary-icon" src="./Images/Brief.png" alt="" /> summary
+                        </button>
+                        <p className="clinics-summary clinics-m">
+                          <img id="clinic-summary-icon" src="./Images/Ringer_volume.png" alt="" /> {clinic.contact}
                         </p>
                       </div>
                     </div>
-                    <div className="clinics-card-summary">
-                      {/* <p className='clinics-summary clinics-s'>(-) {clinic.summary}</p> */}
-                      <button
-                        className="clinics-summary clinics-s"
-                        onClick={() => handleCardClick(clinic)}
-                      >
-                        <img id="clinic-summary-icon" src="./Images/Brief.png" alt="" /> summary
-                      </button>
-                      <p className="clinics-summary clinics-m">
-                      <img id="clinic-summary-icon" src="./Images/Ringer_volume.png" alt="" /> {clinic.contact}
-                      </p>
-                    </div>
                   </div>
-                </div>
-              ))}
+                ))}
 
 
           </div>

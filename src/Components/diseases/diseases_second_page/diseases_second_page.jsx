@@ -5,9 +5,9 @@ import axios from "axios";
 import ClipLoader from "react-spinners/ClipLoader";
 import Top from "../diseases_first_page/diseases_first_page";
 
-const gradientarry=['linear-gradient(rgb(224, 165, 224),white)','linear-gradient(rgb(142, 241, 175),white)','linear-gradient(skyblue,white)','linear-gradient(rgb(244, 244, 159),white)','linear-gradient(rgb(242, 204, 132),white)','linear-gradient(rgb(239, 241, 178),white)','linear-gradient(rgb(249, 175, 239),white)']
+const gradientarry = ['linear-gradient(rgb(224, 165, 224),white)', 'linear-gradient(rgb(142, 241, 175),white)', 'linear-gradient(skyblue,white)', 'linear-gradient(rgb(244, 244, 159),white)', 'linear-gradient(rgb(242, 204, 132),white)', 'linear-gradient(rgb(239, 241, 178),white)', 'linear-gradient(rgb(249, 175, 239),white)']
 const Bottom = () => {
-  
+
   const [selectedTherapy, setSelectedTherapy] = useState("therapiesWithDrugs");
   const [data, setData] = useState({});
   const [loading, setLoading] = useState(true);
@@ -42,7 +42,7 @@ const Bottom = () => {
 
 
   const handleButtonClick = (therapyType) => {
-   setSelectedTherapy(selectedTherapy === therapyType ?"" : therapyType);
+    setSelectedTherapy(selectedTherapy === therapyType ? "" : therapyType);
   };
 
   const toggleReadMore = (index) => {
@@ -62,7 +62,7 @@ const Bottom = () => {
 
   return (
     <>
-      <Top data={data}/>
+      <Top data={data} />
       <div>
         {loading ? (
           <ClipLoader
@@ -92,11 +92,16 @@ const Bottom = () => {
                 <div className="disease-cards">
                   {therapyArray &&
                     therapyArray.map((therapy, index) => (
-                      <div key={index} className="disease-card" style={{backgroundImage:gradientarry[index%gradientarry.length]}}>
-                       <div className="disease-card-img">
-                        <img src={therapy.imageLink} alt="" />
-                       {/* <img src="/Images/cow.png" alt="" /> */}
-                       </div>
+                      <div key={index} className="disease-card" style={{ backgroundImage: gradientarry[index % gradientarry.length] }}>
+                        <div className="disease-card-img">
+                          {process.env.REACT_APP_IS_PRODUCTION == 'true' ? (
+                            <img src={`${process.env.REACT_APP_BACKEND_IP}${therapy.imageLink}`} alt="img" />
+                          ) : (
+                            <img src={therapy.imageLink} alt="img" />
+                          )
+                          }
+
+                        </div>
                         <Link to={`/disease/${disease}/${therapy.name}`} onClick={scrollToTopOnClick}><h4>{therapy.name}</h4></Link>
                         <p>
                           {therapy.isReadMore
