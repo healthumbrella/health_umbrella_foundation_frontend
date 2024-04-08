@@ -31,8 +31,9 @@ function Books(){
           ) : (
            
         <div className="B_outer">
-            <div className="B_outer_top" onClick={()=>{navigate(-1)}}>
-                <h2>&#60; Migraine/ {title1.charAt(0).toUpperCase()}{title1.slice(1)} /Books & Book Chapters</h2>
+            <div className="B_outer_top" >
+                <h2>&#60; <span onClick={() => navigate(-2)}>{disease.charAt(0).toUpperCase()}{disease.slice(1)}</span>
+                <span onClick={() => navigate(-1)}>/{title1.charAt(0).toUpperCase()}{title1.slice(1)}</span> /Books & Book Chapters</h2>
             </div>
             <div className="B_outer_bottom">
                 <div className="B_inner_top">
