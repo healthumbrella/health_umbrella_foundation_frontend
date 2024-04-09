@@ -1,6 +1,6 @@
 import React, { useRef, useState, useEffect } from "react";
 import "./header.css";
-import { NavLink } from 'react-router-dom';
+import { NavLink ,/*useLocation*/} from 'react-router-dom';
 import axios from "axios";
 
 function Header() {
@@ -63,8 +63,9 @@ function Header() {
     const scrollToTopOnClick = () => {
         window.scrollTo(0, 0);
       };
-    
-
+    // const location =useLocation();
+    // let currentPath=location.pathname;
+    //   currentPath+='/';
     
     return (
         <nav className="navbar navbar-expand-lg navbar-dark">
@@ -84,9 +85,10 @@ function Header() {
                     </li> */}
                     <li className="nav-item dropdown">
                         <NavLink
-                            className="nav-link underline "
-                            // to="/diseases"
+                            className="nav-link underline"
+                            // to={`${currentPath} /}`}
                             onClick={handleDropdownToggle}
+                            // end
                         >
                             Diseases
                         </NavLink>
@@ -110,7 +112,7 @@ function Header() {
                         <NavLink className="nav-link underline" to="/pathy" onClick={()=>{handleDiseaseClick(); collapseHandler();  scrollToTopOnClick();}}>Pathy</NavLink>
                     </li>
                       <li className="nav-item">
-                        <NavLink className="nav-link underline" to="/clinics/" onClick={collapseHandler}>Clinics/Hospitals</NavLink>
+                        <NavLink className="nav-link underline" to="/clinics/" onClick={()=>{handleDiseaseClick(); collapseHandler();  scrollToTopOnClick();}}>Clinics/Hospitals</NavLink>
                     </li> 
                 </ul>
             </div>
