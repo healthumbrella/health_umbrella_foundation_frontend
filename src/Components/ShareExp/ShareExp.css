@@ -32,7 +32,7 @@
     color: #053b3f;
     font-size: 2.7rem;
     text-align: center;
-    font-weight: 800;
+    font-weight: 900;
     line-height: 3rem;
     text-wrap: wrap;
     z-index: 1;
@@ -96,7 +96,7 @@
     justify-content: space-between;
     align-self: flex-start;
     align-items: center;
-    padding: 1rem 2rem;
+    padding: 1.5rem 2rem;
     margin-bottom: 1.5rem;
     height: 0;
   }
@@ -121,14 +121,14 @@
   #phone,
   #disease,
   #pathies {
-    width: 14rem;
+    width: 20rem;
   }
   #pathies{
-    width: 29.5rem;
+    width: 41.5rem;
   }
   #age,
   #gender {
-    width: 6.25rem;
+    width: 7.75rem;
   }
   .firstrow,
   .secondrow,
@@ -181,8 +181,8 @@ cursor: pointer;
   
  
   .textarea-box {
-    width: 29rem;
-    height: 8rem;
+    width: 40rem;
+    height: 10rem;
   }
   
   .lastrow {
