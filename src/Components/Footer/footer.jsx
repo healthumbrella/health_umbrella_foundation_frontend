@@ -3,6 +3,10 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import "./footer.css";
 
+import { FaInstagram, FaTwitter, FaYoutube, FaFacebook } from 'react-icons/fa';
+import { IoMdPhonePortrait } from "react-icons/io";
+import { MdEmail } from "react-icons/md";
+import { IoLocation } from "react-icons/io5";
 
 
 function Footer() {
@@ -45,16 +49,16 @@ function Footer() {
                         <div className="follow-us_links">
                             
                             <a href={`https://${footerdata.footer.socialMediaInformation.instagramLink}`} target="__blank" >
-                            <i className="fa-brands fa-instagram"></i>
+                                <FaInstagram size={20} color='#ffffff'/>
                             </a>
                             <a href={`https://${footerdata.footer.socialMediaInformation.twitterLink}`} target="__blank" >
-                            <i className="fa-brands fa-twitter"></i>
+                            <FaTwitter size={20} color='#ffffff'/>
                             </a>
                             <a href={`https://${footerdata.footer.socialMediaInformation.youtubeLink}`} target="__blank" >
-                            <i className="fa-brands fa-youtube"></i>
+                            <FaYoutube size={20} color='#ffffff'/>
                             </a>
                             <a href={`https://${footerdata.footer.socialMediaInformation.facebookLink}`} target="__blank">
-                            <i className="fa-brands fa-facebook"></i>
+                            <FaFacebook size={20} color='#ffffff'/>
                             </a>
                         
                        
@@ -83,13 +87,13 @@ function Footer() {
                     { footerdata && 
                     <div className="reach-us">
                         <h4>Reach Us</h4>
-                        <p><i className="fa-solid fa-envelope"></i>
+                        <p><MdEmail size={20} color='#56B6DC' style={{marginRight:"0.88rem", marginBottom:"-0.2rem"}}/>
                             <a href={`https://${footerdata.footer.contactInformation.contactEmail}`} target="__blank" >
                                     {footerdata.footer.contactInformation.contactEmail}
                              </a>
                         </p>
-                        <p><i className="fa-solid fa-phone"></i>{footerdata.footer.contactInformation.contactPhoneNumber}</p>
-                        <p><i className="fa-solid fa-location-dot"></i><span>{footerdata.footer.contactInformation.contactAddress}</span></p>
+                        <p> <IoMdPhonePortrait size={20} color='#56B6DC' style={{marginRight:"0.88rem",marginBottom:"-0.2rem"}}/>{footerdata.footer.contactInformation.contactPhoneNumber}</p>
+                        <p><IoLocation size={20} color='#56B6DC' style={{marginRight:"0.88rem",marginBottom:"-0.2rem"}}/>{footerdata.footer.contactInformation.contactAddress}</p>
                     </div>}
 
                 </div>
