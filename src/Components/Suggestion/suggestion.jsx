@@ -8,8 +8,8 @@ const suggestion = () => {
       <div className="suggestion_container">
         <div className="suggestion_container_left">
             <img src="./Images/green_ring_tl.png" className="ring-tl" alt="top-green-circle" />
-          <div className="scl_heading">
-            Ask suggestions for<br></br> <p className="scl-subheading" >any disease</p>
+          <div className="scl-heading">
+            Ask suggestions for<br></br> <p className="scl-subheadingask" >any disease</p>
           </div>
           <div className="askscl_content">
             This is your space—a confidential and supportive environment where
@@ -23,7 +23,7 @@ const suggestion = () => {
           </div>
         </div>
         <div className="suggestion_container_right" >
-          <h2 className="scr_heading" style={{marginTop:'1.5rem',marginLeft:"-13rem"}}>Ask suggestion for any Disease</h2>
+          <h2 className="scr_heading" style={{marginTop:'1.5rem'}}>Ask suggestion for any Disease</h2>
           <h4 className="scr_subheading ">
             {/* Share your Suggestions: Help us shape the future by offering your valuable suggestions! */}
             <br></br>

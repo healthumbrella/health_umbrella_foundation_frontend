@@ -38,7 +38,8 @@
     z-index: 1;
   }
   .scl-subheading {
-    place-self: inherit;
+    align-self: center;
+    color: #053b3f;
   }
   
   .scl_content {
@@ -136,7 +137,7 @@
   .fourthrow,
   .fifthrow,
   .lastrow,.sixthrow {
-    gap: 0.5rem;
+    gap: 0.25rem;
   }
   .form_date_text {
     font-size: medium;

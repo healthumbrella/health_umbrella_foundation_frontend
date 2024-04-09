@@ -167,7 +167,7 @@ const ContactForm = () => {
                   <tag className="ask-asterik" 
                   style={{fontSize:'17px',fontWeight:'bold'}}
                   >*</tag>
-                <div className="gap-yes-no">
+                <div className="ask-gap-yes-no">
                     <input  type="radio"  name="show_study"  value="true"  checked={formData.show_study === "true"}  onChange={handleRadioChange}
                     />
                     <p className="radio-text">Yes</p> 
@@ -178,7 +178,7 @@ const ContactForm = () => {
               </div>
               <div className="last2">
                 <p className="last2 p1">Can we Share your email?</p>
-                <div className="gap-yes-no">
+                <div className="ask-gap-yes-no">
                     <input type="radio" name="show_email" value="true" checked={formData.show_email === "true"} onChange={handleRadioChange}/> <p className="radio-text">Yes</p> 
                     <input type="radio" name="show_email" value="false" checked={formData.show_email === "false"} onChange={handleRadioChange}/><p className="radio-text">No</p>  
                 </div>
