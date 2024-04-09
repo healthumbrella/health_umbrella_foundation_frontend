@@ -25,9 +25,9 @@ export const responsive = {
 };
 
 function HomeThirdPage(props) {
-
+    
     const testimonialdata=props.thirdpagedata;
-
+    console.log(testimonialdata);
     return (
         <div className="htp_outer">
             <div className="temp" >
@@ -41,6 +41,7 @@ function HomeThirdPage(props) {
                         infinite={true}
                         autoPlay={true}
                         swipeable={true}
+                        showDots={true}
                         removeArrowOnDeviceType={["tablet", "mobile", "desktop"]}>
                             {testimonialdata.testimonialList.map((innerdata)=>
                             <HTPTestimonial key={innerdata.heading}  testimonialtext={innerdata} /> )}
