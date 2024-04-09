@@ -179,7 +179,7 @@ const Joinus = () => {
           
         </div>
         <div className={styles.join_us_form} style={{display:'flex',flexDirection:'column',alignItems:'center'}}>
-          <div className={styles.fill_form} style={{marginBottom:'3rem',marginLeft:"-32rem"}}>Fill the Form!!</div>
+          <div className={styles.fill_form} style={{marginBottom:'3rem'}}>Fill the Form!!</div>
           {/* <div className={styles.fill_para}>
           Join our movement towards a healthier world – become a part of our community, share your voice, and contribute to a tapestry of hope and healing
           </div> */}
