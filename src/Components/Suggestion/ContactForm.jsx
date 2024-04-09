@@ -65,7 +65,7 @@ const ContactForm = () => {
       setLoading(true)
 
       const response = await axios.post(
-        "${process.env.REACT_APP_BACKEND_IP}/user-forms/ask-suggestion", 
+        `${process.env.REACT_APP_BACKEND_IP}/user-forms/ask-suggestion`, 
         formData,
         {
           headers: {
@@ -76,7 +76,7 @@ const ContactForm = () => {
       toast.success("Information successfully submitted!", {
         position: toast.POSITION.TOP_RIGHT
       });
-      // console.log("Response from backend:", response.data);
+      console.log("Response from backend:", response.data);
       setFormData({
         name: "",
         age: "",
@@ -162,11 +162,11 @@ const ContactForm = () => {
             <div className="lastrow">
               <div className="last1">
                 <p className="last1 p1" style={{height:'0.3rem'}}>
-                  Can we share your case study by keeping <br></br>you anonymous?
-                  <tag className="asterik" 
+                  Can we share your case study by keeping you anonymous?
+                </p>
+                  <tag className="ask-asterik" 
                   style={{fontSize:'17px',fontWeight:'bold'}}
                   >*</tag>
-                </p>
                 <div className="gap-yes-no">
                     <input  type="radio"  name="show_study"  value="true"  checked={formData.show_study === "true"}  onChange={handleRadioChange}
                     />
@@ -184,7 +184,7 @@ const ContactForm = () => {
                 </div>
               </div>
               <div className="last3">
-              <p className="last3 p1">Reports (Any supporting Docx (pdf format only)):</p>
+              <p className="last3 p1">Reports (Any supporting Docx):</p>
               <input type="file" name="supportingDocx" onChange={handleFileInputChange} hidden ref={fileInputRef} accept="application/pdf" />
               <div style={{display:'flex' , flexDirection:"column"}}>
               <label className="btn" onClick={handleUploadClick}>
