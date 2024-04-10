@@ -5,16 +5,17 @@ import axios from "axios";
 import ClipLoader from "react-spinners/ClipLoader";
 
 
-function SeparateBook({ pathy }) {
+function SeparateBook({ pathy,disease }) {
   const [fetchData, setFetchData] = useState({ books: [] });
   const [loading, setLoading] = useState(true);
-  
+  console.log(pathy);
+  console.log(disease);
 
   useEffect(() => {
     const fetchDataFromAPI = async () => {
       try {
         const response = await axios.get(
-          `http://backend.healthumbrella.org:8000/disease/migraine/${pathy}/books`
+          `http://backend.healthumbrella.org:8000/disease/${disease}}/${pathy}/books`
         );
         setFetchData(response.data);
         setLoading(false);
@@ -30,7 +31,7 @@ function SeparateBook({ pathy }) {
     };
     fetchDataFromAPI();
   }, [pathy]);
-
+  console.log(fetchData)
   return (
    
     <>
@@ -46,8 +47,10 @@ function SeparateBook({ pathy }) {
         />
       ) : (
         <>
-    <div className="Sb">
-      {fetchData.books.map((book, index) => (
+    <div className="Sb">{
+
+    fetchData.books.length==0?<h1 style={{marginTop:"20rem", marginLeft:"5rem",fontSize:"3rem"}}>No Books found</h1>:
+      fetchData.books.map((book, index) => (
         <div className="Sb_outer" key={index}>
           <div className="Sb_inner_left">
             <img src={book.imageLink} alt="Book Cover" />
@@ -66,9 +69,11 @@ function SeparateBook({ pathy }) {
           </div>
         </div>
       ))}
+
     </div>
     </>
         )}
+      
       </div>
     </>
   );

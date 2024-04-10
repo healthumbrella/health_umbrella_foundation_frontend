@@ -34,10 +34,11 @@ const Testimonials = () => {
   }, [title2]);
 
   const handleSummaryClick = (summary) => {
-    setSelectedSummary(summary === selectedSummary ? "" : summary);
+    // setSelectedSummary(summary === selectedSummary ? "" : summary);
+    window.open(summary, '_blank');
   };
 
-  // console.log(fetchData);
+  console.log(fetchData);
   
   return (
     <div className="testimonials-main">
@@ -55,7 +56,7 @@ const Testimonials = () => {
         </div>
         {title2==="directCase"?(<div className="t-row2">CASES</div>):(<div className="t-row2">TESTIMONIALS</div>)}
         {/* // <div className="t-row2">TESTIMONIALS</div> */}
-        {title2==="directCase"?(<div className="t-row2">CASES</div>):(<div className="t-row2">TESTIMONIALS</div>)}
+        {/* {title2==="directCase"?(<div className="t-row2">CASES</div>):(<div className="t-row2">TESTIMONIALS</div>)} */}
         {/* // <div className="t-row2">TESTIMONIALS</div> */}
         <div className="t-row3">{fetchData.text}</div>
         <div className="t-row4">
@@ -64,7 +65,7 @@ const Testimonials = () => {
             <div key={item.id} className="t-card">
               <h3 className="t-title">{item.title.charAt(0).toUpperCase()}{item.title.slice(1)}</h3>
               
-              {title2 === "website" ? (
+              {/* {title2 === "website" ? (
       <a href={item.link} target="_blank" rel="noreferrer">
         Click here to visit the website
       </a>
@@ -74,7 +75,7 @@ const Testimonials = () => {
       </a>
     ) : (
      ""
-    )}
+    )} */}
               
               {title2 === "website" ? (
       <a href={item.link} target="_blank" rel="noreferrer">
@@ -94,6 +95,7 @@ const Testimonials = () => {
                 ):(
                   <p id="casedetail">short-summary</p>
                 )}
+               
                 {selectedSummary === item.summary ? (
                   <div>
                     <p className="t-backend-summary">{item.summary}</p>

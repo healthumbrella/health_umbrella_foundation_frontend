@@ -52,13 +52,16 @@
 
         p{
             font-size: 15px;
-             margin-top:5px;
+            //  margin-top:5px;
              
              color: black;
             min-height: 90px;
             max-height: 70px;
             overflow-x: hidden;
+            overflow-y: auto;
+            
             text-align: left;
+            
         }
         p::-webkit-scrollbar{
             width: 0.5rem;

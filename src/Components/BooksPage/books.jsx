@@ -42,14 +42,14 @@ function Books(){
                 </div>
                 <div className="B_inner_bottom">
                     <div className="B_inner_left">
-                        {title1?(
-                            <>
-                        <SeparateBook pathy = {title1} className="Sbclass" />
+                        {/* {title1?(
+                            <> */}
+                        <SeparateBook pathy = {title1} disease = {disease} className="Sbclass" />
                       
-                        </>
+                        {/* </>
                         ):(<p>Books Not Available</p>
 
-                        )}
+                        )} */}
                     </div>
                     <div className="B_inner_right">
                         <img src={process.env.PUBLIC_URL+"/images/bookCase.png"} alt="" />
