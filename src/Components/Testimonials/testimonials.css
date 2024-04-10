@@ -128,10 +128,10 @@
     cursor: pointer;
 }
 .t-backend-summary{
+    
     font-size: small;
     font-weight: 500;
     color: black;
-    text-align: right;
     height: 7.5rem;
     overflow-y: hidden;
     transition: overflow .3s;

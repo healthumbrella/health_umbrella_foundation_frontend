@@ -7,20 +7,20 @@ function Header() {
     const hamburgerRef = useRef(null);
     const [width, setWidth] = useState(window.innerWidth);
 
-    const [diseases, setDiseases] = useState(["Diabetes","Breast Cancer","Alzheimer","migraine","Heart Diseases","Cancer","CLD","Asthma","Thyroid","Depression","Kidney Disease","Obesity","Bronchiectasis","Sudden Cardiac Arrest","Multiple Sclerosis","PCOD","Strokes","Hypertension","Lung Cancer","Osteoporosis","Arthritis","Glaucoma","COPD",]); // State to store diseases data
-    // const [diseases, setDiseases] = useState([]); // State to store diseases data
+    // const [diseases, setDiseases] = useState(["Diabetes","Breast Cancer","Alzheimer","migraine","Heart Diseases","Cancer","CLD","Asthma","Thyroid","Depression","Kidney Disease","Obesity","Bronchiectasis","Sudden Cardiac Arrest","Multiple Sclerosis","PCOD","Strokes","Hypertension","Lung Cancer","Osteoporosis","Arthritis","Glaucoma","COPD",]); // State to store diseases data
+    const [diseases, setDiseases] = useState([]); // State to store diseases data
     const [isDropdownOpen, setIsDropdownOpen] = useState(false); // State to control dropdown visibility
 
     useEffect(() => {
         const getapidata = async () => {
           try {
             const response = await axios.get(
-              `${process.env.REACT_APP_BACKEND_IP}/header`
+              `${process.env.REACT_APP_BACKEND_IP}/header/`
             );
             const fetchedData = response.data;
             // console.log(fetchedData);
             if (fetchedData && fetchedData.diseaseList) {
-              setDiseases(fetchedData);
+                setDiseases(fetchedData.diseaseList);
             //   setLoading(false);
             } else {
               console.error("API response structure is not as expected.");

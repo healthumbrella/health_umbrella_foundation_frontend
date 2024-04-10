@@ -35,15 +35,17 @@
     width: 20rem;
 }
 .PathyPage-heading{
+    font-size:3rem;
     font-weight: bolder;
     color: #053B3F;
     margin-top: 1.5rem;
 }
 .PathyPage-subheading{
-    font-weight: lighter;
-    font-weight: 200;
+    /* font-weight: lighter; */
+    font-weight: 400;
     margin-top: -1rem;
     color: black;
+    letter-spacing: 0.7rem;
 }
 .PathyPage-content{
     width: 80%;
