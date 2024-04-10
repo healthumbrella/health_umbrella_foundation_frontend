@@ -20,6 +20,7 @@ const Testimonials = () => {
           `${process.env.REACT_APP_BACKEND_IP}/disease/${disease}/${title1}/${title2}`
         );
         setFetchData(response.data);
+        // console.log(fetchData);
       } catch (error) { 
         console.error("Error fetching data:", error);
       }
@@ -109,7 +110,14 @@ const Testimonials = () => {
                 ) : (
                   <button
                     className="t-button"
-                    onClick={() => handleSummaryClick(item.summary)}
+                    onClick={() => {
+                      if (title2 === "directCase") {
+                        // Navigate to case details page using useNavigate
+                        navigate(`/disease/${disease}/${title1}/${title2}/${item.caseId}`); // Replace with the actual path
+                      } else {
+                        handleSummaryClick(item.summary);
+                      }
+                    }}
                   >
                     Click here &rarr;
                   </button>
