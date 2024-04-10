@@ -3,6 +3,7 @@ import axios from "axios";
 import "./testimonials.css";
 import { useNavigate, useParams } from "react-router-dom";
 import imageInfo from "./imageLink";
+import { MdOutlineArrowRight } from "react-icons/md";
 
 const Testimonials = () => {
   const [fetchData, setFetchData] = useState({ text: "", sourceList: [] });
@@ -12,6 +13,7 @@ const Testimonials = () => {
   const navigate = useNavigate();
   // console.log(title1);
   // console.log(title2);
+  
   useEffect(() => {
     const fetchDataFromAPI = async () => {
       try {
@@ -109,6 +111,7 @@ const Testimonials = () => {
                   </div>
                 ) : (
                   <button
+                  style={{display:"flex",alignItems:"center"}}
                     className="t-button"
                     onClick={() => {
                       if (title2 === "directCase") {
@@ -118,8 +121,9 @@ const Testimonials = () => {
                         handleSummaryClick(item.summary);
                       }
                     }}
-                  >
-                    Click here &rarr;
+                    >
+                    Click here 
+                    <MdOutlineArrowRight style={{marginLeft:"-3px"}} size={20} /> 
                   </button>
                 )}
               </span>

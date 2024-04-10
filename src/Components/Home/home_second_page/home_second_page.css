@@ -55,6 +55,7 @@
     color: #505050;
     line-height: 1.3rem;
 }
+/* 
 .hsp_outer_mid_right_text{
     height: 110px;
     overflow-y: hidden;
@@ -76,17 +77,17 @@
 }  
 .hsp_outer_mid_right_text::-webkit-scrollbar-button {
     height: 100%;
-}  
+}   */
 .hsp_outer_mid_right button{
     margin-top: 1rem;
     padding: 1rem 0rem;
-    width: 45%;
+    /* width: 45%; */
     color: #FFFFFF;
     font-family: 'Sombra';
     font-style: normal;
     font-weight: 700;
     background-color: #053B3F;
-    border-radius: 0.5rem;
+    /* border-radius: 0.5rem; */
     border: none;
     cursor: pointer;
 }

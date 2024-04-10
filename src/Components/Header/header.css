@@ -65,7 +65,7 @@
     display: inline-block; /* Display items horizontally */
     width: 20%; /* Set width to accommodate 5 items per line */
     text-align: center; /* Center text within each item */
-    margin-bottom: 15px; /* Add spacing between items */
+    /* margin-bottom: 15px; Add spacing between items */
   }
   
   .dropdown-item:hover {
