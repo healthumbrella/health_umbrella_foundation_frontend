@@ -1,6 +1,6 @@
 .hfp_outer{
     border-radius: unset;
-    /* margin-top: 5.5rem; */
+    margin-top: 5.5rem;
     padding: 8rem 0rem 0rem 0rem;
     width: 100vw;
     display: flex;
@@ -17,7 +17,7 @@
 }
 
 .hfp_outer_left{
-    padding: 2rem;
+    /* padding: 2rem; */
     text-align: left;
     width: 50vw;
 }

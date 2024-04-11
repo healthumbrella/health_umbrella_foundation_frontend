@@ -49,7 +49,7 @@ function HomeFourthPage(props){
                 keyBoardControl={true}
                 autoPlay={true}
                 swipeable={true}
-                // showDots={true}
+                showDots={true}
                 removeArrowOnDeviceType={["tablet","stablet", "mobile", "desktop"]}>
                     {pagetext.videoList.map((videos)=>
                      <HFPVideos  key={videos.heading} videosdata={videos} /> )}
