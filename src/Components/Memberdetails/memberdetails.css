@@ -31,11 +31,14 @@
     justify-content: center;
   
   }
-  
-  .image {
+  .member-card img{
+    height: 5rem;
+    width: 5rem;
+  }
+  .mimage {
     border-radius: 50%;
-    width: 100px; 
-    height: 100px;
+    width: 10px; 
+    height: 10px;
     object-fit: cover;
     border: 2px solid #727171;
   }
@@ -187,8 +190,8 @@
   
   .right img {
    
-    width: 750px; 
-    height: auto; 
+    width: 15rem; 
+    height: 15rem; 
     position: relative;top: 20px;
    
   
@@ -264,8 +267,16 @@
     line-height: normal;
     z-index: 1;
     display: flex;
+  }  
+  .navigation-link p{
+    color: #053b3f;
+    font-size: large;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 800;
   }
-  
+  .navigation-link :hover{
+    text-decoration: none;
+  }
     @media screen and (max-width: 1130px) {
   
       .right img {
