@@ -38,6 +38,7 @@ function DirectCases() {
     navigate(-1);
   };
  const [isReadMore2, setIsReadMore2] = useState(false);
+ const [isReadMore, setIsReadMore] = useState(false);
   // console.log(data);
   return (
     <div className="D_outer">
@@ -54,15 +55,15 @@ function DirectCases() {
         <div className="D_outer_summary">
           <h2 className="D_summary_heading">Summary</h2>
           <p className="D_summary_text">
-                {isReadMore2 ? `${data?.summary}` : `${data?.summary}`.slice(0, 900)}
+                {isReadMore ? `${data?.summary}` : `${data?.summary}`.slice(0, 900)}
                     <span
                       onClick={() => {
-                        setIsReadMore2(!isReadMore2);
+                        setIsReadMore(!isReadMore);
                       }}
                       style={{ color: "blue", cursor: "pointer" }}
                     >
                       <br />
-                      {!isReadMore2 ? "Read More..." : "...Read Less"}
+                      {!isReadMore ? "Read More..." : "...Read Less"}
                     </span>
                   </p>
          
