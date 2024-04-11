@@ -31,12 +31,12 @@ function Books(){
           ) : (
            
         <div className="B_outer">
-            <div className="B_outer_top" >
+            <div className="B_outer_top" style={{marginLeft:50,fontWeight:"bold"}}>
                 <h2>&#60; <span onClick={() => navigate(-2)}>{disease.charAt(0).toUpperCase()}{disease.slice(1)}</span>
                 <span onClick={() => navigate(-1)}>/{title1.charAt(0).toUpperCase()}{title1.slice(1)}</span> /Books & Book Chapters</h2>
             </div>
             <div className="B_outer_bottom">
-                <div className="B_inner_top">
+                <div className="B_inner_top" style={{marginBottom:0}}>
                     <img src={process.env.PUBLIC_URL +"/images/bookStack.png"} alt="_blank"/>
                     <h1>Books & Book Chapters</h1>
                 </div>

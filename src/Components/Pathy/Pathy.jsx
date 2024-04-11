@@ -60,16 +60,13 @@ const Pathy = () => {
     }
   };
   
-
-
   const scrollToTopOnClick = () => {
     window.scrollTo(0, 0);
   };
 
   return (
     <>
-    <div>
-
+    <div >
         {loading ? (
           <ClipLoader
             className="loadingicon"
@@ -81,9 +78,10 @@ const Pathy = () => {
           />
         ) : (
           <>
-    <div className="pathy-container">
-      <div className="pathy-select">
-        <h1 className="pathy-select-heading" style={{fontWeight:600}}>Pathy Gallery</h1>
+    <div className="pathy-container " >
+      <div className="pathy-select" style={{marginTop:"110px",backgroundColor:"#F6F6F6"}}>
+      
+        <h1 className="pathy-select-heading" style={{fontWeight:600,color:"#053B3F",marginTop:40}}>Pathy Gallery</h1>
         <h3 className="pathy-select-subheading"style={{color:"black", marginBottom:"2rem"} }>
           Each pathy is a unique roadway to wellness
         </h3>
@@ -98,12 +96,15 @@ const Pathy = () => {
               key={key}
               className="pathy-select-items"
               onClick={() => scrollToDetail(item.title)}
+              style={{borderRadius:"15px",fontSize:18,height:55}}
             >
               {capitalizeFirstLetter(item.title)}
             </div>
           ))}
         </div>
       </div>
+  
+
       <div className="pathy-detail">
         <img
           src={process.env.PUBLIC_URL + "/Images/green_ring_tl.png"}
@@ -136,3 +137,4 @@ const Pathy = () => {
 };
 
 export default Pathy;
+

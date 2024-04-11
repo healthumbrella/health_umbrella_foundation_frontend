@@ -20,6 +20,7 @@ const Testimonials = () => {
         const response = await axios.get(
           
           `${process.env.REACT_APP_BACKEND_IP}/disease/${disease}/${title1}/${title2}`
+          // `${process.env.REACT_APP_BACKEND_IP}/disease/migraine/Homopathy/books/`
         );
         setFetchData(response.data);
         // console.log(fetchData);
@@ -41,23 +42,23 @@ const Testimonials = () => {
     window.open(summary, '_blank');
   };
 
-  console.log(fetchData);
+  // console.log(fetchData);
   
   return (
-    <div className="testimonials-main">
-      <p className="testimonials-link-topleft">
+    <div className="testimonials-main" >
+      <p className="testimonials-link-topleft" style={{fontWeight:"bold",marginLeft:50}}>
         &lt; <span onClick={() => navigate(-2)}>{disease.charAt(0).toUpperCase()}{disease.slice(1)}</span>
         <span onClick={() => navigate(-1)}>/{title1.charAt(0).toUpperCase()}{title1.slice(1)}</span>
         /{title2.charAt(0).toUpperCase()}{title2.slice(1)}
       </p>
-      <div className="testimonials-container">
-        <div className="t-row1">
+      <div className="testimonials-container" >
+        <div className="t-row1" >
           {matchedImageLink && (
-            <img src={matchedImageLink} alt={title2} className="t-image" />
+            <img style={{height:55,width:80}} src={matchedImageLink} alt={title2} className="t-image" />
           )}
-          <h1 className="t-row1 heading">{title2.charAt(0).toUpperCase()}{title2.slice(1)}</h1>
+          <h1 style={{color:"#053B3F"}} className="t-row1 heading">{title2.charAt(0).toUpperCase()}{title2.slice(1)}</h1>
         </div>
-        {title2==="directCase"?(<div className="t-row2">CASES</div>):(<div className="t-row2">TESTIMONIALS</div>)}
+        {/* {title2==="directCase"?(<div className="t-row2">CASES</div>):(<div className="t-row2">TESTIMONIALS</div>)} */}
         {/* // <div className="t-row2">TESTIMONIALS</div> */}
         {/* {title2==="directCase"?(<div className="t-row2">CASES</div>):(<div className="t-row2">TESTIMONIALS</div>)} */}
         {/* // <div className="t-row2">TESTIMONIALS</div> */}
