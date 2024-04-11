@@ -151,7 +151,12 @@ const Testimonials = () => {
               />
               <span className="t-id">
                 <p1>ID:</p1>
-                <p2>{item.id}</p2>
+                {title2 === "directCase"?(
+                  <p2>{item.caseId}</p2>
+                ):(
+                  <p2>{item.id}</p2>
+                )}
+                
               </span>
             </div>
           ))}
