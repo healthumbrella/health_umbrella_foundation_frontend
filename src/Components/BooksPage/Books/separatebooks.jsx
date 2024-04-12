@@ -8,8 +8,8 @@ import ClipLoader from "react-spinners/ClipLoader";
 function SeparateBook({ pathy,disease }) {
   const [fetchData, setFetchData] = useState({ books: [] });
   const [loading, setLoading] = useState(true);
-  console.log(pathy);
-  console.log(disease);
+  // console.log(pathy);
+  // console.log(disease);
 
   useEffect(() => {
     const fetchDataFromAPI = async () => {

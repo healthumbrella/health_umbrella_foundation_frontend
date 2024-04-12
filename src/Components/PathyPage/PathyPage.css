@@ -51,6 +51,7 @@
     width: 80%;
     max-height: 150px;
     overflow-y: hidden;
+    /* overflow-x: scroll; */
     transition: overflow .3s;
     text-align: center;
     color: black;
