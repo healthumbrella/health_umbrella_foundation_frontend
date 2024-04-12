@@ -12,6 +12,7 @@ const ShareExpForm = () => {
     name: "",
     age: "",
     gender: "",
+    house:"",
     city: "",
     state: "",
     country: "",
@@ -21,12 +22,12 @@ const ShareExpForm = () => {
     pathies: "",
     date_from: "",
     date_to: "",
-    
     experience: "",
-    show_name: "false",
-    preferred_communication: "email",
+    show_name: "true",
+    preferred_communication: "",
     reports: null, 
   });
+
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -37,17 +38,26 @@ const ShareExpForm = () => {
   const handleRadioChange = (e) => {
     setFormData({
       ...formData,
-      
       [e.target.name]: e.target.value,
     });
   };
+
   const handleRadioChange1 = (e) => {
+    const newValue = formData.preferred_communication === e.target.value ? "" : e.target.value;
+
     setFormData({
       ...formData,
-      
-      [e.target.name]: e.target.value,
+      preferred_communication:newValue,
     });
   };
+  
+  const handleRadioClick = (e) => {
+    if (e.target.value === formData.preferred_communication) {
+        e.target.checked = false;
+        handleRadioChange1(e);
+    }
+};
+  
   const [dateError,setDateError]=useState("")
   const handleDateFromChange = (e) => {
     const date=new Date()
@@ -99,7 +109,7 @@ const ShareExpForm = () => {
 
   const [loading,setLoading]=useState(false)
   const handleSubmit = async (e) => {
-    // console.log(formData)
+    console.log(formData)
     e.preventDefault();
     try {
       if (new Date(formData.date_from) > new Date(formData.date_to)) {
@@ -112,7 +122,7 @@ const ShareExpForm = () => {
       }
       setLoading(true)
       const response = await axios.post(
-        "${process.env.REACT_APP_BACKEND_IP}/user-forms/share-experience", 
+        `${process.env.REACT_APP_BACKEND_IP}/user-forms/share-experience`, 
         formData,
         {
           headers: {
@@ -123,11 +133,12 @@ const ShareExpForm = () => {
       toast.success("Information successfully submitted!", {
         position: toast.POSITION.TOP_RIGHT
       });
-      // console.log("Response from backend:", response.data);
+      console.log("Response from backend:", response.data);
        setFormData({
         name: "",
         age: "",
         gender: "",
+        house:"",
         city: "",
         state: "",
         country: "",
@@ -137,7 +148,6 @@ const ShareExpForm = () => {
         pathies: "",
         date_from: "",
         date_to: "",
-        
         experience: "",
         show_name: "false",
         preferred_communication: "email",
@@ -159,35 +169,41 @@ const ShareExpForm = () => {
             <input type="text" id="name" name="name" value={formData.name} onChange={handleChange} placeholder="Name*" required /> <br /> <br />
 
             <label htmlFor="age"></label>
-            <input type="number" id="age" name="age" value={formData.age} onChange={handleChange} placeholder="Age*" required /> <br /> <br />
+            <input type="number" id="age" name="age" value={formData.age} onChange={handleChange} placeholder="Age*" required  min="0"/> <br /> <br />
 
-            <label htmlFor="gender"></label>
-            <input type="text" id="gender" name="gender" value={formData.gender} onChange={handleChange} placeholder="Gender*" required /> <br /> <br />
+            
+           <select id="gender" name="gender" value={formData.gender} onChange={handleChange} required>
+           <option value="">Gender</option>
+           <option value="male">Male</option>
+          <option value="female">Female</option>
+          <option value="female">Other</option>
+
+          </select>
           </div>
           <div className="form secondrow">
+          <label htmlFor="house"></label>
+            <input type="text" id="house" name="house" value={formData.house} onChange={handleChange} placeholder="House/Street/Landscape*" required /> <br /> <br />
             <label htmlFor="email_address"></label>
             <input type="email" id="email" name="email_address" value={formData.email_address} onChange={handleChange} placeholder="Email*" required /> <br /> <br />
-            <label htmlFor="city"></label>
-            <input type="text" id="city" name="city" value={formData.city} onChange={handleChange} placeholder="City*" required /> <br /> <br />
           </div>
           <div className="form thirdrow">
-
+          <label htmlFor="city"></label>
+            <input type="text" id="city" name="city" value={formData.city} onChange={handleChange} placeholder="City*" required /> <br /> <br />
             <label htmlFor="phone_number"></label>
-            <input type="tel" id="phone" name="phone_number" value={formData.phone_number} onChange={handleChange} placeholder="Phone No" /> <br /> <br />
-            <label htmlFor="state"></label>
-            <input type="text" id="state" name="state" value={formData.state} onChange={handleChange} placeholder="State*" required /> <br /> <br />
+            <input type="tel" id="phone" name="phone_number" value={formData.phone_number} onChange={handleChange} placeholder="Phone No*" required /> <br /> <br />
           </div>
           <div className="form fourthrow">
-
+          <label htmlFor="state"></label>
+            <input type="text" id="state" name="state" value={formData.state} onChange={handleChange} placeholder="State*" required /> <br /> <br />
             <label htmlFor="country"></label>
             <input type="text" id="country" name="country" value={formData.country} onChange={handleChange} placeholder="Country*" required /> <br /> <br />
-            <label htmlFor="disease"></label>
-            <input type="text" id="disease" name="disease" value={formData.disease} onChange={handleChange} placeholder="Disease"  /> <br /> <br />
           </div>
           <div className="form fifthrow">
+          <label htmlFor="disease"></label>
+            <input type="text" id="disease" name="disease" value={formData.disease} onChange={handleChange} placeholder="Disease*" required /> <br /> <br />
 
-            <label htmlFor="pathies"></label>
-            <input type="text" id="pathies" name="pathies" value={formData.pathies} onChange={handleChange} placeholder="Pathies" /> <br /> <br />
+            <label htmlFor="disease"></label>
+            <input type="text" id="disease" name="pathies" value={formData.pathies} onChange={handleChange} placeholder="Pathies*" required/> <br /> <br />
           </div>
 
 
@@ -232,10 +248,10 @@ const ShareExpForm = () => {
             </div>
 
             <div className="lastrow">
-              <div className="last1">
+              <div className="last11">
                 <p className="last1 p1">
                 Can we publish your experience with name ? 
-                  <span className="asterik" style={{fontWeight:'bold',fontSize:'17px'}}>*</span>
+                <span className="asterik" style={{fontWeight:'bold',fontSize:'17px'}}>*</span>
                 </p>
                 <div className="gap-yes-no">
                     <input  type="radio"  name="show_name"  value="true"  checked={formData.show_name === "true"}  onChange={handleRadioChange}
@@ -250,8 +266,8 @@ const ShareExpForm = () => {
               <div className="last2">
                 <p className="last2 p1">Preferable mode of communication :</p>
                 <div className="gap-yes-no">
-                    <input type="radio" name="preferred_communication" value="email" checked={formData.preferred_communication === "email"} onChange={handleRadioChange1}/> <p className="radio-text">Email</p> 
-                    <input type="radio" name="preferred_communication" value="mobile" checked={formData.preferred_communication === "mobile"} onChange={handleRadioChange1}/><p className="radio-text">Phone no</p>  
+                    <input type="radio" name="preferred_communication" value="email" checked={formData.preferred_communication === "email"} onChange={handleRadioChange1} onClick={handleRadioClick}/> <p className="radio-text">Email</p> 
+                    <input type="radio" name="preferred_communication" value="mobile" checked={formData.preferred_communication === "mobile"} onChange={handleRadioChange1} onClick={handleRadioClick}/><p className="radio-text">Phone no</p>  
                 </div>
               </div>
 
