@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams,useNavigate } from "react-router-dom";
 import "./diseases_second_page.scss";
 import axios from "axios";
 import ClipLoader from "react-spinners/ClipLoader";
@@ -13,7 +13,7 @@ const Bottom = () => {
   const [loading, setLoading] = useState(true);
   const params = useParams();
   const disease = params.disease;
-
+  const navigate=useNavigate();
   useEffect(() => {
     const getapidata = async () => {
       try {
@@ -45,6 +45,7 @@ const Bottom = () => {
     setSelectedTherapy(selectedTherapy === therapyType ? "" : therapyType);
   };
 
+
   const toggleReadMore = (index) => {
     setData((prevData) => ({
       ...prevData,
@@ -59,6 +60,7 @@ const Bottom = () => {
   };
  
   function formatString(str) { return str.replace(/(?<!^)([A-Z])/g, ' $1'); }
+
 
   const therapyArray = data.pathies && data.pathies[selectedTherapy];
 
@@ -112,12 +114,13 @@ const Bottom = () => {
                             : therapy.summary.slice(0, 72)}
                           <span
                             onClick={() => {
-                              toggleReadMore(index);
+                              navigate(`/disease/${disease}/${therapy.name}`)
                             }}
                             style={{ color: "blue", cursor: "pointer" }}
                           >
                             <br />
-                            {!therapy.isReadMore ? "Read More..." : "...Read Less"}
+                            Read More...
+                            {/* {!therapy.isReadMore ? "Read More..." : "...Read Less"} */}
                           </span>
                         </p>
                       </div>

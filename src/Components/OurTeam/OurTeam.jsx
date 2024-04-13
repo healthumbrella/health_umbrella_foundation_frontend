@@ -22,7 +22,9 @@ const OurTeam = () => {
     fetchData();
   }, []);
   
-  
+  const scrollToTopOnClick = () => {
+    window.scrollTo(0, 0);
+  };
   return (
     <>
     <div>
@@ -70,7 +72,7 @@ const OurTeam = () => {
     data.teamList
       .filter((_, index) => index % 2 === 0)
       .map((team, index) => (
-        <Link key={index} to={`/our-team/${team}`} className={styles.team_link}>
+        <Link key={index} to={`/our-team/${team}`} onClick={scrollToTopOnClick}className={styles.team_link}>
           <img
             src={`images/${team
               .split('-')

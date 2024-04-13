@@ -90,20 +90,31 @@ const Joinus = () => {
   };
 
   const [loading,setLoading]=useState(false)
+
   const handleSubmit = async (e) => {
     console.log(formData);
     e.preventDefault();
     try {
+      const emailCheck=formData.email_address;
+      const after=emailCheck.split("@")[1];
+      console.log(after);
+      if(after!=="gmail.com"){
+        toast.error("Please enter valid email !", {
+          position: toast.POSITION.TOP_RIGHT,
+          style:{top:'90px'}
+        });
+        return;
+      }
       if(!formData.photograph || !formData.document){
         toast.error("Please Upload both document and photo !", {
           position: toast.POSITION.TOP_RIGHT,
           style:{top:'90px'}
         });
-        return
+        return;
       }
       setLoading(true)
       const response = await axios.post(
-        "${process.env.REACT_APP_BACKEND_IP}/user-forms/join-us",
+        `${process.env.REACT_APP_BACKEND_IP}/user-forms/join-us`,
         formData,
         {
           headers: {
@@ -168,7 +179,7 @@ const Joinus = () => {
           
         </div>
         <div className={styles.join_us_form} style={{display:'flex',flexDirection:'column',alignItems:'center'}}>
-          <div className={styles.fill_form} style={{marginBottom:'3rem'}}>Fill the Form</div>
+          <div className={styles.fill_form} style={{marginBottom:'3rem'}}>Fill the Form!!</div>
           {/* <div className={styles.fill_para}>
           Join our movement towards a healthier world – become a part of our community, share your voice, and contribute to a tapestry of hope and healing
           </div> */}
@@ -288,7 +299,7 @@ const Joinus = () => {
               rows="6"
               cols="100"
               className={`${styles.form_inputs} ${styles.form_message}`}
-              placeholder="Message"
+              placeholder="Message*"
             ></textarea>
             <div className={`${styles.upload_file}`}>
               <div className={styles.upload_photo}>Recent Photograph <span style={{color:'red'}}>*</span>:</div>
@@ -333,12 +344,12 @@ const Joinus = () => {
             <div className={styles.terms}>
               <input
                 required
-                type="checkbox"
-                style={{ marginBottom: "1.5rem", marginRight: "0.5rem" }}
+                type="radio"
+                style={{ marginBottom: "1.5rem", marginRight: "0.5rem", }}
               ></input>
               <div style={{ fontSize: "13px", fontWeight: "500" }}>
                 I hereby declare that the information given by me in the here is
-                true, complete and correct to the best of my knowledge* :{" "}
+                true, complete and correct to the best of my knowledge :{" "}
                 <span style={{ color: "red",fontSize:'16px' }}>*</span>
               </div>
             </div>

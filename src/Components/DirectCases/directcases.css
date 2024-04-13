@@ -24,7 +24,7 @@
     margin-bottom: 2rem;
     margin-top: .5rem;
     color: #053B3F;
-    font-weight: 500;
+    font-weight: 700;
     font-size: x-large;
 }
 .D_outer_bottom{
@@ -63,11 +63,12 @@
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
+    gap:1.5rem;
 }
 .D_summary_heading{
     margin: 2rem 3rem 0rem 3rem;
     font-family: 'Noto Sans', sans-serif;
-    font-weight: 700;
+    font-weight: bolder;
     font-size: x-large;
     text-align: start;
 }
@@ -123,7 +124,7 @@
     width: 100%;
     margin: 2rem 0rem 1rem 6.5rem;
     font-family: 'Noto Sans', sans-serif;
-    font-weight: 700;
+    font-weight: bolder;
     font-size: x-large;
     text-align: start;
 }
@@ -183,7 +184,7 @@
     text-align: start;
     margin-bottom: 2rem;
     font-family: 'Noto Sans', sans-serif;
-    font-weight: 700;
+    font-weight: bolder;
     font-size: x-large;
 }
 .D_detail_text{

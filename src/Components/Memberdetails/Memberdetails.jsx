@@ -10,7 +10,7 @@ const Memberdetails = () => {
   const [backendData, setBackendData] = useState({ memberList: [] });
   const [loading, setLoading] = useState(true);
   const {team}=useParams();
-
+  console.log(team);
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -61,6 +61,8 @@ const Memberdetails = () => {
       />
     );
   }
+  const currentPath = window.location.pathname;
+  console.log(currentTab);
   return (
     <div>
       <div className="extraspace"></div>
@@ -76,11 +78,11 @@ const Memberdetails = () => {
       ) : (
         <div className="main-members">
           <div className="navigation-link">
-            <Link to="/">
-              <p>&lt; Home</p>
-            </Link>
             <Link to="/our-team">
-              <p>/OurTeam</p>
+              <p>&lt; OurTeam </p>
+            </Link>
+            <Link to={currentPath}>
+              <p>/{team}</p>
             </Link>
           </div>
           <div className="container-members">
@@ -118,7 +120,7 @@ const Memberdetails = () => {
                   </a>):("")
                 }
                 {
-                  currentTab.linkedinLink?(  <a href={`tel:${currentTab.phoneNumber}`} target="_blank">
+                  currentTab.phoneNumber?(  <a href={`tel:${currentTab.phoneNumber}`} target="_blank">
                   <img
                     className="icons-img-ringer"
                     src="/images/icons8-ringer-volume-90.png"
@@ -131,11 +133,16 @@ const Memberdetails = () => {
               </div>
             </div>
             <div className="right">
-              <img className="blur-overlay"
-                src={currentTab.imageLink}
-                alt="Member's image"
-                draggable={false}
-              />
+            {process.env.REACT_APP_IS_PRODUCTION == 'true' ? (
+                          <img src={`${process.env.REACT_APP_BACKEND_IP}${currentTab.imageLink}`} alt="Clinic" />
+                        ) : (
+                          <img
+                    src={currentTab.imageLink}
+                    alt={"members Image"}
+                    className="mimage"
+                    draggable="false"
+                  />
+                        )}
             </div>
             </div>
           
@@ -154,12 +161,17 @@ const Memberdetails = () => {
                   className="member-card"
                   onClick={() => setMyCards(member)}
                 >
-                  <img
+                  {process.env.REACT_APP_IS_PRODUCTION == 'true' ? (
+                          <img src={`${process.env.REACT_APP_BACKEND_IP}${member.imageLink}`} alt="Clinic" />
+                        ) : (
+                          <img
                     src={member.imageLink}
                     alt={member.name}
-                    className="image"
+                    className="mimage"
                     draggable="false"
                   />
+                        )}
+                 
                   <div className="member-info">
                     <p className="name">{member.name}</p>
                     <span className="designation">{member.designation}</span>

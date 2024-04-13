@@ -21,8 +21,8 @@ function HomeSecondPage(props) {
                 </div>
                 <div className="hsp_outer_mid_right">
                     <h1 className="hsp_outer_mid_right_heading">Our Mission</h1>
-                    <span className="hsp_outer_mid_right_text">
-                        {collapse ? ourmissiontext : `${ourmissiontext.slice(0,300)}...`}
+                    <span >
+                    {collapse ? ourmissiontext : `${ourmissiontext.slice(0,300)}...`}
                     </span>
                     <button className="hsp_outer_mid_right_button" onClick={clickHandler}>{collapse ? 'Read Less' : 'Read More'}</button>
                 </div>

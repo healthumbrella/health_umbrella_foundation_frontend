@@ -31,24 +31,25 @@ function Books(){
           ) : (
            
         <div className="B_outer">
-            <div className="B_outer_top" onClick={()=>{navigate(-1)}}>
-                <h2>&#60; Migraine/ {title1.charAt(0).toUpperCase()}{title1.slice(1)} /Books & Book Chapters</h2>
+            <div className="B_outer_top" style={{marginLeft:50,fontWeight:"bold"}}>
+                <h2>&#60; <span onClick={() => navigate(-2)}>{disease.charAt(0).toUpperCase()}{disease.slice(1)}</span>
+                <span onClick={() => navigate(-1)}>/{title1.charAt(0).toUpperCase()}{title1.slice(1)}</span> /Books & Book Chapters</h2>
             </div>
             <div className="B_outer_bottom">
-                <div className="B_inner_top">
+                <div className="B_inner_top" style={{marginBottom:0}}>
                     <img src={process.env.PUBLIC_URL +"/images/bookStack.png"} alt="_blank"/>
                     <h1>Books & Book Chapters</h1>
                 </div>
                 <div className="B_inner_bottom">
                     <div className="B_inner_left">
-                        {title1?(
-                            <>
-                        <SeparateBook pathy = {title1} className="Sbclass" />
+                        {/* {title1?(
+                            <> */}
+                        <SeparateBook pathy = {title1} disease = {disease} className="Sbclass" />
                       
-                        </>
+                        {/* </>
                         ):(<p>Books Not Available</p>
 
-                        )}
+                        )} */}
                     </div>
                     <div className="B_inner_right">
                         <img src={process.env.PUBLIC_URL+"/images/bookCase.png"} alt="" />

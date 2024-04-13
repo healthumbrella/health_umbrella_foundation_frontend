@@ -51,8 +51,8 @@
     align-items: center;
     background-color: white;
     justify-content: center;
-    padding: .3rem .3rem .3rem .3rem;
-    border-radius: .2rem;
+    /* padding: 1rem;
+    border-radius: .5rem; */
     width:100%;
 }
 

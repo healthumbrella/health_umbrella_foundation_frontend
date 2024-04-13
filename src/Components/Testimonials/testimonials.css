@@ -13,6 +13,15 @@
     flex-direction: column;
     position: relative;
 }
+.D_summary_text {
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 400;
+    font-size: medium;
+    color: #555555;
+    height: 200px;
+    overflow-y: auto;
+    text-align: start;
+}
 .testimonials-link-topleft{
     width: fit-content;
     top: 0%;
@@ -128,10 +137,10 @@
     cursor: pointer;
 }
 .t-backend-summary{
+    
     font-size: small;
     font-weight: 500;
     color: black;
-    text-align: right;
     height: 7.5rem;
     overflow-y: hidden;
     transition: overflow .3s;
@@ -176,11 +185,13 @@
     text-align: left;
 }
 .t-comment p2{
-    text-align: left;
-    font-weight: 400;
+    text-align: start;
+    font-weight: 500;
     font-size: small;
-    color: black
+    color: black;
+  
 }
+
 .t-design
 {
     position: relative;

@@ -37,7 +37,8 @@ function DirectCases() {
   const handleNavigateBack = () => {
     navigate(-1);
   };
-
+ const [isReadMore2, setIsReadMore2] = useState(false);
+ const [isReadMore, setIsReadMore] = useState(false);
   // console.log(data);
   return (
     <div className="D_outer">
@@ -53,7 +54,19 @@ function DirectCases() {
         </div>
         <div className="D_outer_summary">
           <h2 className="D_summary_heading">Summary</h2>
-          <p className="D_summary_text">{data?.summary}</p>
+          <p className="D_summary_text">
+                {isReadMore ? `${data?.summary}` : `${data?.summary}`.slice(0, 900)}
+                    <span
+                      onClick={() => {
+                        setIsReadMore(!isReadMore);
+                      }}
+                      style={{ color: "blue", cursor: "pointer" }}
+                    >
+                      <br />
+                      {!isReadMore ? "Read More..." : "...Read Less"}
+                    </span>
+                  </p>
+         
           <div className="line" />
         </div>
         <div className="D_outer_details">
@@ -65,8 +78,20 @@ function DirectCases() {
                   <tr className="TR">
                     <td className="TD1">Name  </td>
                     <td className="TD2">
-                      {data?.personalDetails?.name ?? "NA"}
-                    </td>
+                      {(() => {
+                        const name = data?.personalDetails?.name;
+                        let capitalizedWords = "NA";
+
+                        if (name) {
+                          capitalizedWords = name
+                          .split(" ")
+                          .map(word => word.charAt(0).toUpperCase() + word.slice(1)) 
+                          .join(" ");
+                        }
+
+                      return capitalizedWords;
+                    })()}
+                  </td>
                   </tr>
                   <tr className="TR">
                     <td className="TD1">Age  </td>
@@ -77,13 +102,15 @@ function DirectCases() {
                   <tr className="TR">
                     <td className="TD1">Sex  </td>
                     <td className="TD2">
-                      {data?.personalDetails?.sex ?? "NA"}
+                    {data?.personalDetails?.sex ? data.personalDetails.sex.charAt(0).toUpperCase() + data.personalDetails.sex.slice(1) : "NA"}
+
                     </td>
                   </tr>
                   <tr className="TR">
                     <td className="TD1">Occupation  </td>
                     <td className="TD2">
-                      {data?.personalDetails?.occupation ?? "NA"}
+                    {data?.personalDetails?.occupation ? data.personalDetails.occupation.charAt(0).toUpperCase() + data.personalDetails.occupation.slice(1) : "NA"}
+
                     </td>
                   </tr>
                   <tr className="TR">
@@ -101,8 +128,21 @@ function DirectCases() {
                   <tr className="TR">
                     <td className="TD1">Region  </td>
                     <td className="TD2">
-                      {data?.personalDetails?.region ?? "NA"}
-                    </td>
+                    {(() => {
+                      const name = data?.personalDetails?.region;
+                      let capitalizedWords = "NA";
+
+                      if (name) {
+                        capitalizedWords = name
+                        .split(" ") // Split the string into an array of words
+                        .map(word => word.charAt(0).toUpperCase() + word.slice(1)) // Capitalize the first letter of each word
+                        .join(" "); // Join the words back together into a string
+                      }
+
+                    return capitalizedWords;
+                  })()}
+                </td>
+
                   </tr>
                 </table>
               </div>
@@ -110,8 +150,20 @@ function DirectCases() {
             <div className="D_top_right">
               <div className="inner_line"></div>
               <div className="D_right_text">
-                <h2 className="D_detail_comments">Comments by other</h2>
-                <p className="D_detail_text">{data?.comment}</p>
+                <h2 className="D_detail_comments">Comments by Other</h2>
+                <p className="D_detail_text">
+                {isReadMore2 ? `${data?.comment}` : `${data?.comment}`.slice(0, 500)}
+                    <span
+                      onClick={() => {
+                        setIsReadMore2(!isReadMore2);
+                      }}
+                      style={{ color: "blue", cursor: "pointer" }}
+                    >
+                      <br />
+                      {!isReadMore2 ? "Read More..." : "...Read Less"}
+                    </span>
+                  </p>
+                  
               </div>
             </div>
           </div>
