@@ -44,19 +44,23 @@ const Bottom = () => {
   const handleButtonClick = (therapyType) => {
     setSelectedTherapy(selectedTherapy === therapyType ? "" : therapyType);
   };
-  console.log(data);
-  // const toggleReadMore = (index) => {
-  //   setData((prevData) => ({
-  //     ...prevData,
-  //     pathies: {
-  //       ...prevData.pathies,
-  //       [selectedTherapy]: prevData.pathies[selectedTherapy].map((therapy, i) => ({
-  //         ...therapy,
-  //         isReadMore: i === index ? !therapy.isReadMore : false,
-  //       })),
-  //     },
-  //   }));
-  // };
+
+
+  const toggleReadMore = (index) => {
+    setData((prevData) => ({
+      ...prevData,
+      pathies: {
+        ...prevData.pathies,
+        [selectedTherapy]: prevData.pathies[selectedTherapy].map((therapy, i) => ({
+          ...therapy,
+          isReadMore: i === index ? !therapy.isReadMore : false,
+        })),
+      },
+    }));
+  };
+ 
+  function formatString(str) { return str.replace(/(?<!^)([A-Z])/g, ' $1'); }
+
 
   const therapyArray = data.pathies && data.pathies[selectedTherapy];
 
@@ -84,7 +88,8 @@ const Bottom = () => {
                       onClick={() => handleButtonClick(therapyType)}
                       className={selectedTherapy === therapyType ? "disease-therapy-button " : ""}
                     >
-                      {therapyType}
+                     {formatString(therapyType)}
+
                     </button>
                   ))}
                 </div>

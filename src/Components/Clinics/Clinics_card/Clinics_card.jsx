@@ -37,8 +37,12 @@ const Clinics_card = ({ clinicdata }) => {
     setSelectedItem(item);
     setModalVisible(true);
   };
-  const handleTagClick = (val) => {
-    setShowAllTags(val);
+  
+  const handleTagClick = (index) => {
+    setShowAllTags(prevState => ({
+      ...prevState,
+      [index]: !prevState[index]
+    }));
   };
 
   //   console.log(clinicdata);
@@ -78,29 +82,19 @@ const Clinics_card = ({ clinicdata }) => {
 
                       <div className="clinics-card-text">
                         <h5>{clinic.name}</h5>
-                        <p><img src="./Images/Place_Marker.png" alt="" />
+                        {/* <p><img src="./Images/Place_Marker.png" alt="" /> */}
+                        <p><img src="./Images/Place_Marker.png" alt="" /> 
                           {clinic.location.slice(0, 20)} {clinic.address.slice(0, 60)}...
                         </p>
                         <div className="clinics-card-tags">
-                          {clinic.tagList
-                            .slice(0, showAllTags ? clinic.tagList.length : 3)
-                            .map((tag, tagIndex) => (
-                              <p className="clinics-tag" key={tagIndex}>
-                                {tag}
-                              </p>
-                            ))}
-                          <p
-                            className="clinics-tag-more"
-                            onClick={() => handleTagClick(!showAllTags)}
-                          >
-                            {showAllTags ? (
-                              <p className="clinics-tag-more">See Less...</p>
-                            ) : (
-                              <p className="clinics-tag-more">See More...</p>
-                            )}
-                          </p>
-                        </div>
-                      </div>
+                      {clinic.tagList.slice(0, showAllTags[index] ? clinic.tagList.length : 3).map((tag, tagIndex) => (
+                        <p className="clinics-tag" key={tagIndex}>{tag}</p>
+                      ))}
+                      <p className="clinics-tag-more" onClick={() => handleTagClick(index)}>
+                        {showAllTags[index] ? "See Less..." : "See More..."}
+                      </p>
+                    </div>
+                  </div>
                       <div className="clinics-card-summary">
                         {/* <p className='clinics-summary clinics-s'>(-) {clinic.summary}</p> */}
                         <button
