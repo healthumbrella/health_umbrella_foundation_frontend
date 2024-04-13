@@ -78,7 +78,7 @@ function All() {
 
                           }}
                         >
-                          <span>
+                          <span id="cbb">
                             <FaChevronLeft style={{ color: "lightgrey" }} />
                           </span>
                         </button>
@@ -88,7 +88,7 @@ function All() {
                           {year > 2019 ? <span>{year - 1}</span> : <span>END</span>}
                         </p>
                         <p id="cb">
-                          <span>{year}</span>
+                          <span >{year}</span>
                         </p>
                         <p onClick={() => {
                           if (year !== currentYear) handleYearChange(1);
@@ -101,7 +101,7 @@ function All() {
                             if (year !== currentYear) handleYearChange(1);
                           }}
                         >
-                          <span>
+                          <span id="cbb">
                             <FaChevronRight style={{ color: "lightgrey" }} />
                           </span>
                         </button>

@@ -57,6 +57,8 @@ const Bottom = () => {
       },
     }));
   };
+ 
+  function formatString(str) { return str.replace(/(?<!^)([A-Z])/g, ' $1'); }
 
   const therapyArray = data.pathies && data.pathies[selectedTherapy];
 
@@ -84,7 +86,8 @@ const Bottom = () => {
                       onClick={() => handleButtonClick(therapyType)}
                       className={selectedTherapy === therapyType ? "disease-therapy-button " : ""}
                     >
-                      {therapyType}
+                     {formatString(therapyType)}
+
                     </button>
                   ))}
                 </div>
