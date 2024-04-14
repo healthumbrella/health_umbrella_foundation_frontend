@@ -1,0 +1,10 @@
+.pathy_info_outer {
+    /* border: 1px solid red; */
+    padding: 2rem;
+    max-width: 80vw;
+}
+
+.card_collection_outer {
+    display: flex;
+    flex-wrap: wrap;
+}

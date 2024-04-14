@@ -1,0 +1,15 @@
+.disease_info_outer {
+    /* border: 1px solid blue; */
+    padding: 2rem;
+    display: flex;
+    flex-direction: row;
+    text-align: left;
+}
+
+.disease_image {
+    margin: 1rem 2rem 1rem 1rem;
+    width: 20vw;
+    height: 20vw;
+    border-radius: 50%;
+    border: 5px solid #053B3F;
+}

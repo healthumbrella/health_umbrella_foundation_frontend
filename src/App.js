@@ -17,6 +17,9 @@ import Pathy from "./Components/Pathy/Pathy";
 import Testimonials from "./Components/Testimonials/testimonials";
 import Memberdetails from "./Components/Memberdetails/Memberdetails";
 import Clinics from "./Components/Clinics/Clinics";
+import Disease from "./Components/DiseaseNew/Disease";
+import DiseaseInfo from "./Components/DiseaseNew/Content/DiseaseInfo/DiseaseInfo";
+import PathyInfo from "./Components/DiseaseNew/Content/PathyInfo/PathyInfo";
 
 
 function App() {
@@ -29,9 +32,9 @@ function App() {
         <Route path="/about-us" exact element={<Home />}></Route>
         {/* <Route path="/diseases" exact element={<Diseases/>}></Route> */}
         <Route path="/disease/:disease" exact element={<Diseases/>}></Route>
+        {/* <Route path="/disease/:disease" exact element={<Disease/>}></Route> */}
         <Route path="/disease/:disease/:titles" exact element={<PathyPage/>}></Route>  
         <Route path="/disease/:disease/:pathy/directCase/:caseId" exact element={<DirectCases />}></Route> 
-       
         <Route path="/disease/:disease/:title1/books" exact element={<Books />}></Route> 
         <Route path="/disease/:disease/:title1/:title2" exact element={<Testimonials />}></Route>    
         <Route path="/share-experience" exact element={<ShareExp/>}></Route>
@@ -45,6 +48,13 @@ function App() {
 
         <Route path="/clinics/" exact element={<Clinics />}></Route> 
         <Route path="/feedback" exact element = {<Feedback />}></Route>
+
+        {/* new disease section */}
+        <Route path="/diseases/:disease" element={<Disease/>}>
+          <Route index element={<DiseaseInfo/>} />
+          <Route path=":therapy" element={<PathyInfo/>} />
+        </Route>
+        
       </Routes>     
       <Footer />
     </div>
