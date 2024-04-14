@@ -32,7 +32,7 @@ function App() {
         <Route path="/about-us" exact element={<Home />}></Route>
         {/* <Route path="/diseases" exact element={<Diseases/>}></Route> */}
         <Route path="/disease/:disease" exact element={<Diseases/>}></Route>
-        <Route path="/disease/:disease" exact element={<Disease/>}></Route>
+        {/* <Route path="/disease/:disease" exact element={<Disease/>}></Route> */}
         <Route path="/disease/:disease/:titles" exact element={<PathyPage/>}></Route>  
         <Route path="/disease/:disease/:pathy/directCase/:caseId" exact element={<DirectCases />}></Route> 
         <Route path="/disease/:disease/:title1/books" exact element={<Books />}></Route> 
