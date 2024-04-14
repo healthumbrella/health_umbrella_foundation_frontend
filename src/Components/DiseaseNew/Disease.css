@@ -1,0 +1,5 @@
+.disease_outer {
+    margin-top: 7rem;
+    display: flex;
+    flex-direction: row;
+}
