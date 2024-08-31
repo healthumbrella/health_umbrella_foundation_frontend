@@ -53,7 +53,7 @@ const Clinics_left = ({clinicdata}) => {
             <div className="clinics-filter1">
               {cities.map((city, index) => (
                 <label key={index} className="clinics-radio">
-                  <input type="checkbox" name="city" value={city} onChange={handleCityChange1}/>
+                  <input type="checkbox"  name="city" value={city} onChange={handleCityChange1} style={{cursor:"pointer"}}/>
                   <p className="clinicsf1">{city}</p>
                 </label>
               ))}
@@ -64,7 +64,7 @@ const Clinics_left = ({clinicdata}) => {
             <div className="clinics-filter2">
               {pathies.map((pathy, index) => (
                 <li key={index} className="clinicsf2">
-                <input type="checkbox" name="pathy" value={pathy} onChange={handlePathyChange1} /> {pathy}
+                <input type="checkbox" name="pathy" value={pathy} onChange={handlePathyChange1} style={{cursor:"pointer"}}/> {pathy}
               </li>
               ))}
             </div>

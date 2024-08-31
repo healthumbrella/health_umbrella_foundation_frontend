@@ -1,17 +1,17 @@
 import React, { useContext } from "react";
 import "./clinics_card.scss";
 import { useState, useEffect } from "react";
-
 import axios from "axios";
 import ClinicModal from "../ClinicModal/ClinicModal";
 import { ClinicFilterContext } from "../ClinicContext/ClinicFilterContext";
 
 const Clinics_card = ({ clinicdata }) => {
+  console.log(clinicdata);
   const { selectedPathies, selectedCity } = useContext(ClinicFilterContext);
 
   const [selectedItem, setSelectedItem] = useState("");
   const [modalVisible, setModalVisible] = useState(false);
-  const [showAllTags, setShowAllTags] = useState(false);
+  const [showAllTags, setShowAllTags] = useState({});
 
   // console.log(selectedCity);
   // console.log(selectedPathies);
@@ -39,9 +39,9 @@ const Clinics_card = ({ clinicdata }) => {
   };
   
   const handleTagClick = (index) => {
-    setShowAllTags(prevState => ({
+    setShowAllTags((prevState) => ({
       ...prevState,
-      [index]: !prevState[index]
+      [index]: !prevState[index],
     }));
   };
 
@@ -83,28 +83,42 @@ const Clinics_card = ({ clinicdata }) => {
                       <div className="clinics-card-text">
                         <h5>{clinic.name}</h5>
                         {/* <p><img src="./Images/Place_Marker.png" alt="" /> */}
-                        <p><img src="./Images/Place_Marker.png" alt="" /> 
-                          {clinic.location.slice(0, 20)} {clinic.address.slice(0, 60)}...
+                        <p>
+                          <img src={process.env.PUBLIC_URL +"/images/locationGray.png"} alt="" /> 
+                          {/* <p> */}
+                          {clinic.location.slice(0, 20)} {clinic.address.slice(0,101)}{clinic.address.length>101?" ...":""}
+                          {/* </p> */}
                         </p>
                         <div className="clinics-card-tags">
-                      {clinic.tagList.slice(0, showAllTags[index] ? clinic.tagList.length : 3).map((tag, tagIndex) => (
-                        <p className="clinics-tag" key={tagIndex}>{tag}</p>
-                      ))}
-                      <p className="clinics-tag-more" onClick={() => handleTagClick(index)}>
-                        {showAllTags[index] ? "See Less..." : "See More..."}
-                      </p>
-                    </div>
-                  </div>
+                          {clinic.tagList
+                            .slice(0, showAllTags[index] ? clinic.tagList.length : 3)
+                            .map((tag, tagIndex) => (
+                              <p className="clinics-tag" key={tagIndex}>
+                                {tag}
+                              </p>
+                            ))}
+
+                          {clinic.tagList.length > 3 && (
+                            <p
+                              className="clinics-tag-more"
+                              onClick={() => handleTagClick(index)}
+                            >
+                              {showAllTags[index] ? "See Less..." : "See More..."}
+                            </p>
+                          )}
+                        </div>
+                      </div>
+
                       <div className="clinics-card-summary">
                         {/* <p className='clinics-summary clinics-s'>(-) {clinic.summary}</p> */}
                         <button
                           className="clinics-summary clinics-s"
                           onClick={() => handleCardClick(clinic)}
                         >
-                          <img id="clinic-summary-icon" src="./Images/Brief.png" alt="" /> summary
+                          <img id="clinic-summary-icon" src={process.env.PUBLIC_URL +"/images/Brief.png"}  alt="" /> summary
                         </button>
                         <p className="clinics-summary clinics-m">
-                          <img id="clinic-summary-icon" src="./Images/Ringer_volume.png" alt="" /> {clinic.contact}
+                          <img id="clinic-summary-icon" src={process.env.PUBLIC_URL +"/images/Ringer_volume.png"}  alt="" /> {clinic.contact}
                         </p>
                       </div>
                     </div>
