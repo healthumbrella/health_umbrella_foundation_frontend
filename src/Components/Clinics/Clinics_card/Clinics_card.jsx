@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import "./clinics_card.scss";
 import { useState, useEffect } from "react";
-import axios from "axios";
+// import axios from "axios";
 import ClinicModal from "../ClinicModal/ClinicModal";
 import { ClinicFilterContext } from "../ClinicContext/ClinicFilterContext";
 
@@ -75,7 +75,7 @@ const Clinics_card = ({ clinicdata }) => {
                       <div className="clinics-card-img">
                         {/* Image or placeholder */}
                        
-                        {process.env.REACT_APP_IS_PRODUCTION == 'true' ? (
+                        {process.env.REACT_APP_IS_PRODUCTION === 'true' ? (
                           <img src={`${process.env.REACT_APP_BACKEND_IP}${clinic.imageLink}`} alt="Clinic" />
                         ) : (
                           <img src={clinic.imageLink} alt="Clinic" />

@@ -25,8 +25,9 @@
 .testimonials-link-topleft{
     width: fit-content;
     top: 0%;
+    /* background: #000; */
     /* font-size: large; */
-    font-size: large;
+    font-size: 18px;
     font-family: 'Rubik', sans-serif;
     left: 1%;
     position: absolute;

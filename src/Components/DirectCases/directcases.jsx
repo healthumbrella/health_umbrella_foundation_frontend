@@ -32,19 +32,25 @@ function DirectCases() {
     1
   )}`;
   const capitalizedPathy = `${pathy.charAt(0).toUpperCase()}${pathy.slice(1)}`;
-  const concatenatedString = `${capitalizedDisease}/${capitalizedPathy}`;
-
-  const handleNavigateBack = () => {
-    navigate(-1);
-  };
+  // const concatenatedString = `${capitalizedDisease}/${capitalizedPathy}`;
  const [isReadMore2, setIsReadMore2] = useState(false);
  const [isReadMore, setIsReadMore] = useState(false);
   // console.log(data);
   return (
     <div className="D_outer">
       <div className="D_outer_top">
-        <h2 onClick={handleNavigateBack} style={{ cursor: "pointer" }}>
-          &lt; {concatenatedString}
+        <h2 style={{ cursor: "pointer" ,fontSize:"18px"}}>
+          &lt; <span onClick={()=>navigate(-2)}>
+              {capitalizedDisease}
+            </span>
+            /
+            <span onClick={()=>navigate(-1)}>
+              {capitalizedPathy}
+            </span>
+            <span onClick={()=>navigate(0)}>
+            /DirectCase/
+            </span>
+            {data?.caseId}
         </h2>
       </div>
       <div className="D_outer_bottom">

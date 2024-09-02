@@ -23,6 +23,7 @@
     text-decoration:none;
     display:inline-block;
     font-weight: bold;
+    cursor: pointer;
 }
 .underline:after {
     display:block;
@@ -41,7 +42,9 @@
     font-family: 'Noto Sans';
 }
 
-
+.nav-link.underline.dClick {
+    color: white; 
+}
 .dropdown-menu {
     position: fixed !important; /* Position the dropdown absolutely */
     top: 89px; /* Start it right below the header */
