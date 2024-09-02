@@ -10,23 +10,38 @@
 }
 .clinics-main-scroll{
     overflow: scroll;
+    // background-color: red;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
     .clinic-heading{
+        display: flex;
         flex-direction: column;
         background: white;
         position: relative;
         top: 20px;
+        bottom: 10px;
+        margin-top: 25px;
         color: #053B3F;
+        font-weight: bold;
         // background: gold;
-        width: 80vw;
+        // width: 80vw;
     }
 
 .clinics-card-main{
-    background: white;
-    width: 1200px;
+    // background: red;
+    // background-color: #1CA822;
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+
+    width: 100%;
     // border-left: 1px solid grey;
     overflow-y: scroll;
     height: 100%;
-    height: 1050px;
+    // height: 1050px;
     margin-top: 30px;
     
     padding-bottom: 20px;
@@ -35,8 +50,10 @@
     .clinics-card-container{
         display: flex;
         flex-direction: column;
-        
-        
+        align-items: center;
+        justify-content: center;
+        width: 95%;
+        // background-color: yellow;
 
 
 
@@ -45,7 +62,9 @@
         .clinics-cards{
             display: flex;
             flex-direction: column;
-            width: 80vw;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
             
 
             
@@ -57,49 +76,73 @@
                 background: #f5f5f5;
                 background-image: url("../../../../public/Images/green_ring.png");
                 background-repeat: no-repeat;
-                background-position: 73vw 0;
+                background-position: 74vw;
                 display: flex;
             flex-direction: row;
-            justify-content: space-evenly;
-            width: 80vw;
+            align-items: center;
+            // background-color: #1CA822;
+            padding: 0rem 1rem;
+            justify-content: space-between;
+            width: 100%;
             margin-top: 20px;
-            border: 1px solid black;
+            border: 2px solid rgb(226, 224, 224);
+            
             border-radius: 7px;
-            height: 155px;
-            margin-left: 25px;
+            height: 170px;
+            // margin-left: 25px;
             
                 // background: rgb(169, 122, 122);
                 .clinics-card-img{
                     display: flex;
-                    border: 1px solid black;
-                    height: 18vh;
-                    width: auto;
-                    margin-right: 20px;
-                    margin-top: auto;
+                    // background-color: #1CA822;
+                    // border: 1px solid black;
+                    // margin-right: 20px;
+                    // margin-top: aut  o;
                     
-                    margin-bottom: auto;
-                    position: relative;right: 5px;
-                    border-radius: 7px;
-                    overflow: hidden;
+                    // margin-bottom: auto;
+                    // position: relative;right: 5px;
+                    height: 85%;    
+                    img{
+                        width: 200px;
+                        border-radius: 7px;
+                    }
+                    // overflow: hidden;
                 }
                 .clinics-card-text{
+                    width: 90%;
+                    height: 90%;
                     // background: red;
-                    width: 38vw;
-                    margin-top: 20px;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    // position: relative;
+                    padding: 1rem;
+                    // width: 38vw;
+                    // margin-top: 20px;
                     // margin-bottom: auto;
-                    text-align: left;
                     // position: relative;right: 40px;
                     h5{
+                        align-self: flex-start;
                         text-transform: capitalize;
                         // background: blue;
                         font-size: 24px;
                     }
                     p{
-                        position: relative;bottom: 5px;
+                        align-self: flex-start;
+                        // position: relative;bottom: 5px;
+                        display: inline-flex;
                         color: grey;
                         // background: red;
+                        font-weight: 700;
+                        gap: 4px;
                         font-size: 12px;
                         text-transform: capitalize;
+                        img{
+                            height: 15px;
+                            width: 15px;
+                            // margin-right: 2px;
+                        }
                     }
                     // background: red;
                     .clinics-tag-more{
@@ -117,13 +160,15 @@
                         height: 15px;
                         min-width: 80px;
                         cursor: pointer;
-                        position: relative;top: 0px;left: 5px;
+                        // position: relative;top: 0px;left: 5px;
                     }
                     .clinics-card-tags{
                         // background: green;
                         display: flex;
-                        justify-content: start;
+                        align-self: flex-start;
+                        justify-content: flex-start;
                         // width: 30vw;
+                        
                         height: 40px;
                         // background: blue;
                         overflow-x: scroll;
@@ -136,20 +181,24 @@
                         
 
                         .clinics-tag{
-                            
+                            margin-top: 2.5px;
+                            border: 0.2px solid #00000066;
+                            display: flex;
+                            align-items: center;
                             background: white;
                             color: black;
                             border-radius: 15px;
                             padding: 1px 20px 3px 20px;
+                            // width: auto;
                             // margin: auto;
-                            margin-left: 3px;
-                            margin-top: 8px;
-                            margin-bottom: 2px;
+                            // margin-left: 3px;
+                            // margin-top: 8px;
+                            // margin-bottom: 2px;
                             height: 25px;
-                            border: 1px solid black;
+                            // border: 1px solid black;
                             text-transform: capitalize;
                             // margin-right: 5px;
-                            position: relative;left: 10px;
+                            // position: relative;left: 10px;
                             
 
                         }
@@ -157,25 +206,26 @@
                 }
                 .clinics-card-summary{
                     // background: red;
-                    width: 160px;
-                    margin-top: auto;
-                    margin-bottom: auto;
-                    margin-right: 30px;
-
+                    width: 205px;
+                    // margin-top: auto;
+                    // margin-bottom: auto;
+                    // margin-right: 20px;
+                    
                     #clinic-summary-icon{
                         background: white;
                         padding: 4px 4px 4px 4px;
                         border-radius: 15px;
-
+                        
                     }
-
+                    
                     .clinics-s{
+                        cursor: pointer;
                         background: #053B3F;
                         color: white;
                         border-radius: 15px;
                         padding: 1px 20px 3px 20px;
-                        margin: auto;
-                        border: 1px solid black;
+                        // margin: auto;
+                        // border: 1px solid black;
                         text-transform: capitalize;
                         margin-top: 15px;
                         // margin-right: 20px;
@@ -185,9 +235,10 @@
                         background: #1CA822;
                         color: white;
                         border-radius: 15px;
-                        padding: 1px 20px 3px 20px;
-                        margin: auto;
-                        border: 1px solid black;
+                        padding: 3px;
+                        // margin: auto;
+                        // border: 1px solid black;
+                        // cursor: pointer;
                         text-transform: capitalize;
                         margin-top: 15px;
                         
