@@ -29,6 +29,12 @@ const Top = ({ data }) => {
     getapidata();
   }, []);
 
+  const truncateText = (text, maxLength) => {
+    if (!text || text.length <= maxLength) return text;
+    const truncated = text.slice(0, maxLength);
+    return truncated.slice(0, truncated.lastIndexOf(" ")) + " ";
+  };
+
   return (
     <>
       <div>
@@ -57,28 +63,32 @@ const Top = ({ data }) => {
                 <div className="disease-right">
                   <h1>{data.disease}</h1>
                   <p>
-                    {isReadMore2 ? `${data.text}` : `${data.text}`.slice(0, 270)}
+                  {isReadMore2
+                      ? data.text
+                      : truncateText(data.text, 270)}
                     <span
                       onClick={() => {
                         setIsReadMore2(!isReadMore2);
                       }}
                       style={{ color: "blue", cursor: "pointer" }}
                     >
-                      <br />
-                      {!isReadMore2 ? "Read More..." : "...Read Less"}
+                      {/* <br /> */}
+                      {" "}{!isReadMore2 ? "Read More" : "Read Less"}
                     </span>
                   </p>
                   <h2>Summary</h2>
                   <p>
-                    {isReadMore ? `${data.summary}` : `${data.summary}`.slice(0, 270)}
+                  {isReadMore
+                      ? data.summary
+                      : truncateText(data.summary, 400)}
                     <span
                       onClick={() => {
                         setIsReadMore(!isReadMore);
                       }}
                       style={{ color: "blue", cursor: "pointer" }}
                     >
-                      <br />
-                      {!isReadMore ? "Read More..." : "...Read Less"}
+                      {/* <br /> */}
+                      {!isReadMore ? "Read More" : "Read Less"}
                     </span>
                   </p>
                 </div>
