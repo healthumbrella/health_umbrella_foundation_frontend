@@ -54,19 +54,21 @@ const Clinics_card = ({ clinicdata }) => {
         <h2 className="clinic-heading">Clinic and Medical communities</h2>
         <div className="clinics-card-main">
           <div className="clinics-card-container">
-
-
-            {clinicdata &&
+          {clinicdata &&
               clinicdata.clinicsList
                 .filter((clinic) => {
-                  // Filter logic:
-                  // console.log("Filtering clinic:", clinic.location, selectedCity);
+                  // Apply filtering based on selectedPathies and selectedCity
+                  const cityMatch =
+                    selectedCity.length === 0 ||
+                    selectedCity.includes(clinic.location);
 
-                  return (
-                    // (selectedCity.length === 0 || clinic.location === selectedCity) &&
-                    (selectedPathies.length === 0 ||
-                      clinic.tagList.some((tag) => selectedPathies.includes(tag)))
-                  );
+                  const pathyMatch =
+                    selectedPathies.length === 0 ||
+                    clinic.tagList.some((tag) =>
+                      selectedPathies.includes(tag)
+                    );
+
+                  return cityMatch && pathyMatch;
                 }).map((clinic, index) => (
                   <div className="clinics-cards" key={index}>
                     <div className="clinics-card">
@@ -84,9 +86,11 @@ const Clinics_card = ({ clinicdata }) => {
                         <h5>{clinic.name}</h5>
                         {/* <p><img src="./Images/Place_Marker.png" alt="" /> */}
                         <p>
-                          <img src={process.env.PUBLIC_URL +"/images/locationGray.png"} alt="" /> 
+                          <a href={clinic.locationLink} target="__blank">
+                            <img src={process.env.PUBLIC_URL +"/images/locationGray.png"} alt="" /> 
+                          </a>
                           {/* <p> */}
-                          {clinic.location.slice(0, 20)} {clinic.address.slice(0,101)}{clinic.address.length>101?" ...":""}
+                          {clinic.location.slice(0, 20)} {clinic.address.slice(0,80)}{clinic.address.length>101?" ...":""}
                           {/* </p> */}
                         </p>
                         <div className="clinics-card-tags">

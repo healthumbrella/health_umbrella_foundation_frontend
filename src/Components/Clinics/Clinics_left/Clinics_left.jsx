@@ -7,7 +7,7 @@ const Clinics_left = ({clinicdata}) => {
  
   const [cities, setCities] = useState([]);
   const [pathies, setPathies] = useState([]);
-
+  console.log(clinicdata)
   const {  handlePathyChange, handleCityChange, selectedPathies, selectedCity  } = useContext(ClinicFilterContext);
   
   const handlePathyChange1 = (event) => {
