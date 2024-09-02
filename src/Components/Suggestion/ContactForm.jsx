@@ -161,12 +161,13 @@ const ContactForm = () => {
 
             <div className="lastrow">
               <div className="last1">
-                <p className="last1 p1" style={{height:'0.3rem'}}>
+                <p className="p1" >
                   Can we share your case study by keeping you anonymous?
-                </p>
-                  <tag className="ask-asterik" 
+                  <span className="ask-asterik" 
                   style={{fontSize:'17px',fontWeight:'bold'}}
-                  >*</tag>
+                  >*</span>
+                </p>
+                 
                 <div className="ask-gap-yes-no">
                     <input  type="radio"  name="show_study"  value="true"  checked={formData.show_study === "true"}  onChange={handleRadioChange}
                     />
