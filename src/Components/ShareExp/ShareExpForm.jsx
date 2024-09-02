@@ -249,10 +249,12 @@ const ShareExpForm = () => {
 
             <div className="lastrow">
               <div className="last11">
-                <p className="last1 p1">
+              
+                <p className="p1">
                 Can we publish your experience with name ? 
                 <span className="asterik" style={{fontWeight:'bold',fontSize:'17px'}}>*</span>
                 </p>
+               
                 <div className="gap-yes-no">
                     <input  type="radio"  name="show_name"  value="true"  checked={formData.show_name === "true"}  onChange={handleRadioChange}
                     />

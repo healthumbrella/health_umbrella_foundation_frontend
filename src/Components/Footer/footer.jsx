@@ -105,8 +105,8 @@ function Footer() {
             </div>
 
             <div className="footer_lower">
-                <p><span>Disclaimer:</span> This website does not provide medical advice.</p>
-                <p>The information, including but not limited to text, graphics, images and other material content on the website are for informational purposes only, no material on the site is intended to be a substitute for professional medical advice, diagnosis or treatment.</p>
+                <p><span>Disclaimer:</span> This website does not provide medical advice.
+                The information, including but not limited to text, graphics, images and other material content on the website are for informational purposes only, no material on the site is intended to be a substitute for professional medical advice, diagnosis or treatment.</p>
             </div>
         </div>
     )

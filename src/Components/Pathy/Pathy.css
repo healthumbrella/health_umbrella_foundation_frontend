@@ -73,12 +73,11 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  flex-direction: row;
   padding: 1rem;
-  border-top-left-radius: 150px;
+  /* border-top-left-radius: 150px;
   border-bottom-left-radius: 150px;
   border-top-right-radius: 40px;
-  border-bottom-right-radius: 40px;
+  border-bottom-right-radius: 40px; */
   box-shadow: 0px 4px 4px 0px #00000040;
 }
 .pathyEven {
@@ -186,6 +185,7 @@
 
 
 .scrollToTopButton i {
+  display: flex;
   font-size: 20px;
 }
 

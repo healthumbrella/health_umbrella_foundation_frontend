@@ -3,6 +3,7 @@ import "./Pathy.css";
 import axios from "axios";
 import PathyDetailComponent from "./PathyDetailComponent";
 import ClipLoader from "react-spinners/ClipLoader";
+import { HiArrowUp } from "react-icons/hi";
 
 const Pathy = () => {
   const [data, setData] = useState([]);
@@ -119,14 +120,15 @@ const Pathy = () => {
         {data.map((item, key) => (
             
           <div id={"mp"+item.title} key={key} className={key%2===0 ? "pathyEven" : "pathyOdd"}>
-            <PathyDetailComponent item={item} />
+            <PathyDetailComponent item={item} isEven={key % 2 === 0}/>
           </div>
         ))}
       </div>
       {showScrollButton && (
-        <div className="scrollToTopButton" onClick={scrollToTopOnClick}>
-          <i className="fas fa-arrow-up" ></i>
-        </div>
+      <div className="scrollToTopButton" onClick={scrollToTopOnClick}>
+         {/* <i className="fas fa-home"></i> */}
+         <i><HiArrowUp/></i>
+      </div>
       )}
     </div>
     </>

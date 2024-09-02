@@ -1,7 +1,7 @@
 .suggestion_main {
   display: flex;
   justify-content: center;
-  margin-bottom: 8rem;
+  /* margin-bottom: 8rem; */
 }
 .suggestion_container {
   display: flex;
@@ -156,8 +156,10 @@
 
 .ask-asterik {
   position: absolute;
-  top: 50%;
-  left: 28%;
+  /* top: 50%;
+  left: 28%; */
+  top: 30%;
+  left: 25%;
   padding-inline-start: 0.3rem;
   color: red;
 }
