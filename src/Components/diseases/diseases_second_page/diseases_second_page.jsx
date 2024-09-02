@@ -39,7 +39,11 @@ const Bottom = () => {
   const scrollToTopOnClick = () => {
     window.scrollTo(0, 0);
   };
-
+ const truncateText = (text, maxLength) => {
+    if (!text || text.length <= maxLength) return text;
+    const truncated = text.slice(0, maxLength);
+    return truncated.slice(0, truncated.lastIndexOf(" ")) + " ";
+  };
 
   const handleButtonClick = (therapyType) => {
     setSelectedTherapy(selectedTherapy === therapyType ? "" : therapyType);
@@ -111,17 +115,13 @@ const Bottom = () => {
                         <p>
                           {therapy.isReadMore
                             ? therapy.summary
-                            : therapy.summary.slice(0, 72)}
-                          <span
-                            onClick={() => {
-                              navigate(`/disease/${disease}/${therapy.name}`)
-                            }}
-                            style={{ color: "blue", cursor: "pointer" }}
+                            : truncateText(therapy.summary, 80)}
+                          <button
+                            onClick={() => toggleReadMore(index)}
+                            style={{ color: "blue", cursor: "pointer", background: "none", border: "none" }}
                           >
-                            <br />
-                            Read More...
-                            {/* {!therapy.isReadMore ? "Read More..." : "...Read Less"} */}
-                          </span>
+                            {therapy.isReadMore ? "Read Less" : "Read More"}
+                          </button>
                         </p>
                       </div>
                     ))}

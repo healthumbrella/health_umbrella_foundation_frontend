@@ -38,10 +38,16 @@
         width: 40%;
         margin: auto;
         img{
-            height: 519px;
-            width: auto;
-            margin-right: 20px;
-            max-width: 493px;
+            width: 450px; // Set your desired width
+            height: 450px; // Set your desired height
+            position: relative;
+            left: 40px;
+            border-radius: 4px;
+            // object-fit: cover; 
+            // height: 519px;
+            // width: auto;
+            // margin-right: 20px;
+            // max-width: 493px;
         }
     }
     .disease-right{
