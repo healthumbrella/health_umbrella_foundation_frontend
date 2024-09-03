@@ -1,6 +1,6 @@
 import React, { useRef, useState, useEffect } from "react";
 import "./header.css";
-import { NavLink ,/*useLocation*/} from 'react-router-dom';
+import { NavLink, useLocation ,/*useLocation*/} from 'react-router-dom';
 import axios from "axios";
 
 function Header() {
@@ -10,7 +10,15 @@ function Header() {
     // const [diseases, setDiseases] = useState(["Diabetes","Breast Cancer","Alzheimer","migraine","Heart Diseases","Cancer","CLD","Asthma","Thyroid","Depression","Kidney Disease","Obesity","Bronchiectasis","Sudden Cardiac Arrest","Multiple Sclerosis","PCOD","Strokes","Hypertension","Lung Cancer","Osteoporosis","Arthritis","Glaucoma","COPD",]); // State to store diseases data
     const [diseases, setDiseases] = useState([]); // State to store diseases data
     const [isDropdownOpen, setIsDropdownOpen] = useState(false); // State to control dropdown visibility
-
+    const [isDiseasesClicked, setIsDiseasesClicked] = useState(false);
+    const location=useLocation();
+    useEffect(() => {
+        // console.log(location.pathname)
+        if (!location.pathname.startsWith('/disease')) {
+            setIsDiseasesClicked(false);
+        }
+        else setIsDiseasesClicked(true);
+    }, [location]);
     useEffect(() => {
         const getapidata = async () => {
           try {
@@ -37,11 +45,13 @@ function Header() {
 
     const handleDropdownToggle = () => {
         setIsDropdownOpen(!isDropdownOpen);
+        setIsDiseasesClicked(true);
     };
 
     // Close the dropdown when a disease link is clicked or when navigating to a different page
     const handleDiseaseClick = () => {
         setIsDropdownOpen(false);
+        // setIsDiseasesClicked(false);
     };
 
     const currentScreenWidth = () => {
@@ -84,14 +94,14 @@ function Header() {
                         <NavLink className="nav-link underline" to="/about-us" onClick={collapseHandler}>About Us</NavLink>
                     </li> */}
                     <li className="nav-item dropdown">
-                        <NavLink
-                            className="nav-link underline"
+                        <div
+                            className={`nav-link underline ${isDiseasesClicked?'dClick':''}`}
                             // to={`${currentPath} /}`}
                             onClick={handleDropdownToggle}
                             // end
                         >
                             Diseases
-                        </NavLink>
+                        </div>
                         <div className={`dropdown-menu ${isDropdownOpen ? 'show' : ''}`}>
                             {diseases.map(disease => (
                                 <NavLink key={disease} className="dropdown-item" to={`/disease/${disease}`} onClick={ ()=>{handleDiseaseClick();
