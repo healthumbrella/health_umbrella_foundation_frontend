@@ -5,7 +5,7 @@ import axios from 'axios';
 import { useNavigate, useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
-const PathyPage = () => {
+const   PathyPage = () => {
   const navigate = useNavigate();
   const [data, setData] = useState({
     pathy: '',
@@ -51,7 +51,10 @@ const PathyPage = () => {
     ) : (
       <>
     <div className='PathyPage-main' >
-      <div style={{fontSize:"18px"}} className='PathyPage-nav' onClick={()=>{navigate(-1)}}>&lt; {disease.charAt(0).toUpperCase()}{disease.slice(1)}/{titles.charAt(0).toUpperCase()}{titles.slice(1)}</div>
+      <div style={{fontSize:"18px"}} className='PathyPage-nav'>
+        <span onClick={()=>{navigate(-1)}}>&lt; { disease.charAt(0).toUpperCase()}{disease.slice(1)}/</span>
+        <span>{titles.charAt(0).toUpperCase()}{titles.slice(1)}</span>
+      </div>
       <div className='PathyPage-container' >
         <img src={process.env.PUBLIC_URL +"/Images/green_ring_tl.png"} alt="_blank" className="greenring-tl" />
         <h1 className="PathyPage-heading" style={{marginBottom:0.5}}>{titles}</h1>
