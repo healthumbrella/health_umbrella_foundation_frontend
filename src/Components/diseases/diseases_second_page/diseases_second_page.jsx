@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link, useParams,useNavigate } from "react-router-dom";
+import { Link, useParams} from "react-router-dom";
 import "./diseases_second_page.scss";
 import axios from "axios";
 import ClipLoader from "react-spinners/ClipLoader";
@@ -13,7 +13,7 @@ const Bottom = () => {
   const [loading, setLoading] = useState(true);
   const params = useParams();
   const disease = params.disease;
-  const navigate=useNavigate();
+  // const navigate=useNavigate();
   useEffect(() => {
     const getapidata = async () => {
       try {
@@ -36,6 +36,7 @@ const Bottom = () => {
     getapidata();
   }, [disease]);
 
+  console.log(data)
   const scrollToTopOnClick = () => {
     window.scrollTo(0, 0);
   };

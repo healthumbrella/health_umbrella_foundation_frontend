@@ -40,14 +40,14 @@ function DirectCases() {
     <div className="D_outer">
       <div className="D_outer_top">
         <h2 style={{ cursor: "pointer" ,fontSize:"18px"}}>
-          &lt; <span onClick={()=>navigate(-2)}>
+          &lt; <span onClick={()=>navigate(-3)}>
               {capitalizedDisease}
             </span>
             /
-            <span onClick={()=>navigate(-1)}>
+            <span onClick={()=>navigate(-2)}>
               {capitalizedPathy}
             </span>
-            <span onClick={()=>navigate(0)}>
+            <span onClick={()=>navigate(-1)}>
             /DirectCase/
             </span>
             {data?.caseId}
