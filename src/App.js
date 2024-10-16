@@ -20,7 +20,7 @@ import Clinics from "./Components/Clinics/Clinics";
 import Disease from "./Components/DiseaseNew/Disease";
 import DiseaseInfo from "./Components/DiseaseNew/Content/DiseaseInfo/DiseaseInfo";
 import PathyInfo from "./Components/DiseaseNew/Content/PathyInfo/PathyInfo";
-
+import Home_v2_fourth_page from "./Components/Version_2/Home_v2/Home_v2_fourth_page/Home_v2_fourth_page"
 
 function App() {
   
@@ -28,7 +28,7 @@ function App() {
     <div className="App">  
       <Header />
       <Routes>
-        <Route path="/" exact element={<Home />}></Route> 
+        {/* <Route path="/" exact element={<Home />}></Route>  */}
         <Route path="/about-us" exact element={<Home />}></Route>
         {/* <Route path="/diseases" exact element={<Diseases/>}></Route> */}
         <Route path="/disease/:disease" exact element={<Diseases/>}></Route>
@@ -54,7 +54,7 @@ function App() {
           <Route index element={<DiseaseInfo/>} />
           <Route path=":therapy" element={<PathyInfo/>} />
         </Route>
-        
+        <Route path="/" element = {<Home_v2_fourth_page />} />
       </Routes>     
       <Footer />
     </div>
