@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+.hfifth {
+    background: #C2EBFE;
+  
+    display: flex;
+    flex-direction: column;
+ height: 509.11px;
+    align-items: center;
+   
+}
+
+.hfifth_upper {
+    padding-top: 114.11px;
+    text-align: center;
+    width: 80vw;
+    height: 145.93px;
+   
+    
+}
+
+.hfifth_upper p {
+    
+    font-family: "Noto Sans", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 21.79px;
+    color: #000000;
+    width: 1030px;
+    height: 96.55px;
+    margin-bottom: 1rem;
+}
+
+.hfifth_upper h3 {
+   
+    font-family: "Sombra", serif; /* Ensure correct font and fallback */
+    font-weight: 700;
+    font-size: 34px;
+    line-height: 38.28px;
+     height: 41.69px; 
+}
+.hfifth_lower{
+    height: 225.63px;
+    margin-top: 12.5rem;
+    width:1245.79px;
+}
+
+
+.hfifth_search {
+    position: relative;
+    margin:auto;
+    width: 707px;
+    height: 87.78px;
+    border-radius: 5px 0px 0px 0px;
+}

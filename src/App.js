@@ -20,15 +20,17 @@ import Clinics from "./Components/Clinics/Clinics";
 import Disease from "./Components/DiseaseNew/Disease";
 import DiseaseInfo from "./Components/DiseaseNew/Content/DiseaseInfo/DiseaseInfo";
 import PathyInfo from "./Components/DiseaseNew/Content/PathyInfo/PathyInfo";
-
+import Home_v2 from "./Components/Version_2/Home_v2/Home";
 
 function App() {
   
   return (
     <div className="App">  
-      <Header />
+      {/* <Header /> */}
       <Routes>
-        <Route path="/" exact element={<Home />}></Route> 
+        {/* <Route path="/" exact element={<Home />}></Route>  */}
+        <Route path="/" exact element={<Home_v2 />}></Route> 
+
         <Route path="/about-us" exact element={<Home />}></Route>
         {/* <Route path="/diseases" exact element={<Diseases/>}></Route> */}
         <Route path="/disease/:disease" exact element={<Diseases/>}></Route>

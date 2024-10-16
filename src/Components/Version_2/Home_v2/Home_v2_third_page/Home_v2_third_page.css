@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+.third{
+    background-color: #EEF9FF;
+    height: 829px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1465px;
+    
+}
+.third_mid{
+    /* margin-top: 4rem; */
+    /* margin-left: 8rem; */
+    height: 368px;
+    width: 603px;
+    text-align: left;
+    margin-left: 1rem;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    margin-top: 6rem;
+}
+.highlight{
+    font-family: Noto Sans;
+font-size: 24px;
+font-weight: bold;
+line-height: 32.69px;
+color: #2A2A2A;
+
+}
+.third_left{
+   
+    width:603px;
+    height: 368px;
+    
+    font-family: Oswald;
+    font-size: 130px;
+    font-weight: 400;
+    line-height: 192.66px;
+    letter-spacing: -0.2em;
+    margin-left: 3rem;
+    margin-top: 8rem;
+    /* margin-bottom: 10rem; */
+  
+}
+.h1{
+    width: 603px;
+    height: 56px;
+    font-family: "Roboto Condensed", sans-serif;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 56.25px;
+    color: #005985;
+/* text-align: left; */
+
+}
+
+.para{
+   
+    height: 288px;
+    width: 603px;
+   
+}
+
+.gif{
+   
+    height: 650px;
+    width: 650px;
+    object-fit:contain;
+    margin-right: 3rem;
+  
+}
