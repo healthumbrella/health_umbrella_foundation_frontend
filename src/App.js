@@ -22,7 +22,6 @@ import Clinics from "./Components/Clinics/Clinics";
 import Disease from "./Components/DiseaseNew/Disease";
 import DiseaseInfo from "./Components/DiseaseNew/Content/DiseaseInfo/DiseaseInfo";
 import PathyInfo from "./Components/DiseaseNew/Content/PathyInfo/PathyInfo";
-// import Home_v2 from "./Components/Version_2/Home_v2/Home";
 
 function App() {
   
@@ -34,6 +33,7 @@ function App() {
       <Routes>
         {/* //starting from here version 1 to is being commented
          <Route path="/" exact element={<Home />}></Route> 
+
         <Route path="/about-us" exact element={<Home />}></Route>
         //this was commented <Route path="/diseases" exact element={<Diseases/>}></Route> 
         <Route path="/disease/:disease" exact element={<Diseases/>}></Route>
@@ -58,6 +58,7 @@ function App() {
         <Route path="/diseases/:disease" element={<Disease/>}>
           <Route index element={<DiseaseInfo/>} />
           <Route path=":therapy" element={<PathyInfo/>} />
+
         </Route> */}
 
         
@@ -68,7 +69,6 @@ function App() {
 
       
       </Routes>  
-
       <Footer />
     </div>
   );
