@@ -6,7 +6,7 @@ import First from './home_v2_first_page/Home_v2_first.jsx';
 import Home_v2_second_page from "./Home_v2_second_page/Home_v2_second_page";
 import Home_v2_fifth_page from "./Home_v2_fifth_page/Home_v2_fifth_page";
 import Home_v2_third_page from "./Home_v2_third_page/Home_v2_third_page"
-
+import Home_v2_fourth_page from "./Home_v2_fourth_page/Home_v2_fourth_page.jsx"
 
 function Home(){
   
@@ -37,6 +37,7 @@ function Home(){
                <First />
             <Home_v2_second_page className="homesecondpage" secondpagedata={homepagedata.ourMissionPage} />
             <Home_v2_third_page className="homethirdpage" thirdpagedata={homepagedata.testimonialPage} />
+            < Home_v2_fourth_page />
             <Home_v2_fifth_page  className="homefifthpage" searchpagedata={homepagedata.topSearchPage} fifthpagedata={homepagedata.bottomSearchPage} />
             </>
             }

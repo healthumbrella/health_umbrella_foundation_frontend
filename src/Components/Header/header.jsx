@@ -111,7 +111,7 @@ function Header() {
                             ))}
                         </div>
                     </li>
-
+                    
                     <li className="nav-item">
                         <NavLink className="nav-link underline" to="/share-experience" onClick={()=>{handleDiseaseClick(); collapseHandler();  scrollToTopOnClick();}}>Share Experience</NavLink>
                     </li>
