@@ -31,13 +31,13 @@ function App() {
 
       <Header2 />
       <Routes>
-        {/* //starting from here version 1 to is being commented
-         <Route path="/" exact element={<Home />}></Route> 
+         {/* //starting from here version 1 to is being commented */}
+         {/* <Route path="/" exact element={<Home />}></Route>  */}
 
         <Route path="/about-us" exact element={<Home />}></Route>
-        //this was commented <Route path="/diseases" exact element={<Diseases/>}></Route> 
+        {/* //this was commented <Route path="/diseases" exact element={<Diseases/>}></Route>  */}
         <Route path="/disease/:disease" exact element={<Diseases/>}></Route>
-        //this was commented <Route path="/disease/:disease" exact element={<Disease/>}></Route> 
+        {/* //this was commented <Route path="/disease/:disease" exact element={<Disease/>}></Route>  */}
         <Route path="/disease/:disease/:titles" exact element={<PathyPage/>}></Route>  
         <Route path="/disease/:disease/:pathy/directCase/:caseId" exact element={<DirectCases />}></Route> 
         <Route path="/disease/:disease/:title1/books" exact element={<Books />}></Route> 
@@ -54,12 +54,12 @@ function App() {
         <Route path="/clinics/" exact element={<Clinics />}></Route> 
         <Route path="/feedback" exact element = {<Feedback />}></Route>
 
-        //this was commented new disease section 
+        {/* //this was commented new disease section  */}
         <Route path="/diseases/:disease" element={<Disease/>}>
           <Route index element={<DiseaseInfo/>} />
           <Route path=":therapy" element={<PathyInfo/>} />
 
-        </Route> */}
+        </Route> 
 
         
         
