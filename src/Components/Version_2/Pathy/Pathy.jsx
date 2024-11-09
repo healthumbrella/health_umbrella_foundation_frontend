@@ -10,95 +10,95 @@ const Pathy = () => {
   const [showScrollButton, setShowScrollButton] = useState(false);
   const [loading, setLoading] = useState(true);
 
-  const staticData = {
-    pathyList: [
-      {
-        imageLink: "https://cdn.mos.cms.futurecdn.net/yCPyoZDQBBcXikqxkeW2jJ-1200-80.jpg",
-        title: "acupressure",
-        text: "Acupressure is a form of traditional Chinese medicine that involves applying pressure to specific points on the body to relieve pain, promote relaxation, and improve overall health. It is based on the belief that there are energy pathways called meridians throughout the body, and by stimulating certain points along these meridians.",
-        diseaseList: [
-          { disease: "migraine", link: "healthumbrella.org/disease/migraine/case/1" },
-          { disease: "psoriasis", link: "healthumbrella.org/disease/psoriasis/case/2" },
-          { disease: "cancer", link: "google.com/some-sample-link" }
-        ]
-      },
-      {
-        imageLink: "https://cdn.mos.cms.futurecdn.net/yCPyoZDQBBcXikqxkeW2jJ-1200-80.jpg",
-        title: "fasting",
-        text: "Fasting involves voluntarily abstaining from food or drink for a certain period of time, often for religious, health or personal reasons. It can have benefits such as weight loss, improved metabolism and reduced inflammation. Eating, on the other hand, is the act of consuming food and drink for nourishment and energy to sustain the body's functions.",
-        diseaseList: [
-          { disease: "migraine", link: "healthumbrella.org/disease/migraine/case/1" },
-          { disease: "psoriasis", link: "google.com/disease/psoriasis/case/2" },
-          { disease: "cancer", link: "wikipedia.org/some-sample-link" }
-        ]
-      },
-      {
-        imageLink: "https://cdn.mos.cms.futurecdn.net/yCPyoZDQBBcXikqxkeW2jJ-1200-80.jpg",
-        title: "reiki",
-        text: "Reiki is a form of traditional Chinese medicine that involves applying pressure to specific points on the body to relieve pain, promote relaxation, and improve overall health. It is based on the belief that there are energy pathways called meridians throughout the body, and by stimulating certain points along these meridians.",
-        diseaseList: [
-          { disease: "migraine", link: "healthumbrella.org/disease/migraine/case/1" },
-          { disease: "psoriasis", link: "healthumbrella.org/disease/psoriasis/case/2" },
-          { disease: "cancer", link: "google.com/some-sample-link" }
-        ]
-      },
-      {
-        imageLink: "https://cdn.mos.cms.futurecdn.net/yCPyoZDQBBcXikqxkeW2jJ-1200-80.jpg",
-        title: "food therapy",
-        text: "food therapy is a form of traditional Chinese medicine that involves applying pressure to specific points on the body to relieve pain, promote relaxation, and improve overall health. It is based on the belief that there are energy pathways called meridians throughout the body, and by stimulating certain points along these meridians.",
-        diseaseList: [
-          { disease: "migraine", link: "healthumbrella.org/disease/migraine/case/1" },
-          { disease: "psoriasis", link: "healthumbrella.org/disease/psoriasis/case/2" },
-          { disease: "cancer", link: "google.com/some-sample-link" }
-        ]
-      },
-      {
-        imageLink: "https://cdn.mos.cms.futurecdn.net/yCPyoZDQBBcXikqxkeW2jJ-1200-80.jpg",
-        title: "allopathy",
-        text: "allopathy is a form of traditional Chinese medicine that involves applying pressure to specific points on the body to relieve pain, promote relaxation, and improve overall health. It is based on the belief that there are energy pathways called meridians throughout the body, and by stimulating certain points along these meridians.",
-        diseaseList: [
-          { disease: "migraine", link: "healthumbrella.org/disease/migraine/case/1" },
-          { disease: "psoriasis", link: "healthumbrella.org/disease/psoriasis/case/2" },
-          { disease: "cancer", link: "google.com/some-sample-link" }
-        ]
-      },
+//   const staticData = {
+//     pathyList: [
+//       {
+//         imageLink: "https://cdn.mos.cms.futurecdn.net/yCPyoZDQBBcXikqxkeW2jJ-1200-80.jpg",
+//         title: "acupressure",
+//         text: "Acupressure is a form of traditional Chinese medicine that involves applying pressure to specific points on the body to relieve pain, promote relaxation, and improve overall health. It is based on the belief that there are energy pathways called meridians throughout the body, and by stimulating certain points along these meridians.",
+//         diseaseList: [
+//           { disease: "migraine", link: "healthumbrella.org/disease/migraine/case/1" },
+//           { disease: "psoriasis", link: "healthumbrella.org/disease/psoriasis/case/2" },
+//           { disease: "cancer", link: "google.com/some-sample-link" }
+//         ]
+//       },
+//       {
+//         imageLink: "https://cdn.mos.cms.futurecdn.net/yCPyoZDQBBcXikqxkeW2jJ-1200-80.jpg",
+//         title: "fasting",
+//         text: "Fasting involves voluntarily abstaining from food or drink for a certain period of time, often for religious, health or personal reasons. It can have benefits such as weight loss, improved metabolism and reduced inflammation. Eating, on the other hand, is the act of consuming food and drink for nourishment and energy to sustain the body's functions.",
+//         diseaseList: [
+//           { disease: "migraine", link: "healthumbrella.org/disease/migraine/case/1" },
+//           { disease: "psoriasis", link: "google.com/disease/psoriasis/case/2" },
+//           { disease: "cancer", link: "wikipedia.org/some-sample-link" }
+//         ]
+//       },
+//       {
+//         imageLink: "https://cdn.mos.cms.futurecdn.net/yCPyoZDQBBcXikqxkeW2jJ-1200-80.jpg",
+//         title: "reiki",
+//         text: "Reiki is a form of traditional Chinese medicine that involves applying pressure to specific points on the body to relieve pain, promote relaxation, and improve overall health. It is based on the belief that there are energy pathways called meridians throughout the body, and by stimulating certain points along these meridians.",
+//         diseaseList: [
+//           { disease: "migraine", link: "healthumbrella.org/disease/migraine/case/1" },
+//           { disease: "psoriasis", link: "healthumbrella.org/disease/psoriasis/case/2" },
+//           { disease: "cancer", link: "google.com/some-sample-link" }
+//         ]
+//       },
+//       {
+//         imageLink: "https://cdn.mos.cms.futurecdn.net/yCPyoZDQBBcXikqxkeW2jJ-1200-80.jpg",
+//         title: "food therapy",
+//         text: "food therapy is a form of traditional Chinese medicine that involves applying pressure to specific points on the body to relieve pain, promote relaxation, and improve overall health. It is based on the belief that there are energy pathways called meridians throughout the body, and by stimulating certain points along these meridians.",
+//         diseaseList: [
+//           { disease: "migraine", link: "healthumbrella.org/disease/migraine/case/1" },
+//           { disease: "psoriasis", link: "healthumbrella.org/disease/psoriasis/case/2" },
+//           { disease: "cancer", link: "google.com/some-sample-link" }
+//         ]
+//       },
+//       {
+//         imageLink: "https://cdn.mos.cms.futurecdn.net/yCPyoZDQBBcXikqxkeW2jJ-1200-80.jpg",
+//         title: "allopathy",
+//         text: "allopathy is a form of traditional Chinese medicine that involves applying pressure to specific points on the body to relieve pain, promote relaxation, and improve overall health. It is based on the belief that there are energy pathways called meridians throughout the body, and by stimulating certain points along these meridians.",
+//         diseaseList: [
+//           { disease: "migraine", link: "healthumbrella.org/disease/migraine/case/1" },
+//           { disease: "psoriasis", link: "healthumbrella.org/disease/psoriasis/case/2" },
+//           { disease: "cancer", link: "google.com/some-sample-link" }
+//         ]
+//       },
       
-      {
-        imageLink: "https://cdn.mos.cms.futurecdn.net/yCPyoZDQBBcXikqxkeW2jJ-1200-80.jpg",
-        title: "Music Therapy",
-        text: "Music Therapy is a form of traditional Chinese medicine that involves applying pressure to specific points on the body to relieve pain, promote relaxation, and improve overall health. It is based on the belief that there are energy pathways called meridians throughout the body, and by stimulating certain points along these meridians.",
-        diseaseList: [
-          { disease: "migraine", link: "healthumbrella.org/disease/migraine/case/1" },
-          { disease: "psoriasis", link: "healthumbrella.org/disease/psoriasis/case/2" },
-          { disease: "cancer", link: "google.com/some-sample-link" }
-        ]
-      },
-      {
-        imageLink: "https://cdn.mos.cms.futurecdn.net/yCPyoZDQBBcXikqxkeW2jJ-1200-80.jpg",
-        title: "Yoga",
-        text: "Yoga is a form of traditional Chinese medicine that involves applying pressure to specific points on the body to relieve pain, promote relaxation, and improve overall health. It is based on the belief that there are energy pathways called meridians throughout the body, and by stimulating certain points along these meridians.",
-        diseaseList: [
-          { disease: "migraine", link: "healthumbrella.org/disease/migraine/case/1" },
-          { disease: "psoriasis", link: "healthumbrella.org/disease/psoriasis/case/2" },
-          { disease: "cancer", link: "google.com/some-sample-link" }
-        ]
-      },
-      {
-        imageLink: "https://cdn.mos.cms.futurecdn.net/yCPyoZDQBBcXikqxkeW2jJ-1200-80.jpg",
-        title: "Cow Therapy",
-        text: "Cow Therapy is a form of traditional Chinese medicine that involves applying pressure to specific points on the body to relieve pain, promote relaxation, and improve overall health. It is based on the belief that there are energy pathways called meridians throughout the body, and by stimulating certain points along these meridians.",
-        diseaseList: [
-          { disease: "migraine", link: "healthumbrella.org/disease/migraine/case/1" },
-          { disease: "psoriasis", link: "healthumbrella.org/disease/psoriasis/case/2" },
-          { disease: "cancer", link: "google.com/some-sample-link" }
-        ]
-      },
+//       {
+//         imageLink: "https://cdn.mos.cms.futurecdn.net/yCPyoZDQBBcXikqxkeW2jJ-1200-80.jpg",
+//         title: "Music Therapy",
+//         text: "Music Therapy is a form of traditional Chinese medicine that involves applying pressure to specific points on the body to relieve pain, promote relaxation, and improve overall health. It is based on the belief that there are energy pathways called meridians throughout the body, and by stimulating certain points along these meridians.",
+//         diseaseList: [
+//           { disease: "migraine", link: "healthumbrella.org/disease/migraine/case/1" },
+//           { disease: "psoriasis", link: "healthumbrella.org/disease/psoriasis/case/2" },
+//           { disease: "cancer", link: "google.com/some-sample-link" }
+//         ]
+//       },
+//       {
+//         imageLink: "https://cdn.mos.cms.futurecdn.net/yCPyoZDQBBcXikqxkeW2jJ-1200-80.jpg",
+//         title: "Yoga",
+//         text: "Yoga is a form of traditional Chinese medicine that involves applying pressure to specific points on the body to relieve pain, promote relaxation, and improve overall health. It is based on the belief that there are energy pathways called meridians throughout the body, and by stimulating certain points along these meridians.",
+//         diseaseList: [
+//           { disease: "migraine", link: "healthumbrella.org/disease/migraine/case/1" },
+//           { disease: "psoriasis", link: "healthumbrella.org/disease/psoriasis/case/2" },
+//           { disease: "cancer", link: "google.com/some-sample-link" }
+//         ]
+//       },
+//       {
+//         imageLink: "https://cdn.mos.cms.futurecdn.net/yCPyoZDQBBcXikqxkeW2jJ-1200-80.jpg",
+//         title: "Cow Therapy",
+//         text: "Cow Therapy is a form of traditional Chinese medicine that involves applying pressure to specific points on the body to relieve pain, promote relaxation, and improve overall health. It is based on the belief that there are energy pathways called meridians throughout the body, and by stimulating certain points along these meridians.",
+//         diseaseList: [
+//           { disease: "migraine", link: "healthumbrella.org/disease/migraine/case/1" },
+//           { disease: "psoriasis", link: "healthumbrella.org/disease/psoriasis/case/2" },
+//           { disease: "cancer", link: "google.com/some-sample-link" }
+//         ]
+//       },
       
-    ]
-  };
+//     ]
+//   };
 
   useEffect(() => {
-    setData(staticData.pathyList);
+    // setData(staticData.pathyList);
     async function getData()  {
       try {
         const res = await axios.get(
@@ -106,7 +106,7 @@ const Pathy = () => {
          
         );
         // console.log(res);
-        // setData(res.data.pathyList);
+        setData(res.data.pathyList);
         const fetchedData = res.data.pathyList;
 
         if (fetchedData) {
