@@ -1,19 +1,79 @@
-import React, { useEffect, useState } from "react";
-import { Link, useParams} from "react-router-dom";
+import React, { useState,useEffect } from "react";
+import { Link, useParams } from "react-router-dom";
 import "./diseases_second_page.scss";
-import axios from "axios";
 import ClipLoader from "react-spinners/ClipLoader";
 import Top from "../diseases_first_page/diseases_first_page";
+import axios from "axios";
 
-const gradientarry = ['linear-gradient(rgb(224, 165, 224),white)', 'linear-gradient(rgb(142, 241, 175),white)', 'linear-gradient(skyblue,white)', 'linear-gradient(rgb(244, 244, 159),white)', 'linear-gradient(rgb(242, 204, 132),white)', 'linear-gradient(rgb(239, 241, 178),white)', 'linear-gradient(rgb(249, 175, 239),white)']
+const gradientarry = [
+  "linear-gradient(rgb(224, 165, 224),white)",
+  "linear-gradient(rgb(142, 241, 175),white)",
+  "linear-gradient(skyblue,white)",
+  "linear-gradient(rgb(244, 244, 159),white)",
+  "linear-gradient(rgb(242, 204, 132),white)",
+  "linear-gradient(rgb(239, 241, 178),white)",
+  "linear-gradient(rgb(249, 175, 239),white)"
+];
+
+// Static data
+// const staticData = {
+//   imageLink: "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD",
+//   disease: "Migraine",
+//   text: "Migraine is a common neurological disease causing various symptoms, including headache.",
+//   summary: "Different kinds of therapies help different patients. Some patients are cured by Homeopathy. Various therapies exist to alleviate symptoms and improve outcomes.",
+//   pathies: {
+//     therapiesWithDrugs: [
+//       {
+//         name: "Accupressure Therapy",
+//         imageLink: "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD",
+//         summary: "Accupressure is a type of massage therapy used to relieve pain.",
+//         isReadMore: false
+//       },
+//       {
+//         name: "Herbs",
+//         imageLink: "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD",
+//         summary: "Various herbs can be used to treat headaches naturally.",
+//         isReadMore: false
+//       }
+//     ],
+//     therapiesWithoutDrugs: [
+//       {
+//         name: "Cow Therapy",
+//         imageLink: "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD",
+//         summary: "Cow urine is traditionally used as Ayurvedic medicine.",
+//         isReadMore: false
+//       },
+//       {
+//         name: "Reiki Therapy",
+//         imageLink: "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD",
+//         summary: "Reiki is a form of energy healing that promotes relaxation.",
+//         isReadMore: false
+//       }
+//     ],
+//     lessKnownTherapies: [
+//       {
+//         name: "Fasting Therapy",
+//         imageLink: "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD",
+//         summary: "Fasting can help reset bodily functions and aid in healing.",
+//         isReadMore: false
+//       },
+//       {
+//         name: "Reiki Therapy",
+//         imageLink: "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD",
+//         summary: "Reiki promotes balance and healing through energy transfer.",
+//         isReadMore: false
+//       }
+//     ]
+//   }
+// };
+
 const Bottom = () => {
-
   const [selectedTherapy, setSelectedTherapy] = useState("therapiesWithDrugs");
-  const [data, setData] = useState({});
-  const [loading, setLoading] = useState(true);
+  const [data, setData] = useState();
+  const [loading, setLoading] = useState(false); // Set to false since we have static data
   const params = useParams();
   const disease = params.disease;
-  // const navigate=useNavigate();
+
   useEffect(() => {
     const getapidata = async () => {
       try {
@@ -36,11 +96,11 @@ const Bottom = () => {
     getapidata();
   }, [disease]);
 
-  console.log(data)
   const scrollToTopOnClick = () => {
     window.scrollTo(0, 0);
   };
- const truncateText = (text, maxLength) => {
+
+  const truncateText = (text, maxLength) => {
     if (!text || text.length <= maxLength) return text;
     const truncated = text.slice(0, maxLength);
     return truncated.slice(0, truncated.lastIndexOf(" ")) + " ";
@@ -50,7 +110,6 @@ const Bottom = () => {
     setSelectedTherapy(selectedTherapy === therapyType ? "" : therapyType);
   };
 
-
   const toggleReadMore = (index) => {
     setData((prevData) => ({
       ...prevData,
@@ -58,15 +117,13 @@ const Bottom = () => {
         ...prevData.pathies,
         [selectedTherapy]: prevData.pathies[selectedTherapy].map((therapy, i) => ({
           ...therapy,
-          isReadMore: i === index ? !therapy.isReadMore : false,
-        })),
-      },
+          isReadMore: i === index ? !therapy.isReadMore : false
+        }))
+      }
     }));
   };
- 
-  function formatString(str) { return str.replace(/(?<!^)([A-Z])/g, ' $1'); }
 
-
+  const formatString = (str) => str.replace(/(?<!^)([A-Z])/g, " $1");
   const therapyArray = data.pathies && data.pathies[selectedTherapy];
 
   return (
@@ -91,10 +148,9 @@ const Bottom = () => {
                     <button
                       key={index}
                       onClick={() => handleButtonClick(therapyType)}
-                      className={selectedTherapy === therapyType ? "disease-therapy-button " : ""}
+                      className={selectedTherapy === therapyType ? "disease-therapy-button" : ""}
                     >
-                     {formatString(therapyType)}
-
+                      {formatString(therapyType)}
                     </button>
                   ))}
                 </div>
@@ -102,24 +158,41 @@ const Bottom = () => {
                 <div className="disease-cards">
                   {therapyArray &&
                     therapyArray.map((therapy, index) => (
-                      <div key={index} className="disease-card" style={{ backgroundImage: gradientarry[index % gradientarry.length] }}>
+                      <div
+                        key={index}
+                        className="disease-card"
+                        style={{
+                          backgroundImage: gradientarry[index % gradientarry.length]
+                        }}
+                      >
                         <div className="disease-card-img">
-                          {process.env.REACT_APP_IS_PRODUCTION == 'true' ? (
-                            <img src={`${process.env.REACT_APP_BACKEND_IP}${therapy.imageLink}`} alt="img" />
+                          {process.env.REACT_APP_IS_PRODUCTION === "true" ? (
+                            <img
+                              src={`${process.env.REACT_APP_BACKEND_IP}${therapy.imageLink}`}
+                              alt="img"
+                            />
                           ) : (
                             <img src={therapy.imageLink} alt="img" />
-                          )
-                          }
-
+                          )}
                         </div>
-                        <Link to={`/disease/${disease}/${therapy.name}`} onClick={scrollToTopOnClick}><h4>{therapy.name}</h4></Link>
+                        <Link
+                          to={`/disease/${disease}/${therapy.name}`}
+                          onClick={scrollToTopOnClick}
+                        >
+                          <h4>{therapy.name}</h4>
+                        </Link>
                         <p>
                           {therapy.isReadMore
                             ? therapy.summary
                             : truncateText(therapy.summary, 80)}
                           <button
                             onClick={() => toggleReadMore(index)}
-                            style={{ color: "blue", cursor: "pointer", background: "none", border: "none" }}
+                            style={{
+                              color: "blue",
+                              cursor: "pointer",
+                              background: "none",
+                              border: "none"
+                            }}
                           >
                             {therapy.isReadMore ? "Read Less" : "Read More"}
                           </button>

@@ -1,23 +1,29 @@
 import React, { useRef, useState, useEffect } from "react";
 import "./Header_v2.scss";
-import { NavLink, useLocation /*useLocation*/ } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import axios from "axios";
 
 function Header() {
   const hamburgerRef = useRef(null);
   const [width, setWidth] = useState(window.innerWidth);
-
-  // const [diseases, setDiseases] = useState(["Diabetes","Breast Cancer","Alzheimer","migraine","Heart Diseases","Cancer","CLD","Asthma","Thyroid","Depression","Kidney Disease","Obesity","Bronchiectasis","Sudden Cardiac Arrest","Multiple Sclerosis","PCOD","Strokes","Hypertension","Lung Cancer","Osteoporosis","Arthritis","Glaucoma","COPD",]); // State to store diseases data
-  const [diseases, setDiseases] = useState([]); // State to store diseases data
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false); // State to control dropdown visibility
+  
+  // Static diseases data
+  // const [diseases, setDiseases] = useState([
+  //   "Cancer",
+  //   "Migraine",
+  //   "Psoriasis"
+  // ]); // Using static data instead of fetching from an API
+  const [diseases, setDiseases] = useState([]);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isDiseasesClicked, setIsDiseasesClicked] = useState(false);
   const location = useLocation();
+
   useEffect(() => {
-    // console.log(location.pathname)
     if (!location.pathname.startsWith("/disease")) {
       setIsDiseasesClicked(false);
     } else setIsDiseasesClicked(true);
   }, [location]);
+
   useEffect(() => {
     const getapidata = async () => {
       try {
@@ -27,8 +33,8 @@ function Header() {
         const fetchedData = response.data;
         // console.log(fetchedData);
         if (fetchedData && fetchedData.diseaseList) {
-          setDiseases(fetchedData.diseaseList);
-          //   setLoading(false);
+            setDiseases(fetchedData.diseaseList);
+        //   setLoading(false);
         } else {
           console.error("API response structure is not as expected.");
         }
@@ -40,15 +46,14 @@ function Header() {
     getapidata();
   }, []);
 
+
   const handleDropdownToggle = () => {
     setIsDropdownOpen(!isDropdownOpen);
     setIsDiseasesClicked(true);
   };
 
-  // Close the dropdown when a disease link is clicked or when navigating to a different page
   const handleDiseaseClick = () => {
     setIsDropdownOpen(false);
-    // setIsDiseasesClicked(false);
   };
 
   const currentScreenWidth = () => {
@@ -57,7 +62,10 @@ function Header() {
 
   useEffect(() => {
     window.addEventListener("resize", currentScreenWidth);
-  });
+    return () => {
+      window.removeEventListener("resize", currentScreenWidth);
+    };
+  }, []);
 
   const collapseHandler = () => {
     if (width <= 991) {
@@ -70,9 +78,6 @@ function Header() {
   const scrollToTopOnClick = () => {
     window.scrollTo(0, 0);
   };
-  // const location =useLocation();
-  // let currentPath=location.pathname;
-  //   currentPath+='/';
 
   return (
     <nav className="navbar navbar-expand-lg navbar-dark">
@@ -110,17 +115,12 @@ function Header() {
               Home
             </NavLink>
           </li>
-          {/* <li className="nav-item">
-                        <NavLink className="nav-link underline" to="/about-us" onClick={collapseHandler}>About Us</NavLink>
-                    </li> */}
           <li className="nav-item dropdown">
             <div
               className={`nav-link underline ${
                 isDiseasesClicked ? "dClick" : ""
               }`}
-              // to={`${currentPath} /}`}
               onClick={handleDropdownToggle}
-              // end
             >
               Diseases
             </div>
@@ -140,7 +140,6 @@ function Header() {
               ))}
             </div>
           </li>
-
           <li className="nav-item">
             <NavLink
               className="nav-link underline"
@@ -204,29 +203,3 @@ function Header() {
 }
 
 export default Header;
-
-// import React from 'react'
-// import './Header_v2.scss';
-// const Header_v2 = () => {
-//   return (
-//     <div className='Header_v2'>
-//       <img className='logo_v2' src="/Images_v2/logo.png" alt="logo" />
-//       <div className='Header_v2_route'>
-//         <h6>Home</h6>
-//         <h6>About Us</h6>
-//         <h6>Diseases</h6>
-//         <h6>Share Experience</h6>
-//         <h6>Ask Suggestion</h6>
-//         <h6>Pathy</h6>
-//         <h6>Clinics/Hospitals</h6>
-//       </div>
-//       <div className='Header_v2_search'>
-//         <img src="/Images_v2/Search.png" alt="icon" />
-//         <input type="text" placeholder='Search' />
-//       </div>
-
-//     </div>
-//   )
-// }
-
-// export default Header_v2

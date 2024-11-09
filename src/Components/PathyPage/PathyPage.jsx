@@ -40,6 +40,7 @@ const   PathyPage = () => {
     <>
     <div>
     {loading ? (
+      
       <ClipLoader
         className="loadingicon"
         color="green"
