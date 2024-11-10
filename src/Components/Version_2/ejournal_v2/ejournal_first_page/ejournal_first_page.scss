@@ -4,6 +4,7 @@
 * {
     margin: 0;
     padding: 0;
+    // background: #E3F4FC;
     box-sizing: border-box;
 }
 
@@ -11,26 +12,28 @@
 .extraspace{
     height: 90px;
     width: 100%;
+    // background: #E3F4FC;
+    // background-color: red;
 }
 
-.top-main{
+.top-main {
     // background-color: red;
-    // background-color: #E3F4FC;
-    // background: red;
-    // padding-top: 2px;
-    // padding-bottom: 10px;
+
     // color: dodgerblue;
-    // background: red;
     // overflow: scroll;
+    background: #E3F4FC;
+    padding: 1px;
 }
 
 .top-container {
     // background-color: blue;
     color: #053B3F;
     // background: red;
+    // color: red;
+    // background: red;
     // background-image: url('../assets/greeninfographics.png');
     // --bg-image:url('../assets/greeninfographics.png');
-    --bg-image:url('../../../../public/Images/greeninfographics.png');
+    // --bg-image:url('../../../../../public/Images/greeninfographics.png');
     position: relative;
     isolation: isolate;
     --bg-image-opacity:0.5;
@@ -46,8 +49,8 @@
     background-blend-mode: multiply;
     // overflow-x: scroll;
     overflow: hidden;
-    background-color: #f7f7f7;
-    // background-color: red;
+    // background-color: #f7f7f7;
+    background-color: white;
     // height: 515px;
     height: 63.2vh;
     // width: 1398px;
@@ -84,7 +87,7 @@ background-position: center -600px;
     h1 {
         font-weight: bold;
         margin-top: 20px;
-        color:#053B3F;
+        color:#005985;
 
     }
 
@@ -112,7 +115,7 @@ background-position: center -600px;
         // width: 10.9vw;
         font-size: 16px;
         margin-top: 20px;
-        border: 1px solid #053b3f;
+        border: 1px solid #005985;
         background: transparent;
         border-radius: 7px;
         stroke: #053b3f;
@@ -120,7 +123,7 @@ background-position: center -600px;
         font-family: 'Noto Sans', sans-serif;
         font-weight: bold;
         cursor: pointer;
-        color:#053B3F;
+        color:#005985;
 
         a {
             text-decoration: none;
@@ -129,7 +132,7 @@ background-position: center -600px;
 
         &:hover {
 
-            background: #053b3f;
+            background: #005985;
             color:white;
         }
     }
@@ -138,10 +141,10 @@ background-position: center -600px;
 
 .right {
     // display: none;
-    height: max-content;
+    // height: max-content;
     justify-content: center;
     align-items: center;
-    width: 40%;
+    // width: 40%;
    
     // overflow: scroll;
     position: sticky;
@@ -152,6 +155,10 @@ background-position: center -600px;
     // background: red;
     // margin: auto;
     // padding: 0.625rem;
+    .imgswiper{
+        width: 40vw;
+        height: 65vh;
+    }
 }
 
 
