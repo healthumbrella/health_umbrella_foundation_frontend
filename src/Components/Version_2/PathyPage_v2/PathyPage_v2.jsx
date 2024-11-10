@@ -7,16 +7,16 @@ import axios from 'axios';
 
 const PathyPage = () => {
   const navigate = useNavigate();
-  const [data, setData] = useState({
-    pathy: '',
-    text: '',
-    informationSource: [],
-  }); 
   // const [data, setData] = useState({
-  //   pathy: 'Accupressure Therapy',  // Static value for pathy
-  //   text: 'Discover life-altering testimonials showcasing our effective migraine solution. The effectiveness of accupressure in treating chronic migraine has been documented in multiple studies, offering relief to those who suffer from frequent migraines.',  // Static value for text
-  //   informationSource: ['directCases', 'youtube', 'website', 'socialMedia'],  // Static array for information sources
-  // });
+  //   pathy: '',
+  //   text: '',
+  //   informationSource: [],
+  // }); 
+  const [data, setData] = useState({
+    pathy: 'Accupressure Therapy',  // Static value for pathy
+    text: 'Discover life-altering testimonials showcasing our effective migraine solution. The effectiveness of accupressure in treating chronic migraine has been documented in multiple studies, offering relief to those who suffer from frequent migraines.',  // Static value for text
+    informationSource: ['directCases', 'youtube', 'website', 'socialMedia'],  // Static array for information sources
+  });
   
   const [loading, setLoading] = useState(false); // No longer need to wait for API, so false
 
@@ -27,7 +27,7 @@ const PathyPage = () => {
       try {
         const response = await axios.get(`${process.env.REACT_APP_BACKEND_IP}/disease/${disease}/${titles}`);
         setData(response.data);
-        // setData({ ...data, text: "hvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv" });
+      
       } catch (error) {
         console.error('Error fetching data:', error);
       }

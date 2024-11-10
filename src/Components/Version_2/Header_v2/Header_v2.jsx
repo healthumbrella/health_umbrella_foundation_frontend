@@ -8,12 +8,12 @@ function Header() {
   const [width, setWidth] = useState(window.innerWidth);
   
   // Static diseases data
-  // const [diseases, setDiseases] = useState([
-  //   "Cancer",
-  //   "Migraine",
-  //   "Psoriasis"
-  // ]); // Using static data instead of fetching from an API
-  const [diseases, setDiseases] = useState([]);
+  const [diseases, setDiseases] = useState([
+    "Cancer",
+    "Migraine",
+    "Psoriasis"
+  ]); // Using static data instead of fetching from an API
+  // const [diseases, setDiseases] = useState([]);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isDiseasesClicked, setIsDiseasesClicked] = useState(false);
   const location = useLocation();
@@ -24,27 +24,27 @@ function Header() {
     } else setIsDiseasesClicked(true);
   }, [location]);
 
-  useEffect(() => {
-    const getapidata = async () => {
-      try {
-        const response = await axios.get(
-          `${process.env.REACT_APP_BACKEND_IP}/header/`
-        );
-        const fetchedData = response.data;
-        // console.log(fetchedData);
-        if (fetchedData && fetchedData.diseaseList) {
-            setDiseases(fetchedData.diseaseList);
-        //   setLoading(false);
-        } else {
-          console.error("API response structure is not as expected.");
-        }
-      } catch (error) {
-        console.error(error);
-      }
-    };
+  // useEffect(() => {
+  //   const getapidata = async () => {
+  //     try {
+  //       const response = await axios.get(
+  //         `${process.env.REACT_APP_BACKEND_IP}/header/`
+  //       );
+  //       const fetchedData = response.data;
+  //       // console.log(fetchedData);
+  //       if (fetchedData && fetchedData.diseaseList) {
+  //           setDiseases(fetchedData.diseaseList);
+  //       //   setLoading(false);
+  //       } else {
+  //         console.error("API response structure is not as expected.");
+  //       }
+  //     } catch (error) {
+  //       console.error(error);
+  //     }
+  //   };
 
-    getapidata();
-  }, []);
+  //   getapidata();
+  // }, []);
 
 
   const handleDropdownToggle = () => {

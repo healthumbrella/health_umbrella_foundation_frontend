@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import "./diseases_second_page.scss";
 import ClipLoader from "react-spinners/ClipLoader";
@@ -16,85 +16,85 @@ const gradientarry = [
 ];
 
 // Static data
-// const staticData = {
-//   imageLink: "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD",
-//   disease: "Migraine",
-//   text: "Migraine is a common neurological disease causing various symptoms, including headache.",
-//   summary: "Different kinds of therapies help different patients. Some patients are cured by Homeopathy. Various therapies exist to alleviate symptoms and improve outcomes.",
-//   pathies: {
-//     therapiesWithDrugs: [
-//       {
-//         name: "Accupressure Therapy",
-//         imageLink: "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD",
-//         summary: "Accupressure is a type of massage therapy used to relieve pain.",
-//         isReadMore: false
-//       },
-//       {
-//         name: "Herbs",
-//         imageLink: "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD",
-//         summary: "Various herbs can be used to treat headaches naturally.",
-//         isReadMore: false
-//       }
-//     ],
-//     therapiesWithoutDrugs: [
-//       {
-//         name: "Cow Therapy",
-//         imageLink: "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD",
-//         summary: "Cow urine is traditionally used as Ayurvedic medicine.",
-//         isReadMore: false
-//       },
-//       {
-//         name: "Reiki Therapy",
-//         imageLink: "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD",
-//         summary: "Reiki is a form of energy healing that promotes relaxation.",
-//         isReadMore: false
-//       }
-//     ],
-//     lessKnownTherapies: [
-//       {
-//         name: "Fasting Therapy",
-//         imageLink: "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD",
-//         summary: "Fasting can help reset bodily functions and aid in healing.",
-//         isReadMore: false
-//       },
-//       {
-//         name: "Reiki Therapy",
-//         imageLink: "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD",
-//         summary: "Reiki promotes balance and healing through energy transfer.",
-//         isReadMore: false
-//       }
-//     ]
-//   }
-// };
+const staticData = {
+  imageLink: "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD",
+  disease: "Migraine",
+  text: "Migraine is a common neurological disease causing various symptoms, including headache.",
+  summary: "Different kinds of therapies help different patients. Some patients are cured by Homeopathy. Various therapies exist to alleviate symptoms and improve outcomes.",
+  pathies: {
+    therapiesWithDrugs: [
+      {
+        name: "Accupressure Therapy",
+        imageLink: "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD",
+        summary: "Accupressure is a type of massage therapy used to relieve pain.",
+        isReadMore: false
+      },
+      {
+        name: "Herbs",
+        imageLink: "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD",
+        summary: "Various herbs can be used to treat headaches naturally.",
+        isReadMore: false
+      }
+    ],
+    therapiesWithoutDrugs: [
+      {
+        name: "Cow Therapy",
+        imageLink: "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD",
+        summary: "Cow urine is traditionally used as Ayurvedic medicine.",
+        isReadMore: false
+      },
+      {
+        name: "Reiki Therapy",
+        imageLink: "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD",
+        summary: "Reiki is a form of energy healing that promotes relaxation.",
+        isReadMore: false
+      }
+    ],
+    lessKnownTherapies: [
+      {
+        name: "Fasting Therapy",
+        imageLink: "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD",
+        summary: "Fasting can help reset bodily functions and aid in healing.",
+        isReadMore: false
+      },
+      {
+        name: "Reiki Therapy",
+        imageLink: "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD",
+        summary: "Reiki promotes balance and healing through energy transfer.",
+        isReadMore: false
+      }
+    ]
+  }
+};
 
 const Bottom = () => {
   const [selectedTherapy, setSelectedTherapy] = useState("therapiesWithDrugs");
-  const [data, setData] = useState();
+  const [data, setData] = useState(staticData); // Use static data
   const [loading, setLoading] = useState(false); // Set to false since we have static data
   const params = useParams();
   const disease = params.disease;
 
-  useEffect(() => {
-    const getapidata = async () => {
-      try {
-        const response = await axios.get(
-          `${process.env.REACT_APP_BACKEND_IP}/disease/${disease}`
-        );
-        const fetchedData = response.data;
+  // useEffect(() => {
+  //   const getapidata = async () => {
+  //     try {
+  //       const response = await axios.get(
+  //         `${process.env.REACT_APP_BACKEND_IP}/disease/${disease}`
+  //       );
+  //       const fetchedData = response.data;
 
-        if (fetchedData && fetchedData.pathies) {
-          setData(fetchedData);
-          setLoading(false);
-        } else {
-          console.error("API response structure is not as expected.");
-        }
-      } catch (error) {
-        console.error(error);
-      }
-    };
+  //       if (fetchedData && fetchedData.pathies) {
+  //         setData(fetchedData);
+  //         setLoading(false);
+  //       } else {
+  //         console.error("API response structure is not as expected.");
+  //       }
+  //     } catch (error) {
+  //       console.error(error);
+  //     }
+  //   };
 
-    getapidata();
-  }, [disease]);
+  //   getapidata();
+  // }, [disease]);
 
   const scrollToTopOnClick = () => {
     window.scrollTo(0, 0);

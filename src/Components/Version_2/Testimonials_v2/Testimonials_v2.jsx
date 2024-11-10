@@ -5,29 +5,53 @@ import imageInfo from "./imageLink";
 import { MdOutlineArrowRight } from "react-icons/md";
 
 const Testimonials = () => {
-    const [fetchData, setFetchData] = useState({ text: "", sourceList: [] });
-//   const [fetchData, setFetchData] = useState({
-//     text: "Our dedicated members have picked up jjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjsome important and exciting case histories and testimonials from huge and scattered data in youtube.",
-//     sourceList: [
-//       {
-//         id: "M/H/Y/001",
-//         title: "Best Treatment for migraine in one month",
-//         link: "https://www.youtube.com/watch?v=hQH3viVFhPA&ab_channel=MarkManson",
-//         summary: "This video is about how we can use acupressure to effectively treat this disease",
-//         rating: "7",
-//         comment: "Very important video",
-//       },
-//       {
-//         id: "M/H/Y/002",
-//         title: "My unforgettable story",
-//         link: "https://www.youtube.com/watch?v=hQH3viVFhPA&ab_channel=MarkManson",
-//         summary: "This video is about how we can use acupressure to effectively treat this disease",
-//         rating: "7",
-//         comment: "Really useful testimonial",
-//       },
-//     ],
-//     whatsappData: "s3.aws.com?file=LKJoeSDFdl2sdfsdlkjfsd",
-//   });
+    // const [fetchData, setFetchData] = useState({ text: "", sourceList: [] });
+  const [fetchData, setFetchData] = useState({
+    text: "Our dedicated members have picked up some important and exciting case histories and testimonials from huge and scattered data in youtube.",
+    sourceList: [
+      {
+        id: "M/H/Y/001",
+        title: "Best Treatment for migraine in one month",
+        link: "https://www.youtube.com/watch?v=hQH3viVFhPA&ab_channel=MarkManson",
+        summary: "This video is about how we can use acupressure to effectively treat this disease",
+        rating: "7",
+        comment: "Very important video",
+      },
+      {
+        id: "M/H/Y/002",
+        title: "My unforgettable story",
+        link: "https://www.youtube.com/watch?v=hQH3viVFhPA&ab_channel=MarkManson",
+        summary: "This video is about how we can use acupressure to effectively treat this disease",
+        rating: "7",
+        comment: "Really useful testimonial",
+      },
+      {
+        id: "M/H/Y/002",
+        title: "My unforgettable story",
+        link: "https://www.youtube.com/watch?v=hQH3viVFhPA&ab_channel=MarkManson",
+        summary: "This video is about how we can use acupressure to effectively treat this disease",
+        rating: "7",
+        comment: "Really useful testimonial",
+      },
+      {
+        id: "M/H/Y/002",
+        title: "My unforgettable story",
+        link: "https://www.youtube.com/watch?v=hQH3viVFhPA&ab_channel=MarkManson",
+        summary: "This video is about how we can use acupressure to effectively treat this disease",
+        rating: "7",
+        comment: "Really useful testimonial",
+      },
+      {
+        id: "M/H/Y/002",
+        title: "My unforgettable story",
+        link: "https://www.youtube.com/watch?v=hQH3viVFhPA&ab_channel=MarkManson",
+        summary: "This video is about how we can use acupressure to effectively treat this disease",
+        rating: "7",
+        comment: "Really useful testimonial",
+      },
+    ],
+    whatsappData: "s3.aws.com?file=LKJoeSDFdl2sdfsdlkjfsd",
+  });
 
   const { disease, title1, title2 } = useParams();
   const [matchedImageLink, setMatchedImageLink] = useState("");
@@ -39,7 +63,6 @@ const Testimonials = () => {
     if (matchedImage) {
       setMatchedImageLink(matchedImage.imageLink);
     }
-    // eslint-disable-next-line
   }, [title2]);
 
   const handleSummaryClick = (summary) => {
@@ -68,17 +91,6 @@ const Testimonials = () => {
           {fetchData.sourceList.map((item) => (
             <div key={item.id} className="t-card">
               <h3 className="t-title">{item.title.charAt(0).toUpperCase()}{item.title.slice(1)}</h3>
-              {/* {title2 === "website" ? (
-                <a href={item.link} target="_blank" rel="noreferrer">
-                  Click here to visit the website
-                </a>
-              ) : title2 === "youtube" ? (
-                <a href={item.link} target="_blank" rel="noreferrer">
-                  Click here to see the video
-                </a>
-              ) : (
-                ""
-              )} */}
                <span className="t-rating">
                 <p1>Our Rating for this data <span>{item.rating}/10</span></p1>
                 
@@ -143,22 +155,7 @@ const Testimonials = () => {
 
 
               </div>
-             
-             
               <img className="t-rb-img2" src="/Images_v2/bluegradientcurve.png" alt="sorry" />
-              {/* <img
-                className={`t-rb-img1 ${selectedSummary === item.summary ? "selected-summary-img1" : ""}`}
-                src="/Images/Vector7.png"
-                alt="sorry"
-              /> */}
-              {/* <span className="t-id">
-                <p1>ID:</p1>
-                {title2 === "directCase" ? (
-                  <p2>{item.caseId}</p2>
-                ) : (
-                  <p2>{item.id}</p2>
-                )}
-              </span> */}
             </div>
           ))}
         </div>

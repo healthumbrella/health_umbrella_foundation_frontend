@@ -17,7 +17,7 @@ import PathyPage from "./Components/Version_2/PathyPage_v2/PathyPage_v2"
 import OurTeam from "./Components/OurTeam/OurTeam";
 import Feedback from "./Components/Feedback/Feedback";
 // import Pathy from "./Components/Pathy/Pathy";
-import Pathy from "./Components/Version_2/Pathy/Pathy"
+import Pathy from "./Components/Version_2/Pathy_v2/Pathy_v2"
 // import Testimonials from "./Components/Testimonials/testimonials";
 import Testimonials from "./Components/Version_2/Testimonials_v2/Testimonials_v2";
 import Memberdetails from "./Components/Memberdetails/Memberdetails";
