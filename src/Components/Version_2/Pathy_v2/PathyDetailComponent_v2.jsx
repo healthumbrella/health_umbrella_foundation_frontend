@@ -19,7 +19,7 @@ const PathyDetailComponent = ({ item, isEven }) => {
         <div className="Pathy-right-title">
           {item.title.charAt(0).toUpperCase() + item.title.slice(1)}
         </div>
-        <div className="Pathy-right-para" style={{ color: "black" }}>
+        <div className="Pathy-right-para" style={{ color: "#727272" }}>
           {item.text}
         </div>
         <div className="Pathy-right-disease">

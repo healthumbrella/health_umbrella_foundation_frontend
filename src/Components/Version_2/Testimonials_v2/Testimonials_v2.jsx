@@ -71,7 +71,7 @@ const Testimonials = () => {
 
   return (
     <div className="testimonials-main">
-      <p className="testimonials-link-topleft" style={{ fontWeight: "bold", marginLeft: 50 }}>
+      <p className="testimonials-link-topleft" style={{ fontWeight: 400, fontSize:15, marginLeft: 50 }}>
         &lt; <span onClick={() => navigate(-2)}>{disease.charAt(0).toUpperCase()}{disease.slice(1)}</span>
         <span onClick={() => navigate(-1)} >/{title1.charAt(0).toUpperCase()}{title1.slice(1)}</span>
         /{title2.charAt(0).toUpperCase()}{title2.slice(1)}

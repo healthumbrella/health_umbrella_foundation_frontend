@@ -6,6 +6,7 @@
     margin: 0;
     padding: 0;
  }
+
 .testimonials-main{
     /* margin: 7rem 0rem 2rem 0rem; */
     /* margin-top: 8rem; */
@@ -31,12 +32,12 @@
     top: 0%;
     /* background: #000; */
     /* font-size: large; */
-    font-size: 18px;
+    /* font-size: 18px; */
     font-family: 'Rubik', sans-serif;
     left: 1%;
     position: absolute;
-    font-weight: 500;
-    color: #053B3F;
+    /* font-weight: 500; */
+    color: black;
     cursor: pointer;
     margin-top: 8rem;
 }
