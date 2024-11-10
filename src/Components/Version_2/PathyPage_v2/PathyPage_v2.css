@@ -11,12 +11,13 @@
     height: auto;
     margin-top: 8rem;
     text-align: left;
-    color: #053B3F;
-    font-weight: bolder;
+    color: black;
+    font-weight: 400;
     cursor: pointer;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    line-height: 16.34px;
     /* align-items: center; */
 }
 .PathyPage-container{
