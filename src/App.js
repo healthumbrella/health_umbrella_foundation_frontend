@@ -5,7 +5,8 @@ import Home2 from "./Components/Version_2/Home_v2/Home";
 import Header from "./Components/Header/header";
 import Header2 from "./Components/Version_2/Header_v2/Header_v2"
 import Footer from "./Components/Footer/footer";
-import Ejournal from "./Components/ejournal/ejournal";
+// import Ejournal from "./Components/ejournal/ejournal";
+import Ejournal_v2 from "./Components/Version_2/ejournal_v2/ejournal";
 import Books from "./Components/BooksPage/books";
 import Diseases from "./Components/diseases/diseases";
 import Joinus from "./Components/JoinUs/Joinus";
@@ -49,7 +50,7 @@ function App() {
         <Route path="/share-experience" exact element={<ShareExp/>}></Route>
         <Route path="/ask-suggestion" exact element={<Suggestion />}></Route>
         <Route path="/pathy" exact element={<Pathy/>}></Route>
-         <Route path="/ejournal" exact element={<Ejournal />}></Route>
+         {/* <Route path="/ejournal" exact element={<Ejournal />}></Route> */}
         <Route path="/join-us" exact element={<Joinus />}></Route> 
   
         <Route path="/our-team" exact element={<OurTeam />}></Route> 
@@ -71,7 +72,9 @@ function App() {
       <Route path="/" exact element={<Home2/>}></Route>
         <Route path="/disease/:disease/:title1/books" exact element={<Books_v2 />}></Route> 
         <Route path="/Donation" exact element = {<Donation_v2 />}></Route>
-        <Route path="/clinics/" exact element={<Clinics_v2 />}></Route> 
+        <Route path="/clinics/" exact element={<Clinics_v2 />}></Route>
+        
+        <Route path="/ejournal" exact element={<Ejournal_v2 />}></Route> 
 
       
       </Routes>  

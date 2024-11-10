@@ -17,7 +17,7 @@ const gradientarry = [
 
 // Static data
 const staticData = {
-  imageLink: "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD",
+  imageLink: "/Images/cover.png",
   disease: "Migraine",
   text: "Migraine is a common neurological disease causing various symptoms, including headache.",
   summary: "Different kinds of therapies help different patients. Some patients are cured by Homeopathy. Various therapies exist to alleviate symptoms and improve outcomes.",
@@ -25,13 +25,13 @@ const staticData = {
     therapiesWithDrugs: [
       {
         name: "Accupressure Therapy",
-        imageLink: "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD",
+        imageLink: "/Images/cover.png",
         summary: "Accupressure is a type of massage therapy used to relieve pain.",
         isReadMore: false
       },
       {
         name: "Herbs",
-        imageLink: "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD",
+        imageLink: "/Images/cover.png",
         summary: "Various herbs can be used to treat headaches naturally.",
         isReadMore: false
       }
@@ -39,13 +39,13 @@ const staticData = {
     therapiesWithoutDrugs: [
       {
         name: "Cow Therapy",
-        imageLink: "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD",
+        imageLink: "/Images/cover.png",
         summary: "Cow urine is traditionally used as Ayurvedic medicine.",
         isReadMore: false
       },
       {
         name: "Reiki Therapy",
-        imageLink: "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD",
+        imageLink: "/Images/cover.png",
         summary: "Reiki is a form of energy healing that promotes relaxation.",
         isReadMore: false
       }
@@ -53,13 +53,13 @@ const staticData = {
     lessKnownTherapies: [
       {
         name: "Fasting Therapy",
-        imageLink: "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD",
+        imageLink: "/Images/cover.png",
         summary: "Fasting can help reset bodily functions and aid in healing.",
         isReadMore: false
       },
       {
         name: "Reiki Therapy",
-        imageLink: "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD",
+        imageLink: "/Images/cover.png",
         summary: "Reiki promotes balance and healing through energy transfer.",
         isReadMore: false
       }
@@ -166,14 +166,14 @@ const Bottom = () => {
                         }}
                       >
                         <div className="disease-card-img">
-                          {process.env.REACT_APP_IS_PRODUCTION === "true" ? (
+                          {/* {process.env.REACT_APP_IS_PRODUCTION === "true" ? (
                             <img
-                              src={`${process.env.REACT_APP_BACKEND_IP}${therapy.imageLink}`}
+                              src={`${process.env.REACT_APP_BACKEND_IP}${"/Images/cow.png"}`}
                               alt="img"
                             />
-                          ) : (
-                            <img src={therapy.imageLink} alt="img" />
-                          )}
+                          ) : ( */}
+                            <img src="/Images/cow.png" alt="img" />
+                          {/* )} */}
                         </div>
                         <Link
                           to={`/disease/${disease}/${therapy.name}`}

@@ -12,6 +12,11 @@
 }
 .diseases-top-main{
     color: #053B3F;
+    background-color: #E3F4FC;
+    // background: red;
+    padding-top: 2px;
+    padding-bottom: 10px;
+
 }
 .diseases-top-container{
     position: relative;
@@ -19,6 +24,7 @@
     background-size: 100%;
     width: 96.2vw;
     height: 520px;
+    // background: red;
     // overflow: scroll;
     display: flex;
     flex-direction: row;
@@ -88,19 +94,19 @@
         }
 
         h1{
-            font-weight: bold;
+            font-weight: 500;
             font-size: 60px;
            text-transform: uppercase;
-           color:#053B3F;
+           color:#005985;
             // margin-top: 10px;
             // margin-right: 20px;
             // text-align: left;
             // margin: 20px auto;
         }
         h2{
-            font-weight:500;
+            font-weight:400;
             font-size: 40px;
-            color:#053B3F;
+            color:#005985;
             // margin-top: 15px;
             // margin-right: 20px;
             // text-align: left;

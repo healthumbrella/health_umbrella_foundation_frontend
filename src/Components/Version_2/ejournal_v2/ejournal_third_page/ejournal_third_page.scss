@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100;200;300;400;500&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.sub-main {
+    overflow: hidden;
+    background: #E3F4FC;
+}
+
+.sub-container {
+    // background: rgba($color: #bedcb2, $alpha: 0.26);
+    background: white;
+    color: #053B3F;
+    // background-size: 1800px;
+    background-size:  112.5em;
+    // padding: 20px;
+    padding: 1.25rem;
+    background-position: center -500px;
+    // height: 515px;
+    // width: 1398px;
+    // height: 63.2vh;
+    width: 97.1vw;
+    border-radius: 20px;
+    // box-shadow: 1px 1px rgb(131, 126, 126);
+    // border: 1px outset black;
+    margin: 2rem auto;
+    font-family: 'Noto Sans', sans-serif;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.sub-left {
+    align-items: center;
+    display: flex;
+    flex-direction:row;
+    justify-content: left;
+    margin: 0 auto;
+    img{
+        height: auto;
+        width: 100%;
+    }
+
+}
+
+.sub-right {
+    display: flex;
+    margin: auto;
+    margin-top: 50px;
+    flex-direction: column;
+    width: max-content;
+    align-items: center;
+    justify-content: space-around;
+
+    // margin-right: 50px;
+    // overflow: hidden;
+    // background: red;
+
+
+    h2 {
+        font-size: 35px;
+        margin: auto;
+    }
+
+    p {
+        margin-top: 20px;
+        font-size: 20px;
+    }
+
+    button {
+        outline: none;
+        margin: 30px;
+        // width: 240px;
+        // height: 46px;
+        justify-content: center;
+        text-align: center;
+        padding: 5px 50px;
+        background-color: #005985;
+        color: white;
+        border-radius: 8px;
+        cursor: pointer;
+        border: 0px;
+    }
+
+    input {
+        // width: 435px;
+        width: 30.21em;
+        margin: 30px;
+        border: none;
+        outline: none;
+        background: none;
+        border-bottom: 1px solid black;
+        height: auto;
+        width: 100%;
+        // color: grey;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        width: 100%;
+    }
+}
+.submitbutton span{
+    color: white;
+}
+
+@media screen and (max-width: 768px){
+    .sub-container{
+
+        height: fit-content;
+        align-items: center;
+    }
+    .sub-left{
+        display: none;
+       
+    }
+    .sub-right{
+        height: auto;
+        width: 80%;
+        margin: auto;
+    }
+}
