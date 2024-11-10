@@ -18,10 +18,12 @@ import Feedback from "./Components/Feedback/Feedback";
 import Pathy from "./Components/Pathy/Pathy";
 import Testimonials from "./Components/Testimonials/testimonials";
 import Memberdetails from "./Components/Memberdetails/Memberdetails";
-import Clinics from "./Components/Clinics/Clinics";
+import Clinics_v2 from "./Components/Version_2/Clinics_v2/Clinics_v2";
 import Disease from "./Components/DiseaseNew/Disease";
 import DiseaseInfo from "./Components/DiseaseNew/Content/DiseaseInfo/DiseaseInfo";
 import PathyInfo from "./Components/DiseaseNew/Content/PathyInfo/PathyInfo";
+import Donation_v2 from "./Components/Version_2/Donation_v2/Donation_v2";
+import Books_v2 from "./Components/Version_2/Books_v2/Books_v2";
 
 function App() {
   
@@ -40,7 +42,6 @@ function App() {
         {/* //this was commented <Route path="/disease/:disease" exact element={<Disease/>}></Route>  */}
         <Route path="/disease/:disease/:titles" exact element={<PathyPage/>}></Route>  
         <Route path="/disease/:disease/:pathy/directCase/:caseId" exact element={<DirectCases />}></Route> 
-        <Route path="/disease/:disease/:title1/books" exact element={<Books />}></Route> 
         <Route path="/disease/:disease/:title1/:title2" exact element={<Testimonials />}></Route>    
         <Route path="/share-experience" exact element={<ShareExp/>}></Route>
         <Route path="/ask-suggestion" exact element={<Suggestion />}></Route>
@@ -51,7 +52,6 @@ function App() {
         <Route path="/our-team" exact element={<OurTeam />}></Route> 
         <Route path="/our-team/:team" exact element={<Memberdetails />}></Route> 
 
-        <Route path="/clinics/" exact element={<Clinics />}></Route> 
         <Route path="/feedback" exact element = {<Feedback />}></Route>
 
         {/* //this was commented new disease section  */}
@@ -66,6 +66,9 @@ function App() {
 
       {/* version 2 routes */}
       <Route path="/" exact element={<Home2/>}></Route>
+        <Route path="/disease/:disease/:title1/books" exact element={<Books_v2 />}></Route> 
+        <Route path="/Donation" exact element = {<Donation_v2 />}></Route>
+        <Route path="/clinics/" exact element={<Clinics_v2 />}></Route> 
 
       
       </Routes>  
