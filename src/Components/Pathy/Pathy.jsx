@@ -10,6 +10,7 @@ const Pathy = () => {
   const [showScrollButton, setShowScrollButton] = useState(false);
   const [loading, setLoading] = useState(true);
 
+    
 
   useEffect(() => {
     async function getData()  {
@@ -64,7 +65,7 @@ const Pathy = () => {
   const scrollToTopOnClick = () => {
     window.scrollTo(0, 0);
   };
-
+  
   return (
     <>
     <div >
