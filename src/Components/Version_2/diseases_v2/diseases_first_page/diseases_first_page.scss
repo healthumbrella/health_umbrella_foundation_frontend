@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100;200;300;400;500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.extraspace{
+    height: 90px;
+    width: 100%;
+}
+.diseases-top-main{
+    color: #053B3F;
+    background-color: #E3F4FC;
+    // background: red;
+    padding-top: 2px;
+    padding-bottom: 10px;
+
+}
+.diseases-top-container{
+    position: relative;
+    background-color: #f6f6f6;
+    background-size: 100%;
+    width: 96.2vw;
+    height: 520px;
+    // background: red;
+    // overflow: scroll;
+    display: flex;
+    flex-direction: row;
+    // background: #b9b9b9;
+    // background: #ececec;
+    
+    margin: auto;
+    margin-top: 8rem;
+    // padding: 5rem 0rem 0rem 0rem;
+    border-radius: 20px;
+    font-family: 'Noto Sans', sans-serif;
+
+    .disease-left{
+        display: flex;
+        align-items: center;
+        //margin-left:50px ;
+        width: 40%;
+        margin: auto;
+        img{
+            width: 450px; // Set your desired width
+            height: 450px; // Set your desired height
+            position: relative;
+            left: 40px;
+            border-radius: 4px;
+            // object-fit: cover; 
+            // height: 519px;
+            // width: auto;
+            // margin-right: 20px;
+            // max-width: 493px;
+        }
+    }
+    .disease-right{
+
+        text-align: left;
+        margin-top: 4rem;
+        width: 60%;
+
+        p{
+            font-size: 15px;
+            //  margin-top:5px;
+             
+             color: black;
+            min-height: 90px;
+            max-height: 70px;
+            overflow-x: hidden;
+            overflow-y: auto;
+            
+            text-align: left;
+            
+        }
+        p::-webkit-scrollbar{
+            width: 0.5rem;
+            // width:0;
+        }
+        p::-webkit-scrollbar-track{
+            background: #dedddd;
+            // background: #999999;
+            // background: #8ef0d976;
+            border-radius: 0.5rem;
+        }
+        p::-webkit-scrollbar-thumb{
+            background: #053B3F;
+            border-radius: 0.5rem;
+        }
+        p::-webkit-scrollbar-button{
+            height: 100%;
+        }
+
+        h1{
+            font-weight: 500;
+            font-size: 60px;
+           text-transform: uppercase;
+           color:#005985;
+            // margin-top: 10px;
+            // margin-right: 20px;
+            // text-align: left;
+            // margin: 20px auto;
+        }
+        h2{
+            font-weight:400;
+            font-size: 40px;
+            color:#005985;
+            // margin-top: 15px;
+            // margin-right: 20px;
+            // text-align: left;
+            // margin: 15px auto;
+        }
+    }
+}
+
+
+.diseases-top-end{
+.g-line{
+    width: 100%;
+    height: 9px;
+    // margin-top: 20px;
+    background-color: #053B3F;
+    color:white;
+    display: flex;
+    align-items: center;
+    margin-bottom: 70px;
+    .g-round{
+        display: flex;
+        margin: auto;position: relative;
+        color:white;
+        background-color: #053B3F;
+        padding: 0px;
+        // margin-top: 20px;
+        border-radius: 80px;
+        height: 71px;
+        width: 401px;
+        font-size: 40px;
+        justify-content: center;
+        font-family: 'Noto Sans', sans-serif;
+        font-weight: bold;
+        position: relative;
+        bottom: 32px;
+        padding: 5px;
+    }
+}
+}
+
+
+
+@media screen and (max-width: 915px){
+   .diseases-top-container{
+    .disease-left{
+        display: none;
+    }
+    .disease-right{
+        p{
+            max-width: 90vw;
+        }
+    }
+   }
+}
+
+@media screen and (max-width: 570px){
+    // 
+}
