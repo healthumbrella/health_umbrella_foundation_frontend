@@ -1,0 +1,363 @@
+import React, { useRef, useState } from "react";
+import styles from "./Joinus.module.css";
+import { toast, ToastContainer } from "react-toastify";
+import { FiUpload } from "react-icons/fi";
+import "react-toastify/dist/ReactToastify.css";
+import axios from "axios";
+const Joinus = () => {
+  const fileInputRef = useRef(null);
+  const documentFileInputRef = useRef();
+  const [fileName,setfileName]=useState({file1:"",file2:""});
+  const [formData, setFormData] = useState({
+    name: "",
+    age: "",
+    gender: "",
+    email_address: "",
+    phone_number: "",
+    address: "",
+    pincode: "",
+    city: "",
+    state: "",
+    country: "",
+    profession: "",
+    message: "",
+    photograph: null,
+    document: null,
+  });
+
+  const handleFileChange = (event, name) => {
+   
+    const file = event.target.files[0];
+    
+    if (file) {
+      const fileType = file.type;
+      const photographAllowedTypes = [
+        "image/jpeg",
+        "image/jpg",
+        "image/png",
+        "application/pdf",
+      ];
+      const documentAllowedTypes = ["application/pdf"];
+
+      if (name === "photograph" && photographAllowedTypes.includes(fileType)) {
+        setFormData({
+          ...formData,
+          photograph: file,
+        });
+        setfileName({
+         ...fileName,
+          file1:file.name,
+        });
+        
+      } else if (
+        name === "document" &&
+        documentAllowedTypes.includes(fileType)
+      ) {
+        setFormData({
+          ...formData,
+          document: file,
+        });
+        setfileName({
+          ...fileName,
+          file2:file.name,
+        });
+      } else {
+        toast.error(
+          name === "photograph"
+            ? "Please upload a .jpg, .jpeg, .png, or .pdf file!"
+            : "Please upload a .pdf file!",
+          {
+            position: toast.POSITION.TOP_RIGHT,
+            style:{top:'90px'}
+          }
+        );
+      }
+    }
+  };
+
+  const handleInputChange = (event) => {
+    const { name, value } = event.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
+  const handleUploadClick = () => {
+    fileInputRef.current.click();
+  };
+  const handleDocumentFileSelect = () => {
+    documentFileInputRef.current.click();
+  };
+
+  const [loading,setLoading]=useState(false)
+
+  const handleSubmit = async (e) => {
+    console.log(formData);
+    e.preventDefault();
+    try {
+      const emailCheck=formData.email_address;
+      const after=emailCheck.split("@")[1];
+      console.log(after);
+      if(after!=="gmail.com"){
+        toast.error("Please enter valid email !", {
+          position: toast.POSITION.TOP_RIGHT,
+          style:{top:'90px'}
+        });
+        return;
+      }
+      if(!formData.photograph || !formData.document){
+        toast.error("Please Upload both document and photo !", {
+          position: toast.POSITION.TOP_RIGHT,
+          style:{top:'90px'}
+        });
+        return;
+      }
+      setLoading(true)
+      const response = await axios.post(
+        `${process.env.REACT_APP_BACKEND_IP}/user-forms/join-us`,
+        formData,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        }
+      );
+      toast.success("Information successfully submitted!", {
+        position: toast.POSITION.TOP_RIGHT,
+          style:{top:'90px'}
+      });
+      console.log("Response from backend:", response.data);
+      setFormData({
+        name: "",
+        age: "",
+        gender: "",
+        email_address: "",
+        phone_number: "",
+        address: "",
+        pincode: "",
+        city: "",
+        state: "",
+        country: "",
+        profession: "",
+        message: "",
+        photograph: null,
+        document: null,
+      })
+      setfileName({file1:"",file2:""})
+    } catch (error) {
+      toast.error("Error !", {
+        position: toast.POSITION.TOP_RIGHT,
+          style:{top:'90px'}
+      });
+    }finally{
+      setLoading(false)
+    }
+  };
+
+  return (
+    <div 
+    className={styles.join_us}
+    >
+      <div 
+      className={styles.join_us_content} 
+      >
+        <div  style={{backgroundColor:"transparent",width:"100%",height:"200px"}}>
+          
+          <div className={styles.join_heading} style={{color:"black"}}>
+            <span style={{color:"black"}}>J</span>oin this Movement as a member..
+          </div>
+          <div className={styles.join_para}>
+          This is your space—a confidential and supportive environment where your voice can be heard. By filling out the form below, you're contributing to a tapestry of inspiration that offers hope, guidance, and solace to others walking a similar path.This is your space—a confidential 
+          </div>
+          
+        </div>
+        <div className={styles.join_us_form} style={{display:'flex',flexDirection:'column',alignItems:'center',width:"100%"}}>
+          
+          <form className={styles.form_body} onSubmit={handleSubmit} style={{display:"flex"}}>
+            <div style={{display:"flex",flexDirection:"row"}}>
+            <div  style={{display:"flex",flexDirection:"column",flex:1,paddingRight:"10px"}}>
+                <div >
+              <input
+                required
+                onChange={handleInputChange}
+                name="name"
+                value={formData.name}
+                className={`${styles.form_inputs} ${styles.form_name}`}
+                placeholder="Name*"
+              ></input>
+              <input
+                required
+                onChange={handleInputChange}
+                type="number"
+                name="age"
+                value={formData.age}
+                className={`${styles.form_inputs} ${styles.form_age}`}
+                placeholder="Age*"
+              ></input>
+              <input
+                required
+                onChange={handleInputChange}
+                name="gender"
+                value={formData.gender}
+                className={`${styles.form_inputs} ${styles.form_gender}`}
+                placeholder="Gender*"
+              ></input>
+            </div>
+            <input
+                required
+                type="text"
+                onChange={handleInputChange}
+                name="profession"
+                value={formData.profession}
+                className={`${styles.form_inputs} ${styles.form}`}
+                placeholder="Profession*"
+              ></input>
+              <textarea
+              type="text"
+              onChange={handleInputChange}
+              name="message"
+              value={formData.message}
+              rows="6"
+              cols="100"
+              className={`${styles.form_inputs} ${styles.form_message}`}
+              placeholder="Message*"
+            ></textarea>
+             <div className={`${styles.upload_file}`}>
+              <div className={styles.upload_photo}>Recent Photograph <span style={{color:'red'}}>*</span>:</div>
+              <label onClick={handleUploadClick} className={styles.upload}>
+                <FiUpload size={18} color="#000000" /> Upload
+              </label>
+              <input
+                // required
+                accept=".jpg, .jpeg, .png"
+                name="photograph"
+                onChange={(e) => handleFileChange(e, "photograph")}
+                type="file"
+                id="photo"
+                hidden
+                ref={fileInputRef}
+              ></input>
+              <div className={styles.filename}>{fileName.file1}</div>
+            </div>
+            <div className={styles.upload_file}>
+              <div style={{ marginRight: "2rem" }}>
+                Document(Aadhar/PAN/Govt. ID Proof) <span style={{color:'red'}}>*</span>:
+              </div>
+              <label
+                onClick={handleDocumentFileSelect}
+                className={styles.upload}
+              >
+                <FiUpload size={18} color="#000000" /> Upload
+              </label>
+              <input
+                // required
+                ref={documentFileInputRef}
+                accept=".pdf"
+                hidden
+                name="document"
+                onChange={(e) => handleFileChange(e, "document")}
+                type="file"
+                id="docu"
+                style={{ marginLeft: "0.5%" }}
+              ></input>
+              <div className={styles.filename}>{fileName.file2}</div>
+            </div>
+            </div>
+            
+            <div className={styles.second_row} style={{display:"flex", flexDirection:"column",flex:1,alignItems:"center",justifyContent:"center"}}>
+              <input
+                required
+                type="text"
+                onChange={handleInputChange}
+                name="address"
+                value={formData.address}
+                className={`${styles.form_inputs} ${styles.form}`}
+                placeholder="House no/Street/Landmark*"
+              ></input>
+              <input
+                required
+                type="email"
+                onChange={handleInputChange}
+                name="email_address"
+                value={formData.email_address}
+                className={`${styles.form_inputs} ${styles.form}`}
+                placeholder="Email*"
+              ></input>
+           
+              <input
+                type="text"
+                required
+                onChange={handleInputChange}
+                name="city"
+                value={formData.city}
+                className={`${styles.form_inputs} ${styles.form}`}
+                placeholder="City*"
+              ></input>
+              <input
+                required
+                onChange={handleInputChange}
+                name="phone_number"
+                type="tel"
+                value={formData.phone_number}
+                className={`${styles.form_inputs} ${styles.form}`}
+                placeholder="Phone no*"
+              ></input>
+            
+              <input
+                required
+                type="text"
+                onChange={handleInputChange}
+                name="state"
+                value={formData.state}
+                className={`${styles.form_inputs} ${styles.form}`}
+                placeholder="State*"
+              ></input>
+              <input
+                required
+                type="text"
+                onChange={handleInputChange}
+                name="country"
+                value={formData.country}
+                className={`${styles.form_inputs} ${styles.form}`}
+                placeholder="Country*"
+              ></input>
+            </div>
+            </div>
+            
+           <div>
+            <div className={styles.terms}>
+              <input
+                required
+                type="radio"
+                style={{ marginBottom: "1.5rem", marginRight: "0.5rem", }}
+              ></input>
+              <div style={{ fontSize: "13px", fontWeight: "800" }}>
+                I hereby declare that the information given by me in the here is
+                true, complete and correct to the best of my knowledge :{" "}
+                <span style={{ color: "red",fontSize:'16px' }}>*</span>
+              </div>
+            </div>
+            <div style={{ fontSize: "11px", fontWeight: "500" }}>
+              Anyone who is interested to join our NGO/movement and contribute
+              for the cause are most welcome. Initial work of the members is to
+              spread the awareness about this movement to others. At the same
+              time look for testimonials/ patients who are cured by a specific
+              therapy. One should be 100 % honest without any biasing in giving
+              the data. Later a member may become a state representative or
+              country representative if he /she really proves worthy.
+            </div>
+            <button type="submit" className={styles.submit_button} disabled={loading} style={{cursor:"pointer"}}>
+              {!loading?"Submit":"Processing..."}
+            </button>
+          
+            </div>
+            <ToastContainer />
+          </form>
+          
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Joinus;

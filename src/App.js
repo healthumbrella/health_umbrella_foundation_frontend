@@ -9,14 +9,16 @@ import Footer from "./Components/Footer/footer";
 import Ejournal_v2 from "./Components/Version_2/ejournal_v2/ejournal";
 import Books from "./Components/BooksPage/books";
 import Diseases from "./Components/diseases/diseases";
-import Joinus from "./Components/JoinUs/Joinus";
+// import Joinus from "./Components/JoinUs/Joinus";
+import Joinus from "./Components/Version_2/JoinUs_v2/Joinus";
 import Suggestion from "./Components/Suggestion/suggestion"
 import DirectCases from "./Components/DirectCases/directcases"
 import ShareExp from "./Components/ShareExp/ShareExp";
 // import PathyPage from "./Components/PathyPage/PathyPage"
 import PathyPage from "./Components/Version_2/PathyPage_v2/PathyPage_v2"
 import OurTeam from "./Components/OurTeam/OurTeam";
-import Feedback from "./Components/Feedback/Feedback";
+// import Feedback from "./Components/Feedback/Feedback";
+import Feedback from "../src/Components/Version_2/Feedback_v2/Feedback"
 // import Pathy from "./Components/Pathy/Pathy";
 import Pathy from "./Components/Version_2/Pathy_v2/Pathy_v2"
 // import Testimonials from "./Components/Testimonials/testimonials";
