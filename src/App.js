@@ -10,9 +10,9 @@ import Ejournal_v2 from "./Components/Version_2/ejournal_v2/ejournal";
 import Books from "./Components/BooksPage/books";
 import Diseases from "./Components/diseases/diseases";
 import Joinus from "./Components/JoinUs/Joinus";
-import Suggestion from "./Components/Suggestion/suggestion"
+import Suggestion from "./Components/Version_2/Suggestion_v2/suggestion"
 import DirectCases from "./Components/DirectCases/directcases"
-import ShareExp from "./Components/ShareExp/ShareExp";
+import ShareExp from "./Components/Version_2/ShareExp_v2/ShareExp";
 // import PathyPage from "./Components/PathyPage/PathyPage"
 import PathyPage from "./Components/Version_2/PathyPage_v2/PathyPage_v2"
 import OurTeam from "./Components/OurTeam/OurTeam";
