@@ -2,7 +2,7 @@ import React, { useRef, useState, useEffect } from "react";
 import "./Header_v2.scss";
 import { NavLink, useLocation } from "react-router-dom";
 import axios from "axios";
-
+import SearchBar from "./search_header_v2"
 function Header() {
   const hamburgerRef = useRef(null);
   const [width, setWidth] = useState(window.innerWidth);
@@ -196,7 +196,8 @@ function Header() {
       </div>
       <div className="Header_v2_search">
         <img src="/Images_v2/Search.png" alt="icon" />
-        <input type="text" placeholder="Search" />
+        {/* <input type="text" placeholder="Search" /> */}
+        <SearchBar diseaselist={diseases} />
       </div>
     </nav>
   );
