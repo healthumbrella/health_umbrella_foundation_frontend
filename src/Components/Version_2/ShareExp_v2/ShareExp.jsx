@@ -4,7 +4,7 @@ import ShareExpForm from "./ShareExpForm";
 
 const Share_exp = () => {
   return (
-    <div className="Share_exp_main">
+    <div className="Share_exp_main" >
       {/* <div>Home/Share Experience</div> */}
       <div className="Share_exp_container">
    

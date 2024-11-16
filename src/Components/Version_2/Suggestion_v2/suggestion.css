@@ -1,11 +1,13 @@
 .suggestion_main {
   display: flex;
   justify-content: center;
-  margin: 0px 100px 0px 100px;
+  background: #E3F4FC;
   /* background-color: #e3f4fc; */
   /* margin-bottom: 8rem; */
 }
 .suggestion_container {
+  
+  margin: 0px 100px 0px 100px;
   display: flex;
   flex-direction: column;
   width: 95vw;
@@ -61,6 +63,8 @@
 }
 /* ***********RIGHT HALF*********** */
 .suggestion_container_right {
+
+  background: white;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -94,6 +98,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  
 }
 
 .form{
@@ -153,10 +158,22 @@
 #pathies {
   width: 20rem;
 }
-
+#name{
+  /* background: red; */
+  position: relative;
+  left: 3px;
+}
 #age,
 #gender {
-  width: 7.75rem;
+  width: 7rem;
+}
+#age{
+  position: relative;
+  left: 1px;
+}
+#gender{
+  position: relative;
+  right: 4px;
 }
 .firstrow,
 .secondrow,
@@ -214,6 +231,10 @@
   justify-content: space-between;
   align-items: first baseline;
   gap: 2rem;
+}
+.last1{
+  position: relative;
+  left: 8px;
 }
 .ask-gap-yes-no {
   display: flex;
