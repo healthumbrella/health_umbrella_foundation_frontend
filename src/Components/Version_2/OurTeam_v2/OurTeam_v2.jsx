@@ -5,24 +5,24 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import ClipLoader from "react-spinners/ClipLoader";
 const OurTeam = () => {
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   // const [data, setData] = useState();
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get(
-          `${process.env.REACT_APP_BACKEND_IP}/members/`
-        );
-        // setData(response.data);
-        setLoading(false); // Move setLoading inside try block after data retrieval
-      } catch (error) {
-        console.error("Error fetching data:", error);
-        setLoading(false); // Handle setLoading in case of an error as well
-      }
-    };
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     try {
+  //       const response = await axios.get(
+  //         `${process.env.REACT_APP_BACKEND_IP}/members/`
+  //       );
+  //       // setData(response.data);
+  //       setLoading(false); // Move setLoading inside try block after data retrieval
+  //     } catch (error) {
+  //       console.error("Error fetching data:", error);
+  //       setLoading(false); // Handle setLoading in case of an error as well
+  //     }
+  //   };
 
-    fetchData();
-  }, []);
+  //   fetchData();
+  // }, []);
 
   const scrollToTopOnClick = () => {
     window.scrollTo(0, 0);

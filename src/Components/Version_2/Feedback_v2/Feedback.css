@@ -47,8 +47,15 @@
   z-index: -1;
   }
   .doctor-image{
-  width: 50%;
+    
+
+  width: 115%;
+  height: 100%;
+  /* margin-left: -50px; */
   position: relative;
+  right: 5rem;
+  /* border: 1px solid black; */
+  border-radius: 15px 75px 0px 75px;
   }
   .doctor-r{
   position: absolute;
@@ -146,10 +153,17 @@
     display: none;
   }
   .Feedback_container{
-    width: 60%;
+    width: 100%;
+    gap: 2rem;
+    border: 1px solid black;
   }
   .Feedback_left{
     width: 100%;
+    margin-left: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black;
   }
   .feedback{
     /* justify-content: center; */

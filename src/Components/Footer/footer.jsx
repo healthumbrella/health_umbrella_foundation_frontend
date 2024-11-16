@@ -72,7 +72,7 @@ function Footer() {
                                 <Link to="/" onClick={scrollToTopOnClick}>Home</Link>
                                 {/* <Link to="#" onClick={scrollToTop}>About</Link> */}
                                 <Link to="/our-team" onClick={scrollToTopOnClick}>Members</Link>
-                                {/* <Link to="#" onClick={scrollToTop}><span>Donate</span></Link> */}
+                                <Link to="/donation" onClick={scrollToTopOnClick}>Donate</Link>
                             </div>
                             <div className="quick-links_container-2">
                                 <Link to="/ejournal" onClick={scrollToTopOnClick}>Newsletter</Link>

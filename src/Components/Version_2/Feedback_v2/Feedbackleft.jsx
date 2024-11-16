@@ -6,6 +6,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { FiUpload } from 'react-icons/fi';
 import axios from "axios";
 import {FaStar} from "react-icons/fa"
+import "./Feedback.css"
 
 const Feedbackleft = () => {
   // eslint-disable-next-line
