@@ -168,28 +168,38 @@ const ShareExpForm = () => {
         <div className="form_left">
 
           <div className="form firstrow">
+            
             <label htmlFor="name"></label>
-            <input type="text" id="name" name="name" value={formData.name} onChange={handleChange} placeholder="Name*" required /> <br /> <br />
+            <input type="text" id="name" name="name" className="name2" value={formData.name} onChange={handleChange} placeholder="Name*" required /> 
 
             <label htmlFor="age"></label>
-            <input type="number" id="age" name="age" value={formData.age} onChange={handleChange} placeholder="Age*" required min="0" /> <br /> <br />
+            <input type="number" id="age" name="age" className="age2" value={formData.age} onChange={handleChange} placeholder="Age*" required min="0" />
 
 
-            <select id="gender" name="gender" value={formData.gender} onChange={handleChange} required>
+            <select id="gender" name="gender" className="gender2" value={formData.gender} onChange={handleChange} required>
               <option value="">Gender</option>
               <option value="male">Male</option>
               <option value="female">Female</option>
               <option value="female">Other</option>
 
             </select>
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
           </div>
 
           <div className="form fifthrow">
             <label htmlFor="disease"></label>
-            <input type="text" id="disease" name="disease" value={formData.disease} onChange={handleChange} placeholder="Disease*" required /> <br /> <br />
-
+            <input type="text" id="disease" name="disease" value={formData.disease} onChange={handleChange} placeholder="Disease*" required /> 
+    
             <label htmlFor="disease"></label>
-            <input type="text" id="disease" name="pathies" value={formData.pathies} onChange={handleChange} placeholder="Pathies*" required /> <br /> <br />
+            <input type="text" id="disease"  name="pathies"  value={formData.pathies} onChange={handleChange} placeholder="Pathies*" required /> 
           </div>
 
 
