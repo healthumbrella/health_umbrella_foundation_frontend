@@ -32,8 +32,8 @@ function Books(){
            
         <div className="BV_outer">
             <div className="BV_outer_top" style={{marginLeft:50,fontWeight:"BVold"}}>
-                <h2>&#60; <span onClick={() => navigate(-2)}>{disease.charAt(0).toUpperCase()}{disease.slice(1)}</span>
-                <span onClick={() => navigate(-1)}>/{title1.charAt(0).toUpperCase()}{title1.slice(1)}</span> /Books & Book Chapters</h2>
+                <p>&#60; <span onClick={() => navigate(-2)}>{disease.charAt(0).toUpperCase()}{disease.slice(1)}</span>
+                <span onClick={() => navigate(-1)}>/{title1.charAt(0).toUpperCase()}{title1.slice(1)}</span> /Books & Book Chapters</p>
             </div>
             <div className="BV_outer_middle">
                 <h1>Books & Book Chapters</h1>
@@ -45,14 +45,9 @@ function Books(){
                         <img src={process.env.PUBLIC_URL+"/images/bookCase.png"} alt="" />
                     </div>
                     <div className="BV_inner_right">
-                        {/* {title1?(
-                            <> */}
+        
                         <SeparateBook pathy = {title1} disease = {disease} className="Sbclass" />
-                      
-                        {/* </>
-                        ):(<p>Books Not Available</p>
-
-                        )} */}
+                  
                     </div>
                     
                 </div>
