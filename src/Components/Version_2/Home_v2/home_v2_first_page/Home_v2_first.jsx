@@ -18,7 +18,7 @@ const Home_v2_first = ({ searchpagedata }) => {
           <button>Search</button>
         </div>
         <div className='Home_v2_first_img'> 
-           {/* <div className="hfp_outer_left_searchbar"><SearchBar diseaselist={searchpagedata.diseaseList} /></div> */}
+           {/* <div className="hfp_outer_left_searchbar"><SearchBar diseaselist={searchpagedata.diseaseList} className="s"/></div> */}
                 
         
         <img className='img_main' src="/Images_v2/main.png" alt="Umberall img" />
