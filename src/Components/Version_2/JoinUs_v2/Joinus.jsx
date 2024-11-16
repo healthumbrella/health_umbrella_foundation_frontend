@@ -4,6 +4,7 @@ import { toast, ToastContainer } from "react-toastify";
 import { FiUpload } from "react-icons/fi";
 import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
+import { useNavigate, useParams } from "react-router-dom";
 const Joinus = () => {
   const fileInputRef = useRef(null);
   const documentFileInputRef = useRef();
@@ -153,6 +154,16 @@ const Joinus = () => {
       setLoading(false)
     }
   };
+  const navigate = useNavigate();
+  const handleHomeClick = () => {
+    navigate('/');
+  };
+
+  // Function to handle JoinUs behavior
+  const handleJoinUsClick = () => {
+    // Do nothing or stay on the same page
+    // Optional: You can log or show a message here if needed.
+  };
 
   return (
     <div 
@@ -161,22 +172,34 @@ const Joinus = () => {
       <div 
       className={styles.join_us_content} 
       >
-        <div  style={{backgroundColor:"transparent",width:"100%",height:"200px"}}>
+       
+        <div style={{ backgroundColor: "transparent", width: "100%", height: "auto", textAlign: "left", display: "flex", flexDirection: "column", alignItems: "flex-start",paddingBottom:"20px" }}>
+          <p style={{ fontWeight: 400, fontSize: 15, marginBottom: "20px" }}>
+            <span onClick={handleHomeClick}> Home</span>
+            {' > '}
+            <span onClick={handleJoinUsClick}>
+              JoinUs
+            </span>
+          </p>
           
-          <div className={styles.join_heading} style={{color:"black"}}>
-            <span style={{color:"black"}}>J</span>oin this Movement as a member..
+          <div className={styles.join_heading} style={{ color: "black" }}>
+            <span style={{ color: "black" }}>J</span>oin this Movement as a member..
           </div>
+          
+          <hr style={{ width: "100%", border: "0.01px solid", opacity: "0.2" }} />
+          
           <div className={styles.join_para}>
-          This is your space—a confidential and supportive environment where your voice can be heard. By filling out the form below, you're contributing to a tapestry of inspiration that offers hope, guidance, and solace to others walking a similar path.This is your space—a confidential 
+            This is your space—a confidential and supportive environment where your voice can be heard. By filling out the form below, you're contributing to a tapestry of inspiration that offers hope, guidance, and solace to others walking a similar path. This is your space—a confidential
           </div>
-          
         </div>
+
+
         <div className={styles.join_us_form} style={{display:'flex',flexDirection:'column',alignItems:'center',width:"100%"}}>
           
           <form className={styles.form_body} onSubmit={handleSubmit} style={{display:"flex"}}>
             <div style={{display:"flex",flexDirection:"row"}}>
-            <div  style={{display:"flex",flexDirection:"column",flex:1,paddingRight:"10px"}}>
-                <div >
+            <div  style={{display:"flex",flexDirection:"column",flex:1,paddingRight:"10px",gap:5}}>
+                <div style={{display:"flex",gap:10}}>
               <input
                 required
                 onChange={handleInputChange}
@@ -224,7 +247,7 @@ const Joinus = () => {
             ></textarea>
              <div className={`${styles.upload_file}`}>
               <div className={styles.upload_photo}>Recent Photograph <span style={{color:'red'}}>*</span>:</div>
-              <label onClick={handleUploadClick} className={styles.upload}>
+              <label onClick={handleUploadClick} className={styles.upload} style={{backgroundColor:"white",border:"0.5px solid gray",borderRadius:0}}>
                 <FiUpload size={18} color="#000000" /> Upload
               </label>
               <input
@@ -246,6 +269,7 @@ const Joinus = () => {
               <label
                 onClick={handleDocumentFileSelect}
                 className={styles.upload}
+                style={{backgroundColor:"white",border:"0.5px solid gray",borderRadius:0}}
               >
                 <FiUpload size={18} color="#000000" /> Upload
               </label>
@@ -264,7 +288,7 @@ const Joinus = () => {
             </div>
             </div>
             
-            <div className={styles.second_row} style={{display:"flex", flexDirection:"column",flex:1,alignItems:"center",justifyContent:"center"}}>
+            <div className={styles.second_row} style={{display:"flex", flexDirection:"column",gap:5,flex:1,alignItems:"center",justifyContent:"center"}}>
               <input
                 required
                 type="text"
