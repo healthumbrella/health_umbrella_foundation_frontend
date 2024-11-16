@@ -106,7 +106,7 @@
     height: 3rem;
     /* background: #f2f3f2; */
     background-color: transparent;
-    border:2px solid #E3F4Fc;
+    border:3px solid #E3F4Fc;
     margin-bottom: 6px;
   }
   .form_name {
@@ -144,6 +144,8 @@
       border: none;
       cursor: pointer;
       z-index: 1;
+      display: block; 
+  margin: 1rem auto;
   }
   .filename{
     font-size: 13px;
