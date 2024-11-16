@@ -1,16 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Georgian:wght@200&family=Rubik:wght@500&display=swap');
 
 .BV_outer{
-    /* border: 0.2rem solid green; */
     padding: 3rem 3rem;
-    /* position: relative; */
-    /* height: 70rem; */
     background: #E3F4FC;
     width: 100vw;
     margin-top: 2rem;
     display: flex;
     flex-direction: column;
-    /* row-gap: 1rem; */
     align-items: center;
     justify-content: center;
 }
@@ -37,9 +33,18 @@
     /* padding-top: 3.5rem; */
 
 }
+.BV_outer_top span 
+{
+    font-size: 12px;
+}
+.BV_outer_top p
+{
+    font-size: 12px;
+}
 .BV_outer_middle{
     /* margin-top: 4.5rem; */
     width: 85%;
+   
     text-align: left;
     margin-left: 6rem;
     margin-bottom: 1rem;
@@ -51,15 +56,14 @@
     }
     /* background: red; */
 }
+.BV_outer_middle h1{
+ font-size: 30px;
+}
 
 .BV_outer_bottom{
-    /* background: url("./../../../../public/Images/books-bg.png") no-repeat bottom center; */
     max-height: 120vh;
     width: 90%;
     background-color: white;
-    /* border: 0.2rem solid green; */
-    /* margin-top: 6rem; */
-    /* background-color: #B9B9B921; */
     border-radius: 1.5rem;
     box-shadow: 0px 15px 10px -15px grey;
    
@@ -89,6 +93,7 @@
     flex-direction: row;
     position: relative;
     /* overflow: hidden; */
+    padding-right: 0px;
     padding-bottom: 2vh;
 }
 /* .BV_inner_right{
@@ -106,14 +111,14 @@
 .BV_inner_right {
     width: 75%;
     height: 85vh;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap; /* Allows items to wrap to the next row */
     gap: 1rem; /* Space between items */
     padding: 1rem;
     overflow-y: auto;
-    align-items: start; /* Aligns items to the top of each row */
+    align-items: start; /* Aligns items to the top */
+  flex-wrap: wrap; /* Ensures children don’t overflow */
+
 }
+
 
 
 
@@ -134,8 +139,8 @@
     height: 70px;
 }
 .BV_inner_left{
-    width: 25%;
-    height: 85vh;
+    width: 20%;
+    height: 65vh;
     display: flex;
     align-items: center;
     justify-content: center;

@@ -4,12 +4,10 @@ import { Link, useParams } from "react-router-dom";
 import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io";
 import ClipLoader from "react-spinners/ClipLoader";
 
-
 const Memberdetails = () => {
-    
   const [backendData, setBackendData] = useState({ memberList: [] });
   const [loading, setLoading] = useState(true);
-  const {team}=useParams();
+  const { team } = useParams();
   console.log(team);
   useEffect(() => {
     const fetchData = async () => {
@@ -87,105 +85,114 @@ const Memberdetails = () => {
           </div>
           <div className="container-members">
             <div className="container-2">
-            <div className="left-1">
-              <div className="name-about">
-                <div className="name-span">
-                  <p>{currentTab.name}</p>
-                  <span className="span">{currentTab.designation}</span>
+              <div className="left-1">
+                <div className="name-about">
+                  <div className="name-span">
+                    <p>{currentTab.name}</p>
+                    <span className="span">{currentTab.designation}</span>
+                  </div>
+                  <p className="about">{currentTab.about.slice(0, 180)}</p>
                 </div>
-                <p className="about">{currentTab.about.slice(0,180)}</p>
-              </div>
 
-              <div className="icons">
-                {
-                  currentTab.linkedinLink?( <a href={currentTab.linkedinLink} target="_blank">
-                  <img
-                    className="icons-img"
-                    src="/images/icons8-linked-in-240.png"
-                    alt="Clickable Image"
-                  ></img>
-                </a>):("")
-                }
-                {
-                  currentTab.linkedinLink?(  <a
-                    href={`mailto:${currentTab.emailAddress}`}
-                    target="_blank"
-                    className="gmail"
-                  >
-                    <img
-                      className="icons-img"
-                      src="/images/icons8-gmail-480 (1).png"
-                      alt="Clickable Image"
-                    ></img>
-                  </a>):("")
-                }
-                {
-                  currentTab.phoneNumber?(  <a href={`tel:${currentTab.phoneNumber}`} target="_blank">
-                  <img
-                    className="icons-img-ringer"
-                    src="/images/icons8-ringer-volume-90.png"
-                    alt="Clickable Image"
-                  ></img>
-                </a>):("")
-                }
-               
-               
+                <div className="icons">
+                  {currentTab.linkedinLink ? (
+                    <a href={currentTab.linkedinLink} target="_blank">
+                      <img
+                        className="icons-img"
+                        src="/images/icons8-linked-in-240.png"
+                        alt="Clickable Image"
+                      ></img>
+                    </a>
+                  ) : (
+                    ""
+                  )}
+                  {currentTab.linkedinLink ? (
+                    <a
+                      href={`mailto:${currentTab.emailAddress}`}
+                      target="_blank"
+                      className="gmail"
+                    >
+                      <img
+                        className="icons-img"
+                        src="/images/icons8-gmail-480 (1).png"
+                        alt="Clickable Image"
+                      ></img>
+                    </a>
+                  ) : (
+                    ""
+                  )}
+                  {currentTab.phoneNumber ? (
+                    <a href={`tel:${currentTab.phoneNumber}`} target="_blank">
+                      <img
+                        className="icons-img-ringer"
+                        src="/images/icons8-ringer-volume-90.png"
+                        alt="Clickable Image"
+                      ></img>
+                    </a>
+                  ) : (
+                    ""
+                  )}
+                </div>
               </div>
-            </div>
-            <div className="right">
-            {process.env.REACT_APP_IS_PRODUCTION == 'true' ? (
-                          <img src={`${process.env.REACT_APP_BACKEND_IP}${currentTab.imageLink}`} alt="Clinic" />
-                        ) : (
-                          <img
+              <div className="right">
+                {process.env.REACT_APP_IS_PRODUCTION == "true" ? (
+                  <img
+                    src={`${process.env.REACT_APP_BACKEND_IP}${currentTab.imageLink}`}
+                    alt="Clinic"
+                  />
+                ) : (
+                  <img
                     src={currentTab.imageLink}
                     alt={"members Image"}
                     className="mimage"
                     draggable="false"
                   />
-                        )}
+                )}
+              </div>
             </div>
-            </div>
-          
 
-          <div className="gray-div">
-            <button
-              className="button-left"
-              onClick={() => handleScroll("left")}
-            >
-              <IoIosArrowBack />
-            </button>
-            <div className="data-div" ref={dataDivRef}>
-              {backendData.memberList.map((member, index) => (
-                <div
-                  key={index}
-                  className="member-card"
-                  onClick={() => setMyCards(member)}
-                >
-                  {process.env.REACT_APP_IS_PRODUCTION == 'true' ? (
-                          <img src={`${process.env.REACT_APP_BACKEND_IP}${member.imageLink}`} alt="Clinic" />
-                        ) : (
-                          <img
-                    src={member.imageLink}
-                    alt={member.name}
-                    className="mimage"
-                    draggable="false"
-                  />
-                        )}
-                 
-                  <div className="member-info">
-                    <p className="name">{member.name}</p>
-                    <span className="designation">{member.designation}</span>
+            <div className="gray-div">
+              <button
+                className="button-left"
+                onClick={() => handleScroll("left")}
+              >
+                <IoIosArrowBack />
+              </button>
+              <div className="data-div" ref={dataDivRef}>
+                {backendData.memberList.map((member, index) => (
+                  <div
+                    key={index}
+                    className="member-card"
+                    onClick={() => setMyCards(member)}
+                  >
+                    {process.env.REACT_APP_IS_PRODUCTION == "true" ? (
+                      <img
+                        src={`${process.env.REACT_APP_BACKEND_IP}${member.imageLink}`}
+                        alt="Clinic"
+                      />
+                    ) : (
+                      <img
+                        src={member.imageLink}
+                        alt={member.name}
+                        className="mimage"
+                        draggable="false"
+                      />
+                    )}
+
+                    <div className="member-info">
+                      <p className="name">{member.name}</p>
+                      <span className="designation">{member.designation}</span>
+                    </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
+              <button
+                className="button-right"
+                onClick={() => handleScroll("right")}
+              >
+                <IoIosArrowForward />
+              </button>
             </div>
-            <button
-              className="button-right"
-              onClick={() => handleScroll("right")}
-            >
-              <IoIosArrowForward />
-            </button>
-          </div>
           </div>
         </div>
       )}

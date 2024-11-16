@@ -1,11 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "./seperatebooks_v2.css";
-import { NavLink } from "react-router-dom";
-import axios from "axios";
 import ClipLoader from "react-spinners/ClipLoader";
 
-
-function SeparateBook({ pathy,disease }) {
+function SeparateBook({ pathy, disease }) {
   const staticData = {
     books: [
       {
@@ -13,65 +10,59 @@ function SeparateBook({ pathy,disease }) {
         author: "A.K. Saxena",
         rating: "7",
         text: "This book is about how we can use acupressure to effectively treat this disease.",
-        imageLink: "https://picsum.photos/id/237/200/300  ",
-        buyLink: "https://www.google.com/shopping/product/17777120323974940473"
+        imageLink: "https://picsum.photos/id/237/200/300",
+        buyLink: "https://www.google.com/shopping/product/17777120323974940473",
       },
       {
         name: "Accupressure treatment and Food Therapy for Headache",
         author: "Maxwell",
         rating: "8",
         text: "This book is about how we can use acupressure to effectively treat this disease.",
-        imageLink: "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD",
-        buyLink: "https://www.google.com/shopping/product/17777120323974940473"
+        imageLink: "https://picsum.photos/id/238/200/300",
+        buyLink: "https://www.google.com/shopping/product/17777120323974940473",
       },
       {
-        name: "Accupressure treatment and Food Therapy for Headache",
-        author: "A.K. Saxena",
+        name: "Another Book Title",
+        author: "Author Name",
+        rating: "6",
+        text: "Description about this book.",
+        imageLink: "https://picsum.photos/id/239/200/300",
+        buyLink: "https://www.google.com/shopping/product/17777120323974940473",
+      },
+      {
+        name: "Different Book",
+        author: "Author Name",
+        rating: "9",
+        text: "Another description.",
+        imageLink: "https://picsum.photos/id/240/200/300",
+        buyLink: "https://www.google.com/shopping/product/17777120323974940473",
+      },
+      {
+        name: "Extra Book",
+        author: "Someone Else",
         rating: "7",
-        text: "This book is about how we can use acupressure to effectively treat this disease.",
-        imageLink: "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD",
-        buyLink: "https://www.google.com/shopping/product/17777120323974940473"
+        text: "Extra book description.",
+        imageLink: "https://picsum.photos/id/241/200/300",
+        buyLink: "https://www.google.com/shopping/product/17777120323974940473",
       },
-      {
-        name: "Accupressure treatment and Food Therapy for Headache",
-        author: "Maxwell",
-        rating: "8",
-        text: "This book is about how we can use acupressure to effectively treat this disease.",
-        imageLink: "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD",
-        buyLink: "https://www.google.com/shopping/product/17777120323974940473"
-      }
-    ]
+    ],
   };
-  // const [fetchData, setFetchData] = useState({ books: [] });
+
   const [fetchData, setFetchData] = useState(staticData);
   const [loading, setLoading] = useState(false);
-  // console.log(pathy);
-  // console.log(disease);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalText, setModalText] = useState("");
 
-  // useEffect(() => {
-  //   const fetchDataFromAPI = async () => {
-  //     try {
-  //       const response = await axios.get(
-  //         `http://backend.healthumbrella.org:8000/disease/${disease}}/${pathy}/books`
-  //       );
-  //       setFetchData(response.data);
-  //       setLoading(false);
-  //       // console.log('hi');
-  //       // console.log(response.data);
-  //       setLoading(false);
-        
-  //     } catch (error) {
-  //       console.error('Error fetching data:', error);
-  //       setLoading(false);
-  //       setLoading(false);
-  //     }
-  //   };
-  //   fetchDataFromAPI();
-  // }, [pathy]);
-  console.log(fetchData)
+  const openModal = (text) => {
+    setModalText(text);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
   return (
-   
-    <>
     <div>
       {!fetchData || loading ? (
         <ClipLoader
@@ -84,35 +75,58 @@ function SeparateBook({ pathy,disease }) {
         />
       ) : (
         <>
-    <div className="SbV">{
+          <div className="SbV">
+            {fetchData.books.length === 0 ? (
+              <h1
+                style={{
+                  marginTop: "20rem",
+                  marginLeft: "5rem",
+                  fontSize: "3rem",
+                }}
+              >
+                No Books found
+              </h1>
+            ) : (
+              fetchData.books.map((book, index) => (
+                <div className="SbV_outer" key={index}>
+                  <div className="SbV_inner_left">
+                    <img src={book.imageLink} alt="Book Cover" />
+                  </div>
 
-    fetchData.books.length==0?<h1 style={{marginTop:"20rem", marginLeft:"5rem",fontSize:"3rem"}}>No Books found</h1>:
-      fetchData.books.map((book, index) => (
-        <div className="SbV_outer" key={index}>
-          <div className="SbV_inner_left">
-            <img src={book.imageLink} alt="Book Cover" />
+                  <div className="SbV_inner_right">
+                    <p className="author_name">{book.author}</p>
+                    <p className="book_name">{book.name}</p>
+                    <span className="rating_text_v2">
+                      Our Rating for this Book: {book.rating}/10
+                    </span>
+                    <div className="button_div">
+                      <button onClick={() => openModal(book.text)}>
+                        Summary
+                      </button>
+                      <a href={book.buyLink} target="_blank" rel="noreferrer">
+                        <button>Visit Site</button>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              ))
+            )}
           </div>
-          {/* <div className="vertical_line"></div> */}
-          <div className="SbV_inner_right">
-            <h3>{book.name} <span>({book.author})</span></h3>
-            <p>{book.text}</p>
-            <a href={book.buyLink} target="_blank" rel="noreferrer" >
-              <button><i className="fas fa-bolt"></i> Go to Store</button>
-            </a>
-            <span className="summary_text_v2">
-              For Summary <NavLink className="SbV_Navlink">Click Here &#9654;</NavLink>
-            </span>
-            <span className="rating_text_v2">Our Rating for this Book: {book.rating}/10</span>
-          </div>
-        </div>
-      ))}
 
+          {isModalOpen && (
+            <div className="modal_overlay">
+              <div className="modal_content">
+                <button className="close_button" onClick={closeModal}>
+                  &times;
+                </button>
+                <p>{modalText}</p>
+              </div>
+            </div>
+          )}
+        </>
+      )}
     </div>
-    </>
-        )}
-      
-      </div>
-    </>
   );
 }
+
 export default SeparateBook;
