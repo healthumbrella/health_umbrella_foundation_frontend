@@ -31,11 +31,10 @@ function SearchBar(props) {
     const handleClick = () => {
         scrollToTopOnClick();
         navigate(`/disease/${searchInput}`);
-    }
+    };
     const scrollToTopOnClick = () => {
         window.scrollTo(0, 0);
       };
-    
 
 
 
