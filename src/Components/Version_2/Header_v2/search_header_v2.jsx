@@ -24,6 +24,7 @@ function SearchBar(props) {
   // Handle "Enter" key press
   const handleKeyDown = (event) => {
     if (event.key === "Enter") {
+        window.scrollTo(0, 0);
       handleNavigation();
     }
   };

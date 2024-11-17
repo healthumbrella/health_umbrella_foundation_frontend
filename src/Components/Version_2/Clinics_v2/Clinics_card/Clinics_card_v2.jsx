@@ -76,9 +76,9 @@ const Clinics_card_v2 = ({ clinicdata }) => {
                         {/* Image or placeholder */}
                        
                         {process.env.REACT_APP_IS_PRODUCTION === 'true' ? (
-                          <img src={`${process.env.REACT_APP_BACKEND_IP}${clinic.imageLink}`} alt="Clinic" />
+                          <img src="/Images_v2/clinics-temp.png"  alt="Clinic" />
                         ) : (
-                          <img src={clinic.imageLink} alt="Clinic" />
+                          <img src="/Images_v2/clinics-temp.png" alt="Clinic" />
                         )}
                       </div>
 
