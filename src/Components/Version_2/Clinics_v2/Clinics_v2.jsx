@@ -31,7 +31,7 @@ const Clinics_v2 = () => {
       },
       {
         name: "Harmony Wellness Clinic",
-        imageLink:process.env.PUBLIC_URL +"/Images_v2/clinics-temp.webp",
+        imageLink:process.env.PUBLIC_URL +"/Images_v2/clinics-temp.png",
         location: "Hyderabad",
         address: "56 Jubilee Hills Road, Hyderabad, Telangana, India",
         LocationLink: "https://maps.app.goo.gl/t5ZssrYenjeCWGQt5",
