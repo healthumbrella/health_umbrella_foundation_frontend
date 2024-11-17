@@ -30,11 +30,11 @@ function DirectCases() {
   return (
     <div className="D_outer">
       <div className="D_outer_top">
-        <h2 style={{ cursor: "pointer", fontSize: "18px" }}>
+        <h2 style={{ cursor: "pointer", fontSize: "15px" }}>
           &lt;{" "}
           <span onClick={() => navigate(-3)}>Migraine</span>
           /
-          <span onClick={() => navigate(-2)}>Acupressure</span>
+          <span onClick={() => navigate(-2)}>Acupressure Therapy</span>
           <span onClick={() => navigate(-1)}>/DirectCase/</span>
           {hardcodedData.caseId}
         </h2>
