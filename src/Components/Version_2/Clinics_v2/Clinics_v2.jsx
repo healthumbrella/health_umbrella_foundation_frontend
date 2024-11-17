@@ -5,14 +5,13 @@ import "./clinics_v2.scss";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { ClinicFilterProvider } from './ClinicContext/ClinicFilterContext_v2';
-
+// import staticImageClinic from "../../../../public/Images_v2/clinics-temp.webp"
 const Clinics_v2 = () => {
   const clinicStaticData = {
     clinicsList: [
       {
         name: "Wellness Acupuncture Center",
-        imageLink:
-          "https://res.cloudinary.com/dsutl4kuh/image/upload/v1/media/clinics_images/check_huf_2024-09-21_07-45-30_cpik2w",
+        imageLink:process.env.PUBLIC_URL +"/Images_v2/clinics-temp.webp",
         location: "Delhi",
         address: "123 Main Road, Connaught Place, Delhi, India",
         LocationLink: "https://maps.app.goo.gl/t5ZssrYenjeCWGQt5",
@@ -22,8 +21,7 @@ const Clinics_v2 = () => {
       },
       {
         name: "Tranquil Acupuncture Clinic",
-        imageLink:
-          "https://res.cloudinary.com/dsutl4kuh/image/upload/v1/media/clinics_images/check_huf_2024-09-21_07-45-30_cpik2w",
+        imageLink:process.env.PUBLIC_URL +"/Images_v2/clinics-temp.webp",
         location: "Bangalore",
         address: "78 Greenfield Lane, Koramangala, Bangalore, Karnataka, India",
         LocationLink: "https://maps.app.goo.gl/t5ZssrYenjeCWGQt5",
@@ -33,8 +31,7 @@ const Clinics_v2 = () => {
       },
       {
         name: "Harmony Wellness Clinic",
-        imageLink:
-          "https://res.cloudinary.com/dsutl4kuh/image/upload/v1/media/clinics_images/check_huf_2024-09-21_07-45-30_cpik2w",
+        imageLink:process.env.PUBLIC_URL +"/Images_v2/clinics-temp.webp",
         location: "Hyderabad",
         address: "56 Jubilee Hills Road, Hyderabad, Telangana, India",
         LocationLink: "https://maps.app.goo.gl/t5ZssrYenjeCWGQt5",
@@ -44,8 +41,7 @@ const Clinics_v2 = () => {
       },
       {
         name: "Healing Touch Clinic",
-        imageLink:
-          "https://res.cloudinary.com/dsutl4kuh/image/upload/v1/media/clinics_images/check_huf_2024-09-21_07-45-30_cpik2w",
+        imageLink:process.env.PUBLIC_URL +"/Images_v2/clinics-temp.webp",
         location: "Mumbai",
         address: "45 Park Street, Andheri West, Mumbai, Maharashtra, India",
         LocationLink: "https://maps.app.goo.gl/t5ZssrYenjeCWGQt5",
@@ -55,8 +51,7 @@ const Clinics_v2 = () => {
       },
       {
         name: "Revive Health Center",
-        imageLink:
-          "https://res.cloudinary.com/dsutl4kuh/image/upload/v1/media/clinics_images/check_huf_2024-09-21_07-45-30_cpik2w",
+        imageLink:process.env.PUBLIC_URL +"/Images_v2/clinics-temp.webp",
         location: "Chennai",
         address: "12 Ocean Drive, Besant Nagar, Chennai, Tamil Nadu, India",
         LocationLink: "https://maps.app.goo.gl/t5ZssrYenjeCWGQt5",
