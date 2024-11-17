@@ -23,9 +23,9 @@
 .D_outer_top h2{
     margin-bottom: 2rem;
     margin-top: .5rem;
-    color: #053B3F;
-    font-weight: 700;
-    font-size: x-large;
+    /* color: #053B3F; */
+    font-weight: 500;
+    /* font-size: x-large; */
 }
 .D_outer_bottom{
     /* padding-top: 1rem; */

@@ -8,7 +8,7 @@ import Footer from "./Components/Footer/footer";
 // import Ejournal from "./Components/ejournal/ejournal";
 import Ejournal_v2 from "./Components/Version_2/ejournal_v2/ejournal";
 import Books from "./Components/BooksPage/books";
-import Diseases from "./Components/diseases/diseases";
+import Diseases from "./Components/Version_2/diseases_v2/diseases"
 //import Joinus from "./Components/JoinUs/Joinus";
 import Suggestion from "./Components/Version_2/Suggestion_v2/suggestion"
 // import Joinus from "./Components/JoinUs/Joinus";
