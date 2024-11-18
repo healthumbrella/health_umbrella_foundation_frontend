@@ -14,7 +14,7 @@ import Suggestion from "./Components/Version_2/Suggestion_v2/suggestion"
 // import Joinus from "./Components/JoinUs/Joinus";
 import Joinus from "./Components/Version_2/JoinUs_v2/Joinus";
 
-import Suggestion from "./Components/Suggestion/suggestion";
+// import Suggestion from "./Components/Suggestion/suggestion";
 //import DirectCases from "./Components/DirectCases/directcases";
 //import ShareExp from "./Components/ShareExp/Share
 //import Suggestion from "./Components/Suggestion/suggestion"
