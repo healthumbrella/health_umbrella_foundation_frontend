@@ -101,6 +101,7 @@ function Footer() {
                 <div className="footer_upper_bottom">
                     <p><a href="/">Terms & Conditions</a> | <a href="/">Privacy Policy</a></p>
                 </div>
+                
 
             </div>
 

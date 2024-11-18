@@ -7,7 +7,7 @@ function DirectCases() {
   const hardcodedData = {
     caseId: "001",
     summary:
-      "This is a summary of the case. It includes all the relevant details about the case and the patient's background.Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum nesciunt quia quo iure. Tenetur, nostrum. Odio, iste aperiam itaque tempora labore suscipit quas optio nostrum odit inventore quibusdam? Mollitia tenetur molestias accusantium ipsum! Eveniet illo nesciunt deleniti quasi quidem voluptatum non nulla aspernatur accusamus ipsam modi sapiente expedita est mollitia impedit minima ab totam tempora id dolore, labore voluptatem. Ad qui cum exercitationem vero esse non enim illum, a quod nostrum earum consequuntur quibusdam expedita. Distinctio aliquid, ipsa deleniti harum, perferendis voluptate molestiae natus similique suscipit molestias a odit provident eos quae vel exercitationem recusandae unde laborum! Beatae doloribus optio in corrupti aut, quos consectetur vel. Nostrum ratione, numquam adipisci ullam eaque velit obcaecati facilis suscipit eum nam mollitia corporis, nisi culpa illo. Totam quis deleniti nam corporis explicabo repudiandae doloribus nobis recusandae perferendis amet corrupti voluptas doloremque, beatae qui impedit, exercitationem, culpa laboriosam voluptate? Quam ab eveniet praesentium reprehenderit ad voluptate iure nobis. Vel doloribus facere, ut mollitia expedita nobis nostrum veritatis tempora id quasi voluptas ad doloremque, consectetur quibusdam, suscipit alias rerum architecto dolorem obcaecati laboriosam. Quas ut iste officiis ad atque hic aperiam sit! Quod, suscipit quasi voluptates repudiandae, dolorum magnam laudantium rem eos ipsam est expedita?",
+      "This is a summary of the case. It includes all the relevant details about the case and the patient's background. John Doe is a 30-year-old male engineer from California who presented with symptoms including fatigue, shortness of breath, and occasional chest pain. He has a family history of heart disease, which raises concerns for potential cardiovascular issues. After a series of diagnostic tests, including blood work, an ECG, and an echocardiogram, John was diagnosed with mild hypertension and early signs of atherosclerosis. His blood pressure readings have been consistently high over the past six months, which has prompted a more detailed evaluation of his cardiovascular health. Doctors have recommended lifestyle changes such as increased physical activity, a heart-healthy diet, and medication to manage blood pressure and cholesterol levels. Further follow-ups are scheduled to monitor his progress and ensure that there are no complications. The case involves not only managing John’s immediate health concerns but also educating him on the importance of regular health checkups and preventive care to avoid more serious conditions like heart attack or stroke.",
     personalDetails: {
       name: "John Doe",
       age: 30,
@@ -16,13 +16,78 @@ function DirectCases() {
       emailAddress: "john.doe@example.com",
       phoneNumber: "1234567890",
       region: "California",
+      maritalStatus: "Single",
+      emergencyContact: {
+        name: "Jane Doe",
+        relationship: "Sister",
+        phoneNumber: "9876543210",
+      },
     },
     comment:
-      "This is a summary of the case. It includes all the relevant details about the case and the patient's background.Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum nesciunt quia quo iure. Tenetur, nostrum. Odio, iste aperiam itaque tempora labore suscipit quas optio nostrum odit inventore quibusdam? Mollitia tenetur molestias accusantium ipsum! Eveniet illo nesciunt deleniti quasi quidem voluptatum non nulla aspernatur accusamus ipsam modi sapiente expedita est mollitia impedit minima ab totam tempora id dolore, labore voluptatem. Ad qui cum exercitationem vero esse non enim illum, a quod nostrum earum consequuntur quibusdam expedita. Distinctio aliquid, ipsa deleniti harum, perferendis voluptate molestiae natus similique suscipit molestias a odit provident eos quae vel exercitationem recusandae unde laborum! Beatae doloribus optio in corrupti aut, quos consectetur vel. Nostrum ratione, numquam adipisci ullam eaque velit obcaecati facilis suscipit eum nam mollitia corporis, nisi culpa illo. Totam quis deleniti nam corporis explicabo repudiandae doloribus nobis recusandae perferendis amet corrupti voluptas doloremque, beatae qui impedit, exercitationem, culpa laboriosam voluptate? Quam ab eveniet praesentium reprehenderit ad voluptate iure nobis. Vel doloribus facere, ut mollitia expedita nobis nostrum veritatis tempora id quasi voluptas ad doloremque, consectetur quibusdam, suscipit alias rerum architecto dolorem obcaecati laboriosam. Quas ut iste officiis ad atque hic aperiam sit! Quod, suscipit quasi voluptates repudiandae, dolorum magnam laudantium rem eos ipsam est expedita? the case that should be taken into consideration.",
+      "John Doe is undergoing treatment for hypertension and early-stage atherosclerosis. His doctors have advised lifestyle modifications including weight loss, a low-sodium diet, and an exercise regimen that involves cardiovascular activities like walking or cycling. Additionally, he has been prescribed medications such as ACE inhibitors and statins to help control his blood pressure and cholesterol levels. It is crucial for John to adhere to his medication schedule and attend regular follow-up appointments to prevent further complications. The patient has expressed concerns about the long-term management of his condition and has requested more information on how to maintain a healthy lifestyle. Education on stress management and mindfulness techniques will also be incorporated into his treatment plan to help him cope with work-related stress, which may be contributing to his hypertension.",
     caseHistory: "/path/to/case-history.pdf",
     allergies: "/path/to/allergies.pdf",
     medicalReport: "/path/to/medical-report.pdf",
+    treatmentPlan: {
+      medications: [
+        "ACE Inhibitors (Lisinopril) 10 mg daily",
+        "Statins (Atorvastatin) 20 mg daily",
+        "Aspirin 81 mg daily",
+      ],
+      lifestyleRecommendations: [
+        "Increased physical activity (e.g., walking, cycling, swimming)",
+        "Heart-healthy diet (e.g., low-sodium, high-fiber, rich in fruits and vegetables)",
+        "Weight loss (target: 5-10% reduction in body weight)",
+        "Stress management (e.g., yoga, meditation, mindfulness)",
+      ],
+      followUpAppointments: [
+        { date: "2024-12-01", type: "Cardiology Consultation" },
+        { date: "2025-01-15", type: "Blood Pressure Check" },
+      ],
+      monitoring: "Regular monitoring of blood pressure, cholesterol levels, and kidney function through blood tests every 3 months.",
+    },
+    familyHistory: [
+      {
+        relative: "Father",
+        condition: "Coronary Artery Disease",
+        ageAtDiagnosis: 52,
+      },
+      {
+        relative: "Mother",
+        condition: "Type 2 Diabetes",
+        ageAtDiagnosis: 50,
+      },
+    ],
+    socialHistory: {
+      smoking: "Non-smoker",
+      alcohol: "Occasional (2-3 drinks per week)",
+      exercise: "Moderate (cycling, walking 3 times per week)",
+      diet: "Low-fat, moderate in carbohydrates, high in vegetables",
+    },
+    diagnosticTests: [
+      {
+        testName: "ECG",
+        date: "2024-11-05",
+        result: "Normal sinus rhythm, no signs of ischemia or arrhythmias",
+      },
+      {
+        testName: "Echocardiogram",
+        date: "2024-11-06",
+        result: "Mild left ventricular hypertrophy, no valve abnormalities",
+      },
+      {
+        testName: "Blood Pressure",
+        date: "2024-11-07",
+        result: "145/95 mmHg (Hypertension Stage 1)",
+      },
+      {
+        testName: "Cholesterol Panel",
+        date: "2024-11-07",
+        result: "Total Cholesterol: 210 mg/dL, LDL: 130 mg/dL, HDL: 50 mg/dL",
+      },
+    ],
   };
+  
 
   const [isReadMore2, setIsReadMore2] = useState(false);
   const [isReadMore, setIsReadMore] = useState(false);
@@ -49,7 +114,7 @@ function DirectCases() {
           <p className="D_summary_text">
             {isReadMore
               ? hardcodedData.summary
-              : hardcodedData.summary.slice(0, 700)}
+              : hardcodedData.summary.slice(0, 1180)}
             <span
               onClick={() => setIsReadMore(!isReadMore)}
               style={{ color: "blue", cursor: "pointer" }}
@@ -110,7 +175,7 @@ function DirectCases() {
                 <p className="D_detail_text">
                   {isReadMore2
                     ? hardcodedData.comment
-                    : hardcodedData.comment.slice(0, 400)}
+                    : hardcodedData.comment.slice(0, 600)}
                   <span
                     onClick={() => setIsReadMore2(!isReadMore2)}
                     style={{ color: "blue", cursor: "pointer" }}
