@@ -46,7 +46,7 @@ const Clinics_v2 = () => {
         address: "45 Park Street, Andheri West, Mumbai, Maharashtra, India",
         LocationLink: "https://maps.app.goo.gl/t5ZssrYenjeCWGQt5",
         summary: "Your trusted destination for specialized therapies.",
-        contact: "healclinic@mumbai.com",
+        contact: "9089908990",
         tagList: ["therapy", "allopathy", "homeopathy"],
       },
       {
