@@ -75,7 +75,7 @@ const OurTeam = () => {
                                   className={styles.team_link}
                                 >
                                   <img
-                                    src={`images/${team
+                                    src={`Images/${team
                                       .split("-")
                                       .map(
                                         (word) =>
@@ -113,7 +113,7 @@ const OurTeam = () => {
                                   className={styles.team_link}
                                 >
                                   <img
-                                    src={`images/${team
+                                    src={`Images/${team
                                       .split("-")
                                       .map(
                                         (word) =>
