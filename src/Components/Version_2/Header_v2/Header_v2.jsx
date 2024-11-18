@@ -11,7 +11,24 @@ function Header() {
   const [diseases, setDiseases] = useState([
     "Cancer",
     "Migraine",
-    "Psoriasis"
+    "Psoriasis",
+    "Diabetes",
+  "Hypertension",
+  "Asthma",
+  "Arthritis",
+  "Alzheimer's Disease",
+  "Parkinson's Disease",
+  "Tuberculosis",
+  "Epilepsy",
+  "Hepatitis",
+  "HIV/AIDS",
+  "Depression",
+  "Anxiety",
+  "Obesity",
+  "COVID-19",
+  "Influenza",
+  "Chronic Kidney Disease",
+  "Thyroid Disorders"
   ]); // Using static data instead of fetching from an API
   // const [diseases, setDiseases] = useState([]);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
