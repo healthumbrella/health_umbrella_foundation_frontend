@@ -14,7 +14,7 @@ const Pathy = () => {
   const staticData = {
     pathyList: [
       {
-        imageLink: "https://cdn.mos.cms.futurecdn.net/yCPyoZDQBBcXikqxkeW2jJ-1200-80.jpg",
+        imageLink: "/Images_v2/acupressure.jpg",
         title: "acupressure",
         text: "Acupressure is a form of traditional Chinese medicine that involves applying pressure to specific points on the body to relieve pain, promote relaxation, and improve overall health. It is based on the belief that there are energy pathways called meridians throughout the body, and by stimulating certain points along these meridians.",
         diseaseList: [
@@ -24,7 +24,7 @@ const Pathy = () => {
         ]
       },
       {
-        imageLink: "https://cdn.mos.cms.futurecdn.net/yCPyoZDQBBcXikqxkeW2jJ-1200-80.jpg",
+        imageLink: "/Images_v2/fasting.jpg",
         title: "fasting",
         text: "Fasting involves voluntarily abstaining from food or drink for a certain period of time, often for religious, health or personal reasons. It can have benefits such as weight loss, improved metabolism and reduced inflammation. Eating, on the other hand, is the act of consuming food and drink for nourishment and energy to sustain the body's functions.",
         diseaseList: [
@@ -34,7 +34,7 @@ const Pathy = () => {
         ]
       },
       {
-        imageLink: "https://cdn.mos.cms.futurecdn.net/yCPyoZDQBBcXikqxkeW2jJ-1200-80.jpg",
+        imageLink: "/Images_v2/reiki.jpeg",
         title: "reiki",
         text: "Reiki is a form of traditional Chinese medicine that involves applying pressure to specific points on the body to relieve pain, promote relaxation, and improve overall health. It is based on the belief that there are energy pathways called meridians throughout the body, and by stimulating certain points along these meridians.",
         diseaseList: [
@@ -44,7 +44,7 @@ const Pathy = () => {
         ]
       },
       {
-        imageLink: "https://cdn.mos.cms.futurecdn.net/yCPyoZDQBBcXikqxkeW2jJ-1200-80.jpg",
+        imageLink: "/Images_v2/fasting.jpg",
         title: "food therapy",
         text: "food therapy is a form of traditional Chinese medicine that involves applying pressure to specific points on the body to relieve pain, promote relaxation, and improve overall health. It is based on the belief that there are energy pathways called meridians throughout the body, and by stimulating certain points along these meridians.",
         diseaseList: [
@@ -54,7 +54,7 @@ const Pathy = () => {
         ]
       },
       {
-        imageLink: "https://cdn.mos.cms.futurecdn.net/yCPyoZDQBBcXikqxkeW2jJ-1200-80.jpg",
+        imageLink: "/Images_v2/allopathy.png",
         title: "allopathy",
         text: "allopathy is a form of traditional Chinese medicine that involves applying pressure to specific points on the body to relieve pain, promote relaxation, and improve overall health. It is based on the belief that there are energy pathways called meridians throughout the body, and by stimulating certain points along these meridians.",
         diseaseList: [
@@ -65,7 +65,7 @@ const Pathy = () => {
       },
       
       {
-        imageLink: "https://cdn.mos.cms.futurecdn.net/yCPyoZDQBBcXikqxkeW2jJ-1200-80.jpg",
+        imageLink: "/Images_v2/music.jpeg",
         title: "Music Therapy",
         text: "Music Therapy is a form of traditional Chinese medicine that involves applying pressure to specific points on the body to relieve pain, promote relaxation, and improve overall health. It is based on the belief that there are energy pathways called meridians throughout the body, and by stimulating certain points along these meridians.",
         diseaseList: [
@@ -75,7 +75,7 @@ const Pathy = () => {
         ]
       },
       {
-        imageLink: "https://cdn.mos.cms.futurecdn.net/yCPyoZDQBBcXikqxkeW2jJ-1200-80.jpg",
+        imageLink: "/Images_v2/yoga.jpg",
         title: "Yoga",
         text: "Yoga is a form of traditional Chinese medicine that involves applying pressure to specific points on the body to relieve pain, promote relaxation, and improve overall health. It is based on the belief that there are energy pathways called meridians throughout the body, and by stimulating certain points along these meridians.",
         diseaseList: [
@@ -85,7 +85,7 @@ const Pathy = () => {
         ]
       },
       {
-        imageLink: "https://cdn.mos.cms.futurecdn.net/yCPyoZDQBBcXikqxkeW2jJ-1200-80.jpg",
+        imageLink: "/Images_v2/cow.jpeg",
         title: "Cow Therapy",
         text: "Cow Therapy is a form of traditional Chinese medicine that involves applying pressure to specific points on the body to relieve pain, promote relaxation, and improve overall health. It is based on the belief that there are energy pathways called meridians throughout the body, and by stimulating certain points along these meridians.",
         diseaseList: [
@@ -94,6 +94,36 @@ const Pathy = () => {
           { disease: "cancer", link: "google.com/some-sample-link" }
         ]
       },
+      {
+        imageLink: "/Images_v2/water.jpeg",
+        title: "Water Therapy",
+        text: "Water Therapy involves using water for pain relief, relaxation, and treatment of conditions such as arthritis, back pain, and sports injuries.",
+        diseaseList: [
+          { disease: "arthritis", link: "healthumbrella.org/disease/arthritis/case/1" },
+          { disease: "sports injuries", link: "healthumbrella.org/disease/sports-injuries/case/2" },
+          { disease: "chronic pain", link: "google.com/sample-chronic-pain-link" }
+        ]
+      },
+      {
+        imageLink: "/Images_v2/aroma.jpeg",
+        title: "Aromatherapy",
+        text: "Aromatherapy uses essential oils to enhance physical and emotional health. The oils are often inhaled or applied to the skin for relaxation and healing.",
+        diseaseList: [
+          { disease: "stress", link: "healthumbrella.org/disease/stress/case/1" },
+          { disease: "insomnia", link: "healthumbrella.org/disease/insomnia/case/2" },
+          { disease: "headaches", link: "google.com/sample-headaches-link" }
+        ]
+      },
+      {
+        imageLink: "/Images_v2/electro.jpg",
+        title: "Electro Homeopathy",
+        text: "Electro Homeopathy uses essential oils to enhance physical and emotional health. The oils are often inhaled or applied to the skin for relaxation and healing.",
+        diseaseList: [
+          { disease: "stress", link: "healthumbrella.org/disease/stress/case/1" },
+          { disease: "insomnia", link: "healthumbrella.org/disease/insomnia/case/2" },
+          { disease: "headaches", link: "google.com/sample-headaches-link" }
+        ]
+      }
       
     ]
   };

@@ -11,7 +11,7 @@ const Clinics_v2 = () => {
     clinicsList: [
       {
         name: "Wellness Acupuncture Center",
-        imageLink:process.env.PUBLIC_URL +"/Images_v2/clinics-temp.webp",
+        imageLink:process.env.PUBLIC_URL +"/Images_v2/clinics-1.jpg",
         location: "Delhi",
         address: "123 Main Road, Connaught Place, Delhi, India",
         LocationLink: "https://maps.app.goo.gl/t5ZssrYenjeCWGQt5",
@@ -21,7 +21,7 @@ const Clinics_v2 = () => {
       },
       {
         name: "Tranquil Acupuncture Clinic",
-        imageLink:process.env.PUBLIC_URL +"/Images_v2/clinics-temp.webp",
+        imageLink:process.env.PUBLIC_URL +"/Images_v2/clinics-2.jpg",
         location: "Bangalore",
         address: "78 Greenfield Lane, Koramangala, Bangalore, Karnataka, India",
         LocationLink: "https://maps.app.goo.gl/t5ZssrYenjeCWGQt5",
@@ -31,7 +31,7 @@ const Clinics_v2 = () => {
       },
       {
         name: "Harmony Wellness Clinic",
-        imageLink:process.env.PUBLIC_URL +"/Images_v2/clinics-temp.png",
+        imageLink:process.env.PUBLIC_URL +"/Images_v2/clinics-3.webp",
         location: "Hyderabad",
         address: "56 Jubilee Hills Road, Hyderabad, Telangana, India",
         LocationLink: "https://maps.app.goo.gl/t5ZssrYenjeCWGQt5",
@@ -41,7 +41,7 @@ const Clinics_v2 = () => {
       },
       {
         name: "Healing Touch Clinic",
-        imageLink:process.env.PUBLIC_URL +"/Images_v2/clinics-temp.webp",
+        imageLink:process.env.PUBLIC_URL +"/Images_v2/clinics-4.webp",
         location: "Mumbai",
         address: "45 Park Street, Andheri West, Mumbai, Maharashtra, India",
         LocationLink: "https://maps.app.goo.gl/t5ZssrYenjeCWGQt5",
@@ -51,7 +51,7 @@ const Clinics_v2 = () => {
       },
       {
         name: "Revive Health Center",
-        imageLink:process.env.PUBLIC_URL +"/Images_v2/clinics-temp.webp",
+        imageLink:process.env.PUBLIC_URL +"/Images_v2/clinics-5.webp",
         location: "Chennai",
         address: "12 Ocean Drive, Besant Nagar, Chennai, Tamil Nadu, India",
         LocationLink: "https://maps.app.goo.gl/t5ZssrYenjeCWGQt5",

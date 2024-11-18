@@ -4,7 +4,12 @@ import SeparateBook from "../Books_v2/seperatebooks_v2";
 import { Navigate, useNavigate, useParams } from "react-router-dom";
 import ClipLoader from "react-spinners/ClipLoader";
 
+
 function Books(){
+  const scrollToTopOnClick = () => {
+    window.scrollTo(0, 0);
+  };
+  scrollToTopOnClick();
     const {title1,disease} = useParams();
     const navigate = useNavigate();
 
@@ -42,7 +47,7 @@ function Books(){
                 
                 <div className="BV_inner_bottom">
                     <div className="BV_inner_left">
-                        <img src={process.env.PUBLIC_URL+"/images/bookCase.png"} alt="" />
+                        <img src={process.env.PUBLIC_URL+"/Images/bookCase.png"} alt="" />
                     </div>
                     <div className="BV_inner_right">
         

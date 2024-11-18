@@ -14,28 +14,28 @@ const Memberdetails = () => {
         designation: "Founder",
         imageLink: "/Images/person.png",
         about:
-          "Lorem ipsum dolor sit amet. Et nesciunt nulla et eligendi distinctio est doloremque eaque. Vel ratione excepturi sed pariatur quia aut dolor quis et perferendis doloribus aut ipsum consequatur sed nobis accusamus aut doloremque quibusdam.",
+          "Dr Neogi has been working as an Assistant Professor of Physics in an IT Engineering Institute started by steel King Mr L N Mittal in 2003.",
         linkedinLink: "linkedin.com",
-        emailAddress: "mail@example.com",
+        emailAddress: "dr.amitneogi@example.com",
         phoneNumber: "123456789",
       },
       {
-        name: "John Doe",
-        designation: "Co-Founder",
+        name: "Arun",
+        designation: "FullStack Developer",
         imageLink: "/Images/person.png",
         about:
-          "Lorem ipsum dolor sit amet. Vel ratione excepturi sed pariatur quia aut dolor quis et perferendis doloribus.",
+          "Experienced FullStack Developer of 2 years",
         linkedinLink: "linkedin.com",
         phoneNumber: "987654321",
       },
       {
-        name: "Jane Smith",
-        designation: "Advisor",
+        name: "Dhruv Bandi",
+        designation: "Web Developer",
         imageLink: "/Images/person.png",
         about:
-          "Lorem ipsum dolor sit amet. Vel ratione excepturi sed pariatur quia aut dolor quis et perferendis doloribus.",
+          "Fullstack Developer who loves to do frontend.",
         linkedinLink: "linkedin.com",
-        emailAddress: "jane@example.com",
+        emailAddress: "dhruvbandi03@gmail.com",
       },
     ],
   };
