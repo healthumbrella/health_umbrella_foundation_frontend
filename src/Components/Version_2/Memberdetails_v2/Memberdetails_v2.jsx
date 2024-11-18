@@ -87,7 +87,7 @@ const Memberdetails = () => {
                   >
                     <img
                       className="icons-img"
-                      src="/images/icons8-linked-in-240.png"
+                      src="/Images/icons8-linked-in-240.png"
                       alt="LinkedIn"
                     />
                   </a>
@@ -100,7 +100,7 @@ const Memberdetails = () => {
                   >
                     <img
                       className="icons-img"
-                      src="/images/icons8-gmail-480 (1).png"
+                      src="/Images/icons8-gmail-480 (1).png"
                       alt="Email"
                     />
                   </a>
@@ -113,7 +113,7 @@ const Memberdetails = () => {
                   >
                     <img
                       className="icons-img-ringer"
-                      src="/images/icons8-ringer-volume-90.png"
+                      src="/Images/icons8-ringer-volume-90.png"
                       alt="Phone"
                     />
                   </a>
