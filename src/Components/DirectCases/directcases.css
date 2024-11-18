@@ -43,6 +43,8 @@
     display: flex;
     flex-direction: column;
     text-align: start;
+    /* background:#E3F4FC; */
+    color: #005985;
 }
 .line{
     width: 100%;
@@ -54,7 +56,7 @@
     font-family: 'Noto Sans', sans-serif;
     font-weight: 700;
     font-size: x-large;
-    color: #053B3F;
+    /* color: #053B3F; */
     /* text-align: flex-start; */
 }
 .D_outer_summary{
@@ -64,6 +66,7 @@
     justify-content: center;
     align-items: flex-start;
     gap:1.5rem;
+    color: #005985;
 }
 .D_summary_heading{
     margin: 2rem 3rem 0rem 3rem;
@@ -127,6 +130,7 @@
     font-weight: bolder;
     font-size: x-large;
     text-align: start;
+    color: #005985;
 }
 .D_detail_table{
     width: 100%;
@@ -135,6 +139,7 @@
     /* align-items: flex-start; */
     padding-left: 2rem;
     margin-bottom: 2rem;
+    color: #005985;
 }
 .TR{
     display: flex;
@@ -186,6 +191,7 @@
     font-family: 'Noto Sans', sans-serif;
     font-weight: bolder;
     font-size: x-large;
+    color: #005985;
 }
 .D_detail_text{
     font-family: 'Noto Sans', sans-serif;
