@@ -406,7 +406,11 @@ const healthData = {
     const [selectedTestimonial, setSelectedTestimonial] = useState(null);
     const navigate=useNavigate();
     const handleClick = () =>{
-      navigate(`disease/${selectedDisease.name}/${selectedPathy.name}/${selectedTestimonial.name}`);
+      if(selectedTestimonial.name === "Books/Chapters"){
+        navigate(`disease/${selectedDisease.name}/${selectedPathy.name}/books`);
+      }else{
+        navigate(`disease/${selectedDisease.name}/${selectedPathy.name}/${selectedTestimonial.name}`);
+      }
     }
     const handleMouseOver = (index, disease) => {
         setHoveredIndex(index);
@@ -443,7 +447,7 @@ const healthData = {
                     An overview of health umbrella foundation, what we actually do...
                     An overview of health umbrella foundation, what we actually do...
                 </p>
-                <button className="Home_v2_fourth_left_button">Selected Summary</button>
+                <button className="Home_v2_fourth_left_button" onClick={()=>{navigate(`disease/${healthData.disease[hoveredIndex].name}`)}}>Selected Summary</button>
             </div>
             <div className="Home_v2_fourth_right">
                 <div className="Home_v2_fourth_right_section_outer" onMouseLeave={handleMouseLeaveOuter}>

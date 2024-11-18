@@ -5,6 +5,10 @@ import imageInfo from "./imageLink";
 import { MdOutlineArrowRight } from "react-icons/md";
 
 const Testimonials = () => {
+  const scrollToTopOnClick = () => {
+    window.scrollTo(0, 0);
+  };
+  scrollToTopOnClick();
     // const [fetchData, setFetchData] = useState({ text: "", sourceList: [] });
   const [fetchData, setFetchData] = useState({
     text: "Our dedicated members have picked up some important and exciting case histories and testimonials from huge and scattered data in youtube.",
@@ -22,31 +26,31 @@ const Testimonials = () => {
         title: "My unforgettable story",
         link: "https://www.youtube.com/watch?v=hQH3viVFhPA&ab_channel=MarkManson",
         summary: "This video is about how we can use acupressure to effectively treat this disease",
-        rating: "7",
+        rating: "8",
         comment: "Really useful testimonial",
       },
       {
-        id: "M/H/Y/002",
-        title: "My unforgettable story",
+        id: "M/H/Y/003",
+        title: "Best Testimonial Ever",
         link: "https://www.youtube.com/watch?v=hQH3viVFhPA&ab_channel=MarkManson",
         summary: "This video is about how we can use acupressure to effectively treat this disease",
         rating: "7",
         comment: "Really useful testimonial",
       },
       {
-        id: "M/H/Y/002",
-        title: "My unforgettable story",
+        id: "M/H/Y/004",
+        title: "How I cured my disease within a Month",
         link: "https://www.youtube.com/watch?v=hQH3viVFhPA&ab_channel=MarkManson",
         summary: "This video is about how we can use acupressure to effectively treat this disease",
-        rating: "7",
+        rating: "5",
         comment: "Really useful testimonial",
       },
       {
-        id: "M/H/Y/002",
-        title: "My unforgettable story",
+        id: "M/H/Y/005",
+        title: "How I overcame my fear",
         link: "https://www.youtube.com/watch?v=hQH3viVFhPA&ab_channel=MarkManson",
         summary: "This video is about how we can use acupressure to effectively treat this disease",
-        rating: "7",
+        rating: "9",
         comment: "Really useful testimonial",
       },
     ],
