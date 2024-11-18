@@ -21,7 +21,7 @@ function Header() {
   "Tuberculosis",
   "Epilepsy",
   "Hepatitis",
-  "HIV/AIDS",
+  "HIV-AIDS",
   "Depression",
   "Anxiety",
   "Obesity",

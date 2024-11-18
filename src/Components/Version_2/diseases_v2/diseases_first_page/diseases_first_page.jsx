@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import "./diseases_first_page.scss";
+import { useParams } from "react-router-dom";
 
 const Top = () => {
   const [isReadMore, setIsReadMore] = useState(false);
   const [isReadMore2, setIsReadMore2] = useState(false);
-
+  const { disease } = useParams();
+  console.log(disease)
   // Static data
   const data = {
     disease: "Migraine",
@@ -28,7 +30,7 @@ const Top = () => {
             <img src={data.imageLink} alt="img" />
           </div>
           <div className="disease-right">
-            <h1>{data.disease}</h1>
+            <h1>{disease}</h1>
             <p>
               {isReadMore2 ? data.text : truncateText(data.text, 500)}
               <span
